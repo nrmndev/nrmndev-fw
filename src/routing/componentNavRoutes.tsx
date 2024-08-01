@@ -1,17 +1,16 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 const ComponentNavRoutes = () => {
   return (
     <div className="routeNav">
-      <ul className="list">
-        <Link to="/list" className="list-inline">
+      <ul className="list list--inline">
+        <Link to="/list" className="list__item">
           List
         </Link>
-        <Link to="/button" className="list-inline">
+        <Link to="/button" className="list__item">
           Button
         </Link>
-        <Link to="/sectionlabel" className="list-inline">
+        <Link to="/sectionlabel" className="list__item">
           Section Label
         </Link>
       </ul>
