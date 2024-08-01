@@ -12,6 +12,9 @@ const ComponentNavRoutes = () => {
         </Link>
         <Link to="/sectionlabel" className="list__item">
           Section Label
+        </Link>{" "}
+        <Link to="/leaf" className="list__item">
+          Leaf
         </Link>
       </ul>
     </div>

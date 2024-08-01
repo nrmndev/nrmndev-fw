@@ -2,7 +2,8 @@ import List from "@components/list/Index";
 import App from "../App";
 import { createBrowserRouter } from "react-router-dom";
 import Button from "@components/button/Index";
-import SectionLabel from "@components/section-title/Index";
+import SectionLabel from "@components/section-label/Index";
+import Leaf from "@components/leaf/Index";
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,7 @@ const router = createBrowserRouter([
       { path: "list", element: <List /> },
       { path: "button", element: <Button /> },
       { path: "sectionlabel", element: <SectionLabel /> },
+      { path: "leaf", element: <Leaf /> },
     ],
   },
 ]);
