@@ -34,7 +34,7 @@ h3 {
   display: inline-block;
 }
 
-.btn__bordered {
+.btn--bordered {
   border-radius: 0.5rem;
 }
 

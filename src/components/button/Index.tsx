@@ -1,5 +1,5 @@
 const Button = () => {
-  return <button className="btn btn--primary btn__bordered">Button</button>;
+  return <button className="btn btn--primary btn--bordered">Button</button>;
 };
 
 export default Button;
