@@ -1,0 +1,120 @@
+:root {
+  --color-primary: #145650;
+  --color-light: #fafafa;
+  --color-heading: #145650;
+  --color-body: #333333;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 1.6rem;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+}
+
+/* Buttons */
+.btn {
+  padding: 1rem 1.5rem;
+  border: none;
+}
+
+.btn--primary {
+  background: var(--color-primary);
+  color: var(--color-light);
+  display: inline-block;
+}
+
+.btn__bordered {
+  border-radius: 0.5rem;
+}
+
+.btn__large {
+  padding: 2rem 3rem;
+}
+
+.btn__block {
+  display: block;
+  width: 100%;
+}
+
+/* LISTS */
+.list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.list-inline {
+  display: inline-block;
+  margin-right: 1.5rem;
+}
+
+.list-check {
+  position: relative;
+  /* list-style-image: url("./assets/check_circle.svg"); */
+  padding-left: 2.6rem;
+  margin-bottom: 10px;
+  line-height: 2.4rem;
+}
+
+.list-check::before {
+  content: url("./assets/check_circle.svg");
+  color: var(--color-primary);
+  font-size: 3rem;
+  height: 3rem;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 3rem;
+}
+
+/** SECTION TITLE **/
+.section-label {
+  color: var(--color-primary);
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  padding-left: 3.8rem;
+  position: relative;
+}
+.section-label::before {
+  border: 2px solid var(--color-primary);
+  content: "";
+  height: 0;
+  left: 0;
+  opacity: 0.85;
+  position: absolute;
+  top: 11px;
+  width: 3rem;
+}
+
+/** LINKS **/
+a {
+  text-decoration: none;
+}
+
+/** MODIFIERS **/
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.routeNav {
+  padding: 1rem;
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  margin-bottom: 3rem;
+}
+
+.routeNav a {
+  color: var(--color-light);
+}
