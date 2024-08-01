@@ -26,23 +26,21 @@ h3 {
 .btn {
   padding: 1rem 1.5rem;
   border: none;
+  border-radius: 1rem;
+  display: inline-block;
+  cursor: pointer;
 }
 
 .btn--primary {
   background: var(--color-primary);
   color: var(--color-light);
-  display: inline-block;
 }
 
-.btn--bordered {
-  border-radius: 0.5rem;
-}
-
-.btn__large {
+.btn--large {
   padding: 2rem 3rem;
 }
 
-.btn__block {
+.btn--block {
   display: block;
   width: 100%;
 }
