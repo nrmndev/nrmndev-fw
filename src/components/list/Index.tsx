@@ -2,7 +2,12 @@ import { IconType } from "react-icons";
 import { IoCheckmarkCircleOutline } from "react-icons/io5";
 
 interface IProps {
-  display?: "inline" | "block";
+  display?:
+    | "inline"
+    | "block"
+    | "grid-2-columns"
+    | "grid-3-columns"
+    | "grid-4-columns";
   icon?: IconType;
   iconSize?: number;
   iconColor?: "primary" | "secondary" | "accent";
