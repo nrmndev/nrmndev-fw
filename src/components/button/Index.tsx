@@ -1,11 +1,22 @@
-const Button = () => {
+interface IProps {
+  variant: "primary" | "primary-outlined" | "secondary" | "secondary-outlined";
+  display?: "block" | "inline-block";
+  size?: "small" | "medium" | "large" | "x-large";
+  children: React.ReactNode;
+}
+
+const Button = ({ variant = "primary", display, size, children }: IProps) => {
+  const classNames: string[] = ["btn"];
+  classNames.push(`btn--` + variant);
+  display && classNames.push(`btn--` + display);
+  size && classNames.push(`btn--` + size);
+  const props = {
+    ...(classNames.length > 0 && { className: classNames.join(" ") }),
+  };
+
   return (
     <>
-      <button className="btn btn--primary">Button Primary</button>
-      <button className="btn btn--block btn--primary">
-        Button Block Primary
-      </button>
-      <button className="btn btn--large">Button Large</button>
+      <button {...props}>{children}</button>
     </>
   );
 };
