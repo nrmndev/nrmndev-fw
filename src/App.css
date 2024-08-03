@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   font-size: 1.6rem;
@@ -22,7 +22,53 @@ body {
 h1,
 h2,
 h3 {
-  font-weight: 600;
+  font-family: "Anton", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+h1 {
+  font-size: 4.5rem;
+}
+h2 {
+  font-size: 3rem;
+}
+h3 {
+  font-size: 2.5rem;
+}
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+h4,
+h5,
+h6 {
+  font-size: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+/** TYPOGRAPHY WIDTH MODIFIERS **/
+.width-ch20 {
+  width: 20ch;
+}
+.width-ch30 {
+  width: 30ch;
+}
+.width-ch40 {
+  width: 40ch;
+}
+.width-ch50 {
+  width: 50ch;
+}
+.width-ch60 {
+  width: 60ch;
+}
+.width-ch70 {
+  width: 70ch;
+}
+.width-ch80 {
+  width: 80ch;
 }
 
 /* Buttons */
@@ -39,6 +85,12 @@ h3 {
   color: var(--color-light);
 }
 
+.btn--primary-outlined {
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  background: transparent;
+}
+
 .btn--large {
   padding: 2rem 3rem;
 }
@@ -48,18 +100,47 @@ h3 {
   width: 100%;
 }
 
+/** MAIN NAV **/
+.nav-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.nav-list .list__item {
+  line-height: 1.5;
+}
 /* LISTS */
 .list {
   list-style: none;
   padding-left: 0;
   margin: 0;
 }
+.list--grid-2-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.list--grid-3-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.list--grid-4-columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.list--inline .list__item {
+  display: inline-block;
+  margin-right: 1.5rem;
+}
+
+/** LIST ITEM **/
 .list .list__item {
   margin-bottom: 15px;
   line-height: 1.5;
   align-items: center;
   display: flex;
 }
+
+/** LIST SVG **/
 .list .list__item--primary svg {
   color: var(--color-primary);
 }
@@ -69,10 +150,6 @@ h3 {
 
 .list__item svg {
   padding-right: 0.5rem;
-}
-.list--inline .list__item {
-  display: inline-block;
-  margin-right: 1.5rem;
 }
 
 /* .list-check {
@@ -197,6 +274,12 @@ a {
 
 .text-uppercase {
   text-transform: uppercase;
+}
+.text-capitalize {
+  text-transform: capitalize;
+}
+.text-lowercase {
+  text-transform: lowercase;
 }
 
 .routeNav {
