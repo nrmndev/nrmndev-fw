@@ -1,13 +1,12 @@
 import { Heading } from "@components/heading/Index";
-import React from "react";
 
 const SampleHeading = () => {
   return (
     <>
-      <Heading level={1} maxCharacters={20} textTransform="capitalize">
+      <Heading level={1} maxCharacters={20}>
         A Company to change the world we're driller industrial{" "}
       </Heading>
-      <Heading level={2} maxCharacters={30}>
+      <Heading level={2}>
         A Company to change the world we're driller industrial
       </Heading>
       <Heading level={3} maxCharacters={40}>
