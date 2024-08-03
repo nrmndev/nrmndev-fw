@@ -1,6 +1,8 @@
 :root {
   --color-primary: #145650;
   --color-light: #fafafa;
+
+  --color-accent-light: #e7e7e5;
   --color-heading: #145650;
   --color-body: #333333;
   --color-themed: var(--color-light);
@@ -52,14 +54,29 @@ h3 {
   padding-left: 0;
   margin: 0;
 }
+.list .list__item {
+  margin-bottom: 15px;
+  line-height: 1.5;
+  align-items: center;
+  display: flex;
+}
+.list .list__item--primary svg {
+  color: var(--color-primary);
+}
+.list .list__item--secondary svg {
+  color: var(--color-themed);
+}
+
+.list__item svg {
+  padding-right: 0.5rem;
+}
 .list--inline .list__item {
   display: inline-block;
   margin-right: 1.5rem;
 }
 
-.list-check {
+/* .list-check {
   position: relative;
-  /* list-style-image: url("./assets/check_circle.svg"); */
   padding-left: 2.6rem;
   margin-bottom: 10px;
   line-height: 2.4rem;
@@ -74,7 +91,7 @@ h3 {
   position: absolute;
   top: 0;
   width: 3rem;
-}
+} */
 
 /** SECTION TITLE **/
 .section-label {
@@ -85,11 +102,25 @@ h3 {
   padding-left: 3.8rem;
   position: relative;
 }
+.section-label--center {
+  display: table;
+  margin: 0 auto;
+}
+.section-label--center::after {
+  border: 2px solid var(--color-primary);
+  content: "";
+  height: 0;
+  right: -4.5rem;
+  opacity: 0.85;
+  position: absolute;
+  top: 11px;
+  width: 3rem;
+}
 .section-label::before {
   border: 2px solid var(--color-primary);
   content: "";
   height: 0;
-  left: 0;
+  left: -0.5rem;
   opacity: 0.85;
   position: absolute;
   top: 11px;
@@ -103,9 +134,14 @@ a {
 
 /** LEAF **/
 .leaf {
-  border: 4px solid var(--color-themed);
+  border: 6px solid var(--color-themed);
   border-top-left-radius: 25%;
   border-bottom-right-radius: 25%;
+  overflow: hidden;
+}
+.leaf img {
+  display: block;
+  width: 100%;
 }
 
 .leaf--alt {
@@ -113,6 +149,48 @@ a {
   border-bottom-left-radius: 25%;
   border-top-left-radius: 0;
   border-bottom-right-radius: 0;
+}
+
+.icon {
+  align-items: center;
+  border-radius: 100%;
+  display: flex;
+  font-size: 4rem;
+  height: 8rem;
+  justify-content: center;
+  width: 8rem;
+}
+.icon--small {
+  font-size: 2rem;
+  height: 4rem;
+  width: 4rem;
+}
+.icon--flat {
+  border-radius: 0;
+}
+.icon--primary {
+  color: var(--color-primary);
+  background: var(--color-accent-light);
+}
+.icon--primary-alt {
+  color: var(--color-accent-light);
+  background: var(--color-primary);
+}
+
+.container--dark {
+  position: relative;
+  color: var(--color-light);
+}
+
+.container--dark::before {
+  background: rgba(0, 0, 0, 0.8);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
 }
 
 /** MODIFIERS **/

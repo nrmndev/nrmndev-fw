@@ -15,6 +15,12 @@ const ComponentNavRoutes = () => {
         </Link>{" "}
         <Link to="/leaf" className="list__item">
           Leaf
+        </Link>{" "}
+        <Link to="/icon" className="list__item">
+          Icon
+        </Link>{" "}
+        <Link to="/container" className="list__item">
+          Container
         </Link>
       </ul>
     </div>

@@ -1,25 +1,23 @@
 const Leaf = () => {
   return (
     <>
-      <div
-        className="leaf"
-        style={{
-          minHeight: "200px",
-          minWidth: "300px",
-          display: "inline-block",
-        }}
-      >
-        Leaf
+      <div className="leaf">
+        <picture>
+          <source
+            srcSet="../../../public/images/homepage/construction_1.webp"
+            type="image/webp"
+          />
+          <img src="../../../public/images/homepage/construction_1.jpg" />
+        </picture>
       </div>{" "}
-      <div
-        className="leaf leaf--alt"
-        style={{
-          minHeight: "200px",
-          minWidth: "300px",
-          display: "inline-block",
-        }}
-      >
-        Leaf Alt
+      <div className="leaf leaf--alt">
+        <picture>
+          <source
+            srcSet="../../../public/images/homepage/construction_1.webp"
+            type="image/webp"
+          />
+          <img src="../../../public/images/homepage/construction_1.jpg" />
+        </picture>
       </div>
     </>
   );
