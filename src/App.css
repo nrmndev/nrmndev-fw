@@ -1,8 +1,9 @@
 :root {
   --color-primary: #145650;
+  --color-secondary: #651b15;
   --color-light: #fafafa;
-
-  --color-accent-light: #e7e7e5;
+  --color-accent-1: #e2dbd4;
+  --color-accent-2: #651b15;
   --color-heading: #145650;
   --color-body: #333333;
   --color-themed: var(--color-light);
@@ -71,6 +72,24 @@ h6 {
   width: 80ch;
 }
 
+.width-25 {
+  width: 25%;
+}
+.width-33 {
+  width: 33%;
+}
+.width-50 {
+  width: 50%;
+}
+.width-66 {
+  width: 66%;
+}
+.width-75 {
+  width: 75%;
+}
+.width-80 {
+  width: 80%;
+}
 /* Buttons */
 .btn {
   padding: 1rem 1.5rem;
@@ -193,6 +212,7 @@ h6 {
   top: 11px;
   width: 3rem;
 }
+
 .section-label::before {
   border: 2px solid var(--color-primary);
   content: "";
@@ -203,7 +223,24 @@ h6 {
   top: 11px;
   width: 3rem;
 }
-
+.section-label--right {
+  text-align: right;
+  padding-left: 0;
+  padding-right: 4.5rem;
+}
+.section-label--right::before {
+  display: none;
+}
+.section-label--right::after {
+  border: 2px solid var(--color-primary);
+  content: "";
+  height: 0;
+  right: 0;
+  opacity: 0.85;
+  position: absolute;
+  top: 11px;
+  width: 3rem;
+}
 /** LINKS **/
 a {
   text-decoration: none;
@@ -230,13 +267,21 @@ a {
 
 .icon {
   align-items: center;
-  border-radius: 100%;
   display: flex;
   font-size: 4rem;
   height: 8rem;
   justify-content: center;
   width: 8rem;
 }
+.icon--rounded {
+  border-radius: 100%;
+}
+/* .icon--bg-primary {
+  background: var(--color-primary);
+}
+.icon--bg-secondary {
+  background: var(--color-body);
+} */
 .icon--small {
   font-size: 2rem;
   height: 4rem;
@@ -246,12 +291,29 @@ a {
   border-radius: 0;
 }
 .icon--primary {
-  color: var(--color-primary);
-  background: var(--color-accent-light);
+  background: var(--color-primary);
+  color: var(--color-accent-1);
 }
 .icon--primary-alt {
-  color: var(--color-accent-light);
-  background: var(--color-primary);
+  background: var(--color-accent-1);
+  color: var(--color-primary);
+}
+.icon--secondary {
+  background: var(--color-accent-1);
+  color: var(--color-secondary);
+}
+.icon--secondary-alt {
+  background: var(--color-secondary);
+  color: var(--color-accent-1);
+}
+.icon--primary-outline {
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.icon--secondary-outline {
+  border: 1px solid var(--color-secondary);
+  color: var(--color-secondary);
 }
 
 .container--dark {
