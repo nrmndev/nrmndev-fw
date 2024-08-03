@@ -1,9 +1,18 @@
-const SectionLabel = () => {
+import { SpreadClassNameAsProps } from "@utils/SpreadClassNameAsProps";
+
+interface IProps {
+  position: "left" | "center" | "right";
+  label: string;
+}
+
+const SectionLabel = ({ position, label }: IProps) => {
+  const className = SpreadClassNameAsProps([
+    "section-label",
+    position && position,
+  ]);
   return (
     <>
-      <span className="section-label">What We Do</span>
-      <span className="section-label">What We Do</span>
-      <span className="section-label section-label--center">What We Do</span>
+      <span {...className}>{label}</span>
     </>
   );
 };
