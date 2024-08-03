@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const ComponentNavRoutes = () => {
   return (
     <div className="routeNav">
-      <ul className="list list--inline">
+      <ul className="nav-list list--inline">
         <Link to="/list" className="list__item">
           List
         </Link>
@@ -21,6 +21,9 @@ const ComponentNavRoutes = () => {
         </Link>{" "}
         <Link to="/container" className="list__item">
           Container
+        </Link>{" "}
+        <Link to="/heading" className="list__item">
+          Heading
         </Link>
       </ul>
     </div>
