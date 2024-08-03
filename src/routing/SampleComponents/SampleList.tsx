@@ -1,4 +1,4 @@
-import List from "../../components/list/Index";
+import List from "@components/list/Index";
 
 const SampleList = () => {
   return (
