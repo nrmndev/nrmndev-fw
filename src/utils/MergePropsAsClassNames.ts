@@ -9,7 +9,7 @@
  * If left blank, no Base will be rendered, just straight string value passed.
  *
  * @param {string[] | string[][]} items array of strings or two-deep array of strings.
- * @returns className?: string | undefined
+ * @returns string | undefined
  * @example
  * SpreadClassNameAsProps(["btn", variant, display, size])
  *
@@ -33,9 +33,10 @@
  *
  * Example return: "width-ch20 text-transform"
  */
-export const SpreadClassNameAsProps: {
-  (items: string[]): { className?: string | undefined };
-  (items: string[][]): { className?: string | undefined };
+
+const MergePropsAsClassNames: {
+  (items: string[]): string | undefined;
+  (items: string[][]): string | undefined;
 } = (items: string[] | string[][]) => {
   //Initialize className as array
   const classNames: string[] = [];
@@ -53,14 +54,14 @@ export const SpreadClassNameAsProps: {
         if (rest) {
           rest.forEach((restItem) => {
             //If truthy, add modifier and then push to className array
-            restItem.length > 0 && classNames.push(item[0] + "--" + restItem);
+            restItem && classNames.push(item[0] + "--" + restItem);
           });
         }
       } else {
         //Loop B -> "First item is falsy string":
         //If Succeeding item in array is truthy, push to className array
         item.forEach((restItem) => {
-          restItem.length > 0 && classNames.push(restItem);
+          restItem && classNames.push(restItem);
         });
       }
     } else if (typeof item === "string") {
@@ -70,29 +71,15 @@ export const SpreadClassNameAsProps: {
       //Else, use that baseClass as prefix for modifier
       classNames.length === 0
         ? classNames.push(item)
-        : item.length > 0 && classNames.push(classNames[0] + "--" + item);
+        : item && classNames.push(classNames[0] + "--" + item);
     }
   });
 
+  return classNames.join(" ");
   //Spreading classname: If truthy, will return className with values, else nothing will be injected
-  return {
-    ...(classNames.length > 0 && { className: classNames.join(" ") }),
-  };
+  // return {
+  //   ...(classNames.length > 0 && { className: classNames.join(" ") }),
+  // };
 };
 
-// export const SpreadClassNameAsProps = (
-//   baseClass: string,
-//   ...rest: string[]
-// ) => {
-//   const classNames: string[] = [baseClass && baseClass];
-
-//   rest.forEach((item) => {
-//     item && classNames.push(baseClass ? baseClass + `--` + item : item);
-//   });
-
-//   return {
-//     ...(classNames.length > 0 && { className: classNames.join(" ") }),
-//   };
-
-//   //console.log(props);
-// };
+export default MergePropsAsClassNames;
