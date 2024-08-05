@@ -27,10 +27,11 @@
     "baseUrl": "./src",
     "paths": {
       "@components": ["components/index"],
-      "@utils/*": ["utils/*"],
       "@hooks/*": ["hooks/*"],
+      "@images/*": ["images/*"],
       "@routing/*": ["routing/*"],
-      "@images/*": ["images/*"]
+      "@typekits": ["types/index"],
+      "@utils": ["utils/index"]
     }
   },
   "include": ["src"]

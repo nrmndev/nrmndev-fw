@@ -22,6 +22,10 @@ module.exports = {
             group: ["./components/*", "!./components"],
             message: "Please import from the components index file instead.",
           },
+          {
+            group: ["./types/*", "!./types"],
+            message: "Please import from the types index file instead.",
+          },
         ],
       },
     ],

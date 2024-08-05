@@ -10,9 +10,16 @@ export default defineConfig({
       entries: [
         {
           find: "@components",
-          replacement: path.resolve(__dirname, "src/components"),
+          replacement: path.resolve(__dirname, "src/components/index"),
         },
-        { find: "@utils", replacement: path.resolve(__dirname, "src/utils") },
+        {
+          find: "@types",
+          replacement: path.resolve(__dirname, "src/types/index"),
+        },
+        {
+          find: "@utils",
+          replacement: path.resolve(__dirname, "src/utils/index"),
+        },
         { find: "@hooks", replacement: path.resolve(__dirname, "src/hooks") },
         {
           find: "@routing",
@@ -28,10 +35,11 @@ export default defineConfig({
   resolve: {
     alias: {
       "@components": path.resolve(__dirname, "src/components/index"),
-      "@utils": path.resolve(__dirname, "src/utils"),
       "@hooks": path.resolve(__dirname, "src/hooks"),
-      "@routing": path.resolve(__dirname, "src/routing"),
       "@images": path.resolve(__dirname, "src/images"),
+      "@routing": path.resolve(__dirname, "src/routing"),
+      "@types": path.resolve(__dirname, "src/types/index"),
+      "@utils": path.resolve(__dirname, "src/utils/index"),
     },
   },
 });
