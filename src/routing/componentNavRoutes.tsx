@@ -25,6 +25,9 @@ const ComponentNavRoutes = () => {
         <Link to="/heading" className="list__item">
           Heading
         </Link>
+        <Link to="/media" className="list__item">
+          Media
+        </Link>
       </ul>
     </div>
   );

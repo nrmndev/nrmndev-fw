@@ -7,6 +7,7 @@ import SampleButton from "./SampleComponents/SampleButton";
 import SampleHeading from "./SampleComponents/SampleHeading";
 import SampleIcon from "./SampleComponents/SampleIcon";
 import SampleSectionLabel from "./SampleComponents/SampleSectionLabel";
+import SampleMedia from "./SampleComponents/SampleMedia";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "heading",
         element: <SampleHeading />,
+      },
+      {
+        path: "media",
+        element: <SampleMedia />,
       },
     ],
   },
