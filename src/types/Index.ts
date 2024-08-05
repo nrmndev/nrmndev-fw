@@ -1,2 +1,2 @@
 export type { IconBaseProps } from "./IconBase";
-export type { TextTransform } from "./textTransform";
+export type { TextTransform } from "./TextTransform";
