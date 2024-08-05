@@ -1,7 +1,5 @@
 import App from "../App";
 import { createBrowserRouter } from "react-router-dom";
-
-import { Leaf } from "@components";
 import SampleList from "./SampleComponents/SampleList";
 import SampleButton from "./SampleComponents/SampleButton";
 import SampleHeading from "./SampleComponents/SampleHeading";
@@ -9,6 +7,7 @@ import SampleIcon from "./SampleComponents/SampleIcon";
 import SampleSectionLabel from "./SampleComponents/SampleSectionLabel";
 import SampleMedia from "./SampleComponents/SampleMedia";
 import SampleContainer from "./SampleComponents/SampleContainer";
+import SampleLeaf from "./SampleComponents/SampleLeaf";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +23,7 @@ const router = createBrowserRouter([
         element: <SampleButton />,
       },
       { path: "sectionlabel", element: <SampleSectionLabel /> },
-      { path: "leaf", element: <Leaf /> },
+      { path: "leaf", element: <SampleLeaf /> },
       { path: "icon", element: <SampleIcon /> },
       { path: "container", element: <SampleContainer /> },
       {
