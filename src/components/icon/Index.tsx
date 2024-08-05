@@ -1,10 +1,10 @@
 import { SpreadClassNameAsProps } from "@utils/SpreadClassNameAsProps";
-import { IconType } from "react-icons";
+import { IconBaseProps } from "types/Index";
 import { ImCogs } from "react-icons/im";
 
-interface IProps {
-  icon: IconType | string;
-  variant:
+interface IProps extends IconBaseProps {
+  background?: "primary" | "secondary" | "accent" | "";
+  variant?:
     | "primary"
     | "secondary"
     | "primary-outline"
@@ -24,16 +24,18 @@ interface IProps {
 const Icon = ({
   icon: Icon = ImCogs,
   variant = "primary",
+  background = "",
   rounded = false,
 }: IProps) => {
-  const props = SpreadClassNameAsProps([
+  const classNames = SpreadClassNameAsProps([
     "icon",
     variant,
     rounded ? "rounded" : "",
+    background ? background : "",
   ]);
 
   return (
-    <span {...props}>
+    <span {...classNames}>
       {typeof Icon === "string" ? <img src={Icon} /> : <Icon />}
     </span>
   );
