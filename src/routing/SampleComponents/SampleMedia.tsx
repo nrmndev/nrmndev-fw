@@ -1,4 +1,4 @@
-import Media from "@components/media/Index";
+import { Media } from "@components";
 import { BsPinMapFill } from "react-icons/bs";
 import { FaPhone, FaRegClock, FaRegEnvelope } from "react-icons/fa";
 

@@ -18,15 +18,20 @@ export default defineConfig({
           find: "@routing",
           replacement: path.resolve(__dirname, "src/routing"),
         },
+        {
+          find: "@images",
+          replacement: path.resolve(__dirname, "src/images"),
+        },
       ],
     }),
   ],
   resolve: {
     alias: {
-      "@components": path.resolve(__dirname, "src/components"),
+      "@components": path.resolve(__dirname, "src/components/index"),
       "@utils": path.resolve(__dirname, "src/utils"),
       "@hooks": path.resolve(__dirname, "src/hooks"),
       "@routing": path.resolve(__dirname, "src/routing"),
+      "@images": path.resolve(__dirname, "src/images"),
     },
   },
 });

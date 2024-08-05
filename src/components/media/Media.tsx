@@ -1,5 +1,5 @@
 import { IconBaseProps } from "types/Index";
-import Icon from "@components/icon/Index";
+import { Icon } from "@components";
 
 interface IProps extends IconBaseProps {
   heading: string;

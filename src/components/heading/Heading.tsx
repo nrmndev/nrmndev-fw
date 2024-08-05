@@ -7,7 +7,7 @@ interface IProps extends TextTransform {
   width?: 25 | 33 | 50 | 66 | 75 | 80 | "";
   //maxCharacters?: 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | "";
 }
-export const Heading = ({
+const Heading = ({
   children,
   level,
   textTransform = "",
@@ -24,3 +24,5 @@ IProps) => {
 
   return <Tag {...classNames}>{children}</Tag>;
 };
+
+export default Heading;

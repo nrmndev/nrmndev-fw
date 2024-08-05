@@ -1,4 +1,4 @@
-import { Heading } from "@components/heading/Index";
+import { Heading } from "@components";
 
 const SampleHeading = () => {
   return (

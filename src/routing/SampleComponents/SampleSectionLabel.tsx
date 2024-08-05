@@ -1,4 +1,4 @@
-import SectionLabel from "@components/section-label/Index";
+import { SectionLabel } from "@components";
 
 const SampleSectionLabel = () => {
   return (

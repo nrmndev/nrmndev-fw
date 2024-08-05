@@ -1,4 +1,4 @@
-import Icon from "@components/icon/Index";
+import { Icon } from "@components";
 import viteLogo from "/vite.svg";
 import { FaBeer } from "react-icons/fa";
 

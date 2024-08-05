@@ -1,4 +1,4 @@
-import Button from "@components/button/Index";
+import { Button } from "@components";
 
 const SampleButton = () => (
   <Button variant="primary" size="large">

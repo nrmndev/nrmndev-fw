@@ -1,7 +1,7 @@
 import App from "../App";
 import { createBrowserRouter } from "react-router-dom";
 
-import Leaf from "@components/leaf/Index";
+import { Leaf } from "@components";
 import SampleList from "./SampleComponents/SampleList";
 import SampleButton from "./SampleComponents/SampleButton";
 import SampleHeading from "./SampleComponents/SampleHeading";

@@ -1,4 +1,4 @@
-import { ContainerGrid } from "@components/index";
+import { ContainerGrid } from "@components";
 import SampleMedia from "./SampleMedia";
 
 const SampleContainer = () => {

@@ -26,10 +26,11 @@
     /* Path Aliases to remove import trailing slashes */
     "baseUrl": "./src",
     "paths": {
-      "@components/*": ["components/*"],
+      "@components": ["components/index"],
       "@utils/*": ["utils/*"],
       "@hooks/*": ["hooks/*"],
-      "@routing/*": ["routing/*"]
+      "@routing/*": ["routing/*"],
+      "@images/*": ["images/*"]
     }
   },
   "include": ["src"]
