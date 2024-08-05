@@ -1,18 +1,16 @@
-import { SpreadClassNameAsProps } from "@utils/SpreadClassNameAsProps";
-import { IconBaseProps } from "types/Index";
+import { MergePropsAsClassNames } from "@utils";
+import {
+  BackgroundBaseProps,
+  IconBaseProps,
+  VariantBaseProps,
+} from "@typekits";
 import { ImCogs } from "react-icons/im";
 
-interface IProps extends IconBaseProps {
-  background?: "primary" | "secondary" | "accent" | "";
-  variant?:
-    | "primary"
-    | "secondary"
-    | "primary-outline"
-    | "secondary-outline"
-    | "primary-alt"
-    | "secondary-alt";
-  rounded?: boolean;
-}
+interface IProps
+  extends React.HTMLProps<HTMLDivElement>,
+    IconBaseProps,
+    BackgroundBaseProps,
+    VariantBaseProps {}
 
 /**
  *
@@ -26,17 +24,20 @@ const Icon = ({
   variant = "primary",
   background = "",
   rounded = false,
+  ...rest
 }: IProps) => {
-  const classNames = SpreadClassNameAsProps([
-    "icon",
-    variant,
-    rounded ? "rounded" : "",
-    background ? background : "",
+  const combinedClassName = MergePropsAsClassNames([
+    ["icon", variant, rounded ? "rounded" : "", background ? background : ""],
+    [rest.className ? rest.className : ""],
   ]);
 
   return (
-    <span {...classNames}>
-      {typeof Icon === "string" ? <img src={Icon} /> : <Icon />}
+    <span {...rest} className={combinedClassName}>
+      {typeof Icon === "string" ? (
+        <img src={Icon} className="icon__image" />
+      ) : (
+        <Icon />
+      )}
     </span>
   );
 };
