@@ -1,18 +1,18 @@
-import { SpreadClassNameAsProps } from "@utils/SpreadClassNameAsProps";
+import { MergePropsAsClassNames } from "@utils";
 
-interface IProps {
+interface IProps extends React.HTMLProps<HTMLSpanElement> {
   position: "left" | "center" | "right";
   label: string;
 }
 
-const SectionLabel = ({ position, label }: IProps) => {
-  const className = SpreadClassNameAsProps([
-    "section-label",
-    position && position,
+const SectionLabel = ({ position, label, ...rest }: IProps) => {
+  const classNames = MergePropsAsClassNames([
+    ["section-label", position && position],
+    [rest.className ? rest.className : ""],
   ]);
   return (
     <>
-      <span {...className}>{label}</span>
+      <span className={classNames}>{label}</span>
     </>
   );
 };
