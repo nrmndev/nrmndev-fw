@@ -1,3 +1,3 @@
-export interface TextTransform {
+export default interface TextTransform {
   textTransform?: "uppercase" | "capitalize" | "lowercase" | "";
 }
