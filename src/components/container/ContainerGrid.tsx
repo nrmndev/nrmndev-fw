@@ -1,23 +1,25 @@
-import { SpreadClassNameAsProps } from "@utils/SpreadClassNameAsProps";
-import { ContainerGridProps } from "types/Index";
+import { GridBaseProps } from "@typekits";
+import { MergePropsAsClassNames } from "@utils";
 
 // import { GridBaseProps } from "types/Index";
 
-type IProps = React.HTMLProps<HTMLDivElement> & ContainerGridProps;
+type IProps = React.HTMLProps<HTMLDivElement> & GridBaseProps;
 
 const ContainerGrid = ({
   templateColumns = 2,
   children,
   gap,
-  ...props
+  ...rest
 }: IProps) => {
-  const classNames = SpreadClassNameAsProps([
+  const classNames = MergePropsAsClassNames([
     ["container--grid"],
-    ["container", templateColumns ? "grid-column-" + templateColumns : ""],
+    ["", templateColumns ? "container--grid-column-" + templateColumns : ""],
     ["", gap ? "gap-" + gap : ""],
+    [rest.className ? rest.className : ""],
   ]);
+
   return (
-    <div {...classNames} {...props}>
+    <div className={classNames} {...rest}>
       {children}
     </div>
   );

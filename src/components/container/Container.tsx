@@ -1,14 +1,14 @@
-import { SpreadClassNameAsProps } from "@utils/SpreadClassNameAsProps";
+import { MergePropsAsClassNames } from "@utils";
 
 type IProps = React.HTMLProps<HTMLDivElement> & { fluid?: boolean };
 
-const Container = ({ children, fluid = false, ...props }: IProps) => {
-  const classNames = SpreadClassNameAsProps([
-    "container",
-    fluid ? "fluid" : "",
+const Container = ({ children, fluid = false, ...rest }: IProps) => {
+  const classNames = MergePropsAsClassNames([
+    [rest.className ? rest.className : ""],
+    ["", fluid ? "container--fluid" : "container"],
   ]);
   return (
-    <div {...classNames} {...props}>
+    <div className={classNames} {...rest}>
       {children}
     </div>
   );
