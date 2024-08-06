@@ -1,0 +1,19 @@
+@use "../abstracts/mixins";
+
+$sizes: xs, sm, md, lg, xl, xxl;
+
+// col-{sizes}-{num} -> col-lg-12
+@mixin make-col($values) {
+  @each $value in $values {
+    @for $i from 1 through 12 {
+      $val: calc(($i/12) * 100);
+      .col-#{$value}-#{$i} {
+        @include mixins.respondTo($value) {
+          width: #{$val}#{"%"};
+        }
+      }
+    }
+  }
+}
+
+@include make-col($sizes);

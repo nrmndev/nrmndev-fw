@@ -1,0 +1,28 @@
+// Media query
+@mixin respondTo($size) {
+  @if $size == xs {
+    @media (max-width: 575px) {
+      @content;
+    }
+  } @else if $size == sm {
+    @media (min-width: 576px) and (max-width: 767px) {
+      @content;
+    }
+  } @else if $size == md {
+    @media (min-width: 767px) and (max-width: 991px) {
+      @content;
+    }
+  } @else if $size == lg {
+    @media (min-width: 992px) and (max-width: 1199px) {
+      @content;
+    }
+  } @else if $size == xl {
+    @media (min-width: 1200px) and (max-width: 1399px) {
+      @content;
+    }
+  } @else if $size == xxl {
+    @media (min-width: 1400px) {
+      @content;
+    }
+  }
+}
