@@ -28,7 +28,7 @@ const SampleContainer = () => {
       </ContainerFlex>
       <Container>
         <Container.Row>
-          <Container.Column xs={12} md={12} sm={12} lg={12} xl={12}>
+          <Container.Column xs={5} md={6} sm={7} lg={12} xl={12}>
             Sample Column
           </Container.Column>
         </Container.Row>
