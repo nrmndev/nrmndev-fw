@@ -8,6 +8,7 @@ import SampleSectionLabel from "./SampleComponents/SampleSectionLabel";
 import SampleMedia from "./SampleComponents/SampleMedia";
 import SampleContainer from "./SampleComponents/SampleContainer";
 import SampleLeaf from "./SampleComponents/SampleLeaf";
+import SampleForm from "./SampleComponents/SampleForm";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "media",
         element: <SampleMedia />,
+      },
+      {
+        path: "form",
+        element: <SampleForm />,
       },
     ],
   },
