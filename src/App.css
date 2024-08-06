@@ -423,6 +423,7 @@ a {
 .grow-2 {
   flex-grow: 2;
 }
+
 @media screen and (max-width: 1024px) {
   .container--grid-column-2,
   .container--grid-column-3,
