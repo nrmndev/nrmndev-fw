@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import alias from "@rollup/plugin-alias";
 import path from "path";
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -13,7 +14,7 @@ export default defineConfig({
           replacement: path.resolve(__dirname, "src/components/index"),
         },
         {
-          find: "@types",
+          find: "@typekits",
           replacement: path.resolve(__dirname, "src/types/index"),
         },
         {
@@ -38,7 +39,7 @@ export default defineConfig({
       "@hooks": path.resolve(__dirname, "src/hooks"),
       "@images": path.resolve(__dirname, "src/images"),
       "@routing": path.resolve(__dirname, "src/routing"),
-      "@types": path.resolve(__dirname, "src/types/index"),
+      "@typekits": path.resolve(__dirname, "src/types/index"),
       "@utils": path.resolve(__dirname, "src/utils/index"),
     },
   },
