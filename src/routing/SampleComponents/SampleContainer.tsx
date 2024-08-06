@@ -26,6 +26,13 @@ const SampleContainer = () => {
           <>Item 2</>
         </ContainerFlex.Child>
       </ContainerFlex>
+      <Container>
+        <Container.Row>
+          <Container.Column xs={12} md={12} sm={12} lg={12} xl={12}>
+            Sample Column
+          </Container.Column>
+        </Container.Row>
+      </Container>
     </>
   );
 };
