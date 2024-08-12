@@ -59,7 +59,7 @@ const SampleAboutUs = () => {
       <Container style={{ background: "#fafafa" }} fluid>
         <ContainerGrid templateColumns={3} gap="lg">
           <Container.Column>
-            <Icon icon={FaBeer} variant="primary" />
+            <Icon icon={FaBeer} variant="primary-alt" iconSize="lg" rounded />
             <Heading level={3}>
               Interior Remodeling: <br /> Transform Spaces.
             </Heading>
