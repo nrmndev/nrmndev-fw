@@ -10,11 +10,11 @@ const ContainerGrid = ({
   templateColumns = 2,
   children,
   gap,
-  fluid = false,
+  //fluid = false,
   ...rest
 }: IProps) => {
   const classNames = MergePropsAsClassNames([
-    ["container", fluid ? "fluid" : ""],
+    //["container", fluid ? "fluid" : ""],
     ["container--grid"],
     ["", templateColumns ? "container--grid-column-" + templateColumns : ""],
     ["", gap ? "gap-" + gap : ""],

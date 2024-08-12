@@ -1,3 +1,5 @@
+import SizeTypes from "./Sizes";
+
 export type JustifyTypes =
   | "flex-start"
   | "center"
@@ -14,3 +16,10 @@ export type AlignTypes =
   | "baseline"
   | "stretch"
   | "";
+
+export type PositionTypes = {
+  top?: SizeTypes;
+  right?: SizeTypes;
+  bottom?: SizeTypes;
+  left?: SizeTypes;
+};

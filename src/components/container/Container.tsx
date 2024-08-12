@@ -11,6 +11,7 @@ const Container = ({
   fluid = false,
   alignItems = "",
   justifyContent = "",
+  gap = "",
   ...rest
 }: IProps) => {
   const classNames = MergePropsAsClassNames([
@@ -18,6 +19,7 @@ const Container = ({
     ["", fluid ? "container--fluid" : "container"],
     ["", justifyContent ? "justify-" + justifyContent : ""],
     ["", alignItems ? "items-" + alignItems : ""],
+    ["", gap ? "gap-" + gap : ""],
   ]);
   return (
     <div className={classNames} {...rest}>

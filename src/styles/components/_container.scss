@@ -5,6 +5,14 @@
 
 $sizes: xs, sm, md, lg, xl, xxl;
 
+%grid-column {
+  position: relative;
+  width: 100%;
+  min-height: 1px; // Prevent columns from collapsing when empty
+  //padding-right: 15px;
+  //padding-left: 15px;
+}
+
 // col-{sizes}-{num} -> col-lg-12
 @mixin makeCol($values) {
   @each $value in $values {
@@ -12,8 +20,16 @@ $sizes: xs, sm, md, lg, xl, xxl;
       $val: calc(($i/12) * 100);
       .col-#{$value}-#{$i} {
         @include mixins-respondTo($value) {
-          width: #{$val}#{"%"};
+          // width: #{$val}#{"%"};
+          -webkit-box-flex: 0;
+          -ms-flex: 0 0 #{$val}#{"%"};
+          flex: 0 0 #{$val}#{"%"};
+          max-width: #{$val}#{"%"};
         }
+      }
+      .col-#{$value}-#{$i},
+      .col-#{$value}-auto {
+        @extend %grid-column;
       }
     }
   }
@@ -30,36 +46,29 @@ $sizes: xs, sm, md, lg, xl, xxl;
 .container--fluid {
   max-width: 100%;
 }
-.container,
-.container--fluid {
-  display: flex;
-  [class*="col-"] {
-    flex: 0 0 auto;
-  }
-}
 
 .container--grid {
   display: grid;
 }
 
-// @mixin loopAlignItems($values) {
-//   @each $value in $values {
-//     .items-#{$value} {
-//       align-items: #{$value};
-//     }
-//   }
-// }
-// @include loopAlignItems($alignItems);
-
-// @mixin loopJustifyContent($values) {
-//   @each $value in $values {
-//     .justify-#{$value} {
-//       justify-content: #{$value};
-//     }
-//   }
-// }
-// @include loopJustifyContent($justifyContent);
-
+.gap-xs {
+  gap: var(--spacing-xs);
+}
+.gap-sm {
+  gap: var(--spacing-sm);
+}
+.gap-md {
+  gap: var(--spacing-md);
+}
+.gap-lg {
+  gap: var(--spacing-lg);
+}
+.gap-xl {
+  gap: var(--spacing-xl);
+}
+.gap-xxl {
+  gap: var(--spacing-xxl);
+}
 /**
 * @mixin loopThrough
 * A simple mixin that loops through given format: .{className}{value} {
