@@ -1,2 +1,2 @@
-export * from "./Base";
-export * from "./Props";
+export * from "@basetypes";
+export * from "@proptypes";
