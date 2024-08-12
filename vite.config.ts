@@ -22,6 +22,10 @@ export default defineConfig({
           replacement: path.resolve(__dirname, "src/types/base/index"),
         },
         {
+          find: "@proptypes",
+          replacement: path.resolve(__dirname, "src/types/props/index"),
+        },
+        {
           find: "@utils",
           replacement: path.resolve(__dirname, "src/utils/index"),
         },
@@ -45,6 +49,7 @@ export default defineConfig({
       "@routing": path.resolve(__dirname, "src/routing"),
       "@typekits": path.resolve(__dirname, "src/types/index"),
       "@basetypes": path.resolve(__dirname, "src/types/base/index"),
+      "@proptypes": path.resolve(__dirname, "src/types/props/index"),
       "@utils": path.resolve(__dirname, "src/utils/index"),
     },
   },
