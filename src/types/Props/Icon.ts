@@ -1,6 +1,6 @@
 import { IconType } from "react-icons";
 
-export default interface IconBaseProps {
+export default interface IconProps {
   icon: IconType | string;
   rounded?: boolean;
 }
