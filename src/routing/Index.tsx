@@ -10,6 +10,8 @@ import SampleContainer from "./SampleComponents/SampleContainer";
 import SampleLeaf from "./SampleComponents/SampleLeaf";
 import SampleForm from "./SampleComponents/SampleForm";
 import SampleAboutUs from "./SampleComponents/SampleAboutUs";
+import SampleText from "./SampleComponents/SampleText";
+import SampleHoverCard from "./SampleComponents/SampleHoverCard";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +45,14 @@ const router = createBrowserRouter([
       {
         path: "aboutus",
         element: <SampleAboutUs />,
+      },
+      {
+        path: "text",
+        element: <SampleText />,
+      },
+      {
+        path: "hovercard",
+        element: <SampleHoverCard />,
       },
     ],
   },

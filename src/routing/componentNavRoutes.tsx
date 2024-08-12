@@ -31,6 +31,12 @@ const ComponentNavRoutes = () => {
         <Link to="/form" className="list__item">
           Form
         </Link>{" "}
+        <Link to="/text" className="list__item">
+          Text
+        </Link>{" "}
+        <Link to="/hovercard" className="list__item">
+          Hover Card
+        </Link>{" "}
         <Link to="/aboutus" className="list__item">
           About Us
         </Link>
