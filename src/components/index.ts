@@ -6,4 +6,6 @@ export * from "./icon";
 export * from "./leaf";
 export * from "./list";
 export * from "./media";
-export * from "./section-label";
+export * from "./sectionLabel";
+export * from "./text";
+export * from "./hoverCard";
