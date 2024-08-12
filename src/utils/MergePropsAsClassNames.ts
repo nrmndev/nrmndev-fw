@@ -75,7 +75,7 @@ const MergePropsAsClassNames: {
     }
   });
 
-  return classNames.join(" ");
+  return classNames.length > 0 ? classNames.join(" ") : undefined;
   //Spreading classname: If truthy, will return className with values, else nothing will be injected
   // return {
   //   ...(classNames.length > 0 && { className: classNames.join(" ") }),
