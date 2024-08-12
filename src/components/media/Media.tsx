@@ -1,9 +1,9 @@
-import { IconBaseProps } from "@typekits";
+import { IconProps } from "@typekits";
 import { Icon } from "@components";
 
 interface IProps
   extends React.HTMLProps<HTMLDivElement>,
-    Omit<IconBaseProps, "rounded"> {
+    Omit<IconProps, "rounded"> {
   heading: string;
   body: JSX.Element;
   link?: string;

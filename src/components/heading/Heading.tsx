@@ -1,7 +1,9 @@
-import { TextTransform } from "@typekits";
+import { TextTransformProps } from "@typekits";
 import { MergePropsAsClassNames } from "@utils";
 
-interface IProps extends React.HTMLProps<HTMLHeadingElement>, TextTransform {
+interface IProps
+  extends React.HTMLProps<HTMLHeadingElement>,
+    TextTransformProps {
   children: React.ReactNode;
   level: 1 | 2 | 3 | 4 | 5 | 6;
   width?: 25 | 33 | 50 | 66 | 75 | 80 | "";
