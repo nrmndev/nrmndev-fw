@@ -77,11 +77,10 @@ $sizes: xs, sm, md, lg, xl, xxl;
   }
 }
 
-$alignItems: center, flex-start, flex-end, baseline, stretch;
-$justifyContent: flex-start, flex-end, center, space-between, space-around,
-  space-evenly;
+$alignItems: center, start, end, baseline, stretch;
+$justifyContent: start, end, center, space-between, space-around, space-evenly;
 
 @include loopThrough("justify-", "justify-content", $justifyContent);
 @include loopThrough("justify-self-", "justify-self", $justifyContent);
-@include loopThrough("items", "align-items", $alignItems);
+@include loopThrough("items-", "align-items", $alignItems);
 @include loopThrough("items-self", "align-self", $alignItems);
