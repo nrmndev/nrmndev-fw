@@ -31,6 +31,7 @@
       "@images/*": ["images/*"],
       "@routing/*": ["routing/*"],
       "@typekits": ["types/index"],
+      "@basetypes": ["types/base/index"],
       "@utils": ["utils/index"]
     }
   },

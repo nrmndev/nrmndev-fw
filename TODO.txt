@@ -3,3 +3,12 @@
 -- CSS Preprocessors
 -- Card animations
 -- Footer
+
+
+
+
+//CONTAINER
+-- HPadding
+-- VPadding
+-- Gap
+-- Background ? Url or Hex?
