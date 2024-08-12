@@ -30,6 +30,9 @@ const ComponentNavRoutes = () => {
         </Link>
         <Link to="/form" className="list__item">
           Form
+        </Link>{" "}
+        <Link to="/aboutus" className="list__item">
+          About Us
         </Link>
       </ul>
     </div>

@@ -9,6 +9,7 @@ import SampleMedia from "./SampleComponents/SampleMedia";
 import SampleContainer from "./SampleComponents/SampleContainer";
 import SampleLeaf from "./SampleComponents/SampleLeaf";
 import SampleForm from "./SampleComponents/SampleForm";
+import SampleAboutUs from "./SampleComponents/SampleAboutUs";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "form",
         element: <SampleForm />,
+      },
+      {
+        path: "aboutus",
+        element: <SampleAboutUs />,
       },
     ],
   },
