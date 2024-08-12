@@ -15,6 +15,30 @@
     /* padding: 1rem; */
     margin: 1rem;
   }
+  &--xs {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+  &--sm {
+    width: 6rem;
+    height: 6rem;
+  }
+  &--md {
+    width: 7.5rem;
+    height: 7.5rem;
+  }
+  &--lg {
+    width: 9rem;
+    height: 9rem;
+  }
+  &--xl {
+    width: 10.5rem;
+    height: 10.5rem;
+  }
+  &--xxl {
+    width: 13rem;
+    height: 13rem;
+  }
 }
 .icon .icon__image {
   max-width: 6rem;

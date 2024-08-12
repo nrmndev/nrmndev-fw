@@ -20,10 +20,18 @@ const Icon = ({
   variant = "primary",
   background = "",
   rounded = false,
+  iconSize = "sm",
   ...rest
 }: IProps) => {
   const combinedClassName = MergePropsAsClassNames([
-    ["icon", variant, rounded ? "rounded" : "", background ? background : ""],
+    [
+      "icon",
+      variant,
+      rounded ? "rounded" : "",
+      background ? background : "",
+      iconSize ? iconSize : "",
+    ],
+
     [rest.className ? rest.className : ""],
   ]);
 

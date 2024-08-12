@@ -1,6 +1,8 @@
+import { SizeTypes } from "@basetypes";
 import { IconType } from "react-icons";
 
 export default interface IconProps {
   icon: IconType | string;
   rounded?: boolean;
+  iconSize?: SizeTypes;
 }
