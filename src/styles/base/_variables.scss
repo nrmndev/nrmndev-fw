@@ -1,0 +1,27 @@
+// COLORS
+$primary: #145650 !default;
+$secondary: #651b15 !default;
+$light: #fafafa !default;
+$accent-1: #e2dbd4 !default;
+$accent-2: #651b15 !default;
+$heading: #145650 !default;
+$body: #333333 !default;
+
+$colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "accent-1": $accent-1,
+  "accent-2": $accent-2,
+  "heading": $heading,
+  "body": $body,
+  "light": $light,
+);
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);

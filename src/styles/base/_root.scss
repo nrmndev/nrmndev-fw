@@ -1,0 +1,12 @@
+@use "../base/variables" as *;
+
+// ROOT
+:root {
+  --color-primary: #{$primary};
+  --color-secondary: #{$secondary};
+  --color-light: #{$light};
+  --color-accent-1: #{$accent-1};
+  --color-accent-2: #{$accent-2};
+  --color-heading: #{$heading};
+  --color-body: #{$body};
+}

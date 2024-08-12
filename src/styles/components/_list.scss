@@ -1,0 +1,33 @@
+.list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  @for $i from 1 through 12 {
+    &--grid-#{$i}-columns {
+      display: grid;
+      grid-template-columns: repeat(#{$i}, 1fr);
+    }
+  }
+  //@include listGridColumn();
+}
+
+@mixin listGridColumn() {
+  @for $i from 1 through 12 {
+    &--grid-#{$i}-columns {
+      display: grid;
+      grid-template-columns: repeat(#{$i}, 1fr);
+    }
+  }
+}
+// .list--grid-2-columns {
+//   display: grid;
+//   grid-template-columns: repeat(2, 1fr);
+// }
+// .list--grid-3-columns {
+//   display: grid;
+//   grid-template-columns: repeat(3, 1fr);
+// }
+// .list--grid-4-columns {
+//   display: grid;
+//   grid-template-columns: repeat(4, 1fr);
+// }

@@ -1,0 +1,53 @@
+@use "../base/variables" as *;
+
+.section-label {
+  color: $primary;
+  display: block;
+  font-size: 2rem;
+  // margin-bottom: 3rem;
+  padding-left: 4.5rem;
+  position: relative;
+  &--center {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    &:after {
+      border: 2px solid $primary;
+      content: "";
+      height: 0;
+      right: -4.5rem;
+      opacity: 0.85;
+      position: absolute;
+      top: 11px;
+      width: 3rem;
+    }
+  }
+  &--right {
+    text-align: right;
+    padding-left: 0;
+    padding-right: 4.5rem;
+    &::before {
+      display: none;
+    }
+    &::after {
+      border: 2px solid $primary;
+      content: "";
+      height: 0;
+      right: 0;
+      opacity: 0.85;
+      position: absolute;
+      top: 11px;
+      width: 3rem;
+    }
+  }
+  &::before {
+    border: 2px solid $primary;
+    content: "";
+    height: 0;
+    left: 0;
+    opacity: 0.85;
+    position: absolute;
+    top: 11px;
+    width: 3rem;
+  }
+}

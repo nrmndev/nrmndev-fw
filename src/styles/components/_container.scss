@@ -1,14 +1,17 @@
-@use "../abstracts/mixins";
+@use "../abstracts/index" as *;
+@use "../base/index" as *;
+
+@use "sass:map";
 
 $sizes: xs, sm, md, lg, xl, xxl;
 
 // col-{sizes}-{num} -> col-lg-12
-@mixin make-col($values) {
+@mixin makeCol($values) {
   @each $value in $values {
     @for $i from 1 through 12 {
       $val: calc(($i/12) * 100);
       .col-#{$value}-#{$i} {
-        @include mixins.respondTo($value) {
+        @include mixins-respondTo($value) {
           width: #{$val}#{"%"};
         }
       }
@@ -16,4 +19,69 @@ $sizes: xs, sm, md, lg, xl, xxl;
   }
 }
 
-@include make-col($sizes);
+@include makeCol($sizes);
+
+/** CONTAINERS **/
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+}
+.container--fluid {
+  max-width: 100%;
+}
+.container,
+.container--fluid {
+  display: flex;
+  [class*="col-"] {
+    flex: 0 0 auto;
+  }
+}
+
+.container--grid {
+  display: grid;
+}
+
+// @mixin loopAlignItems($values) {
+//   @each $value in $values {
+//     .items-#{$value} {
+//       align-items: #{$value};
+//     }
+//   }
+// }
+// @include loopAlignItems($alignItems);
+
+// @mixin loopJustifyContent($values) {
+//   @each $value in $values {
+//     .justify-#{$value} {
+//       justify-content: #{$value};
+//     }
+//   }
+// }
+// @include loopJustifyContent($justifyContent);
+
+/**
+* @mixin loopThrough
+* A simple mixin that loops through given format: .{className}{value} {
+*   {keyName} : {value}
+* }
+* @param {string} $className - The classname prefix
+* @param {string} $keyName - The propertyName of the class
+* @param {string[]} $values - The multiple values for multiple classes output
+*/
+@mixin loopThrough($className, $propertyName, $values) {
+  @each $value in $values {
+    .#{$className}#{$value} {
+      #{$propertyName}: $value;
+    }
+  }
+}
+
+$alignItems: center, flex-start, flex-end, baseline, stretch;
+$justifyContent: flex-start, flex-end, center, space-between, space-around,
+  space-evenly;
+
+@include loopThrough("justify-", "justify-content", $justifyContent);
+@include loopThrough("justify-self-", "justify-self", $justifyContent);
+@include loopThrough("items", "align-items", $alignItems);
+@include loopThrough("items-self", "align-self", $alignItems);
