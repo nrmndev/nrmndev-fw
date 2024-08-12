@@ -1,16 +1,12 @@
 import { MergePropsAsClassNames } from "@utils";
-import {
-  BackgroundBaseProps,
-  IconBaseProps,
-  VariantBaseProps,
-} from "@typekits";
+import { BackgroundProps, IconProps, VariantProps } from "@typekits";
 import { ImCogs } from "react-icons/im";
 
 interface IProps
   extends React.HTMLProps<HTMLDivElement>,
-    IconBaseProps,
-    BackgroundBaseProps,
-    VariantBaseProps {}
+    BackgroundProps,
+    IconProps,
+    VariantProps {}
 
 /**
  *

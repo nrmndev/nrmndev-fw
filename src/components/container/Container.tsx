@@ -1,12 +1,23 @@
-import { ColumnBaseProps } from "@typekits";
 import { MergePropsAsClassNames } from "@utils";
+import Column from "./Column";
+import Row from "./Row";
+import { LayoutProps } from "@typekits";
 
-type IProps = React.HTMLProps<HTMLDivElement> & { fluid?: boolean };
+type IProps = React.HTMLProps<HTMLDivElement> &
+  LayoutProps & { fluid?: boolean };
 
-const Container = ({ children, fluid = false, ...rest }: IProps) => {
+const Container = ({
+  children,
+  fluid = false,
+  alignItems = "",
+  justifyContent = "",
+  ...rest
+}: IProps) => {
   const classNames = MergePropsAsClassNames([
     [rest.className ? rest.className : ""],
     ["", fluid ? "container--fluid" : "container"],
+    ["", justifyContent ? "justify-" + justifyContent : ""],
+    ["", alignItems ? "items-" + alignItems : ""],
   ]);
   return (
     <div className={classNames} {...rest}>
@@ -15,41 +26,6 @@ const Container = ({ children, fluid = false, ...rest }: IProps) => {
   );
 };
 
-interface IPropsColumn
-  extends React.HTMLProps<HTMLDivElement>,
-    ColumnBaseProps {}
-
-Container.Column = ({
-  xs = "",
-  sm = "",
-  md = "",
-  lg = "",
-  xl = "",
-  ...rest
-}: IPropsColumn) => {
-  const classNames = MergePropsAsClassNames([
-    [
-      "",
-      "col-xs-" + xs,
-      "col-sm-" + sm,
-      "col-md-" + md,
-      "col-lg-" + lg,
-      "col-xl-" + xl,
-    ],
-    [rest.className ? rest.className : ""],
-  ]);
-  return <div {...rest} className={classNames}></div>;
-};
-
-interface IPropsRow extends React.HTMLProps<HTMLDivElement> {}
-
-Container.Row = ({ ...rest }: IPropsRow) => {
-  const classNames = MergePropsAsClassNames([
-    ["row"],
-    [rest.className ? rest.className : ""],
-  ]);
-
-  return <div {...rest} className={classNames}></div>;
-};
-
+Container.Column = Column;
+Container.Row = Row;
 export default Container;
