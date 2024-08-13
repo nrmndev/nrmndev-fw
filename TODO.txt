@@ -12,3 +12,23 @@
 -- VPadding
 -- Gap
 -- Background ? Url or Hex?
+
+//Column
+-- Default padding of 15px
+-- control over HPadding, VPadding, 
+-- object of padding={{left: "", top: "}}
+
+//HoverCard with animations
+// Media with countdown
+// Link with arrow
+// Progress bar
+-- PolyMorphic Button "as" with required props 
+//Button with just raw but support icon ("JSX?")
+
+// Backgrounds
+// Images
+// TeamCard
+// TeamCard With Hover
+// Finalize if using flex or grid for 2D layout
+// Forms
+//ErrorBoundary
