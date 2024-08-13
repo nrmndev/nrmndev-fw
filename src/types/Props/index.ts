@@ -4,4 +4,12 @@ export type { default as ContainerGridProps } from "./ContainerGrid";
 export type { default as IconProps } from "./Icon";
 export type { default as LayoutProps, SpacingProps } from "./Layout";
 export type { default as VariantProps } from "./Variant";
+export type { default as SizeProps } from "./Size";
+export type { default as AnimationProps } from "./Animations";
+export type {
+  default as PolymorphicButtonProps,
+  AnchorLinkProps,
+  ButtonProps,
+  NavLinkProps,
+} from "./ButtonAnchorLinkNavLink";
 export type { TextTransformProps } from "./Typography";
