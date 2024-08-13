@@ -1,2 +1,3 @@
-@forward "mixins" as mixins-*;
-@forward "functions" as fn-*;
+@forward "./_mixins.scss" as mixins-*;
+@forward "./_animations.scss" as animations-*;
+@forward "./_functions.scss" as fn-*;

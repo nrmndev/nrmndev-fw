@@ -1,0 +1,15 @@
+@mixin hoverSlideInLeft($transition) {
+  @if $transition == "initial" {
+    transform: translateX(-100%);
+  } @else {
+    transform: translateX(0);
+  }
+}
+
+@mixin hoverSlideInRight($transition) {
+  @if $transition == "initial" {
+    transform: translateX(100%);
+  } @else {
+    transform: translateX(0);
+  }
+}

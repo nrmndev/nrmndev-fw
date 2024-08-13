@@ -1,0 +1,65 @@
+// @use "sass:map";
+
+// $transitions: (
+//   fade-io: (
+//     "property": "opacity",
+//     "initial": "0",
+//     "end": "1",
+//   ),
+//   slide-ltr: (
+//     "property": "transform",
+//     "initial": "translateX(-100%)",
+//     "end": "translateX(0)",
+//   ),
+//   slide-ltrs: (
+//     "transform",
+//     "translateX(-100%)",
+//     "translateX(0)",
+//   ),
+//   slide-rtl: (
+//     "property": "transform",
+//     "initial": "translateX(100%)",
+//     "end": "translateX(0)",
+//   ),
+//   slide-ttb: (
+//     "property": "transform",
+//     "initial": "translateY(100%)",
+//     "end": "translateY(0)",
+//   ),
+//   slide-btt: (
+//     "property": "transform",
+//     "initial": "translateY(-100%)",
+//     "end": "translateY(0)",
+//   ),
+// );
+
+// @function get-animation-transition($key) {
+//   // $animation: map.get($transitions, $key);
+//   // $property: map.get($animation, "property");
+//   // $initial: map.get($animation, "initial");
+//   // $end: map.get($animation, "end");
+//   // %result: {
+//   //     #{$property}:
+//   // }
+//   @return map.get($transitions, $key);
+// }
+
+// // $trans: (
+// //   slide-ltr: (
+// //     "transform: translateX(100%);",
+// //     "transform: translateX(0);",
+// //   ),
+// // );
+// // @debug $trans;
+
+// // @mixin addAnimationOnPassedSelector($selector, $transition) {
+// //   $transitionMap: map.get($transitions, $transition);
+// //   $transitionProp: nth($transitionMap, 1);
+// //   $transitionIn: nth($transitionMap, 2);
+// //   $transitionOut: nth($transitionMap, 3);
+// //   #{$selector} {
+// //     #{$transitionProp}: #{$transitionIn};
+// //   } //   #{$selector}:hover {
+// //     #{$transitionProp}: #{$transitionOut};
+// //   }
+// // }

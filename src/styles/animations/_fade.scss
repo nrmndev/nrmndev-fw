@@ -1,0 +1,7 @@
+@mixin hoverFadeIn($transition) {
+  @if $transition == "initial" {
+    opacity: 0;
+  } @else {
+    opacity: 1;
+  }
+}

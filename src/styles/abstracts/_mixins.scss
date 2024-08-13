@@ -26,3 +26,25 @@
     }
   }
 }
+
+//Full width absolute
+// @mixin make-positioning(
+//   $position,
+//   $top,
+//   $right,
+//   $bottom,
+//   $left,
+//   $width,
+//   $height
+// ) {
+//   %finalProp {
+//     position: $position;
+//     top: $top;
+//     right: $right;
+//     bottom: $bottom;
+//     left: $left;
+//     width: $width;
+//     height: $height;
+//   }
+//   @extend %finalProp;
+// }
