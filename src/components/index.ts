@@ -9,3 +9,4 @@ export * from "./media";
 export * from "./sectionLabel";
 export * from "./text";
 export * from "./hoverCard";
+export * from "./progressBar";
