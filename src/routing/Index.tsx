@@ -12,6 +12,7 @@ import SampleForm from "./SampleComponents/SampleForm";
 import SampleAboutUs from "./SampleComponents/SampleAboutUs";
 import SampleText from "./SampleComponents/SampleText";
 import SampleHoverCard from "./SampleComponents/SampleHoverCard";
+import SampleProgressBar from "./SampleComponents/SampleProgressBar";
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
       {
         path: "hovercard",
         element: <SampleHoverCard />,
+      },
+      {
+        path: "progressbar",
+        element: <SampleProgressBar />,
       },
     ],
   },

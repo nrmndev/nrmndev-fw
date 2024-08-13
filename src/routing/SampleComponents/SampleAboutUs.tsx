@@ -41,7 +41,13 @@ const SampleAboutUs = () => {
               "Building and construction",
             ]}
           />
-          <Button variant="primary">More About Us</Button>
+          <Button
+            variant="primary"
+            as="anchorLink"
+            href="https://www.google.com"
+          >
+            More About Us
+          </Button>
         </Container.Column>
       </Container>
       <Container justifyContent="space-between" alignItems="center">
@@ -53,7 +59,14 @@ const SampleAboutUs = () => {
           </Heading>
         </Container.Column>
         <Container.Column>
-          <Button variant="primary">More About Us</Button>
+          <Button
+            variant="primary"
+            onClick={() => {
+              console.log("onClick");
+            }}
+          >
+            To List
+          </Button>
         </Container.Column>
       </Container>
       <Container fluid>

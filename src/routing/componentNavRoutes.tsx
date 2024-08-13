@@ -39,6 +39,9 @@ const ComponentNavRoutes = () => {
         </Link>{" "}
         <Link to="/aboutus" className="list__item">
           About Us
+        </Link>{" "}
+        <Link to="/progressbar" className="list__item">
+          Progress Bar
         </Link>
       </ul>
     </div>
