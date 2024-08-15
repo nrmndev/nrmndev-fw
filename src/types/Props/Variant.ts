@@ -1,4 +1,4 @@
-import { ColorTypes, VariantTypes } from "@basetypes";
+import { ColorTypes, VariantTypes } from "@uniontypes";
 
 interface VariantProps {
   variant?: ColorTypes | VariantTypes;

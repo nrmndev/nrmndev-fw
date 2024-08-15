@@ -1,4 +1,9 @@
-import { AlignTypes, JustifyTypes, PositionTypes, SizeTypes } from "@basetypes";
+import {
+  AlignTypes,
+  JustifyTypes,
+  PositionTypes,
+  SizeTypes,
+} from "@uniontypes";
 
 export default interface LayoutProps {
   justifyContent?: JustifyTypes;

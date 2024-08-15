@@ -1,4 +1,4 @@
-import { TextTransformTypes } from "@basetypes";
+import { TextTransformTypes } from "@uniontypes";
 
 export interface TextTransformProps {
   textTransform?: TextTransformTypes;

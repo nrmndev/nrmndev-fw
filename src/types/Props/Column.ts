@@ -1,4 +1,4 @@
-import { AlignTypes, ColumnTypes, JustifyTypes } from "@basetypes";
+import { AlignTypes, ColumnTypes, JustifyTypes } from "@uniontypes";
 
 interface ColumnProps {
   xs?: ColumnTypes;

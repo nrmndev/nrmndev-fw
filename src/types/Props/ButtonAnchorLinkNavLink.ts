@@ -1,4 +1,4 @@
-import { AnchorTargetTypes, ButtonTypes } from "types/base/Button";
+import { AnchorTargetTypes, ButtonTypes } from "types/union/Button";
 
 export interface ButtonProps {
   type?: ButtonTypes;

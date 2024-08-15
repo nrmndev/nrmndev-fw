@@ -1,4 +1,4 @@
-import { SizeTypes } from "@basetypes";
+import { SizeTypes } from "@uniontypes";
 
 interface SizeProps {
   size?: SizeTypes;

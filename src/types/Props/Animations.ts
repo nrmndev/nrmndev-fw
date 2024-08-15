@@ -1,4 +1,4 @@
-import { AnimationTypes } from "@basetypes";
+import { AnimationTypes } from "@uniontypes";
 
 interface AnimationProps {
   animation?: AnimationTypes;

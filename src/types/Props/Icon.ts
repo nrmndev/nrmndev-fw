@@ -1,4 +1,4 @@
-import { SizeTypes } from "@basetypes";
+import { SizeTypes } from "@uniontypes";
 import { IconType } from "react-icons";
 
 export default interface IconProps {
