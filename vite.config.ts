@@ -22,6 +22,10 @@ export default defineConfig({
           replacement: path.resolve(__dirname, "src/types/base/index"),
         },
         {
+          find: "@uniontypes",
+          replacement: path.resolve(__dirname, "src/types/union/index"),
+        },
+        {
           find: "@proptypes",
           replacement: path.resolve(__dirname, "src/types/props/index"),
         },
