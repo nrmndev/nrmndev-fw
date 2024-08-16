@@ -53,6 +53,7 @@ export default defineConfig({
       "@routing": path.resolve(__dirname, "src/routing"),
       "@typekits": path.resolve(__dirname, "src/types/index"),
       "@basetypes": path.resolve(__dirname, "src/types/base/index"),
+      "@uniontypes": path.resolve(__dirname, "src/types/union/index"),
       "@proptypes": path.resolve(__dirname, "src/types/props/index"),
       "@utils": path.resolve(__dirname, "src/utils/index"),
     },
