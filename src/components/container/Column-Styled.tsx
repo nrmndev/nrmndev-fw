@@ -1,5 +1,5 @@
 // import { ColumnProps, PositionTypes, SpacingProps } from "@typekits";
-// import { MergePropsAsClassNames } from "@utils";
+// import { mergePropsAsClassNames } from "@utils";
 // import styled from "styled-components";
 
 // const StyledColumn = styled.div<{
@@ -37,7 +37,7 @@
 //   margin = { top: "", left: "", right: "", bottom: "" },
 //   ...rest
 // }: IPropsColumn) => {
-//   const classNames = MergePropsAsClassNames([
+//   const classNames = mergePropsAsClassNames([
 //     [
 //       "",
 //       xs ? "col-xs-" + xs : "",

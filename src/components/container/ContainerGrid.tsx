@@ -1,10 +1,9 @@
-import { ContainerGridProps } from "@typekits";
-import { MergePropsAsClassNames } from "@utils";
+import { BaseProps, ContainerGridProps } from "@typekits";
+import { mergePropsAsClassNames } from "@utils";
 
 // import { GridBaseProps } from "types/Index";
 
-type IProps = React.HTMLProps<HTMLDivElement> &
-  ContainerGridProps & { fluid?: boolean };
+type IProps = BaseProps & ContainerGridProps & { fluid?: boolean };
 
 const ContainerGrid = ({
   templateColumns = 2,
@@ -13,12 +12,12 @@ const ContainerGrid = ({
   //fluid = false,
   ...rest
 }: IProps) => {
-  const classNames = MergePropsAsClassNames([
+  const classNames = mergePropsAsClassNames([
     //["container", fluid ? "fluid" : ""],
     ["container--grid"],
     ["", templateColumns ? "container--grid-column-" + templateColumns : ""],
     ["", gap ? "gap-" + gap : ""],
-    [rest.className ? rest.className : ""],
+    [rest.className ?? ""],
   ]);
 
   return (

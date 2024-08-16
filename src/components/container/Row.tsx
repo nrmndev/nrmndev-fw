@@ -1,12 +1,10 @@
-import { MergePropsAsClassNames } from "@utils";
+import { BaseProps } from "@typekits";
+import { mergePropsAsClassNames } from "@utils";
 
-export interface IPropsRow extends React.HTMLProps<HTMLDivElement> {}
+export interface IPropsRow extends BaseProps {}
 
 const Row = ({ ...rest }: IPropsRow) => {
-  const classNames = MergePropsAsClassNames([
-    ["row"],
-    [rest.className ? rest.className : ""],
-  ]);
+  const classNames = mergePropsAsClassNames([["row"], [rest.className ?? ""]]);
 
   return <div {...rest} className={classNames}></div>;
 };
