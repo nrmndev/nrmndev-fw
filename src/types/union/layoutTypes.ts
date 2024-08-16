@@ -1,4 +1,4 @@
-import SizeTypes from "./Sizes";
+import SizeTypes from "./sizeTypes";
 
 export type JustifyUnionTypes =
   | "flex-start"

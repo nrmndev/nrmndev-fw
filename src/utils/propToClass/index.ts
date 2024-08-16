@@ -1,1 +1,1 @@
-export { default as propToClass } from "./PropToClass";
+export { default as propToClass } from "./propToClass";

@@ -1,4 +1,4 @@
-import { BaseProps } from "@basetypes";
+import { BaseProps } from "@typekits";
 import { NavLinkProps, SizeProps, VariantProps } from "@proptypes";
 import { mergePropsAsClassNames } from "@utils";
 import { NavLink } from "react-router-dom";
@@ -9,7 +9,7 @@ type ExtendedIProps = IProps & NavLinkProps;
 
 const AsNavLink = ({
   variant = "primary",
-  size = undefined,
+  size,
   children,
   to = "/",
   ...rest

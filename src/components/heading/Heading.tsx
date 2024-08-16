@@ -10,16 +10,16 @@ interface IProps extends BaseProps, TextTransformProps {
 const Heading = ({
   children,
   level,
-  textTransform = "",
-  width = "",
+  textTransform,
+  width,
   ...rest
 }: //maxCharacters = "",
 IProps) => {
   const Tag = `h${level}` as keyof JSX.IntrinsicElements;
 
   const classNames = mergePropsAsClassNames([
-    ["", width && "width-" + width.toString()],
-    ["", textTransform && "text-" + textTransform],
+    ["", width ? "width-" + width.toString() : ""],
+    ["", textTransform ? "text-" + textTransform : ""],
     [rest.className ?? ""],
     //["", maxCharacters && "width-ch" + maxCharacters.toString()],
   ]);

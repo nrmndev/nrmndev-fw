@@ -13,8 +13,8 @@ type ExtendedIProps = IProps & PolymorphicButtonProps;
 
 const Button = ({
   variant = "primary",
-  display = undefined,
-  size = undefined,
+  display,
+  size,
   children,
   as = "button",
   ...rest

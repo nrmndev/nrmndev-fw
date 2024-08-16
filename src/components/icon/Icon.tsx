@@ -14,7 +14,7 @@ interface IProps extends BaseProps, BackgroundProps, IconProps, VariantProps {}
 const Icon = ({
   icon: Icon = ImCogs,
   variant = "primary",
-  background = "",
+  background,
   rounded = false,
   iconSize = "sm",
   ...rest

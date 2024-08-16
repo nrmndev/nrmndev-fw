@@ -1,16 +1,15 @@
 import { mergePropsAsClassNames } from "@utils";
-import { ColumnTypes } from "@typekits";
+import { ColumnProps } from "@typekits";
 
-export const columnBreakPointClasses = (value: ColumnTypes | undefined) => {
-  if (!value) return;
-  return (
-    mergePropsAsClassNames([
-      ["", value.xs ? "col-xs-" + value.xs : ""],
-      ["", value.sm ? "col-sm-" + value.sm : ""],
-      ["", value.md ? "col-md-" + value.md : ""],
-      ["", value.lg ? "col-lg-" + value.lg : ""],
-      ["", value.xl ? "col-xl-" + value.xl : ""],
-      ["", value.xxl ? "col-xxl-" + value.xxl : ""],
-    ]) ?? undefined
-  );
+export const columnBreakPointClasses = (value: ColumnProps | undefined) => {
+  if (value === undefined || value === null) return undefined;
+  const { xs, sm, md, lg, xl, xxl } = value;
+  return mergePropsAsClassNames([
+    ["", xs ? "col-xs-" + xs : ""],
+    ["", sm ? "col-sm-" + sm : ""],
+    ["", md ? "col-md-" + md : ""],
+    ["", lg ? "col-lg-" + lg : ""],
+    ["", xl ? "col-xl-" + xl : ""],
+    ["", xxl ? "col-xxl-" + xxl : ""],
+  ]);
 };

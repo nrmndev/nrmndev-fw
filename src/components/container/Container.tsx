@@ -7,12 +7,12 @@ type IProps = BaseProps & LayoutProps & SpacingProps & { fluid?: boolean };
 
 const Container = ({
   children,
-  fluid = false,
-  alignItems = undefined,
-  justifyContent = undefined,
-  gap = undefined,
-  padding = undefined,
-  margin = undefined,
+  fluid,
+  alignItems,
+  justifyContent,
+  gap,
+  padding,
+  margin,
   ...rest
 }: IProps) => {
   //const { padding, margin } = rest;

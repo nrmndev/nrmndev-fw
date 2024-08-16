@@ -1,7 +1,7 @@
 import { Container, Media } from "@components";
 import { FaBeer } from "react-icons/fa";
 
-const SampleCountdown2 = () => {
+const SampleCountdown = () => {
   return (
     <>
       <Container
@@ -29,11 +29,11 @@ const SampleCountdown2 = () => {
   );
 };
 
-const SampleCountdown = () => {
-  return (
-    <Container>
-      <Container.Column lg={5}>Test</Container.Column>
-    </Container>
-  );
-};
+// const SampleCountdown2 = () => {
+//   return (
+//     <Container>
+//       <Container.Column lg={5}>Test</Container.Column>
+//     </Container>
+//   );
+// };
 export default SampleCountdown;

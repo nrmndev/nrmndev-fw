@@ -1,24 +1,30 @@
-import { BaseProps, ColumnProps, SpacingProps } from "@typekits";
+import { BaseProps, ColumnProps, FlexBoxProps, SpacingProps } from "@typekits";
 import { mergePropsAsClassNames, propToClass } from "@utils";
 
-export interface IPropsColumn extends BaseProps, ColumnProps, SpacingProps {}
+export interface IPropsColumn
+  extends BaseProps,
+    ColumnProps,
+    SpacingProps,
+    FlexBoxProps {}
 
 const Column = ({
-  xs = undefined,
-  sm = undefined,
-  md = undefined,
-  lg = undefined,
-  xl = undefined,
-  xxl = undefined,
-  padding = undefined,
-  margin = undefined,
-  //padding = { top: "", left: "", right: "", bottom: "" },
-  //margin = { top: "", left: "", right: "", bottom: "" },
+  xs,
+  sm,
+  md,
+  lg,
+  xl,
+  xxl,
+  padding,
+  margin,
+  justifySelf,
+  alignSelf,
   ...rest
 }: IPropsColumn) => {
   const classNames = mergePropsAsClassNames([
-    ["", propToClass("columnBreakpoints", { xs, sm, md, lg, xl, xxl }) ?? ""],
+    ["", propToClass("columnBreakPoints", { xs, sm, md, lg, xl, xxl }) ?? ""],
     ["", propToClass("padding", padding) ?? ""],
+    ["", propToClass("margin", margin) ?? ""],
+    ["", propToClass("flexBox", { justifySelf, alignSelf }) ?? ""],
     ["", propToClass("margin", margin) ?? ""],
     [rest.className ?? ""],
   ]);

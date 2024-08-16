@@ -1,4 +1,4 @@
-import { BaseProps } from "@basetypes";
+import { BaseProps } from "@typekits";
 import { AnchorLinkProps, SizeProps, VariantProps } from "@proptypes";
 import { mergePropsAsClassNames } from "@utils";
 
@@ -8,7 +8,7 @@ type ExtendedIprops = IProps & AnchorLinkProps;
 
 const AsAnchorLink = ({
   variant = "primary",
-  size = undefined,
+  size,
   children,
   href = "#",
   target = "_blank",
