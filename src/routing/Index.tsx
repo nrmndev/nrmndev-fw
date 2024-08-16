@@ -13,6 +13,7 @@ import SampleAboutUs from "./SampleComponents/SampleAboutUs";
 import SampleText from "./SampleComponents/SampleText";
 import SampleHoverCard from "./SampleComponents/SampleHoverCard";
 import SampleProgressBar from "./SampleComponents/SampleProgressBar";
+import SampleCountdown from "./SampleSections/Countdown";
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
       {
         path: "progressbar",
         element: <SampleProgressBar />,
+      },
+      {
+        path: "countdown",
+        element: <SampleCountdown />,
       },
     ],
   },
