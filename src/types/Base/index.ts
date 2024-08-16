@@ -1,1 +1,1 @@
-export type { default as BaseProps } from "./Base";
+export type { default as BaseProps, RequireBaseProps } from "./Base";

@@ -1,23 +1,21 @@
 import SizeTypes from "./Sizes";
 
-export type JustifyTypes =
+export type JustifyUnionTypes =
   | "flex-start"
   | "center"
   | "flex-end"
   | "space-between"
   | "around"
-  | "evenly"
-  | "";
+  | "evenly";
 
-export type AlignTypes =
+export type AlignUnionTypes =
   | "center"
   | "flex-end"
   | "flex-start"
   | "baseline"
-  | "stretch"
-  | "";
+  | "stretch";
 
-export type PositionTypes = {
+export type PositionUnionTypes = {
   top?: SizeTypes;
   right?: SizeTypes;
   bottom?: SizeTypes;

@@ -1,8 +1,12 @@
-export type { ButtonTypes, AnchorTargetTypes } from "./Button";
-export type { default as ColorTypes } from "./Colors";
-export type { default as SizeTypes } from "./Sizes";
-export type { default as ColumnTypes } from "./Column";
-export type { JustifyTypes, AlignTypes, PositionTypes } from "./Layout";
-export type { default as VariantTypes } from "./Variant";
-export type { TextTransformTypes } from "./Typography";
-export type { default as AnimationTypes } from "./Animations";
+export type { ButtonUnionTypes, AnchorTargetUnionTypes } from "./Button";
+export type { default as ColorUnionTypes } from "./Colors";
+export type { default as SizeUnionTypes } from "./Sizes";
+export type { default as ColumnUnionTypes } from "./Column";
+export type {
+  JustifyUnionTypes,
+  AlignUnionTypes,
+  PositionUnionTypes,
+} from "./Layout";
+export type { default as VariantUnionTypes } from "./Variant";
+export type { TextTransformUnionTypes } from "./Typography";
+export type { default as AnimationUnionTypes } from "./Animations";

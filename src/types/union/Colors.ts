@@ -1,2 +1,2 @@
-type ColorTypes = "primary" | "secondary" | "accent" | "";
-export default ColorTypes;
+type ColorUnionTypes = "primary" | "secondary" | "accent" | "";
+export default ColorUnionTypes;

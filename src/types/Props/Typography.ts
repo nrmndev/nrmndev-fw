@@ -1,5 +1,5 @@
-import { TextTransformTypes } from "@uniontypes";
+import { TextTransformUnionTypes } from "@uniontypes";
 
 export interface TextTransformProps {
-  textTransform?: TextTransformTypes;
+  textTransform?: TextTransformUnionTypes;
 }

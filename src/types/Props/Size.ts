@@ -1,7 +1,7 @@
-import { SizeTypes } from "@uniontypes";
+import { SizeUnionTypes } from "@uniontypes";
 
 interface SizeProps {
-  size?: SizeTypes;
+  size?: SizeUnionTypes;
 }
 
 export default SizeProps;

@@ -1,5 +1,5 @@
-import { ColorTypes } from "@uniontypes";
+import { ColorUnionTypes } from "@uniontypes";
 
 export default interface BackgroundProps {
-  background?: ColorTypes;
+  background?: ColorUnionTypes;
 }

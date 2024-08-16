@@ -1,1 +1,5 @@
-export type TextTransformTypes = "uppercase" | "capitalize" | "lowercase" | "";
+export type TextTransformUnionTypes =
+  | "uppercase"
+  | "capitalize"
+  | "lowercase"
+  | "";

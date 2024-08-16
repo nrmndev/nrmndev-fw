@@ -1,7 +1,7 @@
-import { ColorTypes, VariantTypes } from "@uniontypes";
+import { ColorUnionTypes, VariantUnionTypes } from "@uniontypes";
 
 interface VariantProps {
-  variant?: ColorTypes | VariantTypes;
+  variant?: ColorUnionTypes | VariantUnionTypes;
 }
 
 export default VariantProps;

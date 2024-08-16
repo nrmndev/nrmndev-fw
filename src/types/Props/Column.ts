@@ -1,14 +1,31 @@
-import { AlignTypes, ColumnTypes, JustifyTypes } from "@uniontypes";
+import {
+  AlignUnionTypes,
+  ColumnUnionTypes,
+  JustifyUnionTypes,
+} from "@uniontypes";
 
-interface ColumnProps {
-  xs?: ColumnTypes;
-  sm?: ColumnTypes;
-  md?: ColumnTypes;
-  lg?: ColumnTypes;
-  xl?: ColumnTypes;
-  xxl?: ColumnTypes;
-  justifySelf?: JustifyTypes;
-  alignSelf?: AlignTypes;
+export interface ColumnProps {
+  xs?: ColumnUnionTypes;
+  sm?: ColumnUnionTypes;
+  md?: ColumnUnionTypes;
+  lg?: ColumnUnionTypes;
+  xl?: ColumnUnionTypes;
+  xxl?: ColumnUnionTypes;
+  justifySelf?: JustifyUnionTypes;
+  alignSelf?: AlignUnionTypes;
 }
 
-export default ColumnProps;
+export type ColumnTypes = {
+  xs?: ColumnUnionTypes;
+  sm?: ColumnUnionTypes;
+  md?: ColumnUnionTypes;
+  lg?: ColumnUnionTypes;
+  xl?: ColumnUnionTypes;
+  xxl?: ColumnUnionTypes;
+};
+
+export type ColumnBreakpointProps = {
+  columnBreakpoints?: ColumnTypes;
+};
+
+export default ColumnTypes;

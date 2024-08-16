@@ -1,6 +1,6 @@
 export type { default as AnimationProps } from "./Animations";
 export type { default as BackgroundProps } from "./Background";
-export type { default as ColumnProps } from "./Column";
+export type { default as ColumnProps, ColumnBreakpointProps } from "./Column";
 export type { default as ContainerGridProps } from "./ContainerGrid";
 export type {
   default as AllEventHandlerProps,
@@ -9,7 +9,7 @@ export type {
   MouseEventHandlerProps,
   FormEventHandlerProps,
 } from "./EventHandlers";
-export type { default as GeneralProps } from "./GeneralProps";
+export type { default as GeneralProps } from "./Input";
 export type { default as IconProps } from "./Icon";
 export type { default as LayoutProps, SpacingProps } from "./Layout";
 export type { default as SizeProps } from "./Size";
@@ -20,4 +20,6 @@ export type {
   ButtonProps,
   NavLinkProps,
 } from "./ButtonAnchorLinkNavLink";
+export type { default as MarginProps } from "./Margin";
+export type { default as PaddingProps } from "./Padding";
 export type { TextTransformProps } from "./Typography";
