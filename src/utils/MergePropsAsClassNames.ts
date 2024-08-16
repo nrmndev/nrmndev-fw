@@ -34,7 +34,7 @@
  * Example return: "width-ch20 text-transform"
  */
 
-const MergePropsAsClassNames: {
+const mergePropsAsClassNames: {
   (items: string[]): string | undefined;
   (items: string[][]): string | undefined;
 } = (items: string[] | string[][]) => {
@@ -82,4 +82,4 @@ const MergePropsAsClassNames: {
   // };
 };
 
-export default MergePropsAsClassNames;
+export default mergePropsAsClassNames;

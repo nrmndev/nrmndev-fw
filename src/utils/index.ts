@@ -1,1 +1,2 @@
-export { default as MergePropsAsClassNames } from "./MergePropsAsClassNames";
+export { default as mergePropsAsClassNames } from "./MergePropsAsClassNames";
+export { propToClass } from "./propToClass";
