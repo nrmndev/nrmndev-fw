@@ -1,14 +1,11 @@
 import { PolymorphicButtonProps, SizeProps, VariantProps } from "@proptypes";
-import { MergePropsAsClassNames } from "@utils";
+import { mergePropsAsClassNames } from "@utils";
 import AsAnchorLink from "./AsAnchorLink";
 import AsNavLink from "./AsNavLink";
+import { BaseProps } from "@typekits";
 
-interface IProps
-  extends Omit<React.HTMLProps<HTMLButtonElement>, "size">,
-    VariantProps,
-    SizeProps {
-  display?: "block" | "inline-block" | "";
-  children: React.ReactNode;
+interface IProps extends BaseProps, VariantProps, SizeProps {
+  display?: "block" | "inline-block";
   as?: "button" | "anchorLink" | "navLink";
 }
 
@@ -16,15 +13,15 @@ type ExtendedIProps = IProps & PolymorphicButtonProps;
 
 const Button = ({
   variant = "primary",
-  display = "",
-  size = "",
+  display = undefined,
+  size = undefined,
   children,
   as = "button",
   ...rest
 }: ExtendedIProps) => {
-  const classNames = MergePropsAsClassNames([
-    ["btn", variant, display, size],
-    [rest.className ? rest.className : ""],
+  const classNames = mergePropsAsClassNames([
+    ["btn", variant, display ?? "", size ?? ""],
+    [rest.className ?? ""],
   ]);
 
   const { href, to, target, type } = rest;

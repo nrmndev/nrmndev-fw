@@ -1,26 +1,23 @@
-import React from "react";
 import Overlay from "./Overlay";
 import OverlayHeading from "./OverlayHeading";
 import HoverCardHeading from "./Heading";
 import HoverCardBody from "./Body";
 import HoverCardIcon from "./Icon";
 import HoverCardContextProvider from "./HoverCardContext";
-import { MergePropsAsClassNames } from "@utils";
-import { AnimationProps } from "@proptypes";
+import { mergePropsAsClassNames } from "@utils";
+import { RequireBaseProps, AnimationProps } from "@typekits";
 
-interface IProps extends React.HTMLProps<HTMLDivElement>, AnimationProps {
-  children: React.ReactNode;
-}
+interface IProps extends AnimationProps, RequireBaseProps<"children"> {}
 
 const HoverCard = ({ children, className, animation, ...rest }: IProps) => {
-  const classNames = MergePropsAsClassNames([
+  const classNames = mergePropsAsClassNames([
     ["hovercard"],
     [
       animation
         ? "animate animate__" + animation
         : "animate animate__slideInLeft",
     ],
-    ["", className ? className : ""],
+    ["", className ?? ""],
   ]);
   return (
     <HoverCardContextProvider>

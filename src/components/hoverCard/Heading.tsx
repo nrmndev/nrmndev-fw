@@ -1,10 +1,9 @@
 import { Heading } from "@components";
-import React from "react";
 import useHoverCardProvider from "./useHoverCardProvider";
+import { BaseProps } from "@typekits";
 
-export interface IProps {
+export interface IProps extends Required<Pick<BaseProps, "children">> {
   level: 1 | 2 | 3 | 4 | 5 | 6;
-  children: React.ReactNode;
 }
 
 const HoverCardHeading = ({ level, children }: IProps) => {

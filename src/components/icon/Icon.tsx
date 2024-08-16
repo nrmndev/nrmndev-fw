@@ -1,12 +1,8 @@
-import { MergePropsAsClassNames } from "@utils";
-import { BackgroundProps, IconProps, VariantProps } from "@typekits";
+import { mergePropsAsClassNames } from "@utils";
+import { BackgroundProps, BaseProps, IconProps, VariantProps } from "@typekits";
 import { ImCogs } from "react-icons/im";
 
-interface IProps
-  extends React.HTMLProps<HTMLDivElement>,
-    BackgroundProps,
-    IconProps,
-    VariantProps {}
+interface IProps extends BaseProps, BackgroundProps, IconProps, VariantProps {}
 
 /**
  *
@@ -23,7 +19,7 @@ const Icon = ({
   iconSize = "sm",
   ...rest
 }: IProps) => {
-  const combinedClassName = MergePropsAsClassNames([
+  const combinedClassName = mergePropsAsClassNames([
     [
       "icon",
       variant,
@@ -32,7 +28,7 @@ const Icon = ({
       iconSize ? iconSize : "",
     ],
 
-    [rest.className ? rest.className : ""],
+    [rest.className ?? ""],
   ]);
 
   return (

@@ -1,9 +1,8 @@
-import React from "react";
 import useHoverCardProvider from "./useHoverCardProvider";
+import { BaseProps } from "@typekits";
 
-export interface IProps {
-  children: React.ReactNode;
-}
+export interface IProps extends Required<Pick<BaseProps, "children">> {}
+
 const HoverCardBody = ({ children }: IProps) => {
   const isUsedInsideParentHoverCard = useHoverCardProvider();
   isUsedInsideParentHoverCard;

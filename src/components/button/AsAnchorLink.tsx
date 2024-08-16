@@ -1,26 +1,22 @@
+import { BaseProps } from "@basetypes";
 import { AnchorLinkProps, SizeProps, VariantProps } from "@proptypes";
-import { MergePropsAsClassNames } from "@utils";
+import { mergePropsAsClassNames } from "@utils";
 
-interface IProps
-  extends Omit<React.HTMLProps<HTMLAnchorElement>, "href" | "size">,
-    VariantProps,
-    SizeProps {
-  children: React.ReactNode;
-}
+interface IProps extends BaseProps, VariantProps, SizeProps {}
 
 type ExtendedIprops = IProps & AnchorLinkProps;
 
 const AsAnchorLink = ({
   variant = "primary",
-  size = "",
+  size = undefined,
   children,
   href = "#",
   target = "_blank",
   ...rest
 }: ExtendedIprops) => {
-  const classNames = MergePropsAsClassNames([
-    ["btn", variant, size],
-    [rest.className ? rest.className : ""],
+  const classNames = mergePropsAsClassNames([
+    ["btn", variant, size ?? ""],
+    [rest.className ?? ""],
   ]);
 
   return (

@@ -1,4 +1,4 @@
-import { MergePropsAsClassNames } from "@utils";
+import { mergePropsAsClassNames } from "@utils";
 import React from "react";
 import useHoverCardProvider from "./useHoverCardProvider";
 import { AnimationProps } from "@proptypes";
@@ -18,10 +18,10 @@ const Overlay = ({
   const isUsedInsideParentHoverCard = useHoverCardProvider();
   isUsedInsideParentHoverCard;
 
-  const classNames = MergePropsAsClassNames([
+  const classNames = mergePropsAsClassNames([
     ["hovercard__overlay"],
     //[animation ? "animate animate__onhover--" + animation : ""],
-    ["", className ? className : ""],
+    ["", className ?? ""],
   ]);
   return (
     <div {...rest} className={classNames}>

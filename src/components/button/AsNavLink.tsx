@@ -1,26 +1,22 @@
+import { BaseProps } from "@basetypes";
 import { NavLinkProps, SizeProps, VariantProps } from "@proptypes";
-import { MergePropsAsClassNames } from "@utils";
+import { mergePropsAsClassNames } from "@utils";
 import { NavLink } from "react-router-dom";
 
-interface IProps
-  extends Omit<React.HTMLProps<HTMLAnchorElement>, "href" | "size">,
-    VariantProps,
-    SizeProps {
-  children: React.ReactNode;
-}
+interface IProps extends BaseProps, VariantProps, SizeProps {}
 
 type ExtendedIProps = IProps & NavLinkProps;
 
 const AsNavLink = ({
   variant = "primary",
-  size = "",
+  size = undefined,
   children,
   to = "/",
   ...rest
 }: ExtendedIProps) => {
-  const classNames = MergePropsAsClassNames([
-    ["btn", variant, size],
-    [rest.className ? rest.className : ""],
+  const classNames = mergePropsAsClassNames([
+    ["btn", variant, size ?? ""],
+    [rest.className ?? ""],
   ]);
 
   return (
