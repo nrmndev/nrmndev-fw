@@ -5,6 +5,8 @@ module.exports = {
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react-hooks/recommended",
+    "plugin: import/errors",
+    "plugin: import/warnings",
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parser: "@typescript-eslint/parser",
@@ -68,4 +70,15 @@ module.exports = {
       },
     },
   },
+
+  overrides: [
+    {
+      files: ["*.cjs"],
+      parserOptions: {
+        ecmaVersion: 2020,
+        sourceType: "module",
+      },
+    },
+    // Add other overrides or configurations if needed
+  ],
 };
