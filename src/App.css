@@ -30,58 +30,13 @@
 .nav-list .list__item {
   line-height: 1.5;
 }
-/* LISTS */
-
-.list--inline .list__item {
-  display: inline-block;
-  margin-right: 1.5rem;
-}
-
-/** LIST ITEM **/
-.list .list__item {
-  margin-bottom: 15px;
-  line-height: 1.5;
-  align-items: center;
-  display: flex;
-}
-
-/** LIST SVG **/
-.list .list__item--primary svg {
-  color: var(--color-primary);
-}
-.list .list__item--secondary svg {
-  color: var(--color-themed);
-}
-
-.list__item svg {
-  padding-right: 0.5rem;
-}
 
 /** LINKS **/
 a {
   text-decoration: none;
 }
 
-/** LEAF **/
-.leaf {
-  border: 6px solid var(--color-themed);
-  border-top-left-radius: 25%;
-  border-bottom-right-radius: 25%;
-  overflow: hidden;
-}
-.leaf img {
-  display: block;
-  width: 100%;
-}
-
-.leaf--alt {
-  border-top-right-radius: 25%;
-  border-bottom-left-radius: 25%;
-  border-top-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.container--dark {
+/* .container--dark {
   position: relative;
   color: var(--color-light);
 }
@@ -95,52 +50,7 @@ a {
   top: 0;
   width: 100%;
   z-index: -1;
-}
-
-/** MEDIA **/
-.media {
-  display: inline-flex;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-}
-.media__heading,
-.media__body {
-  margin-top: 5px;
-  margin-bottom: 10px;
-}
-.media__link {
-  display: inline-flex;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-  color: inherit;
-}
-
-.container--grid-centered {
-  justify-content: center;
-}
-.container--grid-column-2 {
-  grid-template-columns: repeat(2, 1fr);
-}
-.container--grid-column-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
-.container--grid-column-4 {
-  grid-template-columns: repeat(4, 1fr);
-}
-.container--grid-column-5 {
-  grid-template-columns: repeat(5, 1fr);
-}
-.container--grid-column-6 {
-  grid-template-columns: repeat(6, 1fr);
-}
-.container--grid-column-7 {
-  grid-template-columns: repeat(7, 1fr);
-}
-.container--grid-column-8 {
-  grid-template-columns: repeat(8, 1fr);
-}
+} */
 
 .container--flex {
   display: flex;
@@ -152,48 +62,14 @@ a {
   flex-grow: 2;
 }
 
-@media screen and (max-width: 1024px) {
-  .container--grid-column-2,
-  .container--grid-column-3,
-  .container--grid-column-4,
-  .container--grid-column-5,
-  .container--grid-column-6,
-  .container--grid-column-7,
-  .container--grid-column-8 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-.gap-xs {
-  gap: 5px;
-}
-.gap-sm {
-  gap: 10px;
-}
-.gap-md {
-  gap: 15px;
-}
-.gap-lg {
-  gap: 20px;
-}
-/** MODIFIERS **/
-
-.text-uppercase {
-  text-transform: uppercase;
-}
-.text-capitalize {
-  text-transform: capitalize;
-}
-.text-lowercase {
-  text-transform: lowercase;
-}
-
+/** EXTRA CSS for Development **/
 .routeNav {
   padding: 1rem;
   background-color: var(--color-primary);
-  color: var(--color-light);
+  color: var(--text-color-primary);
   margin-bottom: 3rem;
 }
 
 .routeNav a {
-  color: var(--color-light);
+  color: var(--text-color-primary);
 }
