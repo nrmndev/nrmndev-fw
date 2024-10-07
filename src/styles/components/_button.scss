@@ -5,17 +5,33 @@
   border-radius: 1rem;
   display: inline-block;
   cursor: pointer;
-  &--primary {
-    background: var(--color-primary);
-    color: var(--color-light);
+  svg {
+    font-size: inherit;
   }
-  &--primary-outlined {
-    border: 2px solid var(--color-primary);
-    color: var(--color-primary);
-    background: transparent;
+  &-xs {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
   }
-  &--large {
-    padding: 2rem 3rem;
+
+  &-sm {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+  }
+  &-md {
+    padding: 0.9rem 1.5rem;
+    font-size: 1.5rem;
+  }
+  &-lg {
+    padding: 1.2rem 2rem;
+    font-size: 2rem;
+  }
+  &-xl {
+    padding: 1.5rem 2.5rem;
+    font-size: 2.5rem;
+  }
+  &-xxl {
+    padding: 1.9rem 3rem;
+    font-size: 3rem;
   }
   &--block {
     display: block;

@@ -1,0 +1,71 @@
+//Flex
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  &-row {
+    flex-direction: row;
+  }
+  &-row-reverse {
+    flex-direction: row-reverse;
+  }
+  &-col {
+    flex-direction: column;
+  }
+  &-col-reverse {
+    flex-direction: column-reverse;
+  }
+}
+// Align Items
+$alignItems: ("start", "end", "center", "baseline", "stretch");
+@for $j from 1 through length($alignItems) {
+  $val: nth($alignItems, $j);
+  .items-#{$val} {
+    align-items: #{$alignItems};
+  }
+}
+// Justify Content
+.justify {
+  &-start {
+    justify-content: start;
+  }
+  &-end {
+    justify-content: end;
+  }
+  &-center {
+    justify-content: center;
+  }
+  &-between {
+    justify-content: space-between;
+  }
+  &-around {
+    justify-content: space-around;
+  }
+  &-evenly {
+    justify-content: space-evenly;
+  }
+}
+
+//Align-Content
+.content {
+  &-start {
+    align-content: start;
+  }
+  &-end {
+    align-content: end;
+  }
+  &-center {
+    align-content: center;
+  }
+  &-between {
+    align-content: space-between;
+  }
+  &-around {
+    align-content: space-around;
+  }
+  &-evenly {
+    align-content: space-evenly;
+  }
+  &-stretch {
+    align-content: stretch;
+  }
+}

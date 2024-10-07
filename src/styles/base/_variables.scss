@@ -1,20 +1,23 @@
 // COLORS
-$primary: #145650 !default;
-$secondary: #651b15 !default;
-$light: #fafafa !default;
-$accent-1: #e2dbd4 !default;
-$accent-2: #651b15 !default;
-$heading: #145650 !default;
-$body: #333333 !default;
+$colorPrimary: var(--color-primary) !default;
+$colorSecondary: var(--color-secondary) !default;
+$textColorPrimary: var(--text-color-primary) !default;
+$textColorSecondary: var(--text-color-secondary) !default;
+
+// $light: #fafafa !default;
+// $accent-1: #e2dbd4 !default;
+// $accent-2: #651b15 !default;
+// $heading: #145650 !default;
+// $body: #333333 !default;
 
 $colors: (
-  "primary": $primary,
-  "secondary": $secondary,
-  "accent-1": $accent-1,
-  "accent-2": $accent-2,
-  "heading": $heading,
-  "body": $body,
-  "light": $light,
+  "primary": $colorPrimary,
+  "secondary": $colorSecondary,
+  // "accent-1": $accent-1,
+  // "accent-2": $accent-2,
+  // "heading": $heading,
+  // "body": $body,
+  // "light": $light,
 );
 
 $grid-breakpoints: (

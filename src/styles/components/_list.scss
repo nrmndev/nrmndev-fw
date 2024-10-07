@@ -1,5 +1,4 @@
-.list {
-  list-style: none;
+ul.list {
   padding-left: 0;
   margin: 0;
   @for $i from 1 through 12 {
@@ -9,6 +8,39 @@
     }
   }
   //@include listGridColumn();
+}
+ul.list,
+ol.list {
+  padding-left: 0;
+  list-style-position: inside;
+}
+.list {
+  &--icon {
+    list-style: none;
+  }
+  &--inline-flex {
+    display: flex;
+    // list-style-position: inside;
+  }
+  &--inline-flex.list--text-center {
+    justify-content: center;
+  }
+  &--inline-flex.list--text-right {
+    justify-content: flex-end;
+  }
+  &--inline-flex-space-between {
+    display: flex;
+    justify-content: space-between;
+  }
+  &--text-center {
+    text-align: center;
+  }
+  &--text-right {
+    text-align: right;
+  }
+  li {
+    margin-right: 10px;
+  }
 }
 
 @mixin listGridColumn() {
@@ -31,3 +63,30 @@
 //   display: grid;
 //   grid-template-columns: repeat(4, 1fr);
 // }
+
+/* LISTS */
+
+.list--inline .list__item {
+  display: inline-block;
+  margin-right: 1.5rem;
+}
+
+/** LIST ITEM **/
+.list .list__item {
+  margin-bottom: 15px;
+  line-height: 1.5;
+  /* align-items: center;
+  display: flex; */
+}
+
+/** LIST SVG **/
+.list .list__item--primary svg {
+  color: var(--color-primary);
+}
+.list .list__item--secondary svg {
+  color: var(--color-themed);
+}
+
+.list__item svg {
+  padding-right: 0.5rem;
+}

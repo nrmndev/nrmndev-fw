@@ -5,6 +5,37 @@
   height: 8rem;
   justify-content: center;
   width: 8rem;
+  &-outline {
+    border-width: 1px;
+    border-style: solid;
+    &--primary {
+      border-color: var(--color-primary);
+    }
+    &--secondary {
+      border-color: var(--color-secondary);
+    }
+    &--accent1 {
+      border-color: var(--color-accent1);
+    }
+    &--accent2 {
+      border-color: var(--color-accent2);
+    }
+    &--accent3 {
+      border-color: var(--color-accent3);
+    }
+    &--white {
+      border-color: var(--color-white);
+    }
+    &--black {
+      border-color: var(--color-black);
+    }
+    &--light {
+      border-color: var(--color-light);
+    }
+    &--dark {
+      border-color: var(--color-dark);
+    }
+  }
 
   &--rounded {
     border-radius: 100%;
@@ -41,8 +72,9 @@
   }
 }
 .icon .icon__image {
-  max-width: 6rem;
-  padding: 1rem;
+  // max-width: 6rem;
+  // padding: 1rem;
+  width: 100%;
 }
 
 .icon--small {

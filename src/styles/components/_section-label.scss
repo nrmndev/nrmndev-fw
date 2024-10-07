@@ -1,7 +1,7 @@
 @use "../base/variables" as *;
 
 .section-label {
-  color: $primary;
+  color: $colorPrimary;
   display: block;
   font-size: 2rem;
   // margin-bottom: 3rem;
@@ -12,7 +12,7 @@
     margin-left: auto;
     margin-right: auto;
     &:after {
-      border: 2px solid $primary;
+      border: 2px solid $colorPrimary;
       content: "";
       height: 0;
       right: -4.5rem;
@@ -30,7 +30,7 @@
       display: none;
     }
     &::after {
-      border: 2px solid $primary;
+      border: 2px solid $colorPrimary;
       content: "";
       height: 0;
       right: 0;
@@ -41,7 +41,7 @@
     }
   }
   &::before {
-    border: 2px solid $primary;
+    border: 2px solid $colorPrimary;
     content: "";
     height: 0;
     left: 0;

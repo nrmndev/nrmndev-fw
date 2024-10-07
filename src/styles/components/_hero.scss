@@ -1,0 +1,22 @@
+.hero-wrapper {
+  height: 100vh;
+  width: 100%;
+  background: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding-top: 125px;
+}
+
+.hero-content {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  flex-grow: 1;
+  height: 100%;
+  color: #fff;
+}
