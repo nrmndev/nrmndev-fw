@@ -1,8 +1,8 @@
 import { mergePropsAsClassNames } from "@utils";
-import { PositionUnionTypes, SizeUnionTypes } from "@typekits";
+import { PositionOptions, SizeOptions } from "@uiTypes";
 
 export const paddingClasses = (
-  value: PositionUnionTypes | SizeUnionTypes | undefined
+  value: PositionOptions | SizeOptions | undefined
 ) => {
   if (value === undefined || value === null) return undefined;
 

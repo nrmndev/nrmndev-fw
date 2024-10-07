@@ -1,5 +1,5 @@
 import { mergePropsAsClassNames } from "@utils";
-import { ColumnProps } from "@typekits";
+import { ColumnProps } from "@uiTypes";
 
 export const columnBreakPointClasses = (value: ColumnProps | undefined) => {
   if (value === undefined || value === null) return undefined;

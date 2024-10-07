@@ -2,10 +2,11 @@ import { paddingClasses } from "./padding";
 import { marginClasses } from "./margin";
 import {
   FlexBoxProps,
-  SizeUnionTypes,
-  PositionUnionTypes,
+  SizeOptions,
+  PositionOptions,
   ColumnProps,
-} from "@typekits";
+  FontSizeOptions,
+} from "@uiTypes";
 import { columnBreakPointClasses } from "./column";
 import { flexBoxClasses } from "./flexBox";
 
@@ -13,10 +14,11 @@ import { flexBoxClasses } from "./flexBox";
 
 // Mapping of class generation functions to their respective property types
 type ClassesMap = {
-  padding?: SizeUnionTypes | PositionUnionTypes;
-  margin?: SizeUnionTypes | PositionUnionTypes;
+  padding?: SizeOptions | PositionOptions;
+  margin?: SizeOptions | PositionOptions;
   flexBox?: FlexBoxProps;
   columnBreakPoints?: ColumnProps;
+  fontSize?: FontSizeOptions;
 };
 
 // Mapping of class generation functions to their respective property types

@@ -1,5 +1,5 @@
 import { mergePropsAsClassNames } from "@utils";
-import { FlexBoxProps } from "@typekits";
+import { FlexBoxProps } from "@uiTypes";
 
 export const flexBoxClasses = (value: FlexBoxProps | undefined) => {
   if (value === undefined || value === null) return undefined;
