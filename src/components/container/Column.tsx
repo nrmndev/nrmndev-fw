@@ -1,11 +1,21 @@
-import { BaseProps, ColumnProps, FlexBoxProps, SpacingProps } from "@typekits";
-import { mergePropsAsClassNames, propToClass } from "@utils";
+import {
+  BackgroundProps,
+  BaseProps,
+  BorderProps,
+  ColumnProps,
+  FlexProps,
+  SpacingProps,
+} from "@uiTypes";
+import { propStyleHandler } from "@utils";
+import classNames from "classnames";
 
-export interface IPropsColumn
+export interface ColumnComponentProps
   extends BaseProps,
+    BackgroundProps,
+    BorderProps,
     ColumnProps,
     SpacingProps,
-    FlexBoxProps {}
+    FlexProps {}
 
 const Column = ({
   xs,
@@ -14,21 +24,33 @@ const Column = ({
   lg,
   xl,
   xxl,
+  background,
+  border,
   padding,
   margin,
-  justifySelf,
-  alignSelf,
+  flex,
   ...rest
-}: IPropsColumn) => {
-  const classNames = mergePropsAsClassNames([
-    ["", propToClass("columnBreakPoints", { xs, sm, md, lg, xl, xxl }) ?? ""],
-    ["", propToClass("padding", padding) ?? ""],
-    ["", propToClass("margin", margin) ?? ""],
-    ["", propToClass("flexBox", { justifySelf, alignSelf }) ?? ""],
-    ["", propToClass("margin", margin) ?? ""],
-    [rest.className ?? ""],
-  ]);
-  return <div {...rest} className={classNames}></div>;
+}: ColumnComponentProps) => {
+  const { className, inline } = propStyleHandler({
+    userStyle: rest.style,
+    background,
+    flex,
+    border,
+    margin,
+    padding,
+  });
+  const combinedClasses = classNames(
+    xs ? `col-xs-${xs}` : "",
+    sm ? `col-sm-${sm}` : "",
+    md ? `col-md-${md}` : "",
+    lg ? `col-lg-${lg}` : "",
+    xl ? `col-xl-${xl}` : "",
+    xxl ? `col-xxl-${xxl}` : "",
+    flex ? "flex" : "",
+    className,
+    rest.className
+  );
+  return <div {...rest} className={combinedClasses} style={inline}></div>;
 };
 
 export default Column;

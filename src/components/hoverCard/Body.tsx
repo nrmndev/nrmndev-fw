@@ -1,5 +1,5 @@
 import useHoverCardProvider from "./useHoverCardProvider";
-import { BaseProps } from "@typekits";
+import { BaseProps } from "@uiTypes";
 
 export interface IProps extends Required<Pick<BaseProps, "children">> {}
 

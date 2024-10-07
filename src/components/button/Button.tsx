@@ -1,47 +1,87 @@
-import { PolymorphicButtonProps, SizeProps, VariantProps } from "@proptypes";
-import { mergePropsAsClassNames } from "@utils";
-import AsAnchorLink from "./AsAnchorLink";
-import AsNavLink from "./AsNavLink";
-import { BaseProps } from "@typekits";
+import { PolymorphicButtonProps } from "@proptypes";
+// import AsAnchorLink from "./AsAnchorLink";
+// import AsNavLink from "./AsNavLink";
+import {
+  BackgroundProps,
+  BaseProps,
+  BorderProps,
+  BorderRadiusProps,
+  ColorProps,
+  FontProps,
+  FontSizeProps,
+  MarginProps,
+  PaddingProps,
+} from "@uiTypes";
+import classNames from "classnames";
+import { NavLink } from "react-router-dom";
+import { propStyleHandler } from "utils/propStyleHandler";
 
-interface IProps extends BaseProps, VariantProps, SizeProps {
+type ButtonSize = "sm" | "md" | "lg";
+
+export interface IProps
+  extends BaseProps,
+    BorderProps,
+    BorderRadiusProps,
+    BackgroundProps,
+    ColorProps,
+    FontSizeProps,
+    PaddingProps,
+    MarginProps {
+  variant?: "solid" | "outlined";
   display?: "block" | "inline-block";
   as?: "button" | "anchorLink" | "navLink";
+  size?: ButtonSize;
 }
 
 type ExtendedIProps = IProps & PolymorphicButtonProps;
 
 const Button = ({
-  variant = "primary",
+  as: Component = "button",
+  background = "primary",
+  borderRadius,
+  border,
+  color,
   display,
-  size,
-  children,
-  as = "button",
+  margin,
+  padding,
+  size = "md",
+  variant = "solid",
+  fontSize,
   ...rest
 }: ExtendedIProps) => {
-  const classNames = mergePropsAsClassNames([
-    ["btn", variant, display ?? "", size ?? ""],
-    [rest.className ?? ""],
-  ]);
+  const { href, to = "/404", target, type = "button" } = rest;
 
-  const { href, to, target, type } = rest;
+  const propStyle = propStyleHandler({
+    userStyle: rest.style,
+    padding,
+    border,
+    background,
+    borderRadius,
+    fontSize,
+    margin,
+  });
 
-  switch (as) {
-    case "button":
-      return (
-        <button {...rest} className={classNames} type={type ? type : "button"}>
-          {children}
-        </button>
-      );
-    case "anchorLink":
-      return (
-        <AsAnchorLink href={href!} target={target ? target : "_blank"}>
-          {children}
-        </AsAnchorLink>
-      );
-    case "navLink":
-      return <AsNavLink to={to ? to : "/404"}>{children}</AsNavLink>;
-  }
+  const className = classNames(
+    "btn",
+    `btn-${size}`,
+    display && "btn--" + display,
+    variant && (variant === "solid" ? "bg" : "outlined") + "-" + background,
+    color && "color-" + color,
+    propStyle.className
+  );
+
+  const conditionalProps: {} = {
+    ...rest,
+    className: className,
+    style: propStyle.inline,
+    ...(Component === "anchorLink" && { href: href, target: target }),
+    ...(Component === "button" && { type: type }),
+    ...(Component === "navLink" && { to: to }),
+  };
+
+  if (Component === "button") return <button {...conditionalProps} />;
+  if (Component === "anchorLink") return <a {...conditionalProps} />;
+  if (Component === "navLink") return <NavLink to={to} {...conditionalProps} />;
 };
 
 export default Button;

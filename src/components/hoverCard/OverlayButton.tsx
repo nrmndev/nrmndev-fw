@@ -1,4 +1,4 @@
-import { Button } from "@components";
+import { Button } from "@uiComponents";
 import React from "react";
 import useHoverCardProvider from "./useHoverCardProvider";
 

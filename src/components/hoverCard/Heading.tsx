@@ -1,6 +1,6 @@
-import { Heading } from "@components";
+import { Heading } from "@uiComponents";
 import useHoverCardProvider from "./useHoverCardProvider";
-import { BaseProps } from "@typekits";
+import { BaseProps } from "@uiTypes";
 
 export interface IProps extends Required<Pick<BaseProps, "children">> {
   level: 1 | 2 | 3 | 4 | 5 | 6;

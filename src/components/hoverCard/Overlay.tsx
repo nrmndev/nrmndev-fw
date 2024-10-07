@@ -1,7 +1,7 @@
-import { mergePropsAsClassNames } from "@utils";
 import React from "react";
 import useHoverCardProvider from "./useHoverCardProvider";
 import { AnimationProps } from "@proptypes";
+import classNames from "classnames";
 
 export interface IProps
   extends React.HTMLProps<HTMLDivElement>,
@@ -11,20 +11,15 @@ export interface IProps
 
 const Overlay = ({
   children,
-  className,
   //animation = "slide-ltr",
   ...rest
 }: IProps) => {
   const isUsedInsideParentHoverCard = useHoverCardProvider();
   isUsedInsideParentHoverCard;
 
-  const classNames = mergePropsAsClassNames([
-    ["hovercard__overlay"],
-    //[animation ? "animate animate__onhover--" + animation : ""],
-    ["", className ?? ""],
-  ]);
+  const className = classNames("hovercard__overlay");
   return (
-    <div {...rest} className={classNames}>
+    <div {...rest} className={className}>
       {children}
     </div>
   );

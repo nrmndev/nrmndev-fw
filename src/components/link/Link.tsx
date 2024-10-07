@@ -1,27 +1,24 @@
-import { BaseProps } from "@typekits";
+import { BaseProps } from "@uiTypes";
 import { AnchorLinkProps, SizeProps, VariantProps } from "@proptypes";
-import { mergePropsAsClassNames } from "@utils";
+import classNames from "classnames";
 
 interface IProps extends BaseProps, VariantProps, SizeProps {}
 
 type ExtendedIprops = IProps & AnchorLinkProps;
 
 const AsAnchorLink = ({
-  variant = "primary",
+  variant = "solid",
   size,
   children,
   href = "#",
   target = "_blank",
   ...rest
 }: ExtendedIprops) => {
-  const classNames = mergePropsAsClassNames([
-    ["btn", variant, size ?? ""],
-    [rest.className ?? ""],
-  ]);
+  const className = classNames([["btn", variant, size ?? ""]]);
 
   return (
     <>
-      <a href={href} target={target} className={classNames} {...rest}>
+      <a {...rest} href={href} target={target} className={className}>
         {children}
       </a>
     </>

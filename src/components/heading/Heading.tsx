@@ -1,7 +1,7 @@
-import { BaseProps, TextTransformProps } from "@typekits";
-import { mergePropsAsClassNames } from "@utils";
+import { BaseProps, TextTransformProps } from "@uiTypes";
+import classNames from "classnames";
 
-interface IProps extends BaseProps, TextTransformProps {
+export interface IProps extends BaseProps, TextTransformProps {
   children: React.ReactNode;
   level: 1 | 2 | 3 | 4 | 5 | 6;
   width?: 25 | 33 | 50 | 66 | 75 | 80 | "";
@@ -17,14 +17,17 @@ const Heading = ({
 IProps) => {
   const Tag = `h${level}` as keyof JSX.IntrinsicElements;
 
-  const classNames = mergePropsAsClassNames([
-    ["", width ? "width-" + width.toString() : ""],
-    ["", textTransform ? "text-" + textTransform : ""],
-    [rest.className ?? ""],
+  const className = classNames(
+    width ? "width-" + width.toString() : "",
+    textTransform ? "text-" + textTransform : ""
     //["", maxCharacters && "width-ch" + maxCharacters.toString()],
-  ]);
+  );
 
-  return <Tag className={classNames}>{children}</Tag>;
+  return (
+    <Tag {...rest} className={className}>
+      {children}
+    </Tag>
+  );
 };
 
 export default Heading;

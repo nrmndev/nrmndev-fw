@@ -1,12 +1,12 @@
-import { BaseProps } from "@typekits";
-import { mergePropsAsClassNames } from "@utils";
+import { BaseProps } from "@uiTypes";
+import classNames from "classnames";
 
 export interface IPropsRow extends BaseProps {}
 
 const Row = ({ ...rest }: IPropsRow) => {
-  const classNames = mergePropsAsClassNames([["row"], [rest.className ?? ""]]);
+  const className = classNames("row");
 
-  return <div {...rest} className={classNames}></div>;
+  return <div {...rest} className={className}></div>;
 };
 
 export default Row;

@@ -1,5 +1,5 @@
-import { BaseProps, ContainerGridProps } from "@typekits";
-import { mergePropsAsClassNames } from "@utils";
+import { BaseProps, ContainerGridProps } from "@uiTypes";
+import classNames from "classnames";
 
 // import { GridBaseProps } from "types/Index";
 
@@ -12,16 +12,14 @@ const ContainerGrid = ({
   //fluid = false,
   ...rest
 }: IProps) => {
-  const classNames = mergePropsAsClassNames([
-    //["container", fluid ? "fluid" : ""],
-    ["container--grid"],
-    ["", templateColumns ? "container--grid-column-" + templateColumns : ""],
-    ["", gap ? "gap-" + gap : ""],
-    [rest.className ?? ""],
-  ]);
+  const className = classNames(
+    "container--grid",
+    templateColumns ? "container--grid-column-" + templateColumns : "",
+    gap ? "gap-" + gap : ""
+  );
 
   return (
-    <div className={classNames} {...rest}>
+    <div {...rest} className={className}>
       {children}
     </div>
   );

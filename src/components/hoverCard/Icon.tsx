@@ -1,4 +1,4 @@
-import { Icon } from "@components";
+import { Icon } from "@uiComponents";
 import { IconType } from "react-icons";
 import useHoverCardProvider from "./useHoverCardProvider";
 

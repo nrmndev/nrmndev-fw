@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-interface IProps {
+export interface IProps {
   totalProgress: number;
   currentProgress: number;
   showProgress?: boolean;

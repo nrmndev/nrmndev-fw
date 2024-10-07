@@ -1,7 +1,8 @@
+import { BaseProps } from "@uiTypes";
 import React from "react";
 import styled from "styled-components";
 
-const StyledP = styled.p<{ $maxChars: number | "" }>`
+const StyledP = styled.p<{ $maxChars: number | undefined }>`
   ${({ $maxChars }) =>
     $maxChars
       ? `
@@ -19,14 +20,13 @@ const StyledP = styled.p<{ $maxChars: number | "" }>`
 //     maxCharss ? maxCharss.toString() + "ch" : "auto"};
 // `;
 
-interface IProps
-  extends React.HTMLProps<HTMLParagraphElement | HTMLSpanElement> {
-  maxChars?: number | "";
+export interface ITextProps extends BaseProps {
+  maxChars?: number;
   children?: React.ReactNode;
   as?: "span" | "p";
 }
 
-const Text = ({ maxChars = -1, as = "p", children }: IProps) => {
+const Text = ({ maxChars = undefined, as = "p", children }: ITextProps) => {
   return (
     <StyledP as={as} $maxChars={maxChars}>
       {children}

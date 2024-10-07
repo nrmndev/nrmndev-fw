@@ -1,4 +1,4 @@
-import { Heading } from "@components";
+import { Heading } from "@uiComponents";
 import React from "react";
 import useHoverCardProvider from "./useHoverCardProvider";
 

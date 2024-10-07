@@ -1,38 +1,82 @@
-import { mergePropsAsClassNames, propToClass } from "@utils";
-import Column from "./Column";
-import Row from "./Row";
-import { BaseProps, LayoutProps, SpacingProps } from "@typekits";
+// import Column from "./Column";
+// import Row from "./Row";
+import {
+  BackgroundProps,
+  BaseProps,
+  BorderProps,
+  BorderRadiusProps,
+  FlexProps,
+  LayoutProps,
+  OverlayProps,
+  SpacingProps,
+} from "@uiTypes";
+import classNames from "classnames";
 
-type IProps = BaseProps & LayoutProps & SpacingProps & { fluid?: boolean };
+import { propStyleHandler } from "@utils";
+
+export type ContainerComponentProps = BaseProps &
+  BackgroundProps &
+  BorderProps &
+  BorderRadiusProps &
+  FlexProps &
+  LayoutProps &
+  OverlayProps &
+  SpacingProps & { fluid?: boolean };
 
 const Container = ({
+  alignItems,
+  background,
+  border,
+  borderRadius,
   children,
   fluid,
-  alignItems,
-  justifyContent,
+  flex,
   gap,
-  padding,
+  justifyContent,
   margin,
+  overlay,
+  padding,
   ...rest
-}: IProps) => {
-  //const { padding, margin } = rest;
+}: ContainerComponentProps) => {
   //console.log(padding);
-  const classNames = mergePropsAsClassNames([
-    [rest.className ?? ""],
-    ["", fluid ? "container--fluid" : "container"],
-    ["", justifyContent ? "justify-" + justifyContent : ""],
-    ["", alignItems ? "items-" + alignItems : ""],
-    ["", gap ? "gap-" + gap : ""],
-    ["", propToClass("padding", padding) ?? ""],
-    ["", propToClass("margin", margin) ?? ""],
-  ]);
+  // const toChange ([
+  //   ["", fluid ? "container--fluid" : "container"],
+  //   ["", justifyContent ? "justify-" + justifyContent : ""],
+  //   ["", alignItems ? "items-" + alignItems : ""],
+  //   ["", gap ? "gap-" + gap : ""],
+  // ]);
+
+  const { className, inline } = propStyleHandler({
+    userStyle: rest.style,
+    background,
+    border,
+    borderRadius,
+    padding,
+    margin,
+    flex,
+  });
+
+  let isOverlay = "";
+  if (overlay) {
+    const { color: overlayColor, opacity: overlayOpacity = 70 } = overlay;
+    isOverlay += overlayColor ? `before:bg-${overlayColor}` : "";
+    isOverlay += ` before:opacity-${overlayOpacity}`;
+  }
+
+  const combinedClasses = classNames(
+    fluid ? "container--fluid" : "container",
+    flex ? "flex" : "",
+    isOverlay ?? "",
+    className,
+    rest.className
+  );
   return (
-    <div className={classNames} {...rest}>
+    <div {...rest} className={combinedClasses} style={inline}>
       {children}
     </div>
   );
 };
 
-Container.Column = Column;
-Container.Row = Row;
+// Container.Column = Column;
+// Container.Row = Row;
 export default Container;

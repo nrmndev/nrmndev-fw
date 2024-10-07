@@ -1,15 +1,12 @@
-import { BaseProps } from "@typekits";
-import { mergePropsAsClassNames } from "@utils";
+import { BaseProps } from "@uiTypes";
+import classNames from "classnames";
 
 type IProps = BaseProps & { fluid?: boolean };
 
 const ContainerFlex = ({ children, ...rest }: IProps) => {
-  const classNames = mergePropsAsClassNames([
-    [rest.className ? rest.className : ""],
-    ["", "container--flex"],
-  ]);
+  const className = classNames("container--flex");
   return (
-    <div className={classNames} {...rest}>
+    <div {...rest} className={className}>
       {children}
     </div>
   );
@@ -20,11 +17,11 @@ interface IPropsChild {
   flexGrow?: 0 | 1 | 2;
 }
 ContainerFlex.Child = ({ children, flexGrow }: IPropsChild) => {
-  const classNames = mergePropsAsClassNames([
-    ["", "container--flex__child"],
-    ["", flexGrow ? "grow-" + flexGrow : ""],
+  const className = classNames([
+    "container--flex__child",
+    `${flexGrow ? "grow-" + flexGrow : ""}`,
   ]);
-  return <div className={classNames}>{children}</div>;
+  return <div className={className}>{children}</div>;
 };
 
 export default ContainerFlex;

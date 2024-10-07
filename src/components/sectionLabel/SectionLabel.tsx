@@ -1,18 +1,20 @@
-import { mergePropsAsClassNames } from "@utils";
+import classNames from "classnames";
 
-interface IProps extends React.HTMLProps<HTMLSpanElement> {
+export interface IProps extends React.HTMLProps<HTMLSpanElement> {
   position: "left" | "center" | "right";
   label: string;
 }
 
-const SectionLabel = ({ position, label, ...rest }: IProps) => {
-  const classNames = mergePropsAsClassNames([
-    ["section-label", position ?? ""],
-    [rest.className ?? ""],
-  ]);
+const SectionLabel = ({ position = "left", label, ...rest }: IProps) => {
+  const className = classNames(
+    "section-label",
+    position ? "section-label--" + position : ""
+  );
   return (
     <>
-      <span className={classNames}>{label}</span>
+      <span {...rest} className={className}>
+        {label}
+      </span>
     </>
   );
 };
