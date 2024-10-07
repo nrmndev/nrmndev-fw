@@ -9,7 +9,7 @@ const OverlayButton = ({ children }: IProps) => {
   const isUsedInsideParentHoverCard = useHoverCardProvider();
   isUsedInsideParentHoverCard;
   return (
-    <Button variant="primary" as="button">
+    <Button variant="outlined" as="button">
       {children}
     </Button>
   );

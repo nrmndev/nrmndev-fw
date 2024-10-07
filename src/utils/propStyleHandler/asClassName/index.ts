@@ -1,10 +1,10 @@
 import {
-  AlignContentOptions,
-  AlignItemsOptions,
-  FlexDirectionOptions,
+  // AlignContentOptions,
+  // AlignItemsOptions,
+  // FlexDirectionOptions,
+  // FlexWrapOptions,
+  // JustifyContentOptions,
   FlexProps,
-  FlexWrapOptions,
-  JustifyContentOptions,
 } from "@uiTypes";
 import { flexClasses } from "./flex";
 

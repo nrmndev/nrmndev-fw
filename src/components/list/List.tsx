@@ -1,7 +1,7 @@
 import { ColorOptions, ColorProps, TextAlignProps } from "@uiTypes";
 import classNames from "classnames";
 import { IconType } from "react-icons";
-import { IoCheckmarkCircleOutline } from "react-icons/io5";
+//import { IoCheckmarkCircleOutline } from "react-icons/io5";
 
 type ListOptions = "ordered-list" | "unordered-list";
 

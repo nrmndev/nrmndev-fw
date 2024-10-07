@@ -7,7 +7,6 @@ import {
   BorderProps,
   BorderRadiusProps,
   ColorProps,
-  FontProps,
   FontSizeProps,
   MarginProps,
   PaddingProps,

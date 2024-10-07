@@ -6,7 +6,7 @@ import {
   TypographyComponentProps,
 } from "@uiComponents";
 import classNames from "classnames";
-import { IconType } from "react-icons";
+// import { IconType } from "react-icons";
 import { propStyleHandler } from "@utils";
 
 export interface MediaProps extends BaseProps, PaddingProps {

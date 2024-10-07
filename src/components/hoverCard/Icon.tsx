@@ -9,7 +9,7 @@ export interface IProps {
 const HoverCardIcon = ({ icon }: IProps) => {
   const isUsedInsideParentHoverCard = useHoverCardProvider();
   isUsedInsideParentHoverCard;
-  return <Icon icon={icon} variant="primary-alt" rounded />;
+  return <Icon icon={icon} variant="outline" rounded />;
 };
 
 export default HoverCardIcon;
