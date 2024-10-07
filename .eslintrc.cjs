@@ -7,6 +7,7 @@ module.exports = {
     "plugin:react-hooks/recommended",
     "plugin: import/errors",
     "plugin: import/warnings",
+    "plugin:storybook/recommended",
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parser: "@typescript-eslint/parser",
@@ -23,7 +24,7 @@ module.exports = {
         patterns: [
           {
             group: ["./src/types/base/*"],
-            message: "Please use the @typekits alias to import types.",
+            message: "Please use the @uiTypes alias to import types.",
           },
         ],
       },
@@ -49,12 +50,12 @@ module.exports = {
     //     zones: [
     //       {
     //         // Restrict direct imports from src/components
-    //         target: "@components",
+    //         target: "@uiComponents",
     //         from: {
     //           paths: ["@basetypes"], // Disallow direct imports from src/components
     //         },
     //         to: {
-    //           paths: ["@typekits"], // Allow imports only from @components
+    //           paths: ["@uiTypes"], // Allow imports only from @uiComponents
     //         },
     //       },
     //     ],

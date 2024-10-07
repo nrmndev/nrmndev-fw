@@ -41,10 +41,10 @@ module.exports = {
     resolve: {
       extensions: [".ts", ".tsx", ".js", ".jsx"],
       alias: {
-        "@components": path.resolve(__dirname, "src/components/index"),
+        "@uiComponents": path.resolve(__dirname, "src/components/index"),
         "@hooks": path.resolve(__dirname, "src/hooks"),
         "@utils": path.resolve(__dirname, "src/utils/index"),
-        "@typekits": path.resolve(__dirname, "src/types/index"),
+        "@uiTypes": path.resolve(__dirname, "src/types/index"),
         "@basetypes": path.resolve(__dirname, "src/base/index"),
         "@uniontypes": path.resolve(__dirname, "src/union/index"),
         "@proptypes": path.resolve(__dirname, "src/props/index"),

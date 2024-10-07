@@ -12,11 +12,11 @@ export default defineConfig({
     // alias({
     //   entries: [
     //     {
-    //       find: "@components",
+    //       find: "@uiComponents",
     //       replacement: path.resolve(__dirname, "src/components/index"),
     //     },
     //     {
-    //       find: "@typekits",
+    //       find: "@uiTypes",
     //       replacement: path.resolve(__dirname, "src/types/index"),
     //     },
     //     {
@@ -52,11 +52,11 @@ export default defineConfig({
   },
   // resolve: {
   //   alias: {
-  //     "@components": path.resolve(__dirname, "src/components/index"),
+  //     "@uiComponents": path.resolve(__dirname, "src/components/index"),
   //     "@hooks": path.resolve(__dirname, "src/hooks"),
   //     "@images": path.resolve(__dirname, "src/images"),
   //     "@routing": path.resolve(__dirname, "src/routing"),
-  //     "@typekits": path.resolve(__dirname, "src/types/index"),
+  //     "@uiTypes": path.resolve(__dirname, "src/types/index"),
   //     "@basetypes": path.resolve(__dirname, "src/types/base/index"),
   //     "@uniontypes": path.resolve(__dirname, "src/types/union/index"),
   //     "@proptypes": path.resolve(__dirname, "src/types/props/index"),

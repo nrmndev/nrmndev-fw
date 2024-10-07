@@ -26,11 +26,11 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": "./src",
     "paths": {
-      "@components": ["components/index"],
+      "@uiComponents": ["components/index"],
+      "@uiTypes": ["types/index"],
       "@hooks/*": ["hooks/*"],
       "@images/*": ["images/*"],
       "@routing": ["routing"],
-      "@typekits": ["types/index"],
       "@basetypes": ["types/base/index"],
       "@uniontypes": ["types/union/index"],
       "@proptypes": ["types/props/index"],
@@ -38,6 +38,6 @@
     }
   },
   "include": ["src"],
-  "exclude": ["node_modules", "src/app.tsx", "src/main.tsx", "src/routing"]
-  //"exclude": ["node_modules"]
+  //"exclude": ["node_modules", "src/app.tsx", "src/main.tsx", "src/routing"]
+  "exclude": ["node_modules"]
 }

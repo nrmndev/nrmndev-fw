@@ -31,4 +31,88 @@
 // TeamCard With Hover
 // Finalize if using flex or grid for 2D layout
 // Forms
-//ErrorBoundary
+// ErrorBoundary
+
+
+
+
+
+
+
+// BEBE PRIO
+ONGOING Temporary component page DO STORY doesnt have to be perfect
+ALMOST -- Create a ts file of all your types
+DONE (disclaimer on clash props) Check if putting all props will not clash
+DONE -- Handle for children controls
+DONE -- Create a utility that accepts array of the necessary types needed
+DONE ---- returns a "choice" and "option" and "description" based on that
+DONE ----  default value if needed
+DONE ---- (STOPPED) remove story samples on child links
+DONE -- (Working) Try to build storybook
+DONE -- DOCS for all existing component
+
+-- (!) Classnames 
+-- (!) Realign Styles to components using ClassNames (continuation)
+ (!!!) ALIGNMENT CONTAINER / REMOVE ALIGNMENT FROM COMPONENT
+    - List
+      - sizing
+      - alignment (text: center/left/right)
+        displayBlock -> textAlign
+        displayFlex -> justifyContent FlexEnd
+      - listType unordered-unstyled
+         
+      - display (inline/block/inline-flex-space-between)
+        - ul (flexing)
+          - li (adapt horizontal spaces)
+    - Section Label
+        - spacing (padding/margin)
+        - top bottom right left
+        - icon implementation
+    - IconSize prop must require Icon prop
+    - Media
+     - Orientation - TopIcon, LeftIcon, RightIcon
+     - iconSize
+    
+    - HoverCard
+     - Accept Body, HoverContent, Link
+
+    - icon
+      - inline / block
+      - icon as react-icon or image
+      - background ColorOptions
+      - radius, rounded
+      - borderColor
+      - variant (solid, bordered)
+
+    - Progress Bar
+      - Size
+      - animation
+      - value positioning
+      - borderColor
+      - color
+      - variant Solid / Striped / 
+    - CONTAINER
+    - heading
+    - media
+    - Forms
+    - text
+    - hover card
+    - progress bar
+    - countdown
+ -- WORKING REUSABLE COMBINE STYLES, REFACTOR IF NEEDED
+ -- HYBRID APPROACH, UTILITY AND BEM
+ DONE - Border: number, unit, circle/rounded
+    PolyMorphic, same approach as padding
+        ex: border={"rounded", "xs","sm",etc.}, border={{top,right,bottom,left}}
+ DONE Rename UnionTypes to {type}Options for more clarity    
+-- (!) Homepage 100%
+-- (!) Responsive Design
+-- (!) publish component
+-- (1) Provide different story samples 
+
+
+-- Forms
+-- Services
+-- Email
+-- rewrite to NEXT JS
+-- Netlify or other hosting provider for reactjs compatibility
