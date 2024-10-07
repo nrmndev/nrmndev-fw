@@ -1,11 +1,6 @@
 {
   "compilerOptions": {
     "composite": true,
-    //"tsBuildInfoFile": "./.tsbuildinfo/tsconfig.app.tsbuildinfo",
-    // This is for building TSC for NPM Publish: target, module, moduleResolution
-    "target": "ES6",
-    "module": "ESNext",
-    "moduleResolution": "Node",
 
     // This is for Development vite: module & moduleResolution
     // "module": "ESNext",
@@ -27,6 +22,12 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+
+    //"tsBuildInfoFile": "./.tsbuildinfo/tsconfig.app.tsbuildinfo",
+    // This is for building TSC for NPM Publish: target, module, moduleResolution
+    "target": "ES2015",
+    "module": "ESNext",
+    "moduleResolution": "Node",
     "baseUrl": "./src",
     "paths": {
       "@uiComponents": ["components/index"],
@@ -43,10 +44,12 @@
   "include": ["src"],
   "exclude": [
     "node_modules",
+    "dist",
     "src/app.tsx",
     "src/main.tsx",
     "src/routing",
     "src/stories"
+    //"src/aliases.d.ts"
   ]
   //"exclude": ["node_modules"]
 }

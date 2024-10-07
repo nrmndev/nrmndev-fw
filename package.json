@@ -6,7 +6,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "dev": "vite",
-    "build:tsc": "npx tsc --build",
+    "build:webpack": "webpack",
+    "build:tsc": "tsc --project tsconfig.app.json && tsc-alias -p tsconfig.app.json",
     "build:vite": "vite build",
     "build:all": "npm run build:tsc && npm run build:vite && sass src/styles/main.scss dist/main.css",
     "build:css": "sass src/styles/main.scss dist/main.css",
@@ -30,6 +31,7 @@
     "storybook-addon-code-editor": "^3.1.0",
     "storybook-react-context": "^0.7.0",
     "styled-components": "^6.1.12",
+    "tsc-alias": "^1.8.10",
     "vite-tsconfig-paths": "^5.0.1"
   },
   "devDependencies": {
@@ -61,7 +63,9 @@
     "storybook": "^8.3.2",
     "ts-loader": "^9.5.1",
     "typescript": "^5.2.2",
-    "vite": "^5.3.4"
+    "vite": "^5.3.4",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4"
   },
   "files": [
     "dist"
