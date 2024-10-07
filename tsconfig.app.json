@@ -2,11 +2,13 @@
   "compilerOptions": {
     "composite": true,
     "tsBuildInfoFile": "./.tsbuildinfo/tsconfig.app.tsbuildinfo",
-    // "target": "ES6",
-    // "module": "CommonJS",
-    //"moduleResolution": "Node",
-    "module": "ESNext",
-    "moduleResolution": "bundler",
+    // This is for building TSC for NPM Publish: target, module, moduleResolution
+    "target": "ES6",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    // This is for Development vite: module & moduleResolution
+    // "module": "ESNext",
+    // "moduleResolution": "bundler",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
