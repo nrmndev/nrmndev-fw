@@ -6,7 +6,7 @@ import {
   List,
   SectionLabel,
   Text,
-} from "@components";
+} from "@uiComponents";
 import { FaBeer, FaCheck } from "react-icons/fa";
 
 const SampleAboutUs = () => {

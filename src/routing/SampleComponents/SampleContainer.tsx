@@ -1,37 +1,267 @@
-import { Container, ContainerFlex, ContainerGrid } from "@components";
-import SampleMedia from "./SampleMedia";
+import heroBanner from "../../assets/hero_banner.jpg";
+
+import { Column, Container, Media, Typography } from "@uiComponents";
+import { FaPhone } from "react-icons/fa";
 
 const SampleContainer = () => {
   return (
     <>
-      Sample Grid with templateColumns = 4
-      <ContainerGrid
-        gap="md"
-        templateColumns={4}
+      <Typography as="h3" textAlign="center">
+        Sample container-fluid with background as Image, overLay: white,
+        opacity: .3, border: bottom:10, color:"secondary"
+      </Typography>
+      <Container
+        border={{ bottom: 10, color: "secondary" }}
+        borderRadius={{ bottomLeft: 10, bottomRight: 10 }}
+        background={{ image: heroBanner, attachment: "fixed" }}
+        padding={"lg"}
+        fluid
+        className="overlay"
+        overlay={{ color: "white", opacity: 20 }}
         // style={{ backgroundColor: "black", minHeight: "200px" }}
       >
-        <SampleMedia />
-      </ContainerGrid>
-      <Container style={{ background: "#666666" }}>
-        Sample container max width
+        <Typography as="h4" textAlign="center" color="white">
+          Sample container-flex
+        </Typography>
+        <Container flex={{ alignContent: "evenly" }}>
+          <Media
+            icon={{
+              icon: FaPhone,
+              //background: "primary",
+              color: "primary",
+              rounded: true,
+              variant: "outline",
+            }}
+            heading={{ children: "Phone Number" }}
+            body={{ children: <>(+55) 654 - 545 - 5418</> }}
+          />
+          <Media
+            icon={{
+              icon: FaPhone,
+              //background: "primary",
+              color: "white",
+              margin: "sm",
+              rounded: true,
+              variant: "outline",
+            }}
+            heading={{ children: "Phone Number", color: "white" }}
+            body={{ children: <>(+55) 654 - 545 - 5418</>, color: "white" }}
+          />
+          <Media
+            icon={{
+              icon: FaPhone,
+              //background: "primary",
+              color: "primary",
+              margin: "sm",
+              rounded: true,
+              variant: "outline",
+            }}
+            heading={{ children: "Phone Number" }}
+            body={{ children: <>(+55) 654 - 545 - 5418</> }}
+          />
+          <Media
+            icon={{
+              icon: FaPhone,
+              //background: "primary",
+              color: "primary",
+              margin: "sm",
+              rounded: true,
+              variant: "outline",
+            }}
+            heading={{ children: "Phone Number" }}
+            body={{ children: <>(+55) 654 - 545 - 5418</> }}
+          />
+        </Container>
       </Container>
-      <Container fluid style={{ background: "#dedede" }}>
-        Sample container max width
+      <hr />
+      <Typography as="h3" textAlign="center">
+        Sample container-fluid with utility props
+      </Typography>
+      <Container
+        background="black"
+        borderRadius={"lg"}
+        padding={"lg"}
+        margin={"xxl"}
+        border={{ value: "lg", color: "primary" }}
+        gap="md"
+        fluid
+        alignItems="center"
+        // style={{ backgroundColor: "black", minHeight: "200px" }}
+      >
+        <Typography as="h4" textAlign="center" color="white">
+          Sample container-flex
+        </Typography>
+        <Container flex={{ alignContent: "evenly" }}>
+          <Media
+            icon={{
+              icon: FaPhone,
+              //background: "primary",
+              color: "primary",
+              rounded: true,
+              variant: "outline",
+            }}
+            heading={{ children: "Phone Number" }}
+            body={{ children: <>(+55) 654 - 545 - 5418</> }}
+          />
+          <Media
+            icon={{
+              icon: FaPhone,
+              //background: "primary",
+              color: "white",
+              margin: "sm",
+              rounded: true,
+              variant: "outline",
+            }}
+            heading={{ children: "Phone Number", color: "white" }}
+            body={{ children: <>(+55) 654 - 545 - 5418</>, color: "white" }}
+          />
+          <Media
+            icon={{
+              icon: FaPhone,
+              //background: "primary",
+              color: "primary",
+              margin: "sm",
+              rounded: true,
+              variant: "outline",
+            }}
+            heading={{ children: "Phone Number" }}
+            body={{ children: <>(+55) 654 - 545 - 5418</> }}
+          />
+          <Media
+            icon={{
+              icon: FaPhone,
+              //background: "primary",
+              color: "primary",
+              margin: "sm",
+              rounded: true,
+              variant: "outline",
+            }}
+            heading={{ children: "Phone Number" }}
+            body={{ children: <>(+55) 654 - 545 - 5418</> }}
+          />
+        </Container>
       </Container>
-      <ContainerFlex>
-        <ContainerFlex.Child flexGrow={2}>
-          <>Hello</>
-        </ContainerFlex.Child>
-        <ContainerFlex.Child>
-          <>Item 2</>
-        </ContainerFlex.Child>
-      </ContainerFlex>
-      <Container>
-        <Container.Row>
-          <Container.Column xs={5} md={6} sm={7} lg={12} xl={12}>
-            Sample Column
-          </Container.Column>
-        </Container.Row>
+      <hr />
+      <Container
+        background="primary"
+        borderRadius={"lg"}
+        padding={"lg"}
+        margin={"xxl"}
+        border={{ value: "lg", color: "accent2" }}
+        gap="md"
+        fluid
+        alignItems="center"
+      >
+        <Container
+          flex={{
+            alignItems: "start",
+            alignContent: "start",
+            flexDirection: "col",
+            justifyContent: "start",
+          }}
+        >
+          <Typography as="h4" textAlign="center" color="white">
+            Sample container-flex alignItems:"start", alignContent:"start",
+            flexDirection: "col", justifyContent: "start"
+          </Typography>
+          <Media
+            icon={{
+              icon: FaPhone,
+              color: "white",
+              rounded: true,
+              variant: "outline",
+            }}
+            heading={{ children: "Phone Number", color: "white" }}
+            body={{ children: <>(+55) 654 - 545 - 5418</>, color: "white" }}
+          />
+          <Media
+            icon={{
+              icon: FaPhone,
+              color: "white",
+              rounded: true,
+              variant: "outline",
+            }}
+            heading={{ children: "Phone Number", color: "white" }}
+            body={{ children: <>(+55) 654 - 545 - 5418</>, color: "white" }}
+          />{" "}
+          <Media
+            icon={{
+              icon: FaPhone,
+              color: "white",
+              rounded: true,
+              variant: "outline",
+            }}
+            heading={{ children: "Phone Number", color: "white" }}
+            body={{ children: <>(+55) 654 - 545 - 5418</>, color: "white" }}
+          />{" "}
+          <Media
+            icon={{
+              icon: FaPhone,
+              color: "white",
+              rounded: true,
+              variant: "outline",
+            }}
+            heading={{ children: "Phone Number", color: "white" }}
+            body={{ children: <>(+55) 654 - 545 - 5418</>, color: "white" }}
+          />
+        </Container>
+      </Container>
+      <Container flex={{}}>
+        <Column xxl={6} xl={6} lg={6} md={6} sm={12} xs={12}>
+          <Media
+            icon={{
+              icon: FaPhone,
+              rounded: true,
+              variant: "outline",
+            }}
+            heading={{ children: "Phone Number" }}
+            body={{ children: <>(+55) 654 - 545 - 5418</> }}
+          />
+        </Column>
+        <Column
+          xxl={6}
+          xl={6}
+          lg={6}
+          md={6}
+          sm={12}
+          xs={12}
+          background="black"
+          flex={{ alignContent: "center", justifyContent: "center" }}
+        >
+          <Media
+            icon={{
+              icon: FaPhone,
+              rounded: true,
+              color: "white",
+              variant: "outline",
+            }}
+            heading={{ children: "Phone Number", color: "white" }}
+            body={{ children: <>(+55) 654 - 545 - 5418</>, color: "white" }}
+          />
+        </Column>
+        <Column xxl={6} xl={6} lg={6} md={6} sm={12} xs={12}>
+          <Media
+            icon={{
+              icon: FaPhone,
+              rounded: true,
+              variant: "outline",
+            }}
+            heading={{ children: "Phone Number" }}
+            body={{ children: <>(+55) 654 - 545 - 5418</> }}
+          />
+        </Column>
+        <Column xxl={6} xl={6} lg={6} md={6} sm={12} xs={12} background="black">
+          <Media
+            icon={{
+              icon: FaPhone,
+              rounded: true,
+              color: "white",
+              variant: "outline",
+            }}
+            heading={{ children: "Phone Number", color: "white" }}
+            body={{ children: <>(+55) 654 - 545 - 5418</>, color: "white" }}
+          />
+        </Column>
       </Container>
     </>
   );

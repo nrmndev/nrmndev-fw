@@ -1,4 +1,4 @@
-import { Heading } from "@components";
+import { Heading } from "@uiComponents";
 
 const SampleHeading = () => {
   return (

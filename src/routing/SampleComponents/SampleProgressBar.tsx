@@ -1,4 +1,4 @@
-import { ProgressBar } from "@components";
+import { ProgressBar } from "@uiComponents";
 
 const SampleProgressBar = () => {
   return <ProgressBar currentProgress={90} totalProgress={100} />;

@@ -1,4 +1,4 @@
-import { SectionLabel } from "@components";
+import { SectionLabel } from "@uiComponents";
 
 const SampleSectionLabel = () => {
   return (

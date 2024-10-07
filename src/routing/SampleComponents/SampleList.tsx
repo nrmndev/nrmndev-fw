@@ -1,23 +1,49 @@
-import { List } from "@components";
+import { List } from "@uiComponents";
 
 const SampleList = () => {
   return (
     <>
       <List
+        listType="ordered-list"
         items={[
-          "Market Research",
-          "Pre-construction services",
-          "Industrial manufacturing",
-          "Build and construction",
+          { label: "Market Research", children: [{ label: "Level 1" }] },
+          { label: "Pre-construction services" },
+          { label: "Industrial manufacturing" },
+          { label: "Build and construction" },
         ]}
       />
+      <hr />
+      <List
+        listType="ordered-list"
+        display="inline-flex"
+        items={[
+          { label: "Market Research" },
+          { label: "Pre-construction services" },
+          { label: "Industrial manufacturing" },
+          { label: "Build and construction" },
+        ]}
+        textAlign="right"
+      />
+      <hr />
+      <List
+        listType="ordered-list"
+        display="inline-flex-space-between"
+        items={[
+          { label: "Market Research" },
+          { label: "Pre-construction services" },
+          { label: "Industrial manufacturing" },
+          { label: "Build and construction" },
+        ]}
+      />
+      <hr />
+
       <List
         display="grid-4-columns"
         items={[
-          "Market Research",
-          "Pre-construction services",
-          "Industrial manufacturing",
-          "Build and construction",
+          { label: "Market Research" },
+          { label: "Pre-construction services" },
+          { label: "Industrial manufacturing" },
+          { label: "Build and construction" },
         ]}
       />
     </>

@@ -1,4 +1,4 @@
-import { FormInput } from "@components";
+import { FormInput } from "@uiComponents";
 
 const SampleForm = () => (
   <FormInput type="text" value={""} placeholder="Hello" />

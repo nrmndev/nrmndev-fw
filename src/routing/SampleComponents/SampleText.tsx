@@ -1,10 +1,13 @@
-import { Text } from "@components";
+import { Text } from "@uiComponents";
 
 const SampleText = () => {
   return (
-    <Text as="span" maxChars={50}>
-      Hello
-    </Text>
+    <>
+      <Text as="span" maxChars={50}>
+        Hello
+      </Text>
+      <hr />
+    </>
   );
 };
 
