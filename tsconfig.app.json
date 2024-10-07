@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
     "composite": true,
-    "tsBuildInfoFile": "./.tsbuildinfo/tsconfig.app.tsbuildinfo",
+    //"tsBuildInfoFile": "./.tsbuildinfo/tsconfig.app.tsbuildinfo",
     // This is for building TSC for NPM Publish: target, module, moduleResolution
     "target": "ES6",
     "module": "CommonJS",
     "moduleResolution": "Node",
+
     // This is for Development vite: module & moduleResolution
     // "module": "ESNext",
     // "moduleResolution": "bundler",
