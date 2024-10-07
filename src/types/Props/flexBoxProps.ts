@@ -1,8 +1,8 @@
-import { AlignUnionTypes, JustifyUnionTypes } from "@uniontypes";
+import { AlignOptions, JustifyOptions } from "types/options";
 
 interface FlexBoxProps {
-  justifySelf?: JustifyUnionTypes;
-  alignSelf?: AlignUnionTypes;
+  justifySelf?: JustifyOptions;
+  alignSelf?: AlignOptions;
 }
 
 export default FlexBoxProps;

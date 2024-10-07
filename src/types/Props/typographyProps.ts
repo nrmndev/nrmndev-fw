@@ -1,5 +1,11 @@
-import { TextTransformUnionTypes } from "@uniontypes";
+import { TextAlignOptions, TextTransformOptions } from "types/options";
 
 export interface TextTransformProps {
-  textTransform?: TextTransformUnionTypes;
+  textTransform?: TextTransformOptions;
 }
+
+export interface TextAlignProps {
+  textAlign?: TextAlignOptions;
+}
+
+export interface TypographyProps extends TextAlignProps, TextTransformProps {}

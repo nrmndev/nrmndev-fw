@@ -1,21 +1,21 @@
-import { ColumnUnionTypes } from "@uniontypes";
+import { ColumnOptions } from "types/options";
 
 export interface ColumnProps {
-  xs?: ColumnUnionTypes;
-  sm?: ColumnUnionTypes;
-  md?: ColumnUnionTypes;
-  lg?: ColumnUnionTypes;
-  xl?: ColumnUnionTypes;
-  xxl?: ColumnUnionTypes;
+  xs?: ColumnOptions;
+  sm?: ColumnOptions;
+  md?: ColumnOptions;
+  lg?: ColumnOptions;
+  xl?: ColumnOptions;
+  xxl?: ColumnOptions;
 }
 
 // export type ColumnTypes = {
-//   xs?: ColumnUnionTypes;
-//   sm?: ColumnUnionTypes;
-//   md?: ColumnUnionTypes;
-//   lg?: ColumnUnionTypes;
-//   xl?: ColumnUnionTypes;
-//   xxl?: ColumnUnionTypes;
+//   xs?: ColumnOptions;
+//   sm?: ColumnOptions;
+//   md?: ColumnOptions;
+//   lg?: ColumnOptions;
+//   xl?: ColumnOptions;
+//   xxl?: ColumnOptions;
 // };
 
 export type ColumnBreakpointProps = {

@@ -1,7 +1,7 @@
-import { PositionUnionTypes, SizeUnionTypes } from "@uniontypes";
+import { EdgeOptions, SizeOptions } from "@uiTypes";
 
 type PaddingProps = {
-  padding?: SizeUnionTypes | PositionUnionTypes;
+  padding?: SizeOptions | EdgeOptions;
 };
 
 export default PaddingProps;

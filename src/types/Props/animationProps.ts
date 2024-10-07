@@ -1,7 +1,7 @@
-import { AnimationUnionTypes } from "@uniontypes";
+import { AnimationOptions } from "types/options";
 
 interface AnimationProps {
-  animation?: AnimationUnionTypes;
+  animation?: AnimationOptions;
 }
 
 export default AnimationProps;

@@ -1,7 +1,7 @@
-import { PositionUnionTypes, SizeUnionTypes } from "@uniontypes";
+import { EdgeOptions, SizeOptions } from "types/options";
 
 type MarginProps = {
-  margin?: SizeUnionTypes | PositionUnionTypes;
+  margin?: SizeOptions | EdgeOptions;
 };
 
 export default MarginProps;

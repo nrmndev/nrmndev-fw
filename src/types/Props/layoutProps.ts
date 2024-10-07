@@ -1,18 +1,11 @@
-import { BorderSpacingProps, MarginProps, PaddingProps } from "@typekits";
-import {
-  AlignUnionTypes,
-  JustifyUnionTypes,
-  SizeUnionTypes,
-} from "@uniontypes";
+import { MarginProps, PaddingProps } from "@uiTypes";
+import { AlignOptions, JustifyOptions, SizeOptions } from "types/options";
 
 export default interface LayoutProps {
-  justifyContent?: JustifyUnionTypes;
-  alignItems?: AlignUnionTypes;
+  justifyContent?: JustifyOptions;
+  alignItems?: AlignOptions;
 }
 
-export interface SpacingProps
-  extends PaddingProps,
-    MarginProps,
-    BorderSpacingProps {
-  gap?: SizeUnionTypes;
+export interface SpacingProps extends PaddingProps, MarginProps {
+  gap?: SizeOptions;
 }

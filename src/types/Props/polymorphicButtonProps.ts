@@ -1,13 +1,13 @@
-import { AnchorTargetUnionTypes, ButtonUnionTypes } from "@typekits";
+import { AnchorTargetOptions, ButtonOptions } from "@uiTypes";
 
 export interface ButtonProps {
-  type?: ButtonUnionTypes;
+  type?: ButtonOptions;
   onClick?: () => void;
 }
 
 export interface AnchorLinkProps {
   href: string;
-  target?: AnchorTargetUnionTypes;
+  target?: AnchorTargetOptions;
 }
 
 export interface NavLinkProps {

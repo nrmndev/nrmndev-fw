@@ -1,4 +1,4 @@
-interface BaseProps {
+type BaseProps = {
   className?: string;
   id?: string;
   style?: React.CSSProperties;
@@ -7,7 +7,8 @@ interface BaseProps {
   role?: string;
   name?: string;
   tabIndex?: number;
-}
+  label?: string;
+};
 
 export default BaseProps;
 
