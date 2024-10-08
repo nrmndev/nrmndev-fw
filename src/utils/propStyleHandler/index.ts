@@ -130,6 +130,7 @@ export const propStyleHandler = (props: PropStyleHanlderProps = {}) => {
   //   justifyContent && className.push(`justify-${justifyContent}`);
   // }
   // Create the base style object
+
   let inline: React.CSSProperties = {
     ...userStyle,
     // Inline styles modifiers ie. paddingTop: 10px, marginBottom: 3%.

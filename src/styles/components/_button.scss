@@ -4,33 +4,36 @@
   border: none;
   border-radius: 1rem;
   display: inline-block;
+  text-decoration: none;
   cursor: pointer;
+  &-flat {
+    border: none;
+    background: none;
+  }
   svg {
     font-size: inherit;
   }
   &-xs {
-    padding: 0.3rem 0.8rem;
-    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
   }
 
   &-sm {
-    padding: 0.6rem 1rem;
-    font-size: 1rem;
+    padding: 0.8rem 1.6rem;
   }
   &-md {
-    padding: 0.9rem 1.5rem;
+    padding: 1.25rem 2.5rem;
     font-size: 1.5rem;
   }
   &-lg {
-    padding: 1.2rem 2rem;
+    padding: 1.75rem 3.5rem;
     font-size: 2rem;
   }
   &-xl {
-    padding: 1.5rem 2.5rem;
+    padding: 2rem 4rem;
     font-size: 2.5rem;
   }
   &-xxl {
-    padding: 1.9rem 3rem;
+    padding: 2.5rem 5rem;
     font-size: 3rem;
   }
   &--block {

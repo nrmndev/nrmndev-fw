@@ -6,6 +6,7 @@ import {
   BaseProps,
   BorderProps,
   BorderRadiusProps,
+  ButtonProps,
   ColorProps,
   FontSizeProps,
   MarginProps,
@@ -15,10 +16,18 @@ import classNames from "classnames";
 import { NavLink } from "react-router-dom";
 import { propStyleHandler } from "utils/propStyleHandler";
 
-type ButtonSize = "sm" | "md" | "lg";
-
+// type ButtonSize = "sm" | "md" | "lg";
+// type ButtonVariant =
+//   | "solid-primary"
+//   | "solid-secondary"
+//   | "solid-accent-1"
+//   | "solid-accent-2"
+//   | "solid-accent-3"
+//   | "solid-dark"
+//   | "solid-white";
 export interface IProps
   extends BaseProps,
+    ButtonProps,
     BorderProps,
     BorderRadiusProps,
     BackgroundProps,
@@ -26,17 +35,17 @@ export interface IProps
     FontSizeProps,
     PaddingProps,
     MarginProps {
-  variant?: "solid" | "outlined";
+  // variant?: "solid" | "outlined";
+  // size?: ButtonSize;
   display?: "block" | "inline-block";
   as?: "button" | "anchorLink" | "navLink";
-  size?: ButtonSize;
 }
 
 type ExtendedIProps = IProps & PolymorphicButtonProps;
 
 const Button = ({
   as: Component = "button",
-  background = "primary",
+  background,
   borderRadius,
   border,
   color,
@@ -44,7 +53,7 @@ const Button = ({
   margin,
   padding,
   size = "md",
-  variant = "solid",
+  variant = "solid-primary",
   fontSize,
   ...rest
 }: ExtendedIProps) => {
@@ -59,14 +68,15 @@ const Button = ({
     fontSize,
     margin,
   });
-
+  //console.log(propStyle.className);
   const className = classNames(
     "btn",
     `btn-${size}`,
     display && "btn--" + display,
-    variant && (variant === "solid" ? "bg" : "outlined") + "-" + background,
+    variant && "btn-" + variant,
     color && "color-" + color,
-    propStyle.className
+    propStyle.className,
+    rest.className
   );
 
   const conditionalProps: {} = {

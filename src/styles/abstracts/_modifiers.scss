@@ -111,6 +111,15 @@ $themes: (
     //color: var(--color-#{$theme});
     background: var(--color-#{$theme});
   }
+  //Btn Classes
+  .btn-solid-#{$theme} {
+    background: var(--color-#{$theme});
+    color: var(--color-white);
+  }
+  .btn-outline-#{$theme} {
+    border-color: var(--color-#{$theme});
+    color: var(--color-#{$theme});
+  }
 }
 
 .border {
