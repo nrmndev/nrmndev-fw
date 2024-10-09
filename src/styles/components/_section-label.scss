@@ -1,53 +1,84 @@
 @use "../base/variables" as *;
 
+.sectionLabel,
 .section-label {
-  color: $colorPrimary;
-  display: block;
-  font-size: 2rem;
-  // margin-bottom: 3rem;
-  padding-left: 4.5rem;
-  position: relative;
+  display: flex;
+  //flex-direction: column; /* Stack top and bottom decorations vertically */
+  align-items: center; /* Center elements horizontally */
+  padding: 20px;
+  &--left {
+    justify-content: flex-start;
+  }
   &--center {
-    display: table;
-    margin-left: auto;
-    margin-right: auto;
-    &:after {
-      border: 2px solid $colorPrimary;
-      content: "";
-      height: 0;
-      right: -4.5rem;
-      opacity: 0.85;
-      position: absolute;
-      top: 11px;
-      width: 3rem;
-    }
+    justify-content: center;
   }
   &--right {
-    text-align: right;
-    padding-left: 0;
-    padding-right: 4.5rem;
-    &::before {
-      display: none;
-    }
-    &::after {
-      border: 2px solid $colorPrimary;
-      content: "";
-      height: 0;
-      right: 0;
-      opacity: 0.85;
-      position: absolute;
-      top: 11px;
-      width: 3rem;
-    }
-  }
-  &::before {
-    border: 2px solid $colorPrimary;
-    content: "";
-    height: 0;
-    left: 0;
-    opacity: 0.85;
-    position: absolute;
-    top: 11px;
-    width: 3rem;
+    justify-content: flex-end;
   }
 }
+
+/* Content wrapper */
+.sectionLabel {
+  &__content {
+    display: flex; /* Flexbox for horizontal layout */
+    align-items: center; /* Center items vertically */
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+  &__text {
+    // padding: 10px;
+    z-index: 1; /* Ensure text is on top */
+  }
+  &__decoration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px; /* Adjust size of decorations */
+    height: 30px;
+    //background-color: lightgray; /* Background for decoration */
+  }
+  &__backdrop {
+    position: absolute;
+    z-index: -1;
+    font-weight: bold;
+    margin: auto;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    &--sm {
+      font-size: 3rem;
+    }
+    &--md {
+      font-size: 4rem;
+    }
+    &--lg {
+      font-size: 5rem;
+    }
+    &--xl {
+      font-size: 6rem;
+    }
+    &--xxl {
+      font-size: 7rem;
+    }
+  }
+}
+// /* Top decoration */
+// .decoration--top {
+//   margin-bottom: 10px; /* Space between top decoration and text */
+// }
+
+// /* Bottom decoration */
+// .decoration--bottom {
+//   margin-top: 10px; /* Space between bottom decoration and text */
+// }
+
+// /* Left decoration */
+// .decoration--left {
+//   margin-right: 10px; /* Space between left decoration and text */
+// }
+
+// /* Right decoration */
+// .decoration--right {
+//   margin-left: 10px; /* Space between right decoration and text */
+// }
