@@ -1,6 +1,6 @@
 import { AnchorTargetOptions, ButtonOptions } from "@uiTypes";
 
-export interface ButtonProps {
+export interface ButtonProp {
   type?: ButtonOptions;
   onClick?: () => void;
 }
@@ -14,7 +14,7 @@ export interface NavLinkProps {
   to: string;
 }
 
-interface AsButton extends ButtonProps {
+interface AsButton extends ButtonProp {
   as?: "button";
   href?: never;
   target?: never;

@@ -1,7 +1,5 @@
 import { ColorOptions, OpacityOptions, SizeOptions } from "@uiTypes";
-import React from "react";
 import { IconType } from "react-icons";
-import CenterText from "./CenterText";
 import LeftDecoration from "./LeftDecoration";
 
 import RightDecoration from "./RightDecoration";

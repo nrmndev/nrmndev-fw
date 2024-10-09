@@ -37,7 +37,6 @@ export type { default as VariantProps } from "./variantProps";
 export type {
   default as PolymorphicButtonProps,
   AnchorLinkProps,
-  ButtonProps,
   NavLinkProps,
 } from "./polymorphicButtonProps";
 export type { default as MarginProps } from "./marginProps";

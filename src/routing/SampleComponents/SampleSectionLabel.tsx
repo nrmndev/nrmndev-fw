@@ -1,6 +1,5 @@
 import { ProgressBar, SectionLabel } from "@uiComponents";
-import { FaAccessibleIcon, FaAirbnb, FaBeer, FaCheck } from "react-icons/fa";
-import { MdStars } from "react-icons/md";
+
 import { AiOutlineSmallDash } from "react-icons/ai";
 const SampleSectionLabel = () => {
   return (

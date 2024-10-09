@@ -1,10 +1,10 @@
 import { SectionLabelProps } from "@uiTypes";
 import classNames from "classnames";
-import { IconType } from "react-icons";
-import TopDecoration from "./TopDecoration";
-import BottomDecoration from "./BottomDecoration";
+// import { IconType } from "react-icons";
+// import TopDecoration from "./TopDecoration";
+// import BottomDecoration from "./BottomDecoration";
+// import TextBackdrop from "./TextBackdrop";
 import CenterWrapper from "./CenterWrapper";
-import TextBackdrop from "./TextBackdrop";
 
 export interface SectionLabelComponentProps extends SectionLabelProps {
   label: string;
@@ -30,14 +30,11 @@ const SectionLabel = ({
   label,
   decoration,
   as = "h2",
-  ...rest
 }: SectionLabelComponentProps) => {
-  let TopDecor, RightDecor, BottomDecor, LeftDecor, DecorTextBackdrop;
+  let RightDecor, LeftDecor, DecorTextBackdrop;
   if (decoration) {
-    TopDecor = decoration.top;
-    RightDecor = decoration.right;
-    BottomDecor = decoration.bottom;
     LeftDecor = decoration.left;
+    RightDecor = decoration.right;
     DecorTextBackdrop = decoration.textBackdrop;
   }
 
