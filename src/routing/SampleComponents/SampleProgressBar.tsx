@@ -1,7 +1,7 @@
 import { ProgressBar } from "@uiComponents";
 
 const SampleProgressBar = () => {
-  return <ProgressBar currentProgress={90} totalProgress={100} />;
+  return <ProgressBar current={90} total={100} showProgress />;
 };
 
 export default SampleProgressBar;

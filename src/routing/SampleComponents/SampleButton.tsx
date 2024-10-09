@@ -3,54 +3,58 @@ import { FaBeer } from "react-icons/fa";
 
 const SampleButton = () => (
   <>
-    <ColumnGroup direction="row" alignment="left" wrap fullWidth columns={3}>
-      <Button
-        size="md"
-        background="secondary"
-        color="white"
-        display="block"
-        padding={"lg"}
-        margin={"sm"}
-        border={{ bottom: 2, top: 5, unit: "px" }}
-        borderRadius={{ bottomRight: 50, unit: "%" }}
-        fontSize={{ value: 100 }}
-      >
-        BorderRadius
-      </Button>
-      <Button size="md" color="white" padding={"lg"} margin={{ top: 20 }}>
-        <FaBeer />
-        Test
-      </Button>
-      <Button variant="outlined" size="md" color="primary">
-        Test
-      </Button>
-      <Button size="md" color="primary">
-        Test
-      </Button>
-    </ColumnGroup>
-
     <Button
-      variant="outlined"
       size="md"
-      color="black"
-      background="primary"
-      padding={"lg"}
-      as="anchorLink"
-      target="_blank"
-      href="http://www.google.com"
+      margin={"sm"}
+      fontSize={{ value: 100 }}
+      variant="flat"
+      color="primary"
     >
-      Test as Anchor Link
+      BorderRadius
     </Button>
+    <Button size="xs" margin={{ top: 20 }} as="navLink" to="/test">
+      <FaBeer /> Test
+    </Button>
+    <Button size="sm" margin={{ top: 20 }} as="navLink" to="/test">
+      <FaBeer /> Test
+    </Button>{" "}
     <Button
-      variant="solid"
       size="md"
       color="white"
-      padding={{ top: 10, right: 20 }}
+      margin={{ top: 20 }}
       as="navLink"
-      to="/"
+      to="/test"
     >
-      Test as Navlink
-    </Button>
+      <FaBeer /> Test
+    </Button>{" "}
+    <Button
+      size="lg"
+      color="white"
+      margin={{ top: 20 }}
+      as="navLink"
+      to="/test"
+    >
+      <FaBeer /> Test
+    </Button>{" "}
+    <Button
+      size="xl"
+      color="white"
+      margin={{ top: 20 }}
+      as="navLink"
+      to="/test"
+    >
+      <FaBeer /> Test
+    </Button>{" "}
+    <Button
+      size="xxl"
+      color="white"
+      margin={{ top: 20 }}
+      as="navLink"
+      to="/test"
+      className="sample-className"
+    >
+      <FaBeer /> Test
+    </Button>{" "}
     {/* <ButtonSample
       onClick={(e) => alert(e.currentTarget.value + "test")}
       id="testID"
