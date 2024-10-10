@@ -107,11 +107,25 @@ const textAlign = {
     options: Options["textAlignOptions"],
     description: "Text alignment",
     table: {
-      type: { summary: `[textAlignOptions](somelink)` },
+      type: {
+        summary: `<a href="https://nrmndev-fw.ngsilvestre.com/" target="_blank">textAlignOptions</a>`,
+      },
     },
   },
 };
-
+const textTransform = {
+  textAlign: {
+    name: "textAlign",
+    control: "select",
+    options: Options["textTransformOptions"],
+    description: "Text alignment",
+    table: {
+      type: {
+        summary: `<a href="https://nrmndev-fw.ngsilvestre.com/" target="_blank">textTransformOptions</a>`,
+      },
+    },
+  },
+};
 const argTypesRecord: Record<string, any> = {
   children,
   color,
@@ -121,6 +135,7 @@ const argTypesRecord: Record<string, any> = {
   variant,
   fontSize,
   textAlign,
+  textTransform,
 };
 // Create a record of argument types
 // const argTypesRecord: Record<string, ArgType> = {
@@ -128,14 +143,16 @@ const argTypesRecord: Record<string, any> = {
 //   color: color,
 // };
 
-type ArgTypesGenerator =
-  | "color"
-  | "children"
-  | "size"
-  | "padding"
-  | "margin"
-  | "variant"
-  | "fontSize";
+type ArgTypesGenerator = keyof typeof argTypesRecord;
+// | "color"
+// | "children"
+// | "size"
+// | "padding"
+// | "margin"
+// | "variant"
+// | "fontSize"
+// | "textAlign"
+// | "textTransform";
 
 const argTypesGenerator = (args: ArgTypesGenerator[]) => {
   let argTypes: any = {};
