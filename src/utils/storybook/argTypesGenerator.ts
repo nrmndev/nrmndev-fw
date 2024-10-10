@@ -108,20 +108,20 @@ const textAlign = {
     description: "Text alignment",
     table: {
       type: {
-        summary: `<a href="https://nrmndev-fw.ngsilvestre.com/" target="_blank">textAlignOptions</a>`,
+        summary: `union types: [textAlignOptions](https://nrmndev-fw.ngsilvestre.com)`,
       },
     },
   },
 };
 const textTransform = {
   textAlign: {
-    name: "textAlign",
+    name: "textTransform",
     control: "select",
     options: Options["textTransformOptions"],
     description: "Text alignment",
     table: {
       type: {
-        summary: `<a href="https://nrmndev-fw.ngsilvestre.com/" target="_blank">textTransformOptions</a>`,
+        summary: `union types: [textTransformOptions](https://nrmndev-fw.ngsilvestre.com)`,
       },
     },
   },
@@ -143,16 +143,16 @@ const argTypesRecord: Record<string, any> = {
 //   color: color,
 // };
 
-type ArgTypesGenerator = keyof typeof argTypesRecord;
-// | "color"
-// | "children"
-// | "size"
-// | "padding"
-// | "margin"
-// | "variant"
-// | "fontSize"
-// | "textAlign"
-// | "textTransform";
+type ArgTypesGenerator =
+  | "color"
+  | "children"
+  | "size"
+  | "padding"
+  | "margin"
+  | "variant"
+  | "fontSize"
+  | "textAlign"
+  | "textTransform";
 
 const argTypesGenerator = (args: ArgTypesGenerator[]) => {
   let argTypes: any = {};
