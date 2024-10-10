@@ -1,6 +1,5 @@
-import { ContainerGrid, Media } from "@uiComponents";
-import { BsPinMapFill } from "react-icons/bs";
-import { FaPhone, FaRegEnvelope } from "react-icons/fa";
+import { Media } from "@uiComponents";
+import { FaPhone } from "react-icons/fa";
 import constructionImg from "@images/homepage/construction_1.jpg";
 
 const SampleMedia = () => {
@@ -8,13 +7,16 @@ const SampleMedia = () => {
     <>
       <p>Media icon: react-icons, iconPosition: left</p>
       <Media
+        borderRadius={"xs"}
+        background="black"
+        color="white"
         icon={{
           icon: FaPhone,
           //background: "primary",
-          color: "primary",
           margin: "sm",
           rounded: true,
           variant: "outline",
+          position: "right",
         }}
         heading={{ children: "Phone Number" }}
         body={{ children: <>(+55) 654 - 545 - 5418</> }}

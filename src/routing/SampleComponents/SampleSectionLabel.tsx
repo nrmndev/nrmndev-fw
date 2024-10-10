@@ -5,6 +5,7 @@ const SampleSectionLabel = () => {
   return (
     <>
       <SectionLabel
+        color="white"
         as="h3"
         label="Our skills"
         decoration={{

@@ -1,30 +1,98 @@
-# React + TypeScript + Vite
+# nrmndev-fw
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A lightweight, customizable React component library for building responsive web applications with ease. Designed for simplicity, flexibility, and scalability.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Installation](#installation)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Features](#features)
+- [API Documentation](#api-documentation)
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+You can install the framework using npm or yarn:
 
-- Configure the top-level `parserOptions` property like this:
+````bash
+npm install nrmndev-fw
+# or
+yarn add nrmndev-fw
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+### 5. **Getting Started**
+Include a simple example that helps users understand how to quickly set up and use your framework.
+
+Example:
+```md
+## Getting Started
+Here's a quick example to get you started:
+
+```jsx
+import React from 'react';
+import { Typography } from 'nrmndev-fw';
+
+const App = () => (
+  <div>
+    <Typography as="h2" color="primary">Hello world!</Typography>
+  </div>
+);
+
+export default App;
+````
+
+### 6. **Usage**
+
+Provide more detailed examples, explaining various use cases of your components and framework. Show how different components or features can be utilized.
+
+Example:
+
+````md
+## Usage
+
+### Buttons
+
+Use buttons to trigger actions. Available variants: `primary`, `secondary`, `outlined`.
+
+```jsx
+ <Button onClick={()=>} size="md" margin={"sm"} fontSize={{ value: 100 }} variant="outline-primary">Outlined Primary Button</Button>
+<Button variant="solid-secondary" size="lg">Solid Large Button</Button>
 ```
+````
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Custom Theming
+
+You can easily customize theme, just override root variables
+
+````jsx
+import { ThemeProvider } from 'myreactframework';
+
+const customTheme = {
+  primaryColor: '#3498db',
+  secondaryColor: '#2ecc71',
+};
+
+const App = () => (
+  <CssVariableProvider value={{ "--color-primary": "#4CB944" }}>
+    {/** All component using "primary" will become #4CB944**/}
+  </CssVariableProvider>
+);
+```
+````
+
+### 7. **Features**
+
+Component modularity, theming support, scalable typed props.
+
+Example:
+
+```md
+## Features
+
+- 🛠 **Customizable**: Easily theme and modify components to fit your project’s design.
+- ⚡️ **Performant**: Optimized for high performance and lightweight applications.
+- 🧩 **Modular**: Import only the components you need to reduce bundle size.
+
+## API Documentation
+
+See the storybook link: **\_** for complete component documentation
+```
