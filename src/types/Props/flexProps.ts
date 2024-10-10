@@ -1,6 +1,7 @@
 import {
   AlignContentOptions,
   AlignItemsOptions,
+  ColumnOptions,
   FlexDirectionOptions,
   FlexWrapOptions,
   JustifyContentOptions,
@@ -16,4 +17,12 @@ type FlexProps = {
   };
 };
 
+export type FlexColumnProps = {
+  xsColumns?: ColumnOptions;
+  smColumns?: ColumnOptions;
+  mdColumns?: ColumnOptions;
+  lgColumns?: ColumnOptions;
+  xlColumns?: ColumnOptions;
+  xxlColumns?: ColumnOptions;
+};
 export default FlexProps;

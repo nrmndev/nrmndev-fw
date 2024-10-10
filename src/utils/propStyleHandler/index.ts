@@ -4,6 +4,7 @@ import {
   BorderRadiusProps,
   BoxShadowProps,
   ColorProps,
+  FlexColumnProps,
   FlexProps,
   FontSizeProps,
   MarginProps,
@@ -24,6 +25,7 @@ type PropStyleHanlderProps = BorderProps &
   //OverlayProps &
   PaddingProps & {
     userStyle?: React.CSSProperties;
+    flexColumns?: FlexColumnProps;
   };
 
 /**
@@ -72,6 +74,7 @@ export const propStyleHandler = (props: PropStyleHanlderProps = {}) => {
     fontSize,
     margin,
     padding,
+    flexColumns,
     userStyle,
   } = props;
   let className = [];
@@ -104,6 +107,10 @@ export const propStyleHandler = (props: PropStyleHanlderProps = {}) => {
   if (boxShadow && typeof boxShadow === "string") {
     className.push(boxShadow);
   }
+  //FlexColumns class ie. sm-flex-3
+  if (flexColumns) {
+    className.push(propToClass.flexColumns(flexColumns));
+  }
   //Border class ie. border-sm
   if (border) {
     className.push(border.style ? `border-${border.style}` : `border-solid`);
@@ -115,20 +122,6 @@ export const propStyleHandler = (props: PropStyleHanlderProps = {}) => {
 
   const classes = propToClass({ flex });
   classes && className.push(classes);
-  // if (flex) {
-  //   const {
-  //     alignContent,
-  //     alignItems,
-  //     flexDirection,
-  //     flexWrap,
-  //     justifyContent,
-  //   } = flex;
-  //   alignContent && className.push(`content-${alignContent}`);
-  //   alignItems && className.push(`items-${alignItems}`);
-  //   flexDirection && className.push(`flex-${flexDirection}`);
-  //   flexWrap && className.push(`flex-${flexWrap}`);
-  //   justifyContent && className.push(`justify-${justifyContent}`);
-  // }
   // Create the base style object
 
   let inline: React.CSSProperties = {

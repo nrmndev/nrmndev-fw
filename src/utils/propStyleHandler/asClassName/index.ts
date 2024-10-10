@@ -1,4 +1,5 @@
 import {
+  FlexColumnProps,
   // AlignContentOptions,
   // AlignItemsOptions,
   // FlexDirectionOptions,
@@ -7,6 +8,7 @@ import {
   FlexProps,
 } from "@uiTypes";
 import { flexClasses } from "./flex";
+import flexColumns from "./flexColumns";
 
 // type Flex = {
 //   flexDirection?: FlexDirectionOptions;
@@ -25,4 +27,5 @@ const propToClass = ({ flex }: Prop): string[] => {
   return [""];
 };
 
+propToClass.flexColumns = flexColumns;
 export default propToClass;

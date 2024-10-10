@@ -26,7 +26,7 @@ export type {
   FormEventHandlerProps,
 } from "./eventHandlerProps";
 export type { default as FontSizeProps } from "./fontSizeProps";
-export type { default as FlexProps } from "./flexProps";
+export type { default as FlexProps, FlexColumnProps } from "./flexProps";
 export type { default as FlexBoxProps } from "./flexBoxProps";
 export type { default as FontProps } from "./fontProps";
 export type { default as GeneralProps } from "./inputProps";
