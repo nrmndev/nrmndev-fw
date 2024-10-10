@@ -105,8 +105,7 @@ const textAlign = {
     name: "textAlign",
     control: "select",
     options: Options["textAlignOptions"],
-    description:
-      "union types: [textAlignOptions](https://nrmndev-fw.ngsilvestre.com)",
+    description: `Controls text align. This prop uses \`textAlignProps\`, which accepts values from \`textAlignOptions\` (a union of predefined alignment values). For more info visit API Documentation: [textAlign](https://nrmndev-fw.ngsilvestre.com)`,
     table: {
       type: {
         summary: `[textAlignOptions]`,
@@ -119,11 +118,10 @@ const textTransform = {
     name: "textTransform",
     control: "select",
     options: Options["textTransformOptions"],
-    description:
-      "union types: [textAlignOptions](https://nrmndev-fw.ngsilvestre.com)",
+    description: `Controls text transform. This prop uses \`textTransformProps\`, which accepts values from \`textTransformOptions\` (a union of predefined alignment values). For more info visit API Documentation: [textTransform](https://nrmndev-fw.ngsilvestre.com)`,
     table: {
       type: {
-        summary: `[textTransformOptions]`,
+        summary: `textTransformOptions`,
       },
     },
   },
