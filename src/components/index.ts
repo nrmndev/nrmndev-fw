@@ -1,6 +1,6 @@
 export * from "./button";
 export * from "./card";
-export * from "./container";
+export * from "./layout";
 export * from "./form";
 export * from "./group";
 export * from "./hero";
