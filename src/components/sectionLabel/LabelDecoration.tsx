@@ -5,11 +5,16 @@ import { IconType } from "react-icons";
 type LeftDecorationProps = {
   Icon: IconType;
   color: ColorOptions | undefined;
+  position?: "left" | "right";
 };
 
-const LeftDecoration = ({ Icon, color = "primary" }: LeftDecorationProps) => {
+const LabelDecoration = ({
+  Icon,
+  color = "primary",
+  position = "left",
+}: LeftDecorationProps) => {
   const classes = classNames(
-    "sectionLabel__decoration decoration--left",
+    `section-label__decoration decoration--${position}`,
     `color-${color}`
   );
   return (
@@ -19,4 +24,4 @@ const LeftDecoration = ({ Icon, color = "primary" }: LeftDecorationProps) => {
   );
 };
 
-export default LeftDecoration;
+export default LabelDecoration;

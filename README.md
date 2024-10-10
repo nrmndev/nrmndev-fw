@@ -9,6 +9,7 @@ A lightweight, customizable React component library for building responsive web 
 - [Usage](#usage)
 - [Features](#features)
 - [API Documentation](#api-documentation)
+- [Technologies Used](#technologies-used)
 - [Changelog](#changelog)
 
 ## Installation
@@ -41,6 +42,8 @@ export default App;
 ````
 
 ## Usage
+
+This framework is designed for **personal use** and is not intended for production environments or widespread distribution. Please use it for personal projects or development purposes.
 
 See all components and documentation here: (StoryBook under construction 🛠🛠🛠)
 
@@ -82,6 +85,15 @@ Example:
 - ⚡️ **Performant**: Optimized for high performance and lightweight applications.
 - 🧩 **Modular**: Import only the components you need to reduce bundle size.
 ```
+
+## Technologies Used
+
+This framework is built with the following technologies:
+
+- **TypeScript**: A strongly typed programming language that builds on JavaScript.
+- **Sass**: A powerful CSS preprocessor that allows you to use variables, nested rules, mixins, and more.
+
+Make sure you have these tools set up in your development environment to use this framework effectively.
 
 ## API Documentation
 

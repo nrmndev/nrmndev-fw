@@ -1,6 +1,5 @@
 @use "../base/variables" as *;
 
-.sectionLabel,
 .section-label {
   display: flex;
   //flex-direction: column; /* Stack top and bottom decorations vertically */
@@ -18,7 +17,7 @@
 }
 
 /* Content wrapper */
-.sectionLabel {
+.section-label {
   &__content {
     display: flex; /* Flexbox for horizontal layout */
     align-items: center; /* Center items vertically */

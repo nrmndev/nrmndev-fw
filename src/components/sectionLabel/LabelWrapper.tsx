@@ -5,13 +5,11 @@ import {
   SizeOptions,
 } from "@uiTypes";
 import { IconType } from "react-icons";
-import LeftDecoration from "./LeftDecoration";
-
-import RightDecoration from "./RightDecoration";
 import { Typography } from "components/typography";
 import TextBackdrop from "./TextBackdrop";
+import LabelDecoration from "./LabelDecoration";
 
-type CenterWrapperProps = {
+type LabelWrapperProps = {
   label: string;
   leftDecoration?: {
     Icon?: IconType;
@@ -29,35 +27,39 @@ type CenterWrapperProps = {
   };
   as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span";
 } & ColorProps;
-const CenterWrapper = ({
+const LabelWrapper = ({
   label,
   color = "primary",
   leftDecoration,
   rightDecoration,
   textBackdrop,
   as = "h2",
-}: CenterWrapperProps) => {
+}: LabelWrapperProps) => {
   return (
-    <div className="sectionLabel__content">
+    <div className="section-label__content">
       {textBackdrop?.label && <TextBackdrop {...textBackdrop} />}
+
       {leftDecoration?.Icon && (
-        <LeftDecoration
+        <LabelDecoration
           Icon={leftDecoration.Icon}
           color={leftDecoration.color ?? undefined}
+          position="left"
         />
       )}
-      <Typography as={as} className="sectionLabel__text" color={color}>
+
+      <Typography as={as} className="section-label__text" color={color}>
         {label}
       </Typography>
-      {/* <CenterText label={label} /> */}
+
       {rightDecoration?.Icon && (
-        <RightDecoration
+        <LabelDecoration
           Icon={rightDecoration.Icon}
           color={rightDecoration.color ?? undefined}
+          position="right"
         />
       )}
     </div>
   );
 };
 
-export default CenterWrapper;
+export default LabelWrapper;

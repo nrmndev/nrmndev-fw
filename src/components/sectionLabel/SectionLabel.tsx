@@ -1,10 +1,6 @@
 import { ColorProps, SectionLabelProps } from "@uiTypes";
 import classNames from "classnames";
-// import { IconType } from "react-icons";
-// import TopDecoration from "./TopDecoration";
-// import BottomDecoration from "./BottomDecoration";
-// import TextBackdrop from "./TextBackdrop";
-import CenterWrapper from "./CenterWrapper";
+import LabelWrapper from "./LabelWrapper";
 
 export interface SectionLabelComponentProps
   extends SectionLabelProps,
@@ -40,7 +36,8 @@ const SectionLabel = ({
         {/* {DecorTextBackdrop?.label && <TextBackdrop {...DecorTextBackdrop} />} */}
         {/* {TopDecor?.Icon && <TopDecoration {...TopDecor} />} */}
 
-        <CenterWrapper
+        <LabelWrapper
+          color={color}
           as={as}
           label={label}
           leftDecoration={LeftDecor}
