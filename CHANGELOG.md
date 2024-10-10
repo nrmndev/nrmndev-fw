@@ -1,5 +1,18 @@
 ## Changelog
 
+### [v1.0.12] - 2024-10-10
+
+- **ROW**: added new component row, capabile in handling flex columns (see documentation)
+- **SCSS**: restructure stylesheet, font moved to root @import, to support default font
+- **SECTION LABEL**: restructure section label
+- **STORYBOOK UTILITY FUCNTIONS**: for future storybook documentation
+
+#### FIXED:
+
+- **SECTION LABEL**: Added `{color}` prop support for the label.
+- **PROGRESS BAR**: Added style `margin-bottom: 10px;`.
+- **MEDIA**: Removed `{label}` prop; use `{children}` for content to align with `TypographyProps`.
+
 ### [v1.0.10] - 2024-10-10
 
 #### FIXED:

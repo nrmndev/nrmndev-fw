@@ -1,7 +1,6 @@
 import { BaseProps, FlexColumnProps } from "@uiTypes";
 import { propStyleHandler } from "@utils";
 import classNames from "classnames";
-import flexColumns from "utils/propStyleHandler/asClassName/flexColumns";
 
 export interface IPropsRow extends BaseProps, FlexColumnProps {}
 

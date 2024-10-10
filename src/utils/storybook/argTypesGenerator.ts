@@ -1,19 +1,19 @@
 import { Options } from ".";
 
-type ArgType<T extends string> = {
-  [key in T]: {
-    name: string;
-    control: {
-      disable: boolean;
-    };
-    description: string;
-    table: {
-      type: {
-        summary: string;
-      };
-    };
-  };
-};
+// type ArgType<T extends string> = {
+//   [key in T]: {
+//     name: string;
+//     control: {
+//       disable: boolean;
+//     };
+//     description: string;
+//     table: {
+//       type: {
+//         summary: string;
+//       };
+//     };
+//   };
+// };
 
 const children = {
   children: {
