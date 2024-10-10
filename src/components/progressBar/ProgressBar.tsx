@@ -1,4 +1,4 @@
-import { ColorOptions, ColorProps, MarginProps, PaddingProps } from "@uiTypes";
+import { ColorProps, MarginProps, PaddingProps } from "@uiTypes";
 
 export interface IProps extends PaddingProps, MarginProps, ColorProps {
   label?: string;
