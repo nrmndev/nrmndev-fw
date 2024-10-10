@@ -17,6 +17,7 @@ import SampleMainNavigation from "./SampleComponents/SampleMainNav";
 import SampleHeroBanner from "./SampleComponents/SampleHero";
 import SampleTypography from "./SampleComponents/SampleTypography";
 import SampleCard from "./SampleComponents/SampleCard";
+import SampleRow from "./SampleComponents/SampleRow";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "list",
         element: <SampleList />,
+      },
+      {
+        path: "row",
+        element: <SampleRow />,
       },
       {
         path: "card",

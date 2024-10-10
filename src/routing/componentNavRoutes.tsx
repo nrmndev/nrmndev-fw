@@ -103,8 +103,15 @@ const listArray = [
   },
   {
     label: (
+      <Link to="/row" className="list__item">
+        Row
+      </Link>
+    ),
+  },
+  {
+    label: (
       <Link to="/countdown" className="list__item">
-        Sample Countdown
+        Countdown
       </Link>
     ),
   },

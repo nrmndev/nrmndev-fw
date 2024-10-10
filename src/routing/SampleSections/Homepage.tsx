@@ -1,5 +1,5 @@
 import { Container } from "@uiComponents";
-import Column from "components/container/Column";
+import Column from "components/layout/Column";
 import React from "react";
 import SampleHeroBanner from "routing/SampleComponents/SampleHero";
 import SampleMainNavigation from "routing/SampleComponents/SampleMainNav";
