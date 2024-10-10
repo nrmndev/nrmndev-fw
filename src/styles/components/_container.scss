@@ -1,5 +1,5 @@
-@use "../abstracts/index" as *;
-@use "../base/index" as *;
+@use "../abstracts/mixins" as mixins;
+@use "../base/variables" as var;
 @use "sass:map";
 
 $sizes: xs, sm, md, lg, xl, xxl;
@@ -17,8 +17,18 @@ $sizes: xs, sm, md, lg, xl, xxl;
   @each $value in $values {
     @for $i from 1 through 12 {
       $val: calc(($i/12) * 100);
+      $valAsPercent: calc(100 / $i);
+      .flex-#{$value}-#{$i} > * {
+        @include mixins.respondTo($value) {
+          // width: #{$val}#{"%"};
+          -webkit-box-flex: 0;
+          -ms-flex: 0 0 #{$valAsPercent}#{"%"};
+          flex: 0 0 #{$valAsPercent}#{"%"};
+          max-width: #{$valAsPercent}#{"%"};
+        }
+      }
       .col-#{$value}-#{$i} {
-        @include mixins-respondTo($value) {
+        @include mixins.respondTo($value) {
           // width: #{$val}#{"%"};
           -webkit-box-flex: 0;
           -ms-flex: 0 0 #{$val}#{"%"};
@@ -34,7 +44,7 @@ $sizes: xs, sm, md, lg, xl, xxl;
   }
 }
 
-@include makeCol($sizes);
+@include makeCol(var.$sizes);
 
 /** CONTAINERS **/
 .container {

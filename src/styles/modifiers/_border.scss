@@ -1,0 +1,11 @@
+.border {
+  &-solid {
+    border-style: solid;
+  }
+  &-dashed {
+    border-style: dashed;
+  }
+  &-dotted {
+    border-style: dotted;
+  }
+}

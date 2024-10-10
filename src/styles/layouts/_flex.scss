@@ -1,3 +1,5 @@
+@use "../base/variables" as var;
+@use "../abstracts/mixins" as mixin;
 //Flex
 .flex {
   display: flex;
@@ -69,3 +71,23 @@ $alignItems: ("start", "end", "center", "baseline", "stretch");
     align-content: stretch;
   }
 }
+
+@mixin makeFlexCols($values) {
+  @each $value in $values {
+    @for $i from 1 through 12 {
+      $val: calc(($i/12) * 100);
+      $valAsPercent: calc(100 / $i);
+      .flex-#{$value}-#{$i} > * {
+        @include mixin.respondTo($value) {
+          // width: #{$val}#{"%"};
+          -webkit-box-flex: 0;
+          -ms-flex: 0 0 #{$valAsPercent}#{"%"};
+          flex: 0 0 #{$valAsPercent}#{"%"};
+          max-width: #{$valAsPercent}#{"%"};
+        }
+      }
+    }
+  }
+}
+
+@include makeFlexCols(var.$sizing);

@@ -1,3 +1,4 @@
+@use "../base/variables" as var;
 //before:bg-${theme} is in modifier.scss
 
 [class*="before:"] {
@@ -14,128 +15,11 @@
     display: block;
   }
 }
-.before\:opacity {
-  &-5:before {
-    opacity: 0.05;
-  }
-  &-10:before {
-    opacity: 0.1;
-  }
-  &-15:before {
-    opacity: 0.15;
-  }
-  &-20:before {
-    opacity: 0.2;
-  }
-  &-25:before {
-    opacity: 0.25;
-  }
-  &-30:before {
-    opacity: 0.3;
-  }
-  &-35:before {
-    opacity: 0.35;
-  }
-  &-40:before {
-    opacity: 0.4;
-  }
-  &-45:before {
-    opacity: 0.45;
-  }
-  &-50:before {
-    opacity: 0.5;
-  }
-  &-55:before {
-    opacity: 0.55;
-  }
-  &-60:before {
-    opacity: 0.6;
-  }
-  &-65:before {
-    opacity: 0.65;
-  }
-  &-70:before {
-    opacity: 0.7;
-  }
-  &-75:before {
-    opacity: 0.75;
-  }
-  &-80:before {
-    opacity: 0.8;
-  }
-  &-85:before {
-    opacity: 0.85;
-  }
-  &-90:before {
-    opacity: 0.9;
-  }
-  &-95:before {
-    opacity: 0.95;
-  }
-  &-100:before {
-    opacity: 1;
-  }
-}
 
-.opacity {
-  &-5 {
-    opacity: 0.05;
-  }
-  &-10 {
-    opacity: 0.1;
-  }
-  &-15 {
-    opacity: 0.15;
-  }
-  &-20 {
-    opacity: 0.2;
-  }
-  &-25 {
-    opacity: 0.25;
-  }
-  &-30 {
-    opacity: 0.3;
-  }
-  &-35 {
-    opacity: 0.35;
-  }
-  &-40 {
-    opacity: 0.4;
-  }
-  &-45 {
-    opacity: 0.45;
-  }
-  &-50 {
-    opacity: 0.5;
-  }
-  &-55 {
-    opacity: 0.55;
-  }
-  &-60 {
-    opacity: 0.6;
-  }
-  &-65 {
-    opacity: 0.65;
-  }
-  &-70 {
-    opacity: 0.7;
-  }
-  &-75 {
-    opacity: 0.75;
-  }
-  &-80 {
-    opacity: 0.8;
-  }
-  &-85 {
-    opacity: 0.85;
-  }
-  &-90 {
-    opacity: 0.9;
-  }
-  &-95 {
-    opacity: 0.95;
-  }
-  &-100 {
-    opacity: 1;
+@for $j from 1 through length(var.$incrementsOf5) {
+  $val: nth(var.$incrementsOf5, $j);
+  .opacity-#{$val},
+  .before\:opacity-#{$val}:before {
+    opacity: #{calc($val / 100)};
   }
 }

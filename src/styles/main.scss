@@ -1,6 +1,12 @@
-@use "base/index" as *;
-@use "abstracts/index" as *;
+@use "base/root" as root;
+@use "base/typography" as typography;
+//@use "base/variables" as variables;
+@use "abstracts/animations" as animations;
+@use "abstracts/functions" as functions;
+@use "abstracts/mixins" as mixins;
+@use "modifiers" as modifiers;
+//@use "abstracts/index" as *;
 @use "components/index" as *;
-@use "abstracts/modifiers" as *;
-@use "layouts/index" as *;
+
+@use "layouts" as *;
 @use "animations/index" as *;

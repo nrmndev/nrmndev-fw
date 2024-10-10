@@ -4,11 +4,47 @@ $colorSecondary: var(--color-secondary) !default;
 $textColorPrimary: var(--text-color-primary) !default;
 $textColorSecondary: var(--text-color-secondary) !default;
 
+$sizes: xs, sm, md, lg, xl, xxl;
+$sizing: ("xs", "sm", "md", "lg", "xl", "xxl");
+// COLOR UTILITY MODIFIERS
+$themes: (
+  "primary",
+  "secondary",
+  "accent1",
+  "accent2",
+  "accent3",
+  "white",
+  "black",
+  "light",
+  "dark"
+);
 // $light: #fafafa !default;
 // $accent-1: #e2dbd4 !default;
 // $accent-2: #651b15 !default;
 // $heading: #145650 !default;
 // $body: #333333 !default;
+$incrementsOf5: (
+  5,
+  10,
+  15,
+  20,
+  25,
+  30,
+  35,
+  40,
+  45,
+  50,
+  55,
+  60,
+  65,
+  70,
+  75,
+  80,
+  85,
+  90,
+  95,
+  100
+);
 
 $colors: (
   "primary": $colorPrimary,
@@ -17,7 +53,7 @@ $colors: (
   // "accent-2": $accent-2,
   // "heading": $heading,
   // "body": $body,
-  // "light": $light,
+  // "light": $light,,,,,,,,,,,
 );
 
 $grid-breakpoints: (
