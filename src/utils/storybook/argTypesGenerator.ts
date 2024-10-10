@@ -105,23 +105,25 @@ const textAlign = {
     name: "textAlign",
     control: "select",
     options: Options["textAlignOptions"],
-    description: "Text alignment",
+    description:
+      "union types: [textAlignOptions](https://nrmndev-fw.ngsilvestre.com)",
     table: {
       type: {
-        summary: `union types: [textAlignOptions](https://nrmndev-fw.ngsilvestre.com)`,
+        summary: `[textAlignOptions]`,
       },
     },
   },
 };
 const textTransform = {
-  textAlign: {
+  textTransform: {
     name: "textTransform",
     control: "select",
     options: Options["textTransformOptions"],
-    description: "Text alignment",
+    description:
+      "union types: [textAlignOptions](https://nrmndev-fw.ngsilvestre.com)",
     table: {
       type: {
-        summary: `union types: [textTransformOptions](https://nrmndev-fw.ngsilvestre.com)`,
+        summary: `[textTransformOptions]`,
       },
     },
   },
