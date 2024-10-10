@@ -1,6 +1,10 @@
 ## Changelog
 
-### [v1.0.12] - 2024-10-10
+### [v1.0.14] - 2024-10-10
+
+- **UTILS**: added exports section in package.json
+
+### [v1.0.13] - 2024-10-10
 
 - **ROW**: added new component row, capabile in handling flex columns (see documentation)
 - **SCSS**: restructure stylesheet, font moved to root @import, to support default font
