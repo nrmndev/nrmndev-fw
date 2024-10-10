@@ -1,4 +1,10 @@
-import { BaseProps, PaddingProps } from "@uiTypes";
+import {
+  BackgroundProps,
+  BaseProps,
+  BorderRadiusProps,
+  ColorProps,
+  PaddingProps,
+} from "@uiTypes";
 import {
   Icon,
   IconComponentProps,
@@ -9,7 +15,12 @@ import classNames from "classnames";
 // import { IconType } from "react-icons";
 import { propStyleHandler } from "@utils";
 
-export interface MediaProps extends BaseProps, PaddingProps {
+export interface MediaProps
+  extends BaseProps,
+    BackgroundProps,
+    BorderRadiusProps,
+    ColorProps,
+    PaddingProps {
   icon: IconComponentProps & {
     position?: "top-left" | "left" | "right" | "top-center" | "top-right";
   };
@@ -21,7 +32,10 @@ export interface MediaProps extends BaseProps, PaddingProps {
 
 const Media = ({
   icon,
+  background,
+  borderRadius,
   heading,
+  color: mainColor = "black",
   body,
   padding = "md",
   style,
@@ -31,24 +45,39 @@ const Media = ({
   const {
     position: iconPosition = "left",
     margin: iconMargin = "sm",
+    color: iconColor = mainColor ? mainColor : "primary",
     ...iconProps
   } = icon;
   //Typography as Heading props
   const {
     as: headingAs = "h2",
-    color: headingColor = "primary",
+    color: headingColor = mainColor ? mainColor : "primary",
     ...headingProps
   } = heading;
   //Typography as Body props
-  const { as: bodyAs = "p", color: bodyColor = "black", ...bodyProps } = body;
+  const {
+    as: bodyAs = "p",
+    color: bodyColor = mainColor ? mainColor : "black",
+    ...bodyProps
+  } = body;
 
   //Media Props
-  const { className, inline } = propStyleHandler({ padding, userStyle: style });
+  const { className, inline } = propStyleHandler({
+    padding,
+    userStyle: style,
+    background,
+    borderRadius,
+  });
   const classes = classNames("media", `media__icon-${iconPosition}`, className);
 
   return (
     <div {...rest} className={classes} style={inline}>
-      <Icon {...iconProps} margin={iconMargin} className="media__icon" />
+      <Icon
+        {...iconProps}
+        color={iconColor}
+        margin={iconMargin}
+        className="media__icon"
+      />
       <div className="media__content ">
         <Typography
           {...headingProps}

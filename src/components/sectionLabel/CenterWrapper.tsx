@@ -1,4 +1,9 @@
-import { ColorOptions, OpacityOptions, SizeOptions } from "@uiTypes";
+import {
+  ColorOptions,
+  ColorProps,
+  OpacityOptions,
+  SizeOptions,
+} from "@uiTypes";
 import { IconType } from "react-icons";
 import LeftDecoration from "./LeftDecoration";
 
@@ -23,9 +28,10 @@ type CenterWrapperProps = {
     label: string;
   };
   as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span";
-};
+} & ColorProps;
 const CenterWrapper = ({
   label,
+  color = "primary",
   leftDecoration,
   rightDecoration,
   textBackdrop,
@@ -40,7 +46,7 @@ const CenterWrapper = ({
           color={leftDecoration.color ?? undefined}
         />
       )}
-      <Typography as={as} className="sectionLabel__text">
+      <Typography as={as} className="sectionLabel__text" color={color}>
         {label}
       </Typography>
       {/* <CenterText label={label} /> */}

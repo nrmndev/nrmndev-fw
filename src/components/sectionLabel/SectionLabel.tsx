@@ -1,4 +1,4 @@
-import { SectionLabelProps } from "@uiTypes";
+import { ColorProps, SectionLabelProps } from "@uiTypes";
 import classNames from "classnames";
 // import { IconType } from "react-icons";
 // import TopDecoration from "./TopDecoration";
@@ -6,27 +6,17 @@ import classNames from "classnames";
 // import TextBackdrop from "./TextBackdrop";
 import CenterWrapper from "./CenterWrapper";
 
-export interface SectionLabelComponentProps extends SectionLabelProps {
+export interface SectionLabelComponentProps
+  extends SectionLabelProps,
+    ColorProps {
   label: string;
   position?: "left" | "center" | "right";
   as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 }
 
-// decoration?: {
-//   top?: { color?: ColorOptions; icon?: IconType };
-//   right?: { color?: ColorOptions; icon?: IconType };
-//   bottom?: { color?: ColorOptions; icon?: IconType };
-//   left?: { color?: ColorOptions; icon?: IconType };
-//   textBackdrop?: {
-//     size?: SizeOptions;
-//     opacity?: OpacityOptions;
-//     color?: ColorOptions;
-//   };
-// label: string;
-// position?: "left" | "center" | "right"
-// };
 const SectionLabel = ({
   position = "left",
+  color = "primary",
   label,
   decoration,
   as = "h2",
@@ -40,6 +30,7 @@ const SectionLabel = ({
 
   const classes = classNames(
     "sectionLabel",
+    `color-${color}`,
     position ? "section-label--" + position : ""
   );
 

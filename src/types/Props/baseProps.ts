@@ -7,7 +7,7 @@ type BaseProps = {
   role?: string;
   name?: string;
   tabIndex?: number;
-  label?: string;
+  // label?: string;
 };
 
 export default BaseProps;

@@ -1,13 +1,13 @@
-import { ColorOptions, MarginProps, PaddingProps } from "@uiTypes";
+import { ColorOptions, ColorProps, MarginProps, PaddingProps } from "@uiTypes";
 
-export interface IProps extends PaddingProps, MarginProps {
+export interface IProps extends PaddingProps, MarginProps, ColorProps {
   label?: string;
   labelPosition?: "top" | "bottom";
   total: number;
   current: number;
   showProgress?: boolean;
   format?: "percentage" | "whole";
-  color?: ColorOptions;
+  variant?: "striped" | "solid";
 }
 
 const ProgressBar = ({
@@ -17,6 +17,7 @@ const ProgressBar = ({
   label,
   showProgress = false,
   format = "percentage",
+  variant = "solid",
 }: IProps) => {
   const currentBarWidth = (current / total) * 100;
   return (
@@ -35,7 +36,9 @@ const ProgressBar = ({
           </span>
         )}
         <span className="progress-bar__bar">
-          <span className="progress-bar-stripes"></span>
+          {variant === "striped" && (
+            <span className="progress-bar-stripes"></span>
+          )}
           <span
             className={`progress-bar__bar__current bg-${color}`}
             style={{
