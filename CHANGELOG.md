@@ -1,5 +1,9 @@
 ## Changelog
 
+### [v1.1.0] - 2024-10-10
+
+- **DOCUMENTATION**: added component documentation, see here [https://nrmndev-fw.ngsilvestre.com/](https://nrmndev-fw.ngsilvestre.com/)
+
 ### [v1.0.14] - 2024-10-10
 
 - **UTILS**: added exports section in package.json
