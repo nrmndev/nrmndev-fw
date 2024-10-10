@@ -100,6 +100,18 @@ const variant = {
   },
 };
 
+const textAlign = {
+  textAlign: {
+    name: "textAlign",
+    control: "select",
+    options: Options["textAlignOptions"],
+    description: "Text alignment",
+    table: {
+      type: { summary: `[textAlignOptions](somelink)` },
+    },
+  },
+};
+
 const argTypesRecord: Record<string, any> = {
   children,
   color,
@@ -108,6 +120,7 @@ const argTypesRecord: Record<string, any> = {
   margin,
   variant,
   fontSize,
+  textAlign,
 };
 // Create a record of argument types
 // const argTypesRecord: Record<string, ArgType> = {

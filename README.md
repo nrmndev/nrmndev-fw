@@ -78,13 +78,9 @@ const App = () => (
 
 Component modularity, theming support, scalable typed props.
 
-Example:
-
-```md
 - 🛠 **Customizable**: Easily theme and modify components to fit your project’s design.
 - ⚡️ **Performant**: Optimized for high performance and lightweight applications.
 - 🧩 **Modular**: Import only the components you need to reduce bundle size.
-```
 
 ## Technologies Used
 
@@ -97,7 +93,7 @@ Make sure you have these tools set up in your development environment to use thi
 
 ## API Documentation
 
-See full API documentation here: (StoryBook under construction 🛠🛠🛠)
+See full API documentation here: [https://nrmndev-fw.ngsilvestre.com/](https://nrmndev-fw.ngsilvestre.com/) **StoryBook under construction 🛠🛠🛠**
 
 ## Changelog
 
