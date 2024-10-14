@@ -1,13 +1,15 @@
 import { Typography } from "@uiComponents";
-import argTypesGenerator from "stories/utility/argTypesGenerator";
 
 const SampleTypography = () => {
-  argTypesGenerator(["children", "color"]);
   return (
     <>
-      <Typography as="span">Typography as span</Typography>
+      <Typography as="span" color="gradient-1" fontSize={"xxl"}>
+        Typography as span
+      </Typography>
       <hr />
-      <Typography as="h1">Typography as H1</Typography>
+      <Typography as="h1" color="gradient-1" fontSize={"xxl"}>
+        Typography as H1
+      </Typography>
       <hr />
       <Typography as="h2">Typography as h2</Typography>
       <hr />

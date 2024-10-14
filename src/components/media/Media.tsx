@@ -16,7 +16,7 @@ import classNames from "classnames";
 import { propStyleHandler } from "@utils";
 
 export interface MediaProps
-  extends BaseProps,
+  extends Omit<BaseProps, "children">,
     BackgroundProps,
     BorderRadiusProps,
     ColorProps,

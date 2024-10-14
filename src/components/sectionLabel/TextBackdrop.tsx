@@ -1,9 +1,9 @@
-import { ColorOptions, OpacityOptions, SizeOptions } from "@uiTypes";
+import { ColorOptions, IncrementOf5Options, SizeOptions } from "@uiTypes";
 import classNames from "classnames";
 
 type TextBackdropProps = {
   label: string;
-  opacity?: OpacityOptions;
+  opacity?: IncrementOf5Options;
   color?: ColorOptions;
   size?: SizeOptions;
 };

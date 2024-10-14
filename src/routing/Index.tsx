@@ -8,8 +8,6 @@ import SampleSectionLabel from "./SampleComponents/SampleSectionLabel";
 import SampleMedia from "./SampleComponents/SampleMedia";
 import SampleContainer from "./SampleComponents/SampleContainer";
 import SampleForm from "./SampleComponents/SampleForm";
-import SampleAboutUs from "./SampleComponents/SampleAboutUs";
-import SampleText from "./SampleComponents/SampleText";
 import SampleHoverCard from "./SampleComponents/SampleHoverCard";
 import SampleProgressBar from "./SampleComponents/SampleProgressBar";
 import SampleCountdown from "./SampleSections/Countdown";
@@ -55,14 +53,7 @@ const router = createBrowserRouter([
         path: "form",
         element: <SampleForm />,
       },
-      {
-        path: "aboutus",
-        element: <SampleAboutUs />,
-      },
-      {
-        path: "text",
-        element: <SampleText />,
-      },
+
       {
         path: "hovercard",
         element: <SampleHoverCard />,

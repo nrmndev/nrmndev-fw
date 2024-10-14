@@ -10,7 +10,6 @@ export * from "./list";
 export * from "./mainNavigation";
 export * from "./media";
 export * from "./sectionLabel";
-export * from "./text";
 export * from "./typography";
 export * from "./hoverCard";
 export * from "./progressBar";

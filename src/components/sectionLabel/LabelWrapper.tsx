@@ -1,7 +1,7 @@
 import {
   ColorOptions,
   ColorProps,
-  OpacityOptions,
+  IncrementOf5Options,
   SizeOptions,
 } from "@uiTypes";
 import { IconType } from "react-icons";
@@ -21,7 +21,7 @@ type LabelWrapperProps = {
   };
   textBackdrop?: {
     size?: SizeOptions;
-    opacity?: OpacityOptions;
+    opacity?: IncrementOf5Options;
     color?: ColorOptions;
     label: string;
   };

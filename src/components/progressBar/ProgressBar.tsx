@@ -1,6 +1,10 @@
-import { ColorProps, MarginProps, PaddingProps } from "@uiTypes";
+import { BaseProps, ColorProps, MarginProps, PaddingProps } from "@uiTypes";
 
-export interface IProps extends PaddingProps, MarginProps, ColorProps {
+export interface IProps
+  extends Omit<BaseProps, "children">,
+    PaddingProps,
+    MarginProps,
+    ColorProps {
   label?: string;
   labelPosition?: "top" | "bottom";
   total: number;
