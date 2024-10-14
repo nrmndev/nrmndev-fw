@@ -1,5 +1,32 @@
 ## Changelog
 
+### [v1.1.1-beta.4] - 2024-14-10
+
+- **FONT SYSTEM**
+  - Heading Default Font: changed from _Anton_ to MontserratBold
+  - Body Default Font: changed _OpenSans_ to Metrophobic
+- **TYPOGRAPHY COMPONENT**
+  - Added `{color: 'gradient'}` to be rendered as bg-clip
+  - Added `{margin}` prop
+  - Added `{fontSize}` prop
+- **CARD COMPONENT**
+  - Added `{boxShadow}` prop
+- **CARDMEDIA COMPONENT (NEW)**
+  - Accepts `{image}` `{title}` `{height}` as props
+  - Renders `<div>` with styled background
+- **CARD CONTENT (NEW)**
+  - Container for the card content, bare minimal style, accepts `{padding}` prop
+- **UTILITY**
+  - (File structure) Combined type options into a single type file
+- **PropStyleHandler**
+  - Added BoxShadow classes.
+  - _(Typography Component)_ Added `{color:gradient}` and apply as "bg-clip" classes
+- **ArgTypeGenerator**
+  - Moved to **@utils**
+  - Refactor code, modular approach
+- **CSS STYLES**
+  - Restructured CSS Root Variables
+
 ### [v1.1.0] - 2024-10-10
 
 - **DOCUMENTATION**: added component documentation, see here [https://nrmndev-fw.ngsilvestre.com/](https://nrmndev-fw.ngsilvestre.com/)

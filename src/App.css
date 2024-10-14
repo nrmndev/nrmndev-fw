@@ -65,7 +65,7 @@ a {
 /** EXTRA CSS for Development **/
 .routeNav {
   padding: 1rem;
-  background-color: var(--color-primary);
+  background-color: var(--primary);
   color: var(--text-color-primary);
   margin-bottom: 3rem;
 }
