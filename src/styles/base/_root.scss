@@ -1,5 +1,5 @@
 @use "../base/variables" as *;
-@import url(https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Metrophobic&display=swap);
 
 // ROOT
 :root {
@@ -15,33 +15,44 @@
   --box-shadow-2: 0px 0px 3px #e8eaee;
   --box-shadow-3: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  --box-shadow-4: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  --box-shadow-5: rgba(0, 0, 0, 0.12) 0px 1px 3px,
+    rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 :root,
 [data-theme="light"] {
-  --color-primary: #145650;
-  --color-secondary: #651b15;
-  --color-accent1: #146555;
-  --color-accent2: #143f65;
-  --color-accent3: #151565;
-  --color-white: #ffffff;
-  --color-black: #000000;
-  --color-light: #fafafa;
-  --color-dark: #333333;
+  --primary: #145650;
+  --primary-rgb: 20, 86, 80;
+  --secondary: #651b15;
+  --secondary-rgb: 101, 27, 21;
+  --accent1: #146555;
+  --accent1-rgb: 20, 101, 85;
+  --accent2: #143f65;
+  --accent2-rgb: 20, 63, 101;
+  --accent3: #151565;
+  --accent3-rgb: 21, 21, 101;
+  --white: #ffffff;
+  --black: #000000;
+  --light: #fafafa;
+  --dark: #333333;
   --text-color-primary: #333333;
   --text-color-secondary: #747474;
   --bg-primary: #ffffff;
   --bg-secondary: #fafafa;
   --border-primary: #666;
   --border-secondary: #fafafa;
+  --gradient-1: linear-gradient(30deg, #145650, #651b15);
+  --gradient-2: linear-gradient(30deg, #43cea2, #185a9d);
+  --gradient-3: linear-gradient(30deg, #43cea2, #185a9d);
 }
 
 [data-theme="dark"] {
-  --color-primary: #145650;
-  --color-white: #ffffff;
-  --color-black: #000000;
-  --color-secondary: lighten(#145650, 0.8);
-  --color-light: #333333;
-  --color-dark: #fafafa;
+  --primary: #145650;
+  --white: #ffffff;
+  --black: #000000;
+  --secondary: lighten(#145650, 0.8);
+  --light: #333333;
+  --dark: #fafafa;
   --text-color-primary: #ffffff;
   --text-color-secondary: #dee2e6;
   --bg-primary: #212529;

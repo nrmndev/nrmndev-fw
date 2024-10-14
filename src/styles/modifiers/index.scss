@@ -1,6 +1,7 @@
 @use "../base/variables" as var;
 @use "./border" as border;
 @use "./box-shadow" as box-shadow;
+@use "./background-clip" as bg-clip;
 
 // SPACING Modifier Classes ie. .p-sm, .border-xxl
 
@@ -10,6 +11,7 @@
   .p-#{$size} {
     padding: var(--spacing-#{$size});
   }
+
   .pt-#{$size} {
     padding-top: var(--spacing-#{$size});
   }
@@ -27,6 +29,7 @@
   .m-#{$size} {
     margin: var(--spacing-#{$size});
   }
+
   .mt-#{$size} {
     margin-top: var(--spacing-#{$size});
   }
@@ -49,51 +52,58 @@
   }
 }
 
+// RESETS
+.p-0 {
+  padding: 0;
+}
+.m-0 {
+  margin: 0;
+}
 // THEME Classes ie.  .bg-primary, .color-secondary
 @for $j from 1 through length(var.$themes) {
   $theme: nth(var.$themes, $j);
 
   // Background classes
   .bg-#{$theme} {
-    background: var(--color-#{$theme});
+    background: var(--#{$theme});
   }
 
   // Color classes
   .color-#{$theme},
   .list__icon--#{$theme},
   .list__item.color-#{$theme} a {
-    color: var(--color-#{$theme});
+    color: var(--#{$theme});
   }
 
   // Border Outlined classes
   .outlined-#{$theme} {
-    border: 1px solid var(--color-#{$theme});
+    border: 1px solid var(--#{$theme});
   }
 
   //Border Color classes
   .border-color-#{$theme} {
-    border-color: var(--color-#{$theme});
+    border-color: var(--#{$theme});
   }
 
   //Hover Classes ie. hover:color-primary
   body .hover\:color-#{$theme}:hover {
     //color: var(--color-#{$theme});
-    color: var(--color-#{$theme});
+    color: var(--#{$theme});
   }
 
   //Overlay Classes ie. div.before:bg-primary
   .before\:bg-#{$theme}:before {
     //color: var(--color-#{$theme});
-    background: var(--color-#{$theme});
+    background: var(--#{$theme});
   }
 
   //Btn Classes
   .btn-solid-#{$theme} {
-    background: var(--color-#{$theme});
-    color: var(--color-white);
+    background: var(--#{$theme});
+    color: var(--white);
   }
   .btn-outline-#{$theme} {
-    border-color: var(--color-#{$theme});
-    color: var(--color-#{$theme});
+    border-color: var(--#{$theme});
+    color: var(--#{$theme});
   }
 }
