@@ -1,6 +1,7 @@
 import { BaseProps, BoxShadowProps, MarginProps, PaddingProps } from "@uiTypes";
 import { propStyleHandler } from "@utils";
 import classNames from "classnames";
+import { CardContent, CardMedia, Typography } from "@uiComponents";
 // import React from "react";
 
 interface CardComponentProps
@@ -13,6 +14,7 @@ const Card = ({
   margin,
   padding = "sm",
   boxShadow,
+  children,
   ...rest
 }: CardComponentProps) => {
   const { className, inline } = propStyleHandler({
@@ -24,7 +26,7 @@ const Card = ({
   const classes = classNames("card", className);
   return (
     <div {...rest} className={classes} style={inline}>
-      Card
+      {children}
     </div>
   );
 };
