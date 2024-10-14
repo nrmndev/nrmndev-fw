@@ -126,42 +126,29 @@ const textTransform = {
     },
   },
 };
-const argTypesRecord: Record<string, any> = {
-  children,
-  color,
-  size,
-  padding,
-  margin,
-  variant,
-  fontSize,
+
+const argTypes = {
   textAlign,
   textTransform,
+  color,
+  children,
+  variant,
+  margin,
+  padding,
+  size,
+  fontSize,
 };
-// Create a record of argument types
-// const argTypesRecord: Record<string, ArgType> = {
-//   children: children,
-//   color: color,
-// };
 
-type ArgTypesGenerator =
-  | "color"
-  | "children"
-  | "size"
-  | "padding"
-  | "margin"
-  | "variant"
-  | "fontSize"
-  | "textAlign"
-  | "textTransform";
+type ArgTypesGenerator = keyof typeof argTypes;
 
 const argTypesGenerator = (args: ArgTypesGenerator[]) => {
-  let argTypes: any = {};
+  let argOptions: any = {};
 
   args.map((arg) => {
-    argTypes = { ...argTypes, ...argTypesRecord[arg] };
+    argOptions = { ...argOptions, ...argTypes[arg] };
   });
   //console.log(argTypes);
-  return argTypes;
+  return argOptions;
 };
 
 export default argTypesGenerator;

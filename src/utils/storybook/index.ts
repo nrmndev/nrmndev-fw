@@ -1,7 +1,7 @@
-export { default as Options } from "./options";
+export { default as Options } from "./argTypesGenerator/options";
 export { typeDocGenerator } from "./typeDocGenerator";
 export { default as argTypesGenerator } from "./argTypesGenerator";
-export { default as childrenAsPropModifier } from "./childrenAsPropModifier";
+// export { default as childrenAsPropModifier } from "./childrenAsPropModifier";
 
 // const Options = {
 //   colorOptions: ["primary", "secondary", "accent"],
