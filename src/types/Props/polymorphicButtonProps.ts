@@ -1,41 +1,39 @@
-import { AnchorTargetOptions, ButtonOptions } from "@uiTypes";
+import { AnchorTargetOptions, ButtonTypeOptions } from "@uiTypes";
 
-export interface ButtonProp {
-  type?: ButtonOptions;
+export type ButtonProp = {
+  type?: ButtonTypeOptions;
   onClick?: () => void;
-}
+};
 
-export interface AnchorLinkProps {
+export type AnchorLinkProps = {
   href: string;
   target?: AnchorTargetOptions;
-}
+};
 
-export interface NavLinkProps {
+export type NavLinkProps = {
   to: string;
-}
+};
 
-interface AsButton extends ButtonProp {
+type AsButton = ButtonProp & {
   as?: "button";
   href?: never;
   target?: never;
   to?: never;
-}
+};
 
-interface AsAnchorLink extends AnchorLinkProps {
+type AsAnchorLink = AnchorLinkProps & {
   as: "anchorLink";
   to?: never;
   type?: never;
   onClick?: never;
-}
+};
 
-interface AsNavLink extends NavLinkProps {
+type AsNavLink = NavLinkProps & {
   as: "navLink";
   type?: never;
   onClick?: never;
   href?: never;
   target?: never;
-}
+};
 
-type PolymorphicButtonProps = AsButton | AsAnchorLink | AsNavLink;
-
-export default PolymorphicButtonProps;
+export type PolymorphicButtonProps = AsButton | AsAnchorLink | AsNavLink;

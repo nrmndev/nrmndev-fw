@@ -1,4 +1,4 @@
-import { SizeOptions } from "types/options";
+import { SizeOptions } from "@uiTypes";
 
 type ButtonSize = SizeOptions;
 type ButtonVariant =

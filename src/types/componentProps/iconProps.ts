@@ -1,18 +1,17 @@
-import { SizeOptions } from "types/options";
+import { SizeOptions } from "@uiTypes";
 import { IconType } from "react-icons";
 import {
   BackgroundProps,
   BaseProps,
   ColorProps,
   MarginProps,
-  VariantProps,
 } from "@proptypes";
 
 export type IconProps = BaseProps &
   BackgroundProps &
   ColorProps &
-  MarginProps &
-  VariantProps & {
+  MarginProps & {
+    variant?: "solid" | "outline";
     icon: IconType | string; // Use IconType for react-icons
     rounded?: boolean;
     iconSize?: SizeOptions;

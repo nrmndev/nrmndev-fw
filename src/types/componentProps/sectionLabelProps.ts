@@ -1,5 +1,5 @@
 import { IconType } from "react-icons";
-import { ColorOptions, OpacityOptions, SizeOptions } from "types/options";
+import { ColorOptions, IncrementOf5Options, SizeOptions } from "@uiTypes";
 
 type DecorationsProps = {
   decoration?: {
@@ -9,7 +9,7 @@ type DecorationsProps = {
     left?: { color?: ColorOptions; Icon?: IconType };
     textBackdrop?: {
       size?: SizeOptions;
-      opacity?: OpacityOptions;
+      opacity?: IncrementOf5Options;
       color?: ColorOptions;
       label: string;
     };

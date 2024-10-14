@@ -1,8 +1,6 @@
-import { AlignOptions, JustifyOptions } from "types/options";
+import { AlignOptions, JustifyOptions } from "@uiTypes";
 
-interface FlexBoxProps {
+export type FlexBoxProps = {
   justifySelf?: JustifyOptions;
   alignSelf?: AlignOptions;
-}
-
-export default FlexBoxProps;
+};

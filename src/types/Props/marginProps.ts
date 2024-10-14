@@ -1,7 +1,5 @@
-import { EdgeOptions, SizeOptions } from "types/options";
+import { EdgeOptions, SizeOptions } from "@uiTypes";
 
-type MarginProps = {
+export type MarginProps = {
   margin?: SizeOptions | EdgeOptions;
 };
-
-export default MarginProps;

@@ -26,9 +26,7 @@ export interface FormEventHandlerProps<T> {
   onInvalid?: React.FormEventHandler<T>;
 }
 
-interface AllEventHandlerProps<T>
+export interface AllEventHandlerProps<T>
   extends MouseEventHandlerProps<T>,
     KeyboardEventHandlerProps<T>,
     FocusEventHandlerProps<T> {}
-
-export default AllEventHandlerProps;

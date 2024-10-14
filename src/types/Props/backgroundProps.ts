@@ -1,4 +1,4 @@
-import { ColorOptions } from "types/options";
+import { ColorOptions } from "@uiTypes";
 
 export type BackgroundAsImageProps = {
   image?: string;

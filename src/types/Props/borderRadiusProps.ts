@@ -1,15 +1,13 @@
-import { SizeOptions } from "types/options";
+import { SizeOptions } from "@uiTypes";
 
-type BorderRadiusProps = {
-  borderRadius?:
-    | {
-        topLeft?: number;
-        topRight?: number;
-        bottomRight?: number;
-        bottomLeft?: number;
-        unit?: "px" | "%" | "rem";
-      }
-    | SizeOptions;
+export type BorderRadiusOptions = {
+  topLeft?: number;
+  topRight?: number;
+  bottomRight?: number;
+  bottomLeft?: number;
+  unit?: "px" | "%" | "rem";
 };
 
-export default BorderRadiusProps;
+export type BorderRadiusProps = {
+  borderRadius?: BorderRadiusOptions | SizeOptions;
+};

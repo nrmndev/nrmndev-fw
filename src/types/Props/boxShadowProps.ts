@@ -1,7 +1,11 @@
-import { BoxShadowOptions } from "types/options";
+export type BoxShadowOptions =
+  | "box-shadow-1"
+  | "box-shadow-2"
+  | "box-shadow-3"
+  | "box-shadow-4"
+  | "box-shadow-5"
+  | "box-shadow-6";
 
-type BoxShadowProps = {
+export type BoxShadowProps = {
   boxShadow?: BoxShadowOptions;
 };
-
-export default BoxShadowProps;

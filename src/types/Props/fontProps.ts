@@ -1,11 +1,17 @@
-import { SizeOptions } from "@uiTypes";
+export type FontStyleOptions =
+  | "italic"
+  | "normal"
+  | "inherit"
+  | "oblique"
+  | "unset"
+  | "inital";
 
-type FontProps = {
+export type FontFamilyOptions = "openSans" | "custom-1" | "custom-2";
+
+export type FontProps = {
   font?: {
-    size?: SizeOptions;
-    family?: "openSans" | "custom-1" | "custom-2";
-    style?: "italic" | "normal" | "inherit" | "oblique" | "unset" | "inital";
+    size?: "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
+    family?: FontFamilyOptions;
+    style?: FontStyleOptions;
   };
 };
-
-export default FontProps;

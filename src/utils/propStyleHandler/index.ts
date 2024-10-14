@@ -88,22 +88,22 @@ export const propStyleHandler = (props: PropStyleHanlderProps = {}) => {
   }
   //Padding classes ie. p-sm p-md...
   if (padding && typeof padding === "string") {
-    className.push("p-" + padding);
+    padding === "zero" ? className.push("p-0") : className.push("p-" + padding);
   }
   //Margin classes ie. m-sm m-md...
   if (margin && typeof margin === "string") {
-    className.push("m-" + margin);
+    margin === "zero" ? className.push("m-0") : className.push("p-" + margin);
   }
   //Color class ie. color-primary...
   if (color && typeof color === "string") {
-    className.push("color-" + color);
+    className.push(propToClass.color(color));
   }
 
   //FontSize class ie. font-size-sm
   if (fontSize && typeof fontSize === "string") {
     className.push("font-size-" + fontSize);
   }
-  //FontSize class ie. font-size-sm
+  //BoxShadow class ie. box-shadow-1
   if (boxShadow && typeof boxShadow === "string") {
     className.push(boxShadow);
   }
@@ -120,8 +120,8 @@ export const propStyleHandler = (props: PropStyleHanlderProps = {}) => {
     border.value && className.push("border-" + border.value);
   }
 
-  const classes = propToClass({ flex });
-  classes && className.push(classes);
+  // const classes = propToClass.flexClasses( flex );
+  // classes && className.push(classes);
   // Create the base style object
 
   let inline: React.CSSProperties = {

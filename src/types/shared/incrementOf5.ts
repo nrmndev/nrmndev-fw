@@ -1,4 +1,4 @@
-export type OpacityOptions =
+export type IncrementOf5Options =
   | 0
   | 5
   | 10

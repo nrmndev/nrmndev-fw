@@ -1,7 +1,6 @@
-import { ColorOptions, OpacityOptions } from "types/options";
+import { IncrementOf5Options } from "types/shared";
+import { ColorOptions } from "@uiTypes";
 
-type OverlayProps = {
-  overlay?: { color?: ColorOptions; opacity?: OpacityOptions };
+export type OverlayProps = {
+  overlay?: { color?: ColorOptions; opacity?: IncrementOf5Options };
 };
-
-export default OverlayProps;

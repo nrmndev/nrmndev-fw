@@ -1,49 +1,93 @@
-export type { default as AnimationProps } from "./animationProps";
+export type {
+  default as AnimationProps,
+  AnimationOptions,
+} from "./animationProps";
+
 export type {
   default as BackgroundProps,
   BackgroundAsImageProps,
 } from "./backgroundProps";
-export type { default as BaseProps, RequireBaseProps } from "./baseProps";
+
+export type { BaseProps, RequireBaseProps } from "./baseProps";
+
+//Shouldn't it be size not value? @borderProps
 export type {
-  default as BorderProps,
+  BorderProps,
   BorderIsEdgeOptions,
   BorderIsSizeOptions,
   BorderBaseProps,
 } from "./borderProps";
-export type { default as BorderRadiusProps } from "./borderRadiusProps";
-export type { default as BoxShadowProps } from "./boxShadowProps";
+
+export type { BoxShadowProps, BoxShadowOptions } from "./boxShadowProps";
+
 export type {
-  default as ColumnProps,
+  BorderRadiusProps,
+  BorderRadiusOptions,
+} from "./borderRadiusProps";
+
+export type { AnchorTargetOptions, ButtonTypeOptions } from "./buttonProps";
+
+export type { ColorProps, ColorOptions } from "./colorProps";
+
+export type {
+  ColumnProps,
   ColumnBreakpointProps,
+  ColumnOptions,
 } from "./columnProps";
-export type { default as ColorProps } from "./colorProps";
-export type { default as ContainerGridProps } from "./containerGridProps";
+
+//Not Sure about this Prop
+export type { ContainerGridProps } from "./containerGridProps";
+
+// Double check usage
 export type {
-  default as AllEventHandlerProps,
   FocusEventHandlerProps,
   KeyboardEventHandlerProps,
   MouseEventHandlerProps,
   FormEventHandlerProps,
 } from "./eventHandlerProps";
-export type { default as FontSizeProps } from "./fontSizeProps";
-export type { default as FlexProps, FlexColumnProps } from "./flexProps";
-export type { default as FlexBoxProps } from "./flexBoxProps";
-export type { default as FontProps } from "./fontProps";
-export type { default as GeneralProps } from "./inputProps";
-export type { default as LayoutProps, SpacingProps } from "./layoutProps";
-export type { default as OverlayProps } from "./overlayProps";
-export type { default as SizeProps } from "./sizeProps";
-export type { default as VariantProps } from "./variantProps";
+
 export type {
-  default as PolymorphicButtonProps,
+  FlexProps,
+  FlexColumnProps,
+  AlignContentOptions,
+  AlignItemsOptions,
+  FlexDirectionOptions,
+  FlexWrapOptions,
+  JustifyContentOptions,
+} from "./flexProps";
+
+export type { FlexBoxProps } from "./flexBoxProps";
+
+export type { FontSizeProps, FontSizeOptions } from "./fontSizeProps";
+
+export type {
+  FontProps,
+  FontFamilyOptions,
+  FontStyleOptions,
+} from "./fontProps";
+
+//Better check usage
+export type { InputProps } from "./inputProps";
+
+export type { LayoutProps, SpacingProps } from "./layoutProps";
+
+export type { OverlayProps } from "./overlayProps";
+
+export type {
+  PolymorphicButtonProps,
   AnchorLinkProps,
   NavLinkProps,
 } from "./polymorphicButtonProps";
-export type { default as MarginProps } from "./marginProps";
-export type { default as PaddingProps } from "./paddingProps";
-// export type { default as TextAlignProps } from "./textAlignProps";
+
+export type { MarginProps } from "./marginProps";
+
+export type { PaddingProps } from "./paddingProps";
+
+export type { SizeProps, SizeOptions } from "./sizeProps";
+
 export type {
   TextTransformProps,
   TextAlignProps,
+  TextAsProps,
   TypographyProps,
 } from "./typographyProps";

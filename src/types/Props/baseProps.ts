@@ -1,4 +1,4 @@
-type BaseProps = {
+export type BaseProps = {
   className?: string;
   id?: string;
   style?: React.CSSProperties;
@@ -9,8 +9,6 @@ type BaseProps = {
   tabIndex?: number;
   // label?: string;
 };
-
-export default BaseProps;
 
 export type RequireBaseProps<T extends keyof BaseProps> = Required<
   Pick<BaseProps, T>

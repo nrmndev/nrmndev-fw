@@ -1,7 +1,4 @@
-import { SizeOptions } from "types/options";
-
-interface SizeProps {
+export type SizeOptions = "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "zero";
+export type SizeProps = {
   size?: SizeOptions;
-}
-
-export default SizeProps;
+};

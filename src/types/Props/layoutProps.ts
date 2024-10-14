@@ -1,11 +1,17 @@
-import { MarginProps, PaddingProps } from "@uiTypes";
-import { AlignOptions, JustifyOptions, SizeOptions } from "types/options";
+import {
+  MarginProps,
+  PaddingProps,
+  AlignOptions,
+  JustifyOptions,
+  SizeOptions,
+} from "@uiTypes";
 
-export default interface LayoutProps {
+export type LayoutProps = {
   justifyContent?: JustifyOptions;
   alignItems?: AlignOptions;
-}
+};
 
-export interface SpacingProps extends PaddingProps, MarginProps {
+export type SpacingProps = {
   gap?: SizeOptions;
-}
+} & PaddingProps &
+  MarginProps;

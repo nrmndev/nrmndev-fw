@@ -1,7 +1,5 @@
 import { EdgeOptions, SizeOptions } from "@uiTypes";
 
-type PaddingProps = {
+export type PaddingProps = {
   padding?: SizeOptions | EdgeOptions;
 };
-
-export default PaddingProps;
