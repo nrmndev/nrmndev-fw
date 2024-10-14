@@ -1,5 +1,3 @@
-import React from "react";
-
 type CardMediaComponentProps = {
   image: string;
   title?: string;
@@ -20,7 +18,7 @@ const CardMedia = ({
         // display: "none",
       }}
       role="img"
-      title="green iguana"
+      title={title}
     />
   );
 };

@@ -70,7 +70,7 @@ export const propStyleHandler = (props: PropStyleHanlderProps = {}) => {
     borderRadius,
     boxShadow,
     color,
-    flex,
+    //flex,
     fontSize,
     margin,
     padding,

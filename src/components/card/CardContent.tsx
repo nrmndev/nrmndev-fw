@@ -1,6 +1,5 @@
 import { BaseProps, PaddingProps } from "@uiTypes";
 import classNames from "classnames";
-import React from "react";
 
 type CardContentComponentProps = {} & PaddingProps & BaseProps;
 const CardContent = ({

@@ -1,7 +1,6 @@
 import { BaseProps, BoxShadowProps, MarginProps, PaddingProps } from "@uiTypes";
 import { propStyleHandler } from "@utils";
 import classNames from "classnames";
-import { CardContent, CardMedia, Typography } from "@uiComponents";
 // import React from "react";
 
 interface CardComponentProps
