@@ -4,9 +4,9 @@
 @use "abstracts/animations" as animations;
 @use "abstracts/functions" as functions;
 @use "abstracts/mixins" as mixins;
-@use "modifiers" as modifiers;
 //@use "abstracts/index" as *;
 @use "components/index" as *;
+@use "modifiers" as modifiers;
 
 @use "layouts" as *;
 @use "animations/index" as *;

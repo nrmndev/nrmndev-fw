@@ -40,13 +40,13 @@ const Column = ({
     padding,
   });
   const combinedClasses = classNames(
+    "col",
     xs ? `col-xs-${xs}` : "",
     sm ? `col-sm-${sm}` : "",
     md ? `col-md-${md}` : "",
     lg ? `col-lg-${lg}` : "",
     xl ? `col-xl-${xl}` : "",
     xxl ? `col-xxl-${xxl}` : "",
-    flex ? "flex" : "",
     className,
     rest.className
   );

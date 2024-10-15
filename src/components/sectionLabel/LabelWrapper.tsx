@@ -1,6 +1,7 @@
 import {
   ColorOptions,
   ColorProps,
+  FontSizeProps,
   IncrementOf5Options,
   SizeOptions,
 } from "@uiTypes";
@@ -26,9 +27,11 @@ type LabelWrapperProps = {
     label: string;
   };
   as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span";
-} & ColorProps;
+} & ColorProps &
+  FontSizeProps;
 const LabelWrapper = ({
   label,
+  fontSize,
   color = "primary",
   leftDecoration,
   rightDecoration,
@@ -47,7 +50,12 @@ const LabelWrapper = ({
         />
       )}
 
-      <Typography as={as} className="section-label__text" color={color}>
+      <Typography
+        as={as}
+        className="section-label__text"
+        color={color}
+        fontSize={fontSize}
+      >
         {label}
       </Typography>
 

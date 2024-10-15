@@ -55,7 +55,13 @@ $sizes: xs, sm, md, lg, xl, xxl;
 .container--fluid {
   max-width: 100%;
 }
-
+.col {
+  display: flex;
+  padding: 15px;
+}
+.row {
+  margin: 0 -15px;
+}
 .container--grid {
   display: grid;
 }

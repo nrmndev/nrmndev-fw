@@ -1,23 +1,21 @@
 .font {
-  &-size {
-    &-xs {
-      font-size: 0.8rem;
-    }
-    &-sm {
-      font-size: 1rem;
-    }
-    &-md {
-      font-size: 2rem;
-    }
-    &-lg {
-      font-size: 3rem;
-    }
-    &-xl {
-      font-size: 4rem;
-    }
-    &-xxl {
-      font-size: 5rem;
-    }
+  &-xs {
+    font-size: 0.8rem;
+  }
+  &-sm {
+    font-size: 1rem;
+  }
+  &-md {
+    font-size: 2rem;
+  }
+  &-lg {
+    font-size: 3rem;
+  }
+  &-xl {
+    font-size: 4rem;
+  }
+  &-xxl {
+    font-size: 5rem;
   }
 }
 

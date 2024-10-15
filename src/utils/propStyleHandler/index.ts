@@ -70,7 +70,7 @@ export const propStyleHandler = (props: PropStyleHanlderProps = {}) => {
     borderRadius,
     boxShadow,
     color,
-    //flex,
+    flex,
     fontSize,
     margin,
     padding,
@@ -101,7 +101,7 @@ export const propStyleHandler = (props: PropStyleHanlderProps = {}) => {
 
   //FontSize class ie. font-size-sm
   if (fontSize && typeof fontSize === "string") {
-    className.push("font-size-" + fontSize);
+    className.push("font-" + fontSize);
   }
   //BoxShadow class ie. box-shadow-1
   if (boxShadow && typeof boxShadow === "string") {
@@ -120,7 +120,10 @@ export const propStyleHandler = (props: PropStyleHanlderProps = {}) => {
     border.value && className.push("border-" + border.value);
   }
 
-  // const classes = propToClass.flexClasses( flex );
+  if (flex) {
+    className.push(propToClass.flex(flex));
+  }
+  //const classes = propToClass.flexClasses( flex );
   // classes && className.push(classes);
   // Create the base style object
 

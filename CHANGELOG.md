@@ -1,6 +1,15 @@
 ## Changelog
 
-### [v1.1.1-beta.5] - 2024-15-10
+### [v1.1.2-beta.6] - 2024-15-10
+
+- **SECTION LABEL**
+  - Added `{fontSize}` prop for text Sizing
+- **COLUMN COMPONENT (NEW)** : Granular control over child elements
+  - With Utility Layout props
+  - Added `{flex}` Props: controls child alignment
+  - Responsive `{xs, sm, md, lg, xl, xxl}` column props
+
+### [v1.1.2-beta.5] - 2024-15-10
 
 - **CARD COMPONENT**
   - Added `{background}` props
@@ -9,7 +18,7 @@
 - **PropStyleHandler**
   - Fixed `{margin}` handle
 
-### [v1.1.1-beta.4] - 2024-14-10
+### [v1.1.2-beta.4] - 2024-14-10
 
 - **FONT SYSTEM**
   - Heading Default Font: changed from _Anton_ to MontserratBold

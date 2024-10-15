@@ -22,7 +22,7 @@ $alignItems: ("start", "end", "center", "baseline", "stretch");
 @for $j from 1 through length($alignItems) {
   $val: nth($alignItems, $j);
   .items-#{$val} {
-    align-items: #{$alignItems};
+    align-items: #{$val};
   }
 }
 // Justify Content

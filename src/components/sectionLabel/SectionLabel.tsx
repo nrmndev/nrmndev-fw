@@ -1,9 +1,10 @@
-import { ColorProps, SectionLabelProps } from "@uiTypes";
+import { ColorProps, FontSizeProps, SectionLabelProps } from "@uiTypes";
 import classNames from "classnames";
 import LabelWrapper from "./LabelWrapper";
 
 export interface SectionLabelComponentProps
   extends SectionLabelProps,
+    FontSizeProps,
     ColorProps {
   label: string;
   position?: "left" | "center" | "right";
@@ -15,6 +16,7 @@ const SectionLabel = ({
   color = "primary",
   label,
   decoration,
+  fontSize,
   as = "h2",
 }: SectionLabelComponentProps) => {
   let RightDecor, LeftDecor, DecorTextBackdrop;
@@ -40,6 +42,7 @@ const SectionLabel = ({
           color={color}
           as={as}
           label={label}
+          fontSize={fontSize}
           leftDecoration={LeftDecor}
           rightDecoration={RightDecor}
           textBackdrop={DecorTextBackdrop}
