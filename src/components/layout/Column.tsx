@@ -40,6 +40,7 @@ const Column = ({
     padding,
   });
   const combinedClasses = classNames(
+    //flex ? "col" : "",
     "col",
     xs ? `col-xs-${xs}` : "",
     sm ? `col-sm-${sm}` : "",

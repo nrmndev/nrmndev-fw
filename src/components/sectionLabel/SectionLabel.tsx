@@ -27,7 +27,7 @@ const SectionLabel = ({
   }
 
   const classes = classNames(
-    "sectionLabel",
+    "section-label",
     `color-${color}`,
     position ? "section-label--" + position : ""
   );

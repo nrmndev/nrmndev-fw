@@ -22,7 +22,7 @@ const Row = ({
     xxlColumns,
   };
   const { className } = propStyleHandler({ flexColumns });
-  const classes = classNames("row", flexColumns && `flex`, className);
+  const classes = classNames("row", className);
   return <div {...rest} className={classes}></div>;
 };
 

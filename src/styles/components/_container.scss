@@ -56,11 +56,20 @@ $sizes: xs, sm, md, lg, xl, xxl;
   max-width: 100%;
 }
 .col {
-  display: flex;
-  padding: 15px;
+  // display: flex;
+  padding: 10px;
 }
 .row {
-  margin: 0 -15px;
+  margin: 0 -10px;
+  display: flex;
+  flex-wrap: wrap;
+  // &.flex > * {
+  //   display: flex;
+  //   padding: 10px;
+  // }
+}
+[class*="row flex-"] > * {
+  display: flex;
 }
 .container--grid {
   display: grid;
