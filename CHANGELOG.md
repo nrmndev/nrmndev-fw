@@ -1,5 +1,9 @@
 ## Changelog
 
+### [v1.1.2-beta.7] - 2024-15-10
+
+- **ROW/COLUMN** : Fix flex classnames
+
 ### [v1.1.2-beta.6] - 2024-15-10
 
 - **SECTION LABEL**
