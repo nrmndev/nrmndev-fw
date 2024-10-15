@@ -9,6 +9,8 @@ export type ColorOptions =
   | "gradient-1"
   | "gradient-2"
   | "gradient-3"
+  | "gradient-4"
+  | "gradient-5"
   | "light"
   | "white";
 

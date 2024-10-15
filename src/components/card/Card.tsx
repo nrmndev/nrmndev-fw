@@ -1,10 +1,17 @@
-import { BaseProps, BoxShadowProps, MarginProps, PaddingProps } from "@uiTypes";
+import {
+  BackgroundProps,
+  BaseProps,
+  BoxShadowProps,
+  MarginProps,
+  PaddingProps,
+} from "@uiTypes";
 import { propStyleHandler } from "@utils";
 import classNames from "classnames";
 // import React from "react";
 
 interface CardComponentProps
   extends BaseProps,
+    BackgroundProps,
     BoxShadowProps,
     PaddingProps,
     MarginProps {}
@@ -12,6 +19,7 @@ interface CardComponentProps
 const Card = ({
   margin,
   padding = "sm",
+  background,
   boxShadow,
   children,
   ...rest
@@ -21,6 +29,7 @@ const Card = ({
     margin,
     padding,
     userStyle: rest.style,
+    background,
   });
   const classes = classNames("card", className);
   return (

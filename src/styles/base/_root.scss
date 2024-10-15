@@ -41,9 +41,11 @@
   --bg-secondary: #fafafa;
   --border-primary: #666;
   --border-secondary: #fafafa;
-  --gradient-1: linear-gradient(30deg, #145650, #651b15);
-  --gradient-2: linear-gradient(30deg, #43cea2, #185a9d);
-  --gradient-3: linear-gradient(30deg, #43cea2, #185a9d);
+  --gradient-1: linear-gradient(30deg, var(--primary), var(--secondary));
+  --gradient-2: linear-gradient(30deg, var(--primary), var(--light));
+  --gradient-3: linear-gradient(30deg, var(--primary), var(--dark));
+  --gradient-4: linear-gradient(30deg, var(--secondary), var(--light));
+  --gradient-5: linear-gradient(30deg, var(--secondary), var(--dark));
 }
 
 [data-theme="dark"] {

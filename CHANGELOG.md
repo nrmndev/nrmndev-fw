@@ -1,5 +1,14 @@
 ## Changelog
 
+### [v1.1.1-beta.5] - 2024-15-10
+
+- **CARD COMPONENT**
+  - Added `{background}` props
+- **CSS STYLES**
+  - Added root gradient variables
+- **PropStyleHandler**
+  - Fixed `{margin}` handle
+
 ### [v1.1.1-beta.4] - 2024-14-10
 
 - **FONT SYSTEM**

@@ -92,7 +92,7 @@ export const propStyleHandler = (props: PropStyleHanlderProps = {}) => {
   }
   //Margin classes ie. m-sm m-md...
   if (margin && typeof margin === "string") {
-    margin === "zero" ? className.push("m-0") : className.push("p-" + margin);
+    margin === "zero" ? className.push("m-0") : className.push("m-" + margin);
   }
   //Color class ie. color-primary...
   if (color && typeof color === "string") {
