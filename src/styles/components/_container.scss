@@ -68,8 +68,10 @@ $sizes: xs, sm, md, lg, xl, xxl;
   //   padding: 10px;
   // }
 }
-[class*="row flex-"] > * {
+
+.row[class*="flex-"] > * {
   display: flex;
+  box-sizing: border-box;
 }
 .container--grid {
   display: grid;

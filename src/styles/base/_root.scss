@@ -10,6 +10,20 @@
   --spacing-lg: 2.5rem;
   --spacing-xl: 3rem;
   --spacing-xxl: 3.5rem;
+  //Margin
+  --margin-xs: 1rem;
+  --margin-sm: 1.5rem;
+  --margin-md: 2rem;
+  --margin-lg: 2.5rem;
+  --margin-xl: 3rem;
+  --margin-xxl: 3.5rem;
+  //Padding
+  --padding-xs: 1rem;
+  --padding-sm: 1.5rem;
+  --padding-md: 2rem;
+  --padding-lg: 2.5rem;
+  --padding-xl: 3rem;
+  --padding-xxl: 3.5rem;
   //Box shadow
   --box-shadow-1: 1px 1px 6px #dedede;
   --box-shadow-2: 0px 0px 3px #e8eaee;
@@ -18,6 +32,11 @@
   --box-shadow-4: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   --box-shadow-5: rgba(0, 0, 0, 0.12) 0px 1px 3px,
     rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  --gradient-1: linear-gradient(30deg, var(--primary), var(--secondary));
+  --gradient-2: linear-gradient(30deg, var(--primary), var(--light));
+  --gradient-3: linear-gradient(30deg, var(--primary), var(--dark));
+  --gradient-4: linear-gradient(30deg, var(--secondary), var(--light));
+  --gradient-5: linear-gradient(30deg, var(--secondary), var(--dark));
 }
 :root,
 [data-theme="light"] {
@@ -41,11 +60,6 @@
   --bg-secondary: #fafafa;
   --border-primary: #666;
   --border-secondary: #fafafa;
-  --gradient-1: linear-gradient(30deg, var(--primary), var(--secondary));
-  --gradient-2: linear-gradient(30deg, var(--primary), var(--light));
-  --gradient-3: linear-gradient(30deg, var(--primary), var(--dark));
-  --gradient-4: linear-gradient(30deg, var(--secondary), var(--light));
-  --gradient-5: linear-gradient(30deg, var(--secondary), var(--dark));
 }
 
 [data-theme="dark"] {

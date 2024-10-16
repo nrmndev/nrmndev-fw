@@ -1,0 +1,8 @@
+$displays: block, inline-block, flex, inline, grid, table;
+
+@for $j from 1 through length($displays) {
+  $display: nth($displays, $j);
+  .d-#{$display} {
+    display: #{$display};
+  }
+}

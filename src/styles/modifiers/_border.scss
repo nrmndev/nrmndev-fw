@@ -1,3 +1,4 @@
+@use "../base/variables" as var;
 .border {
   &-solid {
     border-style: solid;
@@ -7,5 +8,29 @@
   }
   &-dotted {
     border-style: dotted;
+  }
+}
+
+//Layout Classes
+@for $j from 1 through length(var.$sizes) {
+  $size: nth(var.$sizes, $j);
+
+  //Border
+  .border-#{$size} {
+    border-width: var(--spacing-#{$size});
+  }
+}
+
+//Skin Classes
+@for $j from 1 through length(var.$themes) {
+  $theme: nth(var.$themes, $j);
+  // Border Outlined classes
+  .outlined-#{$theme} {
+    border: 1px solid var(--#{$theme});
+  }
+
+  //Border Color classes
+  .border-color-#{$theme} {
+    border-color: var(--#{$theme});
   }
 }

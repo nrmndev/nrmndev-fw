@@ -1,0 +1,42 @@
+@use "../base/variables" as var;
+
+// SPACING Modifier Classes ie. .p-sm, .border-xxl
+
+@for $j from 1 through length(var.$sizes) {
+  $size: nth(var.$sizes, $j);
+  //Margins
+  .m-#{$size} {
+    margin: var(--spacing-#{$size});
+  }
+  .mh-#{$size} {
+    margin-top: var(--spacing-#{size});
+    margin-bottom: var(--spacing-#{size});
+  }
+  .mv-#{$size} {
+    margin-left: var(--spacing-#{size});
+    margin-right: var(--spacing-#{size});
+  }
+  .mt-#{$size} {
+    margin-top: var(--spacing-#{$size});
+  }
+  .mt-negative-#{$size} {
+    margin-top: calc(var(--spacing-#{$size}) * -1);
+  }
+  .mr-#{$size} {
+    margin-right: var(--spacing-#{$size});
+  }
+  .mb-#{$size} {
+    margin-bottom: var(--spacing-#{$size});
+  }
+  .mb-negative-#{$size} {
+    margin-bottom: calc(var(--spacing-#{$size}) * -1);
+  }
+  .ml-#{$size} {
+    margin-left: var(--spacing-#{$size});
+  }
+}
+
+//Reset
+.m-0 {
+  margin: 0;
+}

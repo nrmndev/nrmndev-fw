@@ -1,3 +1,8 @@
-@forward "root" as root-*;
-@forward "variables" as var-*;
-@forward "typography" as typo-*;
+@use "./root" as root;
+@forward "root";
+
+@use "./variables" as var;
+@forward "variables";
+
+@use "./typography" as typography;
+@forward "typography";

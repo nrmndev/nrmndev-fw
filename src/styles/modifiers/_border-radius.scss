@@ -1,0 +1,12 @@
+@use "../base/variables" as var;
+
+// SPACING Modifier Classes ie. .p-sm, .border-xxl
+
+@for $j from 1 through length(var.$sizes) {
+  $size: nth(var.$sizes, $j);
+
+  //Border Radius
+  .br-#{$size} {
+    border-radius: var(--spacing-#{$size});
+  }
+}

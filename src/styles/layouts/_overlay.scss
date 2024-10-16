@@ -23,3 +23,19 @@
     opacity: #{calc($val / 100)};
   }
 }
+
+@for $j from 1 through length(var.$themes) {
+  $theme: nth(var.$themes, $j);
+
+  //Hover Classes ie. hover:color-primary
+  body .hover\:color-#{$theme}:hover {
+    //color: var(--color-#{$theme});
+    color: var(--#{$theme});
+  }
+
+  //Overlay Classes ie. div.before:bg-primary
+  .before\:bg-#{$theme}:before {
+    //color: var(--color-#{$theme});
+    background: var(--#{$theme});
+  }
+}

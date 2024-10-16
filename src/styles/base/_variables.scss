@@ -56,7 +56,7 @@ $colors: (
   // "accent-2": $accent-2,
   // "heading": $heading,
   // "body": $body,
-  // "light": $light,,,,,,,,,,,,
+  // "light": $light,,,,,,,,,,,,,
 );
 
 $grid-breakpoints: (
@@ -75,4 +75,22 @@ $sizes-as-rem: (
   lg: var(--spacing-lg),
   xl: var(--spacing-xl),
   xxl: var(--spacing-xxl),
+);
+
+$margin-as-rem: (
+  xs: var(--margin-xs),
+  sm: var(--margin-sm),
+  md: var(--margin-md),
+  lg: var(--margin-lg),
+  xl: var(--margin-xl),
+  xxl: var(--margin-xxl),
+);
+
+$padding-as-rem: (
+  xs: var(--padding-xs),
+  sm: var(--padding-sm),
+  md: var(--padding-md),
+  lg: var(--padding-lg),
+  xl: var(--padding-xl),
+  xxl: var(--padding-xxl),
 );
