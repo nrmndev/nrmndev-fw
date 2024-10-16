@@ -27,6 +27,7 @@ const SampleRow = () => {
             xxlColumns={3}
             xlColumns={3}
             xsColumns={1}
+            flex={{ alignItems: "stretch", justifyContent: "center" }}
           >
             <Media
               icon={{

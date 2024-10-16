@@ -13,10 +13,13 @@ import { BsFillHouseGearFill } from "react-icons/bs";
 import { FaBeer, FaCheck, FaCog } from "react-icons/fa";
 const SampleCard = () => (
   <>
-    <Container>
+    <Container marginTop={"sm"} marginBottom="negative-lg">
       <Row>
         <Column xxl={6} xl={6} lg={6} md={12} sm={12} xs={12}>
-          ye
+          <img
+            src="../../../public/images/homepage/image-1.png"
+            style={{ display: "block", width: "100%" }}
+          />
         </Column>
         <Column xxl={6} xl={6} lg={6} md={12} sm={12} xs={12} padding={"sm"}>
           <SectionLabel
@@ -630,6 +633,56 @@ const SampleCard = () => (
             </Column>
           </Row>
         </Container>
+      </Container>
+    </Container>
+    <Container fluid background={"black"} padding={"xl"}>
+      {/* <SectionLabel
+        label="How are we going"
+        position="center"
+        
+      ></SectionLabel> */}
+      <Container flex={{ alignContent: "center", justifyContent: "around" }}>
+        <Column>
+          <Media
+            icon={{
+              icon: BsFillHouseGearFill,
+              rounded: true,
+              variant: "outline",
+              background: "white",
+            }}
+            heading={{ children: "1.2m+", as: "h3", color: "white" }}
+            body={{
+              children: "Projects Done",
+              color: "white",
+            }}
+          />
+          <Media
+            icon={{
+              icon: BsFillHouseGearFill,
+              rounded: true,
+              variant: "outline",
+              background: "white",
+            }}
+            heading={{ children: "1.2m+", as: "h3", color: "white" }}
+            body={{
+              children: "Projects Done",
+              color: "white",
+            }}
+          />{" "}
+          <Media
+            icon={{
+              icon: BsFillHouseGearFill,
+              rounded: true,
+              variant: "outline",
+              background: "white",
+            }}
+            heading={{ children: "1.2m+", as: "h3", color: "white" }}
+            body={{
+              children: "Projects Done",
+              color: "white",
+            }}
+          />
+        </Column>
       </Container>
     </Container>
   </>

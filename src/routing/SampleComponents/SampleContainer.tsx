@@ -83,7 +83,6 @@ const SampleContainer = () => {
         padding={"lg"}
         margin={"xxl"}
         border={{ value: "lg", color: "primary" }}
-        gap="md"
         fluid
         alignItems="center"
         // style={{ backgroundColor: "black", minHeight: "200px" }}
@@ -148,7 +147,6 @@ const SampleContainer = () => {
         padding={"lg"}
         margin={"xxl"}
         border={{ value: "lg", color: "accent2" }}
-        gap="md"
         fluid
         alignItems="center"
       >

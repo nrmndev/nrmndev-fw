@@ -2,7 +2,6 @@ import App from "../App";
 import { createBrowserRouter } from "react-router-dom";
 import SampleList from "./SampleComponents/SampleList";
 import SampleButton from "./SampleComponents/SampleButton";
-import SampleHeading from "./SampleComponents/SampleHeading";
 import SampleIcon from "./SampleComponents/SampleIcon";
 import SampleSectionLabel from "./SampleComponents/SampleSectionLabel";
 import SampleMedia from "./SampleComponents/SampleMedia";
@@ -16,60 +15,27 @@ import SampleHeroBanner from "./SampleComponents/SampleHero";
 import SampleTypography from "./SampleComponents/SampleTypography";
 import SampleCard from "./SampleComponents/SampleCard";
 import SampleRow from "./SampleComponents/SampleRow";
+import SampleImage from "./SampleComponents/SampleImage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
-      {
-        path: "list",
-        element: <SampleList />,
-      },
-      {
-        path: "row",
-        element: <SampleRow />,
-      },
-      {
-        path: "card",
-        element: <SampleCard />,
-      },
-      {
-        path: "button",
-        element: <SampleButton />,
-      },
-      { path: "sectionlabel", element: <SampleSectionLabel /> },
-      { path: "icon", element: <SampleIcon /> },
+      { path: "button", element: <SampleButton /> },
+      { path: "card", element: <SampleCard /> },
       { path: "container", element: <SampleContainer /> },
-      {
-        path: "heading",
-        element: <SampleHeading />,
-      },
-      {
-        path: "media",
-        element: <SampleMedia />,
-      },
-      {
-        path: "form",
-        element: <SampleForm />,
-      },
-
-      {
-        path: "hovercard",
-        element: <SampleHoverCard />,
-      },
-      {
-        path: "progressbar",
-        element: <SampleProgressBar />,
-      },
-      {
-        path: "countdown",
-        element: <SampleCountdown />,
-      },
-      {
-        path: "typography",
-        element: <SampleTypography />,
-      },
+      { path: "countdown", element: <SampleCountdown /> },
+      { path: "form", element: <SampleForm /> },
+      { path: "hovercard", element: <SampleHoverCard /> },
+      { path: "icon", element: <SampleIcon /> },
+      { path: "image", element: <SampleImage /> },
+      { path: "list", element: <SampleList /> },
+      { path: "media", element: <SampleMedia /> },
+      { path: "progressbar", element: <SampleProgressBar /> },
+      { path: "row", element: <SampleRow /> },
+      { path: "sectionlabel", element: <SampleSectionLabel /> },
+      { path: "typography", element: <SampleTypography /> },
       {
         path: "mainnavigation",
         element: (
