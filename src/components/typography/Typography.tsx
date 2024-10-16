@@ -1,39 +1,30 @@
-import { BaseProps, MarginProps, TypographyProps } from "@uiTypes";
-import { propStyleHandler } from "@utils";
-import classNames from "classnames";
+import {
+  BaseProps,
+  TextAlignProps,
+  TextDecorationProps,
+  TextTransformProps,
+  TypographyProps,
+  MarginDiscriminatedProps,
+} from "@uiTypes";
 
-export interface TypographyComponentProps
-  extends BaseProps,
-    TypographyProps,
-    MarginProps {}
+import { UtilityStyledComponent } from "@uiComponents";
+
+export type TypographyComponentProps = BaseProps &
+  TypographyProps &
+  TextDecorationProps &
+  TextTransformProps &
+  TextAlignProps &
+  MarginDiscriminatedProps;
+
 const Typography = ({
-  as: Component = "p",
   children,
-  color,
-  textAlign,
-  textTransform,
-  fontSize,
-  margin,
-  ...rest
+  as = "p",
+  ...utilityProps
 }: TypographyComponentProps) => {
-  const { className, inline } = propStyleHandler({
-    userStyle: rest.style,
-    color,
-    fontSize,
-    margin,
-  });
-
-  const classes = classNames(
-    //color ? "color-" + color : undefined,
-    textAlign ? `text-${textAlign}` : undefined,
-    textTransform ? `text-${textTransform}` : undefined,
-    className,
-    rest.className
-  );
   return (
-    <Component {...rest} style={inline} className={classes}>
+    <UtilityStyledComponent as={as} {...utilityProps}>
       {children}
-    </Component>
+    </UtilityStyledComponent>
   );
 };
 

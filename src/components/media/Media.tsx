@@ -25,9 +25,7 @@ export interface MediaProps
     position?: "top-left" | "left" | "right" | "top-center" | "top-right";
   };
   heading: TypographyComponentProps;
-  body: Omit<TypographyComponentProps, "as"> & {
-    as?: "p" | "span";
-  };
+  body: TypographyComponentProps;
 }
 
 const Media = ({
@@ -44,7 +42,6 @@ const Media = ({
   //Icon props
   const {
     position: iconPosition = "left",
-    margin: iconMargin = "sm",
     color: iconColor = mainColor ? mainColor : "primary",
     ...iconProps
   } = icon;
@@ -55,11 +52,11 @@ const Media = ({
     ...headingProps
   } = heading;
   //Typography as Body props
-  const {
-    as: bodyAs = "p",
-    color: bodyColor = mainColor ? mainColor : "black",
-    ...bodyProps
-  } = body;
+  // const {
+  //   as: bodyAs = "p",
+  //   //  color: bodyColor = mainColor ? mainColor : "black",
+  //   ...bodyProps
+  // } = body;
 
   //Media Props
   const { className, inline } = propStyleHandler({
@@ -72,12 +69,7 @@ const Media = ({
 
   return (
     <div {...rest} className={classes} style={inline}>
-      <Icon
-        {...iconProps}
-        color={iconColor}
-        margin={iconMargin}
-        className="media__icon"
-      />
+      <Icon {...iconProps} color={iconColor} className="media__icon" />
       <div className="media__content ">
         <Typography
           {...headingProps}
@@ -87,9 +79,9 @@ const Media = ({
         />
 
         <Typography
-          {...bodyProps}
-          as={bodyAs}
-          color={bodyColor}
+          // {...bodyProps}
+          {...body}
+          //color={bodyColor}
           className="media__body"
         />
       </div>

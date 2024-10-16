@@ -9,7 +9,7 @@ import {
   ButtonProps,
   ColorProps,
   FontSizeProps,
-  MarginProps,
+  MarginDiscriminatedProps,
   PaddingProps,
 } from "@uiTypes";
 import classNames from "classnames";
@@ -25,21 +25,18 @@ import { propStyleHandler } from "utils/propStyleHandler";
 //   | "solid-accent-3"
 //   | "solid-dark"
 //   | "solid-white";
-export interface IProps
-  extends BaseProps,
-    ButtonProps,
-    BorderProps,
-    BorderRadiusProps,
-    BackgroundProps,
-    ColorProps,
-    FontSizeProps,
-    PaddingProps,
-    MarginProps {
-  // variant?: "solid" | "outlined";
-  // size?: ButtonSize;
+export type IProps = {
   display?: "block" | "inline-block";
   as?: "button" | "anchorLink" | "navLink";
-}
+} & BaseProps &
+  ButtonProps &
+  BorderProps &
+  BorderRadiusProps &
+  BackgroundProps &
+  ColorProps &
+  FontSizeProps &
+  PaddingProps &
+  MarginDiscriminatedProps;
 
 type ExtendedIProps = IProps & PolymorphicButtonProps;
 

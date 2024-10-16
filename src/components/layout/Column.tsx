@@ -1,57 +1,46 @@
 import {
   BackgroundProps,
-  BaseProps,
+  //BaseProps,
   BorderProps,
-  ColumnProps,
+  ColumnBreakpointProps,
   FlexProps,
+  MarginDiscriminatedProps,
   SpacingProps,
 } from "@uiTypes";
-import { propStyleHandler } from "@utils";
-import classNames from "classnames";
 
-export interface ColumnComponentProps
-  extends BaseProps,
-    BackgroundProps,
-    BorderProps,
-    ColumnProps,
-    SpacingProps,
-    FlexProps {}
+import { UtilityStyledComponent } from "@uiComponents";
+
+export type ColumnComponentProps = {
+  className?: string;
+  id?: string;
+  style?: React.CSSProperties;
+  children?: React.ReactNode;
+  title?: string;
+  role?: string;
+  name?: string;
+  tabIndex?: number;
+} & BackgroundProps &
+  BorderProps &
+  ColumnBreakpointProps &
+  SpacingProps &
+  MarginDiscriminatedProps &
+  FlexProps;
 
 const Column = ({
-  xs,
-  sm,
-  md,
-  lg,
-  xl,
-  xxl,
-  background,
-  border,
-  padding,
-  margin,
-  flex,
-  ...rest
+  id,
+  style: userStyle,
+  children,
+  title,
+  role,
+  name,
+  tabIndex,
+  ...utilityClasses
 }: ColumnComponentProps) => {
-  const { className, inline } = propStyleHandler({
-    userStyle: rest.style,
-    background,
-    flex,
-    border,
-    margin,
-    padding,
-  });
-  const combinedClasses = classNames(
-    //flex ? "col" : "",
-    "col",
-    xs ? `col-xs-${xs}` : "",
-    sm ? `col-sm-${sm}` : "",
-    md ? `col-md-${md}` : "",
-    lg ? `col-lg-${lg}` : "",
-    xl ? `col-xl-${xl}` : "",
-    xxl ? `col-xxl-${xxl}` : "",
-    className,
-    rest.className
+  return (
+    <UtilityStyledComponent as="div" {...utilityClasses}>
+      {children}
+    </UtilityStyledComponent>
   );
-  return <div {...rest} className={combinedClasses} style={inline}></div>;
 };
 
 export default Column;

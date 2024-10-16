@@ -6,9 +6,11 @@ import {
   BorderProps,
   BorderRadiusProps,
   FlexProps,
-  LayoutProps,
+  FlexLayoutProps,
   OverlayProps,
-  SpacingProps,
+  //SpacingProps,
+  PaddingProps,
+  MarginDiscriminatedProps,
 } from "@uiTypes";
 import classNames from "classnames";
 
@@ -19,9 +21,10 @@ export type ContainerComponentProps = BaseProps &
   BorderProps &
   BorderRadiusProps &
   FlexProps &
-  LayoutProps &
+  FlexLayoutProps &
   OverlayProps &
-  SpacingProps & { fluid?: boolean };
+  PaddingProps &
+  MarginDiscriminatedProps & { fluid?: boolean };
 
 const Container = ({
   alignItems,
@@ -31,9 +34,15 @@ const Container = ({
   children,
   fluid,
   flex,
-  gap,
+  //gap,
   justifyContent,
   margin,
+  marginBottom,
+  marginLeft,
+  marginRight,
+  marginTop,
+  vMargin,
+  hMargin,
   overlay,
   padding,
   ...rest
@@ -45,14 +54,22 @@ const Container = ({
   //   ["", alignItems ? "items-" + alignItems : ""],
   //   ["", gap ? "gap-" + gap : ""],
   // ]);
-
+  const allMarginProps = {
+    vMargin,
+    hMargin,
+    margin,
+    marginBottom,
+    marginLeft,
+    marginRight,
+    marginTop,
+  };
   const { className, inline } = propStyleHandler({
     userStyle: rest.style,
     background,
     border,
     borderRadius,
     padding,
-    margin,
+    ...allMarginProps,
     flex,
   });
 
@@ -70,6 +87,7 @@ const Container = ({
     className,
     rest.className
   );
+
   return (
     <div {...rest} className={combinedClasses} style={inline}>
       {children}

@@ -2,19 +2,18 @@ import {
   BackgroundProps,
   BaseProps,
   BoxShadowProps,
-  MarginProps,
+  MarginDiscriminatedProps,
   PaddingProps,
 } from "@uiTypes";
 import { propStyleHandler } from "@utils";
 import classNames from "classnames";
 // import React from "react";
 
-interface CardComponentProps
-  extends BaseProps,
-    BackgroundProps,
-    BoxShadowProps,
-    PaddingProps,
-    MarginProps {}
+type CardComponentProps = {} & BaseProps &
+  BackgroundProps &
+  BoxShadowProps &
+  PaddingProps &
+  MarginDiscriminatedProps;
 
 const Card = ({
   margin,
