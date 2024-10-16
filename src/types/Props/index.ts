@@ -4,6 +4,13 @@ export type {
 } from "./animationProps";
 
 export type {
+  AsComponentProps,
+  AsAnchorProps,
+  AsImgProps,
+  AsOptionalProps,
+} from "./asProps";
+
+export type {
   default as BackgroundProps,
   BackgroundAsImageProps,
 } from "./backgroundProps";
@@ -29,15 +36,12 @@ export type { AnchorTargetOptions, ButtonTypeOptions } from "./buttonProps";
 
 export type { ColorProps, ColorOptions } from "./colorProps";
 
-export type {
-  ColumnProps,
-  ColumnBreakpointProps,
-  ColumnOptions,
-} from "./columnProps";
+export type { ColumnBreakpointProps, ColumnOptions } from "./columnProps";
 
 //Not Sure about this Prop
 export type { ContainerGridProps } from "./containerGridProps";
 
+export type { DisplayProps, DisplayOptions } from "./displayProps";
 // Double check usage
 export type {
   FocusEventHandlerProps,
@@ -69,7 +73,7 @@ export type {
 //Better check usage
 export type { InputProps } from "./inputProps";
 
-export type { LayoutProps, SpacingProps } from "./layoutProps";
+export type { FlexLayoutProps, SpacingProps } from "./layoutProps";
 
 export type { OverlayProps } from "./overlayProps";
 
@@ -79,15 +83,22 @@ export type {
   NavLinkProps,
 } from "./polymorphicButtonProps";
 
-export type { MarginProps } from "./marginProps";
+export type {
+  MarginProps,
+  MarginAxisProps,
+  MarginEdgeProps,
+  MarginDiscriminatedProps,
+  MarginShorthandProps,
+} from "./marginProps";
 
 export type { PaddingProps } from "./paddingProps";
 
-export type { SizeProps, SizeOptions } from "./sizeProps";
+export type { SizeProps, SizeOptions, SizeNegativeOptions } from "./sizeProps";
 
 export type {
   TextTransformProps,
   TextAlignProps,
   TextAsProps,
   TypographyProps,
+  TextDecorationProps,
 } from "./typographyProps";

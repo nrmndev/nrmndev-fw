@@ -1,15 +1,22 @@
 import { ColorProps, FontSizeProps } from "@uiTypes";
 
 export type TextTransformOptions = "uppercase" | "capitalize" | "lowercase";
-
-export type TextAlignOptions = "left" | "center" | "right";
-
 export type TextTransformProps = {
   textTransform?: TextTransformOptions;
 };
 
+export type TextAlignOptions = "left" | "center" | "right";
 export type TextAlignProps = {
   textAlign?: TextAlignOptions;
+};
+
+export type TextDecorationOptions =
+  | "none"
+  | "dashed"
+  | "underline"
+  | "line-through";
+export type TextDecorationProps = {
+  textDecoration?: TextDecorationOptions;
 };
 
 export type TextAsProps = {

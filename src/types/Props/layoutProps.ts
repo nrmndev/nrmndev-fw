@@ -6,7 +6,7 @@ import {
   SizeOptions,
 } from "@uiTypes";
 
-export type LayoutProps = {
+export type FlexLayoutProps = {
   justifyContent?: JustifyOptions;
   alignItems?: AlignOptions;
 };

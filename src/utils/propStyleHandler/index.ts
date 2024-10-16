@@ -4,24 +4,34 @@ import {
   BorderRadiusProps,
   BoxShadowProps,
   ColorProps,
+  ColumnBreakpointProps,
+  DisplayProps,
   FlexColumnProps,
   FlexProps,
   FontSizeProps,
-  MarginProps,
   //OverlayProps,
   PaddingProps,
+  TextAlignProps,
+  TextDecorationProps,
+  TextTransformProps,
 } from "@uiTypes";
 import { default as pTS } from "./asInline";
-import propToClass from "./asClassName";
+import propToClass, { AllMarginProps } from "./asClassName";
+//import { MarginDiscriminatedProps } from "types/props/marginProps";
 
-type PropStyleHanlderProps = BorderProps &
+export type PropStyleHanlderProps = BorderProps &
   BackgroundProps &
   BorderRadiusProps &
   BoxShadowProps &
   ColorProps &
+  ColumnBreakpointProps &
+  DisplayProps &
   FlexProps &
   FontSizeProps &
-  MarginProps &
+  AllMarginProps &
+  TextDecorationProps &
+  TextTransformProps &
+  TextAlignProps &
   //OverlayProps &
   PaddingProps & {
     userStyle?: React.CSSProperties;
@@ -63,19 +73,35 @@ type PropStyleHanlderProps = BorderProps &
  * // }
  */
 
-export const propStyleHandler = (props: PropStyleHanlderProps = {}) => {
+export const propStyleHandler = (props: PropStyleHanlderProps) => {
   const {
-    border,
     background,
+    border,
     borderRadius,
     boxShadow,
     color,
+    display,
     flex,
-    fontSize,
-    margin,
-    padding,
     flexColumns,
+    fontSize,
+    hMargin,
+    lg,
+    margin,
+    marginBottom,
+    marginLeft,
+    marginRight,
+    marginTop,
+    md,
+    padding,
+    sm,
+    textAlign,
+    textDecoration,
+    textTransform,
     userStyle,
+    vMargin,
+    xl,
+    xs,
+    xxl,
   } = props;
   let className = [];
   //Background classes ie. p-sm p-md...
@@ -90,15 +116,45 @@ export const propStyleHandler = (props: PropStyleHanlderProps = {}) => {
   if (padding && typeof padding === "string") {
     padding === "zero" ? className.push("p-0") : className.push("p-" + padding);
   }
-  //Margin classes ie. m-sm m-md...
-  if (margin && typeof margin === "string") {
-    margin === "zero" ? className.push("m-0") : className.push("m-" + margin);
+  //Discriminating Union Margin classes ie. m-sm | mh-md | mb-xxl ..
+  //It will only be the either of three, type safety but has to pass everything to propToClass.margin
+  //Implementation detail is in `{propToClass.margin}`
+  const allMarginProps = {
+    vMargin,
+    hMargin,
+    margin,
+    marginBottom,
+    marginLeft,
+    marginRight,
+    marginTop,
+  };
+
+  if (allMarginProps) {
+    className.push(propToClass.margin(allMarginProps));
   }
   //Color class ie. color-primary...
   if (color && typeof color === "string") {
     className.push(propToClass.color(color));
   }
 
+  //Column BreakPoints
+  if (xl || xs || xxl || md || sm || lg) {
+    className.push(propToClass.columnBreakpoints({ xl, xs, xxl, md, sm, lg }));
+  }
+
+  //Display
+  if (display) {
+    className.push(propToClass.display({ display }));
+  }
+  if (textDecoration) {
+    className.push(propToClass.text({ textDecoration }));
+  }
+  if (textTransform) {
+    className.push(propToClass.text({ textTransform }));
+  }
+  if (textAlign) {
+    className.push(propToClass.text({ textAlign }));
+  }
   //FontSize class ie. font-size-sm
   if (fontSize && typeof fontSize === "string") {
     className.push("font-" + fontSize);

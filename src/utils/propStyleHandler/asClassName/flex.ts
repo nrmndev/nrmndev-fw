@@ -14,7 +14,7 @@ type Flex = {
   flexWrap?: FlexWrapOptions;
 };
 
-export const flexClasses = (flex: Flex): string[] | undefined => {
+export const flexClasses = (flex: Flex): string | undefined => {
   if (!flex) return undefined;
   let className = [];
   if (flex) {
@@ -25,11 +25,11 @@ export const flexClasses = (flex: Flex): string[] | undefined => {
       flexWrap,
       justifyContent,
     } = flex;
+    flexDirection && className.push(`flex-${flexDirection}`);
     alignContent && className.push(`content-${alignContent}`);
     alignItems && className.push(`items-${alignItems}`);
-    flexDirection && className.push(`flex-${flexDirection}`);
     flexWrap && className.push(`flex-${flexWrap}`);
     justifyContent && className.push(`justify-${justifyContent}`);
   }
-  return className;
+  return className.join(" ");
 };

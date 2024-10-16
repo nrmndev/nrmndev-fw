@@ -10,12 +10,12 @@ const flexColumns = ({
 }: FlexColumnProps): string => {
   const classes: string[] = [];
 
-  xsColumns && classes.push(`flex-xs-${xsColumns}`);
-  smColumns && classes.push(`flex-sm-${smColumns}`);
-  mdColumns && classes.push(`flex-md-${mdColumns}`);
-  lgColumns && classes.push(`flex-lg-${lgColumns}`);
-  xlColumns && classes.push(`flex-xl-${xlColumns}`);
-  xxlColumns && classes.push(`flex-xxl-${xxlColumns}`);
+  xsColumns ? classes.push(`flex-xs-${xsColumns}`) : undefined;
+  smColumns ? classes.push(`flex-sm-${smColumns}`) : undefined;
+  mdColumns ? classes.push(`flex-md-${mdColumns}`) : undefined;
+  lgColumns ? classes.push(`flex-lg-${lgColumns}`) : undefined;
+  xlColumns ? classes.push(`flex-xl-${xlColumns}`) : undefined;
+  xxlColumns ? classes.push(`flex-xxl-${xxlColumns}`) : undefined;
   return classes.join(" ");
 };
 
