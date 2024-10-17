@@ -15,6 +15,7 @@ import {
   TextAlignProps,
   TextDecorationProps,
   TextTransformProps,
+  WidthProps,
 } from "@uiTypes";
 import { default as pTS } from "./asInline";
 import { default as propToClass, AllMarginProps } from "./asClassName";
@@ -35,6 +36,7 @@ export type PropStyleHanlderProps = BorderProps &
   TextTransformProps &
   TextAlignProps &
   //OverlayProps &
+  WidthProps &
   PaddingProps & {
     userStyle?: React.CSSProperties;
     flexColumns?: FlexColumnProps;
@@ -103,6 +105,7 @@ export const propStyleHandler = (props: PropStyleHanlderProps) => {
     height,
     userStyle,
     vMargin,
+    width,
     xl,
     xs,
     xxl,
@@ -207,6 +210,7 @@ export const propStyleHandler = (props: PropStyleHanlderProps) => {
     ${userInlineStyle ?? ""}
     ${typeof padding === "object" ? pTS.padding(padding) ?? "" : ""}
     ${typeof height === "object" ? pTS.height({ height }) ?? "" : ""}
+    ${typeof width === "object" ? pTS.width({ width }) ?? "" : ""}
     
     ${typeof margin === "object" ? pTS.margin(margin) ?? "" : ""}
     ${typeof background === "object" ? pTS.background(background) ?? "" : ""}

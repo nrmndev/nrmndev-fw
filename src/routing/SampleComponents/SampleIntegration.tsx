@@ -1,4 +1,4 @@
-import { Container } from "@uiComponents";
+import { Container, Image } from "@uiComponents";
 
 const SampleIntegration = () => {
   return (
@@ -14,7 +14,10 @@ const SampleIntegration = () => {
       }}
       marginTop="negative-xl"
     >
-      test
+      <Image
+        src="/images/homepage/image-1.png"
+        width={{ unit: "vw", value: 100 }}
+      />
     </Container>
   );
 };

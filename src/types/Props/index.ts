@@ -71,6 +71,7 @@ export type {
 } from "./fontProps";
 
 export type { HeightProps } from "./heightProps";
+export type { WidthProps } from "./widthProps";
 //Better check usage
 export type { InputProps } from "./inputProps";
 
