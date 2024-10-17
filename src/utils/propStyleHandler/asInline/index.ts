@@ -13,6 +13,7 @@ import { padding } from "./padding";
 import { margin } from "./margin";
 import { fontSize } from "./fontSize";
 import { borderRadius } from "./borderRadius";
+import { height } from "./height";
 // type BoxShadowOptions = Record<1 | 2 | 3, string>;
 // type Border = BorderBaseProps & (BorderIsEdgeOptions & BorderIsEdgeOptions);
 // type FontSize = { value: number; unit?: "px" | "%" | "rem" };
@@ -30,6 +31,7 @@ const propToStyle = {
   border,
   boxShadow,
   borderRadius,
+  height,
   padding,
   margin,
   fontSize,

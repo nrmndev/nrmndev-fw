@@ -9,6 +9,7 @@ import {
   FlexColumnProps,
   FlexProps,
   FontSizeProps,
+  HeightProps,
   //OverlayProps,
   PaddingProps,
   TextAlignProps,
@@ -16,7 +17,7 @@ import {
   TextTransformProps,
 } from "@uiTypes";
 import { default as pTS } from "./asInline";
-import propToClass, { AllMarginProps } from "./asClassName";
+import { default as propToClass, AllMarginProps } from "./asClassName";
 //import { MarginDiscriminatedProps } from "types/props/marginProps";
 
 export type PropStyleHanlderProps = BorderProps &
@@ -27,6 +28,7 @@ export type PropStyleHanlderProps = BorderProps &
   ColumnBreakpointProps &
   DisplayProps &
   FlexProps &
+  HeightProps &
   FontSizeProps &
   AllMarginProps &
   TextDecorationProps &
@@ -36,6 +38,7 @@ export type PropStyleHanlderProps = BorderProps &
   PaddingProps & {
     userStyle?: React.CSSProperties;
     flexColumns?: FlexColumnProps;
+    className?: string;
   };
 
 /**
@@ -53,8 +56,8 @@ export type PropStyleHanlderProps = BorderProps &
  *
  * @param {PropStyleHanlderProps} props - The collection of style-related props passed into the component.
  * @returns {object} An object containing two objects:
- *   - `inlineStyles` - The styles to be applied inline using the `style` attribute, generated from object-based props. Make sure you destructure or use object return added to your component' style={}
- *   - `classNameStyles` - The class names to be applied to the component, generated from predefined union string props. Make sure you add it to your classNames utility or to your component' className={}
+ *   - `styled` - The props that need calculation, (mostly in object form ie. margin={{top:2,unit:"px"}}) will be handled by propToStyle. PropToStyle has a custom methods for each property and will return a css-friendly string literal. This string literal will be added in the variable `{styled}` to be used in your component.
+ *   - `className` - The class names to be applied to the component, generated from predefined union string props. Make sure you add it to your classNames utility or to your component' className={}
  *
  * @example
  * const styles = propStyleHandler({
@@ -97,13 +100,18 @@ export const propStyleHandler = (props: PropStyleHanlderProps) => {
     textAlign,
     textDecoration,
     textTransform,
+    height,
     userStyle,
     vMargin,
     xl,
     xs,
     xxl,
+    className: componentClassName,
   } = props;
   let className = [];
+  if (componentClassName) {
+    className.push(componentClassName.split(" "));
+  }
   //Background classes ie. p-sm p-md...
   if (background && typeof background === "string") {
     className.push("bg-" + background);
@@ -116,6 +124,7 @@ export const propStyleHandler = (props: PropStyleHanlderProps) => {
   if (padding && typeof padding === "string") {
     padding === "zero" ? className.push("p-0") : className.push("p-" + padding);
   }
+
   //Discriminating Union Margin classes ie. m-sm | mh-md | mb-xxl ..
   //It will only be the either of three, type safety but has to pass everything to propToClass.margin
   //Implementation detail is in `{propToClass.margin}`
@@ -179,20 +188,55 @@ export const propStyleHandler = (props: PropStyleHanlderProps) => {
   if (flex) {
     className.push(propToClass.flex(flex));
   }
-  //const classes = propToClass.flexClasses( flex );
-  // classes && className.push(classes);
-  // Create the base style object
 
-  let inline: React.CSSProperties = {
-    ...userStyle,
-    // Inline styles modifiers ie. paddingTop: 10px, marginBottom: 3%.
-    ...(typeof padding === "object" ? pTS.padding(padding) : {}),
-    ...(typeof margin === "object" ? pTS.margin(margin) : {}),
-    ...(typeof background === "object" ? pTS.background(background) : {}),
-    ...(typeof border === "object" && !border.value ? pTS.border(border) : {}),
-    ...(typeof borderRadius === "object" ? pTS.borderRadius(borderRadius) : {}),
-    ...(typeof fontSize === "object" ? pTS.fontSize(fontSize) : {}),
+  //CONVERT React.CSSProperties into a CSS-friendly string literal
+  let userInlineStyle = "";
+  if (userStyle) {
+    userInlineStyle = Object.entries(userStyle)
+      .map(([key, value]) => {
+        const cssKey = key.replace(
+          /[A-Z]/g,
+          (match) => `-${match.toLowerCase()}`
+        ); // Convert camelCase to kebab-case
+        return `${cssKey}: ${value};`;
+      })
+      .join(" ");
+  }
+
+  let styled: string = `
+    ${userInlineStyle ?? ""}
+    ${typeof padding === "object" ? pTS.padding(padding) ?? "" : ""}
+    ${typeof height === "object" ? pTS.height({ height }) ?? "" : ""}
+    
+    ${typeof margin === "object" ? pTS.margin(margin) ?? "" : ""}
+    ${typeof background === "object" ? pTS.background(background) ?? "" : ""}
+     ${
+       typeof border === "object" && !border.value
+         ? pTS.border(border) ?? ""
+         : ""
+     }
+     ${
+       typeof borderRadius === "object"
+         ? pTS.borderRadius(borderRadius) ?? ""
+         : ""
+     }
+     ${
+       typeof fontSize === "object" ? pTS.fontSize(fontSize) ?? "" : ""
+     }`.trim();
+
+  return {
+    className: className.join(" ").trim(),
+    styled: styled.length > 0 ? styled : undefined,
   };
-
-  return { className: className.join(" "), inline };
 };
+
+// let inline: React.CSSProperties = {
+//   ...userStyle,
+//   // Inline styles modifiers ie. paddingTop: 10px, marginBottom: 3%.
+//   ...(typeof padding === "object" ? pTS.padding(padding) : {}),
+//   ...(typeof margin === "object" ? pTS.margin(margin) : {}),
+//   ...(typeof background === "object" ? pTS.background(background) : {}),
+//   ...(typeof border === "object" && !border.value ? pTS.border(border) : {}),
+//   ...(typeof borderRadius === "object" ? pTS.borderRadius(borderRadius) : {}),
+//   ...(typeof fontSize === "object" ? pTS.fontSize(fontSize) : {}),
+// };

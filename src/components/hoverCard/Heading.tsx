@@ -1,15 +1,13 @@
-import { Heading } from "@uiComponents";
+import { Typography } from "@uiComponents";
 import useHoverCardProvider from "./useHoverCardProvider";
 import { BaseProps } from "@uiTypes";
 
-export interface IProps extends Required<Pick<BaseProps, "children">> {
-  level: 1 | 2 | 3 | 4 | 5 | 6;
-}
+export interface IProps extends Required<Pick<BaseProps, "children">> {}
 
-const HoverCardHeading = ({ level, children }: IProps) => {
+const HoverCardHeading = ({ children }: IProps) => {
   const isUsedInsideParentHoverCard = useHoverCardProvider();
   isUsedInsideParentHoverCard;
-  return <Heading level={level}>{children}</Heading>;
+  return <Typography as="h3">{children}</Typography>;
 };
 
 export default HoverCardHeading;

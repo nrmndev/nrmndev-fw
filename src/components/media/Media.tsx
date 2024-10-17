@@ -59,7 +59,7 @@ const Media = ({
   // } = body;
 
   //Media Props
-  const { className, inline } = propStyleHandler({
+  const { className } = propStyleHandler({
     padding,
     userStyle: style,
     background,
@@ -68,7 +68,7 @@ const Media = ({
   const classes = classNames("media", `media__icon-${iconPosition}`, className);
 
   return (
-    <div {...rest} className={classes} style={inline}>
+    <div {...rest} className={classes}>
       <Icon {...iconProps} color={iconColor} className="media__icon" />
       <div className="media__content ">
         <Typography

@@ -1,24 +1,24 @@
+import { HeightProps } from "@uiTypes";
+import { UtilityStyledComponent } from "components/utility-styled-component";
+
 type CardMediaComponentProps = {
   image: string;
-  title?: string;
-  height?: number;
-};
+  //title?: string;   //check implementation of title from MUI
+} & HeightProps;
 
 const CardMedia = ({
   image = "",
-  title = "",
-  height = 100,
+  //title = "",
+  height = { value: 120, unit: "px" },
 }: CardMediaComponentProps) => {
   return (
-    <div
+    <UtilityStyledComponent
+      as="div"
       className="card__media"
-      style={{
-        backgroundImage: `url(${image})`,
-        height: `${height}px`,
-        // display: "none",
-      }}
-      role="img"
-      title={title}
+      background={{ image }}
+      height={height}
+      //role="img" //check implementation of role from MUI
+      //title={title}
     />
   );
 };

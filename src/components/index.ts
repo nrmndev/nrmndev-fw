@@ -4,7 +4,6 @@ export * from "./layout";
 export * from "./form";
 export * from "./group";
 export * from "./hero";
-export * from "./heading";
 export * from "./icon";
 export * from "./image";
 export * from "./list";

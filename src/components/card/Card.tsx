@@ -5,8 +5,7 @@ import {
   MarginDiscriminatedProps,
   PaddingProps,
 } from "@uiTypes";
-import { propStyleHandler } from "@utils";
-import classNames from "classnames";
+import { UtilityStyledComponent } from "@uiComponents";
 // import React from "react";
 
 type CardComponentProps = {} & BaseProps &
@@ -15,26 +14,17 @@ type CardComponentProps = {} & BaseProps &
   PaddingProps &
   MarginDiscriminatedProps;
 
-const Card = ({
-  margin,
-  padding = "sm",
-  background,
-  boxShadow,
-  children,
-  ...rest
-}: CardComponentProps) => {
-  const { className, inline } = propStyleHandler({
-    boxShadow,
-    margin,
-    padding,
-    userStyle: rest.style,
-    background,
-  });
-  const classes = classNames("card", className);
+const Card = ({ children, ...rest }: CardComponentProps) => {
+  const { padding = "sm" } = rest;
   return (
-    <div {...rest} className={classes} style={inline}>
+    <UtilityStyledComponent
+      as="div"
+      className="card"
+      {...rest}
+      padding={padding}
+    >
       {children}
-    </div>
+    </UtilityStyledComponent>
   );
 };
 

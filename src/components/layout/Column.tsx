@@ -37,7 +37,7 @@ const Column = ({
   ...utilityClasses
 }: ColumnComponentProps) => {
   return (
-    <UtilityStyledComponent as="div" {...utilityClasses}>
+    <UtilityStyledComponent as="div" {...utilityClasses} className="col">
       {children}
     </UtilityStyledComponent>
   );

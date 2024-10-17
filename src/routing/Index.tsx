@@ -16,6 +16,7 @@ import SampleTypography from "./SampleComponents/SampleTypography";
 import SampleCard from "./SampleComponents/SampleCard";
 import SampleRow from "./SampleComponents/SampleRow";
 import SampleImage from "./SampleComponents/SampleImage";
+import SampleIntegration from "./SampleComponents/SampleIntegration";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,7 @@ const router = createBrowserRouter([
       { path: "row", element: <SampleRow /> },
       { path: "sectionlabel", element: <SampleSectionLabel /> },
       { path: "typography", element: <SampleTypography /> },
+      { path: "integration", element: <SampleIntegration /> },
       {
         path: "mainnavigation",
         element: (

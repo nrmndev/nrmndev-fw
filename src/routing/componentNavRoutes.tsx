@@ -17,6 +17,7 @@ const LinksArray = [
   { label: "Row", to: "/row" },
   { label: "Section Label", to: "/sectionlabel" },
   { label: "Typography", to: "/typography" },
+  { label: "Utility Integration", to: "/integration" },
 ];
 
 const ListItem = LinksArray.map((link, i) => {

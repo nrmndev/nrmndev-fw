@@ -70,6 +70,7 @@ export type {
   FontStyleOptions,
 } from "./fontProps";
 
+export type { HeightProps } from "./heightProps";
 //Better check usage
 export type { InputProps } from "./inputProps";
 

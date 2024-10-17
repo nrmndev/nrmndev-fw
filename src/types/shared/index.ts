@@ -6,3 +6,9 @@ export type {
   PositionOptions,
   FlexAlignOptions,
 } from "./layoutOptions";
+
+export type {
+  ValueAndUnitProps,
+  ValueOptions,
+  UnitOptions,
+} from "./valueAndUnit";

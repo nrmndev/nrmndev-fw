@@ -51,7 +51,7 @@ const Icon = (props: IconComponentProps) => {
   );
 
   return (
-    <span {...rest} className={className} style={propStyle.inline}>
+    <span {...rest} className={className}>
       {typeof Icon === "string" ? (
         <img src={Icon} className="icon__image" />
       ) : (

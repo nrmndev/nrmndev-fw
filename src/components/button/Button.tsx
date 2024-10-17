@@ -79,7 +79,6 @@ const Button = ({
   const conditionalProps: {} = {
     ...rest,
     className: className,
-    style: propStyle.inline,
     ...(Component === "anchorLink" && { href: href, target: target }),
     ...(Component === "button" && { type: type }),
     ...(Component === "navLink" && { to: to }),

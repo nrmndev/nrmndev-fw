@@ -1,14 +1,13 @@
 import { BaseProps, PaddingProps } from "@uiTypes";
-import classNames from "classnames";
+import { UtilityStyledComponent } from "components/utility-styled-component";
 
 type CardContentComponentProps = {} & PaddingProps & BaseProps;
-const CardContent = ({
-  children,
-  padding = "xs",
-  ...rest
-}: CardContentComponentProps) => {
-  const classes = classNames(rest.className, "card__content", `p-${padding}`);
-  return <div className={classes}>{children}</div>;
+const CardContent = (props: CardContentComponentProps) => {
+  //const classes = classNames(rest.className, "card__content", `p-${padding}`);
+
+  return (
+    <UtilityStyledComponent as="div" className={"card__content"} {...props} />
+  );
 };
 
 export default CardContent;

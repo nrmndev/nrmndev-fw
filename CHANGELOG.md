@@ -1,5 +1,32 @@
 ## Changelog
 
+### [v1.2.0] - 2024-16-10
+
+### MINOR VERSION RELEASED
+
+#### CSS
+
+- Added negative margin support "m-negative-xs"
+- Added root var `--margin-{size}`, `--padding-{size}` for granular control
+- Restructured modifiers and created separate files per each
+
+#### COMPONENTS
+
+- **IMAGE (NEW)**
+  - Accepts `{src}` (**required**), `{border}`, `{borderRadius}`, `{display}`;
+- **CONTAINER**
+  - Added `{background: {{image}}}` support
+  - Added discriminating union `{MarginAxisProps}` | `{MarginShorthandProps}` | `{MarginEdgeProps}`
+- **ROW**
+  - Added `flex={{justifyContent, alignItems, flexDirection, flexWrap, alignContent }}` for granular child element control
+- **UTILITYSTYLEDCOMPONENT (NEW)**
+  - Effortlessly manages all Utility Props and injects the necessary classNames into the element, allowing you to focus solely on the logic implementation. See doc for more information (link to follow).
+
+#### UTILITY
+
+- **propStyleHandler**
+  - Added `{textAlign}`, `{textTransform}`, `{display}`
+
 ### [v1.1.2-beta.7] - 2024-15-10
 
 - **ROW/COLUMN** : Fix flex classnames

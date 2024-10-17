@@ -79,7 +79,11 @@ const SampleCard = () => (
         <Container className="fluid">
           <Row lgColumns={3} mdColumns={3} xlColumns={3} xxlColumns={3}>
             <Column flex={{ alignItems: "stretch" }}>
-              <Card boxShadow="box-shadow-3" background={"white"}>
+              <Card
+                boxShadow="box-shadow-3"
+                background={"white"}
+                padding={"sm"}
+              >
                 <Media
                   padding={"zero"}
                   icon={{

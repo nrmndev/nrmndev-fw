@@ -9,12 +9,12 @@
     margin: var(--spacing-#{$size});
   }
   .mh-#{$size} {
-    margin-top: var(--spacing-#{size});
-    margin-bottom: var(--spacing-#{size});
+    margin-top: var(--spacing-#{$size});
+    margin-bottom: var(--spacing-#{$size});
   }
   .mv-#{$size} {
-    margin-left: var(--spacing-#{size});
-    margin-right: var(--spacing-#{size});
+    margin-left: var(--spacing-#{$size});
+    margin-right: var(--spacing-#{$size});
   }
   .mt-#{$size} {
     margin-top: var(--spacing-#{$size});

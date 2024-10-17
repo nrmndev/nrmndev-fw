@@ -1,4 +1,4 @@
-import { Heading } from "@uiComponents";
+import { Typography } from "@uiComponents";
 import React from "react";
 import useHoverCardProvider from "./useHoverCardProvider";
 
@@ -7,10 +7,10 @@ export interface IProps {
   children: React.ReactNode;
 }
 
-const OverlayHeading = ({ level, children }: IProps) => {
+const OverlayHeading = ({ children }: IProps) => {
   const isUsedInsideParentHoverCard = useHoverCardProvider();
   isUsedInsideParentHoverCard;
-  return <Heading level={level}>{children}</Heading>;
+  return <Typography as="h3">{children}</Typography>;
 };
 
 export default OverlayHeading;

@@ -1,5 +1,6 @@
 import { AsOptionalProps } from "@uiTypes";
 import { propStyleHandler, PropStyleHanlderProps } from "@utils";
+import styled from "styled-components";
 
 /**
  * Acts as a wrapper that handles utility props.
@@ -10,8 +11,9 @@ type UtilityStyledComponentProps = {
   as: React.ElementType;
   children?: React.ReactNode;
   style?: React.CSSProperties;
+  className?: string;
 } & PropStyleHanlderProps &
-  AsOptionalProps;
+  AsOptionalProps & { role?: string; title?: string }; //all props below are to follow
 
 const UtilityStyledComponent = (props: UtilityStyledComponentProps) => {
   const {
@@ -24,17 +26,13 @@ const UtilityStyledComponent = (props: UtilityStyledComponentProps) => {
     target,
   } = props;
 
-  // if (Component === "a") {
-  //   props.href!
-  // }
-  const { className, inline } = propStyleHandler({
+  const { className, styled } = propStyleHandler({
     ...props,
     userStyle: style,
   });
 
   const ComponentProps = {
-    className: className,
-    style: inline,
+    ...(className ? { className: className } : {}),
     ...(Component === "a" ? { href, target } : {}),
     ...(Component === "img" ? { src, alt } : {}),
     ...(Component === "iframe" ? { src } : {}),
@@ -45,7 +43,22 @@ const UtilityStyledComponent = (props: UtilityStyledComponentProps) => {
     //...(Component === "button" ? {}: {}),
   };
 
+  if (styled) {
+    return (
+      <StyledComponent as={Component} {...ComponentProps} $ss={styled}>
+        {children}
+      </StyledComponent>
+    );
+  }
   return <Component {...ComponentProps}>{children}</Component>;
 };
 
+const StyledComponent = styled.div<{ $ss?: string }>`
+  ${(props) => {
+    if (!props.$ss) {
+      return null;
+    }
+    return props.$ss;
+  }}
+`;
 export default UtilityStyledComponent;
