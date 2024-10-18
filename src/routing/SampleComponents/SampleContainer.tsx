@@ -14,11 +14,8 @@ const SampleContainer = () => {
         border={{ bottom: 10, color: "secondary" }}
         borderRadius={{ bottomLeft: 10, bottomRight: 10 }}
         background={{ image: heroBanner, attachment: "fixed" }}
-        padding={"lg"}
+        padding={{ top: 25, right: 30, bottom: 30, left: 30 }}
         fluid
-        className="overlay"
-        overlay={{ color: "white", opacity: 20 }}
-        // style={{ backgroundColor: "black", minHeight: "200px" }}
       >
         <Typography as="h4" textAlign="center" color="white">
           Sample container-flex
@@ -84,7 +81,6 @@ const SampleContainer = () => {
         margin={"xxl"}
         border={{ value: "lg", color: "primary" }}
         fluid
-        alignItems="center"
         // style={{ backgroundColor: "black", minHeight: "200px" }}
       >
         <Typography as="h4" textAlign="center" color="white">
@@ -148,7 +144,6 @@ const SampleContainer = () => {
         margin={"xxl"}
         border={{ value: "lg", color: "accent2" }}
         fluid
-        alignItems="center"
       >
         <Container
           flex={{
@@ -212,7 +207,7 @@ const SampleContainer = () => {
               rounded: true,
               variant: "outline",
             }}
-            heading={{ children: "Phone Number" }}
+            heading={{ children: "Test Column" }}
             body={{ children: <>(+55) 654 - 545 - 5418</> }}
           />
         </Column>

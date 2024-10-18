@@ -94,6 +94,7 @@ export type {
 } from "./marginProps";
 
 export type { PaddingProps } from "./paddingProps";
+export type { PositionProps, PositionOptions } from "./positionProps";
 
 export type { SizeProps, SizeOptions, SizeNegativeOptions } from "./sizeProps";
 

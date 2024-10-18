@@ -5,7 +5,7 @@ export type EdgeOptions = {
   right?: number;
   bottom?: number;
   left?: number;
-  unit?: "px" | "rem" | "%";
+  unit?: "px" | "rem" | "%" | "em";
 };
 
 export type JustifyOptions =
@@ -22,12 +22,5 @@ export type FlexAlignOptions =
   | "flex-start"
   | "baseline"
   | "stretch";
-
-export type PositionOptions = {
-  top?: SizeOptions;
-  right?: SizeOptions;
-  bottom?: SizeOptions;
-  left?: SizeOptions;
-};
 
 export type AlignOptions = "left" | "center" | "right";

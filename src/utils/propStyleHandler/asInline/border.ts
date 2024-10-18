@@ -14,7 +14,7 @@ export const border = <T extends Border>(border: T): string | undefined => {
   } = border;
 
   return `
-    borderWidth: 0; 
+    border-width: 0; 
     border-style: solid;
     ${top && `border-top: ${top}${unit};`}
     ${bottom && `border-bottom: ${bottom}${unit};`}

@@ -12,6 +12,7 @@ import {
   HeightProps,
   //OverlayProps,
   PaddingProps,
+  PositionProps,
   TextAlignProps,
   TextDecorationProps,
   TextTransformProps,
@@ -35,7 +36,7 @@ export type PropStyleHanlderProps = BorderProps &
   TextDecorationProps &
   TextTransformProps &
   TextAlignProps &
-  //OverlayProps &
+  PositionProps &
   WidthProps &
   PaddingProps & {
     userStyle?: React.CSSProperties;
@@ -98,6 +99,7 @@ export const propStyleHandler = (props: PropStyleHanlderProps) => {
     marginTop,
     md,
     padding,
+    position,
     sm,
     textAlign,
     textDecoration,
@@ -211,6 +213,7 @@ export const propStyleHandler = (props: PropStyleHanlderProps) => {
     ${typeof padding === "object" ? pTS.padding(padding) ?? "" : ""}
     ${typeof height === "object" ? pTS.height({ height }) ?? "" : ""}
     ${typeof width === "object" ? pTS.width({ width }) ?? "" : ""}
+    ${typeof position === "object" ? pTS.position({ position }) ?? "" : ""}
     
     ${typeof margin === "object" ? pTS.margin(margin) ?? "" : ""}
     ${typeof background === "object" ? pTS.background(background) ?? "" : ""}

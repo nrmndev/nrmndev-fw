@@ -7,22 +7,9 @@ export const padding = <T extends EdgeOptions>(
   const { top = 0, right = 0, bottom = 0, left = 0, unit = "px" } = padding;
 
   return `
-    ${top && `padding-top: ${top}${unit};`}
-    ${bottom && `padding-bottom: ${bottom}${unit};`}
-    ${right && `padding-right: ${right}${unit};`}
-    ${left && `padding-left: ${left}${unit};`}
+    ${top || top === 0 ? `padding-top: ${top}${unit};` : ""}
+    ${right || right === 0 ? `padding-right: ${right}${unit};` : ``}
+    ${bottom || bottom === 0 ? `padding-bottom: ${bottom}${unit};` : ``}
+    ${left || left === 0 ? `padding-left: ${left}${unit};` : ``}
   `;
 };
-
-// export const padding = <T extends EdgeOptions>(
-//   padding: T
-// ): React.CSSProperties | undefined => {
-//   if (!padding) return;
-//   const { top = 0, right = 0, bottom = 0, left = 0, unit = "px" } = padding;
-//   return {
-//     ...(top ? { paddingTop: `${top}${unit}` } : {}),
-//     ...(right ? { paddingRight: `${right}${unit}` } : {}),
-//     ...(bottom ? { paddingBottom: `${bottom}${unit}` } : {}),
-//     ...(left ? { paddingLeft: `${left}${unit}` } : {}),
-//   };
-// };

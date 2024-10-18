@@ -3,7 +3,6 @@ export type {
   EdgeOptions,
   AlignOptions,
   JustifyOptions,
-  PositionOptions,
   FlexAlignOptions,
 } from "./layoutOptions";
 

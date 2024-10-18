@@ -6,15 +6,15 @@ import {
   BorderProps,
   BorderRadiusProps,
   FlexProps,
-  FlexLayoutProps,
   OverlayProps,
-  //SpacingProps,
   PaddingProps,
   MarginDiscriminatedProps,
+  PositionProps,
+  WidthProps,
+  HeightProps,
 } from "@uiTypes";
 import classNames from "classnames";
 
-import { propStyleHandler } from "@utils";
 import { UtilityStyledComponent } from "components/utility-styled-component";
 
 export type ContainerComponentProps = BaseProps &
@@ -24,6 +24,9 @@ export type ContainerComponentProps = BaseProps &
   FlexProps &
   OverlayProps &
   PaddingProps &
+  PositionProps &
+  WidthProps &
+  HeightProps &
   MarginDiscriminatedProps & { fluid?: boolean };
 
 const Container = ({ fluid, overlay, ...rest }: ContainerComponentProps) => {

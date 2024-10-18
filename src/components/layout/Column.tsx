@@ -5,6 +5,7 @@ import {
   ColumnBreakpointProps,
   FlexProps,
   MarginDiscriminatedProps,
+  PositionProps,
   SpacingProps,
 } from "@uiTypes";
 
@@ -24,10 +25,10 @@ export type ColumnComponentProps = {
   ColumnBreakpointProps &
   SpacingProps &
   MarginDiscriminatedProps &
-  FlexProps;
+  FlexProps &
+  PositionProps;
 
 const Column = ({
-  id,
   style: userStyle,
   children,
   title,

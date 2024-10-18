@@ -1,11 +1,3 @@
-// import BorderProps from "types/props/borderProps";
-
-// import {
-//   EdgeOptions,
-//   BorderIsEdgeOptions,
-//   BorderBaseProps,
-//   BackgroundAsImageProps,
-// } from "@uiTypes";
 import { boxShadow } from "./boxShadow";
 import { border } from "./border";
 import { background } from "./background";
@@ -15,18 +7,8 @@ import { fontSize } from "./fontSize";
 import { borderRadius } from "./borderRadius";
 import { height } from "./height";
 import { width } from "./width";
-// type BoxShadowOptions = Record<1 | 2 | 3, string>;
-// type Border = BorderBaseProps & (BorderIsEdgeOptions & BorderIsEdgeOptions);
-// type FontSize = { value: number; unit?: "px" | "%" | "rem" };
-// type BorderRadius = {
-//   topLeft?: number;
-//   topRight?: number;
-//   bottomRight?: number;
-//   bottomLeft?: number;
-//   unit?: "px" | "%" | "rem";
-// };
+import { position } from "./position";
 
-// type Background = BackgroundAsImageProps;
 const propToStyle = {
   background,
   border,
@@ -37,6 +19,7 @@ const propToStyle = {
   height,
   margin,
   padding,
+  position,
 };
 
 export default propToStyle;
