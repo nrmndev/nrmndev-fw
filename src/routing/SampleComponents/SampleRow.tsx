@@ -10,7 +10,7 @@ const SampleRow = () => {
         Sample row handling columns
       </Typography>
       <Container
-        border={{ bottom: { color: "primary", width: 3 } }}
+        border={{ bottom: { color: "primary", width: 10 } }}
         borderRadius={{ bottomLeft: 10, bottomRight: 10 }}
         background={{ image: heroBanner, attachment: "fixed" }}
         padding={"lg"}

@@ -11,8 +11,9 @@ export type {
 } from "./asProps";
 
 export type {
-  default as BackgroundProps,
+  BackgroundProps,
   BackgroundAsImageProps,
+  BackgroundAsColorProps,
 } from "./backgroundProps";
 
 export type { BaseProps, RequireBaseProps } from "./baseProps";
@@ -99,7 +100,8 @@ export type { SizeProps, SizeOptions, SizeNegativeOptions } from "./sizeProps";
 export type {
   TextTransformProps,
   TextAlignProps,
-  TextAsProps,
-  TypographyProps,
   TextDecorationProps,
-} from "./typographyProps";
+  TextProps,
+} from "./textProps";
+
+export type { TextAsProps, TypographyProps } from "./typographyProps";

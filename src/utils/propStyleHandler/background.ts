@@ -1,11 +1,10 @@
 import { ColorOptions, BackgroundAsImageProps } from "@uiTypes";
 import { StyleReturnType } from "./styleReturnType";
+import { BackgroundProps } from "types/props/backgroundProps";
 
-export const getBackgroundStyle = <
-  T extends BackgroundAsImageProps | ColorOptions
->(
-  background: T
-): StyleReturnType => {
+export const getBackgroundStyle = <T extends BackgroundProps>({
+  background,
+}: T): StyleReturnType => {
   let classes: string = "";
   let inline: React.CSSProperties = {};
 
@@ -13,31 +12,26 @@ export const getBackgroundStyle = <
     return { classes, inline };
   }
 
-  switch (typeof background) {
-    case "string":
-      classes += `bg-${background}`;
-      break;
-    case "object":
-      const {
-        attachment = "fixed",
-        image,
-        position = "center",
-        repeat = "no-repeat",
-        size = "cover",
-      } = background;
+  if (typeof background === "string") {
+    classes += `bg-${background}`;
+  }
 
-      const positionStyle =
-        typeof position === "object"
-          ? `${position.value}/${position.unit}`
-          : position;
-      inline = {
-        ...(background
-          ? {
-              background: `url(${image}) ${repeat} ${positionStyle}/${size} ${attachment}`,
-            }
-          : {}),
-      };
-      break;
+  if (typeof background === "object") {
+    const {
+      image,
+      attachment = "fixed",
+      position = "center",
+      size = "cover",
+      repeat = "no-repeat",
+    } = background;
+    console.log(image, attachment, position, size);
+    const positionStyle =
+      typeof position === "object"
+        ? `${position.value}/${position.unit}`
+        : position;
+    inline = {
+      background: `url(${image}) ${repeat} ${positionStyle}/${size} ${attachment}`,
+    };
   }
 
   return { classes, inline };

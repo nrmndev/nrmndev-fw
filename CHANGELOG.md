@@ -1,6 +1,13 @@
 ## Changelog
 
-### [v2.0] - 2024-21-10
+### [v2.1.0] - 2024-21-10
+
+- **HOTFIXES**
+- `{border}` now requires `{border:{width}}`
+- `{background:{}}` (as obj ie. setting image as bg) now requires `{background:{image}}`
+- changed `{textDecoration, textAlign, textTransform}` into `{text:{decoration, align, transform}}`
+
+### [v2.0.0] - 2024-21-10
 
 ### MAJOR VERSION RELEASED
 

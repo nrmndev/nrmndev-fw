@@ -1,28 +1,20 @@
-import {
-  TextAlignProps,
-  TextDecorationProps,
-  TextTransformProps,
-} from "@uiTypes";
 import { StyleReturnType } from "./styleReturnType";
+import { TextProps } from "types/props/textProps";
 
-type TextClassesProps = TextAlignProps &
-  TextTransformProps &
-  TextDecorationProps;
-
-export const getTextStyle = <T extends TextClassesProps>({
-  textAlign,
-  textTransform,
-  textDecoration,
+export const getTextStyle = <T extends TextProps>({
+  text,
 }: T): StyleReturnType => {
   let classes: string = "";
   let inline: React.CSSProperties = {};
 
-  if (!textAlign && !textTransform && !textDecoration) {
+  if (!text) {
     return { classes, inline };
   }
+  console.log(text);
+  const { align, decoration, transform } = text;
   let textArray: string[] = [];
-  textAlign ? textArray.push(`text-${textAlign}`) : ``;
-  textTransform ? textArray.push(`text-${textTransform}`) : ``;
-  textDecoration ? textArray.push(`text-${textDecoration}`) : ``;
+  align ? textArray.push(`text-${align}`) : ``;
+  decoration ? textArray.push(`text-${decoration}`) : ``;
+  transform ? textArray.push(`text-${transform}`) : ``;
   return { classes: textArray.join(" "), inline };
 };

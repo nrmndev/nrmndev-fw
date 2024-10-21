@@ -1,10 +1,10 @@
 import IntegrationComponentTesting from "components/utility-styled-component/IntegrationComponentTesting";
-
+import img from "/images/homepage/construction_1.jpg";
 const SampleIntegration = () => {
   return (
     <>
       <IntegrationComponentTesting
-        background={{ image: "/images/homepage/image-1.png" }}
+        background={{ attachment: "fixed", image: img }}
         borderRadius={"lg"}
         boxShadow="box-shadow-3"
         color="primary"
@@ -32,10 +32,12 @@ const SampleIntegration = () => {
           left: { value: 3 },
         }}
         width={{ value: 100, unit: "%" }}
-        textAlign="center"
-        textDecoration="dashed"
-        textTransform="uppercase"
-        border={{ color: "primary", width: 2, style: "dashed" }}
+        text={{
+          align: "center",
+          decoration: "underline",
+          transform: "uppercase",
+        }}
+        border={{ width: 5, color: "primary", style: "dashed" }}
         // border={{
         //   bottom: { color: "primary", width: 2, style: "dashed" },
         //   right: { color: "primary", width: 11, style: "dashed" },
@@ -57,7 +59,6 @@ const SampleIntegration = () => {
         xsColumns={7}
         children={<>Hello</>}
         className="testClassName"
-        style={{ display: "none" }}
       ></IntegrationComponentTesting>
     </>
   );

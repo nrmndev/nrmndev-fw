@@ -13,9 +13,7 @@ import {
   MarginProps,
   PaddingProps,
   PositionProps,
-  TextAlignProps,
-  TextDecorationProps,
-  TextTransformProps,
+  TextProps,
   WidthProps,
 } from "@uiTypes";
 
@@ -32,9 +30,7 @@ export type PropStyleHandlerProps = BorderProps &
   HeightProps &
   FontSizeProps &
   MarginProps &
-  TextDecorationProps &
-  TextTransformProps &
-  TextAlignProps &
+  TextProps &
   PositionProps &
   WidthProps &
   PaddingProps &
@@ -99,9 +95,9 @@ export const propStyleHandler = (props: PropStyleHandlerProps) => {
 
   //Utility handle for Text
   const textProps = {
-    textAlign: props.textAlign,
-    textDecoration: props.textDecoration,
-    textTransform: props.textTransform,
+    align: props.text?.align,
+    decoration: props.text?.decoration,
+    transform: props.text?.transform,
   };
   if (textProps) processStyle(getStyle.text, { text: textProps });
 

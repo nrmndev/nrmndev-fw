@@ -11,11 +11,11 @@ export const getBorderStyle = <T extends BorderProps>({
     return { classes, inline };
   }
 
-  if (["width"].some((key) => key in border)) {
+  if (["width", "style", "color"].some((key) => key in border)) {
     const { width, style, color } = border;
     inline = {
       borderWidth: `${width}px`,
-      borderStyle: `${style ?? "solid"}`,
+      borderStyle: `${style ? style : "solid"}`,
       borderColor: `${color ? `var(--${color})` : `var(--primary)`}`,
     };
   }
@@ -25,28 +25,28 @@ export const getBorderStyle = <T extends BorderProps>({
     inline = {
       ...(top
         ? {
-            borderTop: `${top.width}px ${top.style} ${
+            borderTop: `${top.width}px ${top.style ?? "solid"} ${
               top.color ? `var(--${top.color})` : `var(--primary)`
             }`,
           }
         : {}),
       ...(left
         ? {
-            borderLeft: `${left.width}px ${left.style} ${
+            borderLeft: `${left.width}px ${left.style ?? "solid"} ${
               left.color ? `var(--${left.color})` : `var(--primary)`
             }`,
           }
         : {}),
       ...(right
         ? {
-            borderRight: `${right.width}px ${right.style} ${
+            borderRight: `${right.width}px ${right.style ?? "solid"} ${
               right.color ? `var(--${right.color})` : `var(--primary)`
             }`,
           }
         : {}),
       ...(bottom
         ? {
-            borderBottom: `${bottom.width}px ${bottom.style} ${
+            borderBottom: `${bottom.width}px ${bottom.style ?? "solid"} ${
               bottom.color ? `var(--${bottom.color})` : `var(--primary)`
             }`,
           }

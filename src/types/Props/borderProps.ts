@@ -34,7 +34,7 @@ import {
  */
 
 type BorderBaseOptions = {
-  width?: number;
+  width: number;
   color?: ColorOptions;
   style?: "solid" | "dashed" | "dotted";
 };
