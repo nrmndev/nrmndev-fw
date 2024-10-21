@@ -20,9 +20,8 @@ export type { BaseProps, RequireBaseProps } from "./baseProps";
 //Shouldn't it be size not value? @borderProps
 export type {
   BorderProps,
-  BorderIsEdgeOptions,
-  BorderIsSizeOptions,
-  BorderBaseProps,
+  BorderEdgeOptions,
+  BorderOptions,
 } from "./borderProps";
 
 export type { BoxShadowProps, BoxShadowOptions } from "./boxShadowProps";
@@ -87,10 +86,9 @@ export type {
 
 export type {
   MarginProps,
-  MarginAxisProps,
-  MarginEdgeProps,
-  MarginDiscriminatedProps,
-  MarginShorthandProps,
+  MarginAxisOptions,
+  MarginEdgeOptions,
+  MarginValueUnitOptions,
 } from "./marginProps";
 
 export type { PaddingProps } from "./paddingProps";

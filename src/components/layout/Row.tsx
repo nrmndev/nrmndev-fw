@@ -1,7 +1,5 @@
 import { BaseProps, FlexColumnProps, FlexProps, PositionProps } from "@uiTypes";
-import { propStyleHandler } from "@utils";
-import classNames from "classnames";
-import { UtilityStyledComponent } from "components/utility-styled-component";
+import { UtilityStyledComponent } from "@uiComponents";
 
 export interface IPropsRow
   extends BaseProps,
@@ -9,24 +7,8 @@ export interface IPropsRow
     FlexProps,
     PositionProps {}
 
-const Row = (props: IPropsRow) => {
-  // const flexColumns = {
-  //   xsColumns,
-  //   smColumns,
-  //   mdColumns,
-  //   lgColumns,
-  //   xlColumns,
-  //   xxlColumns,
-  // };
-  // const { className } = propStyleHandler({ flexColumns, flex });
-  //const classes = classNames("row", className);
-  return (
-    <UtilityStyledComponent
-      as="div"
-      {...props}
-      className={"row"}
-    ></UtilityStyledComponent>
-  );
+const Row = ({ ...rest }: IPropsRow) => {
+  return <UtilityStyledComponent as="div" className={"row"} {...rest} />;
 };
 
 export default Row;

@@ -8,10 +8,11 @@ import {
   FlexProps,
   OverlayProps,
   PaddingProps,
-  MarginDiscriminatedProps,
+  //MarginDiscriminatedProps,
   PositionProps,
   WidthProps,
   HeightProps,
+  MarginProps,
 } from "@uiTypes";
 import classNames from "classnames";
 
@@ -27,9 +28,14 @@ export type ContainerComponentProps = BaseProps &
   PositionProps &
   WidthProps &
   HeightProps &
-  MarginDiscriminatedProps & { fluid?: boolean };
+  MarginProps & { fluid?: boolean };
 
-const Container = ({ fluid, overlay, ...rest }: ContainerComponentProps) => {
+const Container = ({
+  fluid,
+  overlay,
+  className,
+  ...rest
+}: ContainerComponentProps) => {
   let isOverlay = "";
   if (overlay) {
     const { color: overlayColor, opacity: overlayOpacity = 70 } = overlay;
@@ -40,8 +46,7 @@ const Container = ({ fluid, overlay, ...rest }: ContainerComponentProps) => {
   const combinedClasses = classNames(
     fluid ? "container--fluid" : "container",
     isOverlay ?? "",
-
-    rest.className
+    className
   );
 
   return (

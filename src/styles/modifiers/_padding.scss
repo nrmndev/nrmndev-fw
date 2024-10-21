@@ -16,10 +16,18 @@
     padding-right: var(--padding-#{$size});
   }
   .pb-#{$size} {
-    padding-right: var(--padding-#{$size});
+    padding-bottom: var(--padding-#{$size});
   }
   .pl-#{$size} {
     padding-left: var(--padding-#{$size});
+  }
+  .ph-#{$size} {
+    padding-left: var(--padding-#{$size});
+    padding-right: var(--padding-#{$size});
+  }
+  .pv-#{$size} {
+    padding-top: var(--padding-#{$size});
+    padding-bottom: var(--padding-#{$size});
   }
 }
 

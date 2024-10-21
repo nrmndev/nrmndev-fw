@@ -1,5 +1,6 @@
 import { AsOptionalProps } from "@uiTypes";
-import { propStyleHandler, PropStyleHanlderProps } from "@utils";
+import { propStyleHandler, PropStyleHandlerProps } from "@utils";
+import { useMemo } from "react";
 import styled from "styled-components";
 
 /**
@@ -12,24 +13,26 @@ type UtilityStyledComponentProps = {
   children?: React.ReactNode;
   style?: React.CSSProperties;
   className?: string;
-} & PropStyleHanlderProps &
+} & PropStyleHandlerProps &
   AsOptionalProps & { role?: string; title?: string }; //all props below are to follow
 
 const UtilityStyledComponent = (props: UtilityStyledComponentProps) => {
   const {
     as: Component = "a",
     children,
-    style,
     href,
     src,
     alt,
     target,
+    style,
   } = props;
 
-  const { className, styled } = propStyleHandler({
-    ...props,
-    userStyle: style,
-  });
+  const memoizedStyles = useMemo(() => {
+    return propStyleHandler({ ...props });
+  }, [props]);
+
+  const { className, styled } = memoizedStyles;
+  //const { className, styled } = propStyleHandler({ ...props });
 
   const ComponentProps = {
     ...(className ? { className: className } : {}),
@@ -45,12 +48,21 @@ const UtilityStyledComponent = (props: UtilityStyledComponentProps) => {
 
   if (styled) {
     return (
-      <StyledComponent as={Component} {...ComponentProps} $ss={styled}>
+      <StyledComponent
+        as={Component}
+        {...ComponentProps}
+        $ss={styled}
+        style={style}
+      >
         {children}
       </StyledComponent>
     );
   }
-  return <Component {...ComponentProps}>{children}</Component>;
+  return (
+    <Component {...ComponentProps} style={style}>
+      {children}
+    </Component>
+  );
 };
 
 const StyledComponent = styled.div<{ $ss?: string }>`

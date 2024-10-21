@@ -2,8 +2,11 @@ import heroBanner from "../../assets/hero_banner.jpg";
 
 import { Column, Container, Media, Typography } from "@uiComponents";
 import { FaPhone } from "react-icons/fa";
+import { getPaddingStyle } from "utils/propStyleHandler/padding";
 
 const SampleContainer = () => {
+  // const paddingClass = getPaddingStyle(undefined);
+  // console.log(paddingClass);
   return (
     <>
       <Typography as="h3" textAlign="center">

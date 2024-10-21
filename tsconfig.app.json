@@ -49,7 +49,8 @@
   //   "src/main.tsx",
   //   "src/routing",
   //   "src/stories"
-  //   //"src/aliases.d.ts"
+  //   //"src/aliases.d.ts",
+  // "**/*.bak.ts"
   // ]
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "**/*.bak.ts"]
 }

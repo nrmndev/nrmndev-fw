@@ -1,10 +1,10 @@
 import {
   BaseProps,
+  MarginProps,
   TextAlignProps,
   TextDecorationProps,
   TextTransformProps,
   TypographyProps,
-  MarginDiscriminatedProps,
 } from "@uiTypes";
 
 import { UtilityStyledComponent } from "@uiComponents";
@@ -14,7 +14,7 @@ export type TypographyComponentProps = BaseProps &
   TextDecorationProps &
   TextTransformProps &
   TextAlignProps &
-  MarginDiscriminatedProps;
+  MarginProps;
 
 const Typography = ({
   children,

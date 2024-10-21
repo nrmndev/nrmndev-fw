@@ -4,7 +4,7 @@ import {
   BorderProps,
   ColumnBreakpointProps,
   FlexProps,
-  MarginDiscriminatedProps,
+  MarginProps,
   PositionProps,
   SpacingProps,
 } from "@uiTypes";
@@ -24,13 +24,11 @@ export type ColumnComponentProps = {
   BorderProps &
   ColumnBreakpointProps &
   SpacingProps &
-  MarginDiscriminatedProps &
+  MarginProps &
   FlexProps &
   PositionProps;
 
 const Column = ({
-  style: userStyle,
-  children,
   title,
   role,
   name,
@@ -38,9 +36,7 @@ const Column = ({
   ...utilityClasses
 }: ColumnComponentProps) => {
   return (
-    <UtilityStyledComponent as="div" {...utilityClasses} className="col">
-      {children}
-    </UtilityStyledComponent>
+    <UtilityStyledComponent as="div" {...utilityClasses} className="col" />
   );
 };
 

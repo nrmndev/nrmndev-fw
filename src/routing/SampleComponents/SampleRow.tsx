@@ -10,7 +10,7 @@ const SampleRow = () => {
         Sample row handling columns
       </Typography>
       <Container
-        border={{ bottom: 10, color: "secondary" }}
+        border={{ bottom: { color: "primary", width: 3 } }}
         borderRadius={{ bottomLeft: 10, bottomRight: 10 }}
         background={{ image: heroBanner, attachment: "fixed" }}
         padding={"lg"}
@@ -19,7 +19,13 @@ const SampleRow = () => {
         overlay={{ color: "white", opacity: 20 }}
         // style={{ backgroundColor: "black", minHeight: "200px" }}
       >
-        <Container>
+        <Container
+          position={{
+            position: "absolute",
+            top: { value: 10 },
+            left: { value: 10 },
+          }}
+        >
           <Row
             lgColumns={3}
             mdColumns={2}
@@ -28,7 +34,6 @@ const SampleRow = () => {
             xlColumns={3}
             xsColumns={1}
             flex={{ alignItems: "stretch", justifyContent: "center" }}
-            position={{ position: "relative", top: 10 }}
           >
             <Media
               icon={{
@@ -38,7 +43,7 @@ const SampleRow = () => {
                 rounded: true,
                 variant: "outline",
               }}
-              heading={{ children: "Phone Number" }}
+              heading={{ children: "Flexing" }}
               body={{ children: <>(+55) 654 - 545 - 5418</> }}
             />
             <Media
