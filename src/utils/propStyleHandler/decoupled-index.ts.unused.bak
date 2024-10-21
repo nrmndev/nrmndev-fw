@@ -10,6 +10,7 @@ import {
   FlexProps,
   FontSizeProps,
   HeightProps,
+  MarginProps,
   //OverlayProps,
   PaddingProps,
   PositionProps,
@@ -18,8 +19,7 @@ import {
   TextTransformProps,
   WidthProps,
 } from "@uiTypes";
-import { default as pTS } from "./asInline";
-import { default as propToClass } from "./asClassName";
+
 import { getPaddingStyle } from "./padding";
 //import { MarginDiscriminatedProps } from "types/props/marginProps";
 
@@ -33,7 +33,7 @@ export type PropStyleHanlderProps = BorderProps &
   FlexProps &
   HeightProps &
   FontSizeProps &
-  AllMarginProps &
+  MarginProps &
   TextDecorationProps &
   TextTransformProps &
   TextAlignProps &

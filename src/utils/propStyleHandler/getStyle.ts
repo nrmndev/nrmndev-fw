@@ -1,4 +1,3 @@
-import fontSize from "utils/storybook/argTypesGenerator/fontSize";
 import { getBackgroundStyle } from "./background";
 import { getBorderStyle } from "./border";
 import { getBorderRadiusStyle } from "./borderRadius";

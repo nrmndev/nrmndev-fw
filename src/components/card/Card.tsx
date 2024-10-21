@@ -2,7 +2,7 @@ import {
   BackgroundProps,
   BaseProps,
   BoxShadowProps,
-  MarginDiscriminatedProps,
+  MarginProps,
   PaddingProps,
 } from "@uiTypes";
 import { UtilityStyledComponent } from "@uiComponents";
@@ -12,7 +12,7 @@ type CardComponentProps = {} & BaseProps &
   BackgroundProps &
   BoxShadowProps &
   PaddingProps &
-  MarginDiscriminatedProps;
+  MarginProps;
 
 const Card = ({ children, ...rest }: CardComponentProps) => {
   const { padding = "sm" } = rest;

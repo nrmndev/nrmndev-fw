@@ -9,7 +9,7 @@ import {
   ButtonProps,
   ColorProps,
   FontSizeProps,
-  MarginDiscriminatedProps,
+  MarginProps,
   PaddingProps,
 } from "@uiTypes";
 import classNames from "classnames";
@@ -36,7 +36,7 @@ export type IProps = {
   ColorProps &
   FontSizeProps &
   PaddingProps &
-  MarginDiscriminatedProps;
+  MarginProps;
 
 type ExtendedIProps = IProps & PolymorphicButtonProps;
 
@@ -52,12 +52,13 @@ const Button = ({
   size = "md",
   variant = "solid-primary",
   fontSize,
+  style,
   ...rest
 }: ExtendedIProps) => {
   const { href, to = "/404", target, type = "button" } = rest;
 
   const propStyle = propStyleHandler({
-    userStyle: rest.style,
+    style,
     padding,
     border,
     background,

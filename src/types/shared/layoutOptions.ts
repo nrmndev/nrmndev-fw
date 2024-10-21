@@ -1,5 +1,3 @@
-import { SizeOptions } from "@uiTypes";
-
 export type EdgeOptions = {
   top?: number;
   right?: number;

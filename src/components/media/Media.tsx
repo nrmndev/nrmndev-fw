@@ -61,7 +61,7 @@ const Media = ({
   //Media Props
   const { className } = propStyleHandler({
     padding,
-    userStyle: style,
+    style,
     background,
     borderRadius,
   });

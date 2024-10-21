@@ -1,6 +1,8 @@
 # nrmndev-fw
 
-A lightweight, customizable React component library for building responsive web applications with ease. Designed for simplicity, flexibility, and scalability.
+A utility-first CSS and CSS-in-JS framework with type safety and memoized centralized logic
+
+## MAJOR VERSION RELEASE (breaking changes) see changelog [v2.0] - 2024-21-10
 
 ## Table of Contents
 

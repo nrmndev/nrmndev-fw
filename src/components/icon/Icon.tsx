@@ -2,14 +2,14 @@ import { propStyleHandler } from "@utils";
 import { ImCogs } from "react-icons/im";
 import classNames from "classnames";
 
-import { MarginDiscriminatedProps, SizeOptions } from "@uiTypes";
+import { MarginProps, SizeOptions } from "@uiTypes";
 import { IconType } from "react-icons";
 import { BackgroundProps, BaseProps, ColorProps } from "@proptypes";
 
 export type IconComponentProps = Omit<BaseProps, "children"> &
   BackgroundProps &
   ColorProps &
-  MarginDiscriminatedProps & {
+  MarginProps & {
     icon: IconType | string; // Use IconType for react-icons
     rounded?: boolean;
     iconSize?: SizeOptions;
