@@ -1,5 +1,25 @@
 ## Changelog
 
+### [v2.0] - 2024-21-10
+
+### MAJOR VERSION RELEASED
+
+- **UTILITIES**
+- **propStyleHandler**
+  - Now returns {classes: string, inline: React.CSSProperties} based on the props passed
+  - Passed the logic implementation to getStyle.\*
+  - `getStyle()` handles all props implementation, with separate handle per prop
+  - `{classes}` returns a string literal of pre-defined modifer classNames
+  - `{inline}` returns a list of CSSProperties
+  - **Memoized** for optimized calculation
+  - Merged `asClassName` & `asInline` utility into one. (ie asClassName/padding.ts, asInline/padding.ts to padding.ts)
+- **Props**
+  - `{padding}` now accepts `SizeOptions` | `PaddingAxisOptions` | `PaddingEdgeOptions` | `PaddingValueUnitOptions`.
+  - `{margin}` now accepts `SizeOptions` | `MarginAxisOptions` | `MarginEdgeOptions` | `MarginValueUnitOptions`. (Renamed `MarginDiscriminatedProps` to `MarginProps`).
+  - `{border}` now accepts `BorderEdgeOptions` | `BorderOptions`.
+  - `{width}` , `{height}` , `{position}`, `{display}` props added.
+- **UPCOMING UPDATE** see details below [Upcoming Release](upcoming-release):
+
 ### [v1.2.0] - 2024-16-10
 
 ### MINOR VERSION RELEASED
@@ -114,11 +134,19 @@
   - Added `{borderRadius}` and `{background}` props.
 - **README.md**: Updated content for clarity and completeness.
 
-## Upcoming Release
+---
 
-### [v1.1.0] - TBA
+---
 
-#### PLANNED FEATURES:
+## Upcoming Release [v2.1.0]
+
+- **ALL COMPONENT** propStyleHandler re-integration and optimization
+
+---
+
+---
+
+## PLANNED FEATURES:
 
 - **FULL COVERAGE TESTING** : Implement comprehensive unit and integration tests for all components to ensure reliability and catch bugs early, enhancing user confidence in the framework.
 - **SEPARATE REPO FOR STORYBOOK DOCUMENTATION**: Create a dedicated GitHub repository for Storybook documentation, centralizing visual component examples and usage guidelines to improve accessibility and collaboration.

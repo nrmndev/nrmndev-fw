@@ -99,4 +99,4 @@ See full API documentation here: [https://nrmndev-fw.ngsilvestre.com/](https://n
 
 ## Changelog
 
-You can view the full changelog [here](./nrmndev-fw/CHANGELOG.md).
+You can view the full changelog [here](./CHANGELOG.md).
