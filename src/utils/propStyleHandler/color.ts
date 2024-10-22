@@ -1,4 +1,4 @@
-import { ColorOptions, ColorProps } from "@uiTypes";
+import { ColorProps } from "@uiTypes";
 import { StyleReturnType } from "./styleReturnType";
 
 export const getColorStyle = <T extends ColorProps>({

@@ -1,4 +1,3 @@
-import { ColorOptions, BackgroundAsImageProps } from "@uiTypes";
 import { StyleReturnType } from "./styleReturnType";
 import { BackgroundProps } from "types/props/backgroundProps";
 

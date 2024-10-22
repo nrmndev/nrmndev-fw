@@ -42,14 +42,14 @@
     }
   },
   "include": ["src"],
-  // "exclude": [
-  //   "node_modules",
-  //   "dist",
-  //   "src/app.tsx",
-  //   "src/main.tsx",
-  //   "src/routing",
-  //   "src/stories",
-  //   "**/*.bak.ts"
-  // ]
-  "exclude": ["node_modules", "**/*.bak.ts"]
+  "exclude": [
+    "node_modules",
+    "dist",
+    "src/app.tsx",
+    "src/main.tsx",
+    "src/routing",
+    "src/stories",
+    "**/*.bak.ts"
+  ]
+  //"exclude": ["node_modules", "**/*.bak.ts"]
 }
