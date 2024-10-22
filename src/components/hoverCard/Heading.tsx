@@ -1,13 +1,13 @@
 import { Typography } from "@uiComponents";
+import { HoverCardHeadingComponentProps } from "@uiTypes";
 import useHoverCardProvider from "./useHoverCardProvider";
-import { BaseProps } from "@uiTypes";
 
-export interface IProps extends Required<Pick<BaseProps, "children">> {}
-
-const HoverCardHeading = ({ children }: IProps) => {
+const HoverCardHeading = ({
+  ...utilityProps
+}: HoverCardHeadingComponentProps) => {
   const isUsedInsideParentHoverCard = useHoverCardProvider();
   isUsedInsideParentHoverCard;
-  return <Typography as="h3">{children}</Typography>;
+  return <Typography as="h3" {...utilityProps} />;
 };
 
 export default HoverCardHeading;

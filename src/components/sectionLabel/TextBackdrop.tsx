@@ -1,26 +1,23 @@
-import { ColorOptions, IncrementOf5Options, SizeOptions } from "@uiTypes";
+import { TextBackdropProps } from "@uiTypes";
 import classNames from "classnames";
-
-type TextBackdropProps = {
-  label: string;
-  opacity?: IncrementOf5Options;
-  color?: ColorOptions;
-  size?: SizeOptions;
-};
+import { UtilityStyledComponent } from "@uiComponents";
 
 const TextBackdrop = ({
   label,
   opacity = 10,
-  color = "primary",
   size = "md",
+  ...utilityProps
 }: TextBackdropProps) => {
   const classes = classNames(
     "sectionLabel__backdrop",
     `opacity-${opacity}`,
-    `color-${color}`,
     `sectionLabel__backdrop--${size}`
   );
-  return <span className={classes}>{label}</span>;
+  return (
+    <UtilityStyledComponent as="span" className={classes} {...utilityProps}>
+      {label}
+    </UtilityStyledComponent>
+  );
 };
 
 export default TextBackdrop;

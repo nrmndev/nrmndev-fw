@@ -8,7 +8,7 @@ import {
   DisplayProps,
   FlexColumnProps,
   FlexProps,
-  FontSizeProps,
+  FontProps,
   HeightProps,
   MarginProps,
   PaddingProps,
@@ -28,7 +28,7 @@ export type PropStyleHandlerProps = BorderProps &
   DisplayProps &
   FlexProps &
   HeightProps &
-  FontSizeProps &
+  FontProps &
   MarginProps &
   TextProps &
   PositionProps &
@@ -87,6 +87,10 @@ export const propStyleHandler = (props: PropStyleHandlerProps) => {
     inline && Object.assign(styleAsInlineStyle, inline);
   };
 
+  //User-defined ClassNames
+  const { className: userDefinedClassNames } = props;
+  userDefinedClassNames && styleAsClassNames.push(userDefinedClassNames);
+
   //Utility handle for Padding
   if (props.padding) processStyle(getStyle.padding, { padding: props.padding });
 
@@ -102,8 +106,7 @@ export const propStyleHandler = (props: PropStyleHandlerProps) => {
   if (textProps) processStyle(getStyle.text, { text: textProps });
 
   //Utility handle for FontSize
-  if (props.fontSize)
-    processStyle(getStyle.fontSize, { fontSize: props.fontSize });
+  if (props.font) processStyle(getStyle.font, { font: props.font });
 
   //Utility handle for Background classes
   if (props.background)
@@ -125,10 +128,6 @@ export const propStyleHandler = (props: PropStyleHandlerProps) => {
 
   //Utility handle for Width
   if (props.width) processStyle(getStyle.width, { width: props.width });
-
-  //User-defined ClassNames
-  const { className: userDefinedClassNames } = props;
-  userDefinedClassNames && styleAsClassNames.push(userDefinedClassNames);
 
   //Utility handle for Display
   if (props.display) processStyle(getStyle.display, props.display);

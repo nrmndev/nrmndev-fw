@@ -1,6 +1,6 @@
 import { ProgressBar, SectionLabel } from "@uiComponents";
-
 import { AiOutlineSmallDash } from "react-icons/ai";
+
 const SampleSectionLabel = () => {
   return (
     <>

@@ -1,14 +1,10 @@
-import { BaseProps, FlexColumnProps, FlexProps, PositionProps } from "@uiTypes";
+import { RowComponentProps } from "@uiTypes";
 import { UtilityStyledComponent } from "@uiComponents";
 
-export interface IPropsRow
-  extends BaseProps,
-    FlexColumnProps,
-    FlexProps,
-    PositionProps {}
-
-const Row = ({ ...rest }: IPropsRow) => {
-  return <UtilityStyledComponent as="div" className={"row"} {...rest} />;
+const Row = ({ ...utilityProps }: RowComponentProps) => {
+  return (
+    <UtilityStyledComponent as="div" className={"row"} {...utilityProps} />
+  );
 };
 
 export default Row;

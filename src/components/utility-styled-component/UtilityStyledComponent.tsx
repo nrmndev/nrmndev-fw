@@ -1,5 +1,5 @@
-import { AsOptionalProps } from "@uiTypes";
-import { propStyleHandler, PropStyleHandlerProps } from "@utils";
+import { UtilityStyledComponentProps } from "@uiTypes";
+import { propStyleHandler } from "@utils";
 import { useMemo } from "react";
 import styled from "styled-components";
 
@@ -7,14 +7,6 @@ import styled from "styled-components";
  * Acts as a wrapper that handles utility props.
  * @returns Component with utility classNames or inlineStyles
  */
-
-type UtilityStyledComponentProps = {
-  as: React.ElementType;
-  children?: React.ReactNode;
-  style?: React.CSSProperties;
-  className?: string;
-} & PropStyleHandlerProps &
-  AsOptionalProps & { role?: string; title?: string }; //all props below are to follow
 
 const UtilityStyledComponent = (props: UtilityStyledComponentProps) => {
   const {

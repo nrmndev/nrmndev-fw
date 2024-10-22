@@ -1,4 +1,15 @@
-import { SizeOptions } from "@uiTypes";
+import {
+  BackgroundProps,
+  BaseProps,
+  BorderProps,
+  BorderRadiusProps,
+  ColorProps,
+  FontProps,
+  MarginProps,
+  PaddingProps,
+  PolymorphicButtonProps,
+  SizeOptions,
+} from "@uiTypes";
 
 type ButtonSize = SizeOptions;
 type ButtonVariant =
@@ -26,3 +37,17 @@ export type ButtonProps = {
   size?: ButtonSize;
   variant?: ButtonVariant;
 };
+
+export type ButtonComponentProps = {
+  display?: "block" | "inline-block";
+  as?: "button" | "anchorLink" | "navLink";
+} & BaseProps &
+  ButtonProps &
+  BorderProps &
+  BorderRadiusProps &
+  BackgroundProps &
+  ColorProps &
+  FontProps &
+  PaddingProps &
+  MarginProps &
+  PolymorphicButtonProps;

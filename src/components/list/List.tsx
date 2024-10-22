@@ -1,29 +1,5 @@
-import { ColorOptions, ColorProps, TextAlignProps } from "@uiTypes";
+import { ListComponentProps } from "@uiTypes";
 import classNames from "classnames";
-import { IconType } from "react-icons";
-//import { IoCheckmarkCircleOutline } from "react-icons/io5";
-
-type ListOptions = "ordered-list" | "unordered-list";
-
-type Items = {
-  label: string | JSX.Element;
-  children?: [{ label: string }];
-};
-
-export interface IProps extends TextAlignProps, ColorProps {
-  display?:
-    | "inline-flex"
-    | "inline-flex-space-between"
-    | "block"
-    | "grid-2-columns"
-    | "grid-3-columns"
-    | "grid-4-columns";
-  icon?: IconType;
-  iconSize?: number;
-  iconColor?: ColorOptions;
-  items?: Items[];
-  listType?: ListOptions;
-}
 
 const List = ({
   display = "block",
@@ -38,8 +14,8 @@ const List = ({
     },
   ],
   listType = "unordered-list",
-  textAlign,
-}: IProps) => {
+  text,
+}: ListComponentProps) => {
   const ListTag = listType === "ordered-list" ? "ol" : "ul";
 
   const className = classNames(
@@ -47,7 +23,7 @@ const List = ({
     `list--${listType}`,
     `list--${display}`,
     `${Icon ? `list--icon` : ""}`,
-    `${textAlign ? ` list--text-${textAlign}` : ""}`
+    `${text?.align ? ` list--text-${text.align}` : ""}`
   );
 
   return (

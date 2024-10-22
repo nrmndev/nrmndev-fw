@@ -1,9 +1,9 @@
-import { ColorOptions } from "@uiTypes";
+import { ColorOptions, ColorProps } from "@uiTypes";
 import { StyleReturnType } from "./styleReturnType";
 
-export const getColorStyle = <T extends ColorOptions>(
-  color?: T
-): StyleReturnType => {
+export const getColorStyle = <T extends ColorProps>({
+  color,
+}: T): StyleReturnType => {
   let classes: string = "";
   let inline: React.CSSProperties = {};
 
@@ -11,6 +11,7 @@ export const getColorStyle = <T extends ColorOptions>(
     return { classes, inline };
   }
 
+  console.log(color);
   switch (typeof color) {
     case "string":
       switch (color) {

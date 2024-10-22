@@ -1,11 +1,21 @@
 ## Changelog
 
-### [v2.1.0] - 2024-21-10
+### [v2.1.0-alpha] - 2024-22-10
 
-- **HOTFIXES**
-- `{border}` now requires `{border:{width}}`
-- `{background:{}}` (as obj ie. setting image as bg) now requires `{background:{image}}`
-- changed `{textDecoration, textAlign, textTransform}` into `{text:{decoration, align, transform}}`
+## Alpha Version released.
+
+## Documentation of the framework is under development! Will release an update soon!
+
+### [v2.0.0] - 2024-21-10
+
+## **BREAKING CHANGES**
+
+- All components are affected by these breaking changes, please correlate with the update:
+  - `{border}` now requires `{border:{width}}`
+  - `{background:{}}` (as obj ie. setting image as bg) now requires `{background:{image}}`
+  - Removed `{textDecoration, textAlign, textTransform}` prop, added `{text:{decoration, align, transform}}`
+  - Removed `{fontSize}` prop, added `{font:{size,style,lineHeight,weight,family}}`
+  - Moved Component's type to type folder for code cleanup and better import organisation
 
 ### [v2.0.0] - 2024-21-10
 

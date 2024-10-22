@@ -1,16 +1,14 @@
 import { Typography } from "@uiComponents";
-import React from "react";
 import useHoverCardProvider from "./useHoverCardProvider";
+import { TypographyComponentProps } from "@uiTypes";
 
-export interface IProps {
-  level: 1 | 2 | 3 | 4 | 5 | 6;
-  children: React.ReactNode;
-}
-
-const OverlayHeading = ({ children }: IProps) => {
+const OverlayHeading = ({
+  as = "h3",
+  ...utilityStyledComponent
+}: TypographyComponentProps) => {
   const isUsedInsideParentHoverCard = useHoverCardProvider();
   isUsedInsideParentHoverCard;
-  return <Typography as="h3">{children}</Typography>;
+  return <Typography as={as} {...utilityStyledComponent} />;
 };
 
 export default OverlayHeading;

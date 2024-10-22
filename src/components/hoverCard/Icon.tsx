@@ -1,15 +1,11 @@
 import { Icon } from "@uiComponents";
-import { IconType } from "react-icons";
+import { IconComponentProps } from "@uiTypes";
 import useHoverCardProvider from "./useHoverCardProvider";
 
-export interface IProps {
-  icon: IconType | string;
-}
-
-const HoverCardIcon = ({ icon }: IProps) => {
+const HoverCardIcon = ({ ...utilityProps }: IconComponentProps) => {
   const isUsedInsideParentHoverCard = useHoverCardProvider();
   isUsedInsideParentHoverCard;
-  return <Icon icon={icon} variant="outline" rounded />;
+  return <Icon variant={utilityProps.variant ?? "outline"} {...utilityProps} />;
 };
 
 export default HoverCardIcon;

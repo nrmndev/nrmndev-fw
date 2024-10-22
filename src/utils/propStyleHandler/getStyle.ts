@@ -10,7 +10,7 @@ import { getMarginStyle } from "./margin";
 import { getPaddingStyle } from "./padding";
 import { getTextStyle } from "./text";
 import { getWidthStyle } from "./width";
-import { getFontSizeStyle } from "./fontSize";
+import { getFontStyle } from "./font";
 import { getHeightStyle } from "./height";
 import { getPositionStyle } from "./position";
 
@@ -32,7 +32,7 @@ export const getStyle = {
   display: getDisplayStyle,
   flex: getFlexStyle,
   flexColumns: getFlexColumnStyle,
-  fontSize: getFontSizeStyle,
+  font: getFontStyle,
   height: getHeightStyle,
   position: getPositionStyle,
 };

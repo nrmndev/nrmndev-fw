@@ -25,7 +25,7 @@ export default {
       "@utils": path.resolve(__dirname, "src/utils"),
       "@basetypes": path.resolve(__dirname, "src/base"),
       "@uniontypes": path.resolve(__dirname, "src/union"),
-      "@proptypes": path.resolve(__dirname, "src/props"),
+      //"@proptypes": path.resolve(__dirname, "src/props"),
       // Add other aliases as needed
     },
   },

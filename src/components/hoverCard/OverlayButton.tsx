@@ -1,18 +1,11 @@
 import { Button } from "@uiComponents";
-import React from "react";
 import useHoverCardProvider from "./useHoverCardProvider";
+import { ButtonProps } from "@uiTypes";
 
-interface IProps {
-  children: React.ReactNode;
-}
-const OverlayButton = ({ children }: IProps) => {
+const OverlayButton = ({ ...utilityProps }: ButtonProps) => {
   const isUsedInsideParentHoverCard = useHoverCardProvider();
   isUsedInsideParentHoverCard;
-  return (
-    <Button variant="outline-primary" as="button">
-      {children}
-    </Button>
-  );
+  return <Button {...utilityProps} />;
 };
 
 export default OverlayButton;

@@ -63,11 +63,11 @@ export type {
 export type { FlexBoxProps } from "./flexBoxProps";
 
 export type { FontSizeProps, FontSizeOptions } from "./fontSizeProps";
-
 export type {
-  FontProps,
   FontFamilyOptions,
+  FontProps,
   FontStyleOptions,
+  FontWeightOptions,
 } from "./fontProps";
 
 export type { HeightProps } from "./heightProps";
@@ -78,12 +78,6 @@ export type { InputProps } from "./inputProps";
 export type { FlexLayoutProps, SpacingProps } from "./layoutProps";
 
 export type { OverlayProps } from "./overlayProps";
-
-export type {
-  PolymorphicButtonProps,
-  AnchorLinkProps,
-  NavLinkProps,
-} from "./polymorphicButtonProps";
 
 export type {
   MarginProps,

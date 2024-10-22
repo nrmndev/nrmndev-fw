@@ -3,7 +3,7 @@ import { ProgressBar } from "@uiComponents";
 const SampleProgressBar = () => {
   return (
     <ProgressBar
-      current={90}
+      current={80}
       total={100}
       showProgress
       color="black"

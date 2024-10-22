@@ -4,21 +4,22 @@ import HoverCardHeading from "./Heading";
 import HoverCardBody from "./Body";
 import HoverCardIcon from "./Icon";
 import HoverCardContextProvider from "./HoverCardContext";
-import { RequireBaseProps, AnimationProps } from "@uiTypes";
 import classNames from "classnames";
+import { UtilityStyledComponent } from "components/utility-styled-component";
+import { HoverCardComponentProps } from "@uiTypes";
 
-interface IProps extends AnimationProps, RequireBaseProps<"children"> {}
-
-const HoverCard = ({ children, animation, ...rest }: IProps) => {
+const HoverCard = ({ animation, ...utilityProps }: HoverCardComponentProps) => {
   const className = classNames(
     "hovercard",
     animation ? "animate animate__" + animation : "animate animate__slideInLeft"
   );
   return (
     <HoverCardContextProvider>
-      <div {...rest} className={className}>
-        {children}
-      </div>
+      <UtilityStyledComponent
+        as="div"
+        {...utilityProps}
+        className={className}
+      />
     </HoverCardContextProvider>
   );
 };

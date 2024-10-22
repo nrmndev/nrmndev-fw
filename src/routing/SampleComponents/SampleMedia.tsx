@@ -8,7 +8,7 @@ const SampleMedia = () => {
       <p>Media icon: react-icons, iconPosition: left</p>
       <Media
         borderRadius={"xs"}
-        background="black"
+        background="primary"
         color="white"
         icon={{
           icon: FaPhone,
@@ -25,8 +25,8 @@ const SampleMedia = () => {
       <p>Media icon: react-icons, iconPosition: right</p>
       <Media
         icon={{ icon: FaPhone, position: "right" }}
-        heading={{ children: "Phone Number" }}
-        body={{ children: <>(+55) 654 - 545 - 5418</> }}
+        heading={{ children: "Phone Number", color: "light" }}
+        body={{ children: <>(+55) 654 - 545 - 5418</>, color: "light" }}
       />
       <hr />
       <p>Media icon: react-icons, iconPosition: top-left</p>

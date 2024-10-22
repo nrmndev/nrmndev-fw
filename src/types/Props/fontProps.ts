@@ -1,3 +1,5 @@
+import { SizeOptions, ValueAndUnitProps } from "@uiTypes";
+
 export type FontStyleOptions =
   | "italic"
   | "normal"
@@ -6,12 +8,36 @@ export type FontStyleOptions =
   | "unset"
   | "inital";
 
-export type FontFamilyOptions = "openSans" | "custom-1" | "custom-2";
+export type FontFamilyOptions =
+  | "Metrophobic"
+  | "Montserrat"
+  | "CustomFont1"
+  | "CustomFont2"
+  | "CustomFont3";
+
+export type FontWeightOptions =
+  | "normal"
+  | "bold"
+  | "bolder"
+  | "lighter"
+  | "100"
+  | "200"
+  | "300"
+  | "400"
+  | "500"
+  | "600"
+  | "700"
+  | "800"
+  | "900";
 
 export type FontProps = {
-  font?: {
-    size?: "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
-    family?: FontFamilyOptions;
-    style?: FontStyleOptions;
-  };
+  font?:
+    | {
+        size?: SizeOptions | ValueAndUnitProps;
+        family?: FontFamilyOptions;
+        style?: FontStyleOptions;
+        weight?: FontWeightOptions;
+        lineHeight?: number;
+      }
+    | SizeOptions;
 };

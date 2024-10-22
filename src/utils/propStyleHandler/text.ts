@@ -10,7 +10,7 @@ export const getTextStyle = <T extends TextProps>({
   if (!text) {
     return { classes, inline };
   }
-  console.log(text);
+
   const { align, decoration, transform } = text;
   let textArray: string[] = [];
   align ? textArray.push(`text-${align}`) : ``;

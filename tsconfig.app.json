@@ -37,7 +37,7 @@
       "@routing": ["routing"],
       "@basetypes": ["types/base/index"],
       "@uniontypes": ["types/union/index"],
-      "@proptypes": ["types/props/index"],
+      // "@proptypes": ["types/props/index"],
       "@utils": ["utils/index"]
     }
   },

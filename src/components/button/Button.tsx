@@ -1,93 +1,52 @@
-import { PolymorphicButtonProps } from "@proptypes";
-// import AsAnchorLink from "./AsAnchorLink";
-// import AsNavLink from "./AsNavLink";
-import {
-  BackgroundProps,
-  BaseProps,
-  BorderProps,
-  BorderRadiusProps,
-  ButtonProps,
-  ColorProps,
-  FontSizeProps,
-  MarginProps,
-  PaddingProps,
-} from "@uiTypes";
+import { ButtonComponentProps } from "@uiTypes";
 import classNames from "classnames";
+import { UtilityStyledComponent } from "@uiComponents";
 import { NavLink } from "react-router-dom";
-import { propStyleHandler } from "utils/propStyleHandler";
-
-// type ButtonSize = "sm" | "md" | "lg";
-// type ButtonVariant =
-//   | "solid-primary"
-//   | "solid-secondary"
-//   | "solid-accent-1"
-//   | "solid-accent-2"
-//   | "solid-accent-3"
-//   | "solid-dark"
-//   | "solid-white";
-export type IProps = {
-  display?: "block" | "inline-block";
-  as?: "button" | "anchorLink" | "navLink";
-} & BaseProps &
-  ButtonProps &
-  BorderProps &
-  BorderRadiusProps &
-  BackgroundProps &
-  ColorProps &
-  FontSizeProps &
-  PaddingProps &
-  MarginProps;
-
-type ExtendedIProps = IProps & PolymorphicButtonProps;
 
 const Button = ({
   as: Component = "button",
-  background,
-  borderRadius,
-  border,
-  color,
   display,
-  margin,
-  padding,
   size = "md",
   variant = "solid-primary",
-  fontSize,
-  style,
-  ...rest
-}: ExtendedIProps) => {
-  const { href, to = "/404", target, type = "button" } = rest;
-
-  const propStyle = propStyleHandler({
-    style,
-    padding,
-    border,
-    background,
-    borderRadius,
-    fontSize,
-    margin,
-  });
-  //console.log(propStyle.className);
+  href,
+  target,
+  type = "button",
+  to = "/404",
+  ...utilityProps
+}: ButtonComponentProps) => {
   const className = classNames(
     "btn",
     `btn-${size}`,
     display && "btn--" + display,
-    variant && "btn-" + variant,
-    color && "color-" + color,
-    propStyle.className,
-    rest.className
+    variant && "btn-" + variant
   );
 
   const conditionalProps: {} = {
-    ...rest,
-    className: className,
+    ...utilityProps,
     ...(Component === "anchorLink" && { href: href, target: target }),
     ...(Component === "button" && { type: type }),
     ...(Component === "navLink" && { to: to }),
   };
 
-  if (Component === "button") return <button {...conditionalProps} />;
-  if (Component === "anchorLink") return <a {...conditionalProps} />;
-  if (Component === "navLink") return <NavLink to={to} {...conditionalProps} />;
+  if (Component === "button")
+    return (
+      <UtilityStyledComponent
+        as="button"
+        {...conditionalProps}
+        className={className}
+      />
+    );
+  if (Component === "anchorLink")
+    return (
+      <UtilityStyledComponent
+        as="a"
+        {...conditionalProps}
+        className={className}
+      />
+    );
+  if (Component === "navLink")
+    return <NavLink to={to} {...conditionalProps} className={className} />;
+  //return <UtilityStyledComponent as={NavLink} to={to} {...conditionalProps} className={className} />;
 };
 
 export default Button;

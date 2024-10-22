@@ -1,70 +1,28 @@
-import {
-  ColorOptions,
-  ColorProps,
-  FontSizeProps,
-  IncrementOf5Options,
-  SizeOptions,
-} from "@uiTypes";
-import { IconType } from "react-icons";
-import { Typography } from "components/typography";
-import TextBackdrop from "./TextBackdrop";
-import LabelDecoration from "./LabelDecoration";
+import { LabelWrapperComponentProps } from "@uiTypes";
+import { Typography, TextBackdrop, LabelDecoration } from "@uiComponents";
 
-type LabelWrapperProps = {
-  label: string;
-  leftDecoration?: {
-    Icon?: IconType;
-    color?: ColorOptions | undefined;
-  };
-  rightDecoration?: {
-    Icon?: IconType;
-    color?: ColorOptions | undefined;
-  };
-  textBackdrop?: {
-    size?: SizeOptions;
-    opacity?: IncrementOf5Options;
-    color?: ColorOptions;
-    label: string;
-  };
-  as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span";
-} & ColorProps &
-  FontSizeProps;
 const LabelWrapper = ({
   label,
-  fontSize,
-  color = "primary",
   leftDecoration,
   rightDecoration,
   textBackdrop,
   as = "h2",
-}: LabelWrapperProps) => {
+  ...utilityProps
+}: LabelWrapperComponentProps) => {
   return (
     <div className="section-label__content">
       {textBackdrop?.label && <TextBackdrop {...textBackdrop} />}
 
       {leftDecoration?.Icon && (
-        <LabelDecoration
-          Icon={leftDecoration.Icon}
-          color={leftDecoration.color ?? undefined}
-          position="left"
-        />
+        <LabelDecoration {...leftDecoration} position="left" />
       )}
 
-      <Typography
-        as={as}
-        className="section-label__text"
-        color={color}
-        fontSize={fontSize}
-      >
+      <Typography as={as} className="section-label__text" {...utilityProps}>
         {label}
       </Typography>
 
       {rightDecoration?.Icon && (
-        <LabelDecoration
-          Icon={rightDecoration.Icon}
-          color={rightDecoration.color ?? undefined}
-          position="right"
-        />
+        <LabelDecoration {...rightDecoration} position="right" />
       )}
     </div>
   );

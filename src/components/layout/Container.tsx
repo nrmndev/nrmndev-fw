@@ -1,40 +1,11 @@
-// import Column from "./Column";
-// import Row from "./Row";
-import {
-  BackgroundProps,
-  BaseProps,
-  BorderProps,
-  BorderRadiusProps,
-  FlexProps,
-  OverlayProps,
-  PaddingProps,
-  //MarginDiscriminatedProps,
-  PositionProps,
-  WidthProps,
-  HeightProps,
-  MarginProps,
-} from "@uiTypes";
+import { ContainerComponentProps } from "@uiTypes";
+import { UtilityStyledComponent } from "@uiComponents";
 import classNames from "classnames";
-
-import { UtilityStyledComponent } from "components/utility-styled-component";
-
-export type ContainerComponentProps = BaseProps &
-  BackgroundProps &
-  BorderProps &
-  BorderRadiusProps &
-  FlexProps &
-  OverlayProps &
-  PaddingProps &
-  PositionProps &
-  WidthProps &
-  HeightProps &
-  MarginProps & { fluid?: boolean };
 
 const Container = ({
   fluid,
   overlay,
-  className,
-  ...rest
+  ...utilityProps
 }: ContainerComponentProps) => {
   let isOverlay = "";
   if (overlay) {
@@ -45,12 +16,15 @@ const Container = ({
 
   const combinedClasses = classNames(
     fluid ? "container--fluid" : "container",
-    isOverlay ?? "",
-    className
+    isOverlay ?? ""
   );
 
   return (
-    <UtilityStyledComponent as="div" {...rest} className={combinedClasses} />
+    <UtilityStyledComponent
+      as="div"
+      {...utilityProps}
+      className={combinedClasses}
+    />
   );
 };
 

@@ -1,18 +1,7 @@
-import {
-  ColorProps,
-  FontSizeProps,
-  TextAlignProps,
-  TextDecorationProps,
-  TextTransformProps,
-} from "@uiTypes";
+import { ColorProps, TextProps } from "@uiTypes";
 
 export type TextAsProps = {
   as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span";
 };
 
-export type TypographyProps = {} & FontSizeProps &
-  ColorProps &
-  TextAsProps &
-  TextAlignProps &
-  TextTransformProps &
-  TextDecorationProps;
+export type TypographyProps = {} & ColorProps & TextAsProps & TextProps;

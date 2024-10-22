@@ -3,11 +3,17 @@ import { Typography } from "@uiComponents";
 const SampleTypography = () => {
   return (
     <>
-      <Typography as="span" color="gradient-1" fontSize={"xxl"}>
+      <Typography as="span" color="white" font="lg">
         Typography as span
       </Typography>
       <hr />
-      <Typography as="h1" color="gradient-1" fontSize={"xxl"}>
+      <Typography
+        as="h1"
+        color="gradient-1"
+        font={{
+          style: "italic",
+        }}
+      >
         Typography as H1
       </Typography>
       <hr />

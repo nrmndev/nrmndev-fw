@@ -1,30 +1,14 @@
-import {
-  BackgroundProps,
-  BaseProps,
-  BoxShadowProps,
-  MarginProps,
-  PaddingProps,
-} from "@uiTypes";
+import { CardComponentProps } from "@uiTypes";
 import { UtilityStyledComponent } from "@uiComponents";
-// import React from "react";
 
-type CardComponentProps = {} & BaseProps &
-  BackgroundProps &
-  BoxShadowProps &
-  PaddingProps &
-  MarginProps;
-
-const Card = ({ children, ...rest }: CardComponentProps) => {
-  const { padding = "sm" } = rest;
+const Card = ({ ...utilityProps }: CardComponentProps) => {
   return (
     <UtilityStyledComponent
       as="div"
       className="card"
-      {...rest}
-      padding={padding}
-    >
-      {children}
-    </UtilityStyledComponent>
+      {...utilityProps}
+      padding={utilityProps.padding ?? "sm"}
+    />
   );
 };
 
