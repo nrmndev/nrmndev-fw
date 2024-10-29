@@ -1,5 +1,4 @@
-import { Container } from "@uiComponents";
-import { PickUtilityProps, PropStyleHandlerProps } from "@uiTypes";
+import { PropStyleHandlerProps } from "@uiTypes";
 import React from "react";
 
 export type ExtendUtilityPropsType<C, U> = C extends React.ComponentType<

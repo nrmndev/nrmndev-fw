@@ -7,7 +7,6 @@ import HoverCardContextProvider from "./HoverCardContext";
 import classNames from "classnames";
 import { UtilityStyledComponent } from "@uiComponents";
 import { HoverCardComponentProps } from "@uiComponentTypes";
-import { forwardRef } from "react";
 
 const HoverCard = (
   { animation, ...utilityProps }: HoverCardComponentProps,

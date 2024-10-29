@@ -1,8 +1,6 @@
 import { IconType } from "react-icons";
 import {
   ColorOptions,
-  ColorProps,
-  FontProps,
   IncrementOf5Options,
   PickUtilityProps,
   SizeOptions,

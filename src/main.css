@@ -1627,30 +1627,6 @@ h6 {
   display: grid;
 }
 
-.gap-xs {
-  gap: var(--spacing-xs);
-}
-
-.gap-sm {
-  gap: var(--spacing-sm);
-}
-
-.gap-md {
-  gap: var(--spacing-md);
-}
-
-.gap-lg {
-  gap: var(--spacing-lg);
-}
-
-.gap-xl {
-  gap: var(--spacing-xl);
-}
-
-.gap-xxl {
-  gap: var(--spacing-xxl);
-}
-
 /**
 * @mixin loopThrough
 * A simple mixin that loops through given format: .{className}{value} {
@@ -2758,6 +2734,30 @@ header.main-navigation nav li a:hover, header.main-navigation nav li a:active, h
 
 .d-table {
   display: table;
+}
+
+.g-xs {
+  gap: var(--spacing-xs);
+}
+
+.g-sm {
+  gap: var(--spacing-sm);
+}
+
+.g-md {
+  gap: var(--spacing-md);
+}
+
+.g-lg {
+  gap: var(--spacing-lg);
+}
+
+.g-xl {
+  gap: var(--spacing-xl);
+}
+
+.g-xxl {
+  gap: var(--spacing-xxl);
 }
 
 .m-xs {

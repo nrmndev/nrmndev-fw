@@ -1,8 +1,6 @@
 import {
   AsProps,
   ColorOptions,
-  ColorProps,
-  FontProps,
   IncrementOf5Options,
   PickUtilityProps,
   SizeOptions,
