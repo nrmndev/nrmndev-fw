@@ -29,10 +29,17 @@ const SampleIntegration = () => {
     <>
       <Container>
         <Row>
-          <Column xxl={6} xl={6} lg={6} md={12} sm={12} xs={12}>
-            ye
-          </Column>
-          <Column xxl={6} xl={6} lg={6} md={12} sm={12} xs={12} padding={"sm"}>
+          <Column>ye</Column>
+          <Column
+            xxl={6}
+            xl={6}
+            lg={6}
+            md={12}
+            sm={12}
+            xs={12}
+            padding={"sm"}
+            //columnBreakpoints={{ xxl: 6, xl: 6, lg: 6, md: 6, sm: 12, xs: 12 }}
+          >
             <SectionLabel
               position="left"
               label="About Us"
