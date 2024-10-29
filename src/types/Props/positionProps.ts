@@ -1,6 +1,4 @@
-//import { EdgeOptions } from "types/shared";
-
-import { ValueAndUnitProps } from "types/shared";
+import { ValueAndUnitProps } from "@uiTypes";
 
 export type PositionOptions =
   | "absolute"

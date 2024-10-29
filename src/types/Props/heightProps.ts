@@ -1,4 +1,4 @@
-import { ValueAndUnitProps } from "types/shared";
+import { ValueAndUnitProps } from "@uiTypes";
 
 export type HeightProps = {
   height?: ValueAndUnitProps;

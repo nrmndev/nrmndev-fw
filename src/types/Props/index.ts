@@ -16,13 +16,12 @@ export type {
   BackgroundAsColorProps,
 } from "./backgroundProps";
 
-export type { BaseProps, RequireBaseProps } from "./baseProps";
-
 //Shouldn't it be size not value? @borderProps
 export type {
   BorderProps,
   BorderEdgeOptions,
   BorderOptions,
+  BorderBaseOptions,
 } from "./borderProps";
 
 export type { BoxShadowProps, BoxShadowOptions } from "./boxShadowProps";
@@ -34,9 +33,11 @@ export type {
 
 export type { AnchorTargetOptions, ButtonTypeOptions } from "./buttonProps";
 
+export type { ChildrenProps } from "./childrenProps";
 export type { ColorProps, ColorOptions } from "./colorProps";
 
 export type { ColumnBreakpointProps, ColumnOptions } from "./columnProps";
+export type { ColumnItemsProps } from "./columnItemsProps";
 
 //Not Sure about this Prop
 export type { ContainerGridProps } from "./containerGridProps";
@@ -52,7 +53,6 @@ export type {
 
 export type {
   FlexProps,
-  FlexColumnProps,
   AlignContentOptions,
   AlignItemsOptions,
   FlexDirectionOptions,

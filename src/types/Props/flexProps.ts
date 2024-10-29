@@ -1,5 +1,3 @@
-import { ColumnOptions } from "@uiTypes";
-
 export type FlexDirectionOptions =
   | "row"
   | "row-reverse"
@@ -30,15 +28,6 @@ export type AlignContentOptions =
   | "stretch";
 
 export type FlexWrapOptions = "nowrap" | "wrap" | "wrap-reverse";
-
-export type FlexColumnProps = {
-  xsColumns?: ColumnOptions;
-  smColumns?: ColumnOptions;
-  mdColumns?: ColumnOptions;
-  lgColumns?: ColumnOptions;
-  xlColumns?: ColumnOptions;
-  xxlColumns?: ColumnOptions;
-};
 
 export type FlexProps = {
   flex?: {

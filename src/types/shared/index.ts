@@ -11,3 +11,5 @@ export type {
   ValueOptions,
   UnitOptions,
 } from "./valueAndUnit";
+
+export type { GetStyleReturnProps } from "./getStyleReturnProps";
