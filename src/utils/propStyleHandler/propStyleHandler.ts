@@ -59,6 +59,10 @@ export const propStyleHandler = (props: PropStyleHandlerProps) => {
   //Utility handle for BorderRadius
   if (props.borderRadius)
     processStyle(getStyle.borderRadius, { borderRadius: props.borderRadius });
+
+  //Utility handle for BoxShadow
+  const { boxShadow } = props;
+  boxShadow && styleAsClassNames.push(boxShadow);
   //Utility handle for Responsive Column BreakPoints
   if (props.sm || props.xs || props.md || props.lg || props.xs || props.xxl)
     processStyle(getStyle.columnBreakPoint, {
@@ -86,13 +90,16 @@ export const propStyleHandler = (props: PropStyleHandlerProps) => {
   if (props.color) processStyle(getStyle.color, { color: props.color });
   //Utility handle for Display
   if (props.display) processStyle(getStyle.display, props.display);
+  //Utility handle for Flex ColumnItems
+  if (props.columnItems) processStyle(getStyle.columnItems, props.columnItems);
+
   //Utility handle for Flex
   if (props.flex) processStyle(getStyle.flex, { flex: props.flex });
-  //Utility handle for FlexColumns
-  if (props.columnItems) processStyle(getStyle.columnItems, props.columnItems);
+
   //Utility handle for FontSize
   // if (props.font) processStyle(getStyle.font, { font: props.font });
-
+  //Utility handle for Gap
+  if (props.gap) processStyle(getStyle.gap, { gap: props.gap });
   //Utility handle for Width
   if (props.width) processStyle(getStyle.width, { width: props.width });
   // //Utility handle for Height
@@ -102,8 +109,7 @@ export const propStyleHandler = (props: PropStyleHandlerProps) => {
   //Utility handle for Opacity
   if (props.opacity) processStyle(getStyle.opacity, { opacity: props.opacity });
   //Utility handle for Overlay
-  //Utility handle for Gap
-  if (props.gap) processStyle(getStyle.gap, { opacity: props.gap });
+
   //Utility handle for Padding
   if (props.padding) processStyle(getStyle.padding, { padding: props.padding });
   //Utility handle for Position
@@ -119,10 +125,6 @@ export const propStyleHandler = (props: PropStyleHandlerProps) => {
         transform: props.text?.transform,
       },
     });
-
-  //Utility handle for BoxShadow
-  const { boxShadow } = props;
-  boxShadow && styleAsClassNames.push(boxShadow);
 
   //Sanitize classes by removing spaces and undefined.
   const sanitizedstyleAsClassNames = styleAsClassNames.filter((c) => c !== "");

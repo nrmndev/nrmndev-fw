@@ -1,4 +1,5 @@
 import { MarginProps, GetStyleReturnProps } from "@uiTypes";
+import { typeCheckers } from "../typeCheckers";
 
 export const getMarginStyle = <T extends MarginProps>({
   margin,
@@ -15,20 +16,15 @@ export const getMarginStyle = <T extends MarginProps>({
   }
 
   if (typeof margin === "object") {
-    let vMarginStyle = {};
-    let hMarginStyle = {};
+    let marginStyle = {};
 
     //margin is ValueAndUnitProps
-    if ("value" in margin || "unit" in margin) {
+    if (typeCheckers.valueAndUnitProps(margin)) {
       const { value, unit = "px" } = margin;
-      if (value !== undefined) {
-        return {
-          classes: "",
-          inline: { margin: `${value}${unit}` },
-        };
-      }
+      marginStyle = { margin: `${value}${unit}` };
     }
-
+    let vMarginStyle = {};
+    let hMarginStyle = {};
     if ("vMargin" in margin || "hMargin" in margin) {
       const { vMargin, hMargin } = margin;
 
@@ -126,6 +122,7 @@ export const getMarginStyle = <T extends MarginProps>({
     }
 
     inline = {
+      ...marginStyle,
       ...vMarginStyle,
       ...hMarginStyle,
       ...topStyle,

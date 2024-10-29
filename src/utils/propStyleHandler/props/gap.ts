@@ -1,4 +1,5 @@
 import { GetStyleReturnProps, GapProps } from "@uiTypes";
+import { typeCheckers } from "../typeCheckers";
 
 export const getGapStyle = <T extends GapProps>({
   gap,
@@ -16,14 +17,13 @@ export const getGapStyle = <T extends GapProps>({
 
   if (typeof gap === "object") {
     //margin is ValueAndUnitProps
-    if ("value" in gap || "unit" in gap) {
+
+    if (typeCheckers.valueAndUnitProps(gap)) {
       const { value, unit = "px" } = gap;
-      if (value !== undefined) {
-        return {
-          classes: "",
-          inline: { gap: `${value}${unit}` },
-        };
-      }
+      return {
+        classes: "",
+        inline: { gap: `${value}${unit}` },
+      };
     }
   }
   const sanizitizedClasses = classes.filter((c) => c !== "");

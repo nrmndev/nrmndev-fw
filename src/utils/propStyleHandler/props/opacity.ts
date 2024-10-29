@@ -10,7 +10,7 @@ export const getOpacityStyle = <T extends OpacityProps>({
     return { classes: classes.join(" "), inline };
   }
 
-  opacity && classes.push(`opacity-${opacity}`);
+  (opacity || opacity === 0) && classes.push(`opacity-${opacity}`);
 
   const sanizitizedClasses = classes.filter((c) => c !== "");
   return { classes: sanizitizedClasses.join(" "), inline };

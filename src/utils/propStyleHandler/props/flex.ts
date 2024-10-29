@@ -1,6 +1,6 @@
 import { FlexProps, GetStyleReturnProps } from "@uiTypes";
 
-export const getFlexStyle = (flex?: FlexProps["flex"]): GetStyleReturnProps => {
+export const getFlexStyle = ({ flex }: FlexProps): GetStyleReturnProps => {
   let classes: string[] = [];
   let inline: React.CSSProperties = {};
 
