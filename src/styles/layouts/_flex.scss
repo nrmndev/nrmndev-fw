@@ -90,4 +90,4 @@ $alignItems: ("start", "end", "center", "baseline", "stretch");
   }
 }
 
-@include makeFlexCols(var.$sizing);
+@include makeFlexCols(var.$sizes);
