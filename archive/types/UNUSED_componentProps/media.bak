@@ -1,0 +1,13 @@
+import { PickUtilityProps } from "@uiTypes";
+import { IconComponentProps } from "components/icon/Icon.types";
+import { TypographyComponentProps } from "components/typography/Typography.types";
+
+export type MediaComponentProps = PickUtilityProps<
+  "background" | "border" | "borderRadius" | "color" | "padding"
+> & {
+  icon: IconComponentProps & {
+    position?: "top-left" | "left" | "right" | "top-center" | "top-right";
+  };
+  heading: TypographyComponentProps;
+  body: TypographyComponentProps;
+};

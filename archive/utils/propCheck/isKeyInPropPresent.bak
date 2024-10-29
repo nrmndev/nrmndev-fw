@@ -1,0 +1,32 @@
+import { MarginProps } from "@uiTypes";
+
+type ValueArray<T> = {
+  [K in keyof T]: T[K] extends object ? keyof T[K] : T[K];
+}[keyof T][];
+
+export const isKeyInPropPresent = <T extends object>(
+  obj: T,
+  props: ValueArray<T>
+): obj is T & {
+  [K in keyof T]: K extends (typeof props)[number] ? T[K] : never;
+} => {
+  //console.log(obj);
+  //console.log(props);
+  return props.some((prop) => prop in obj);
+};
+
+const margin: MarginProps = {
+  margin: {
+    unit: "%",
+    value: 150,
+  },
+};
+
+//type MarginKeys = keyof NonNullable<MarginProps["margin"]>;
+
+const obj: MarginProps = {
+  margin: { value: 120 },
+};
+const { margin: marginZ } = obj;
+isKeyInPropPresent<MarginProps>(margin, [""]);
+//const test = isKeyInPropPresent<MarginEdgeOptions>(obj, ["bottom","right","left","top"]);

@@ -1,0 +1,15 @@
+import {
+  AsImgProps,
+  BorderProps,
+  BorderRadiusProps,
+  DisplayProps,
+  HeightProps,
+  WidthProps,
+} from "@uiTypes";
+
+export type ImageComponentProps = DisplayProps &
+  AsImgProps &
+  BorderProps &
+  BorderRadiusProps &
+  WidthProps &
+  HeightProps;
