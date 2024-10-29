@@ -2,8 +2,9 @@ import { Image, UtilityStyledComponent } from "@uiComponents";
 import classNames from "classnames";
 import { ImCogs } from "react-icons/im";
 import { IconComponentProps } from "@uiComponentTypes";
+import { forwardRef } from "react";
 
-const Icon = (props: IconComponentProps) => {
+const Icon = (props: IconComponentProps, ref?: React.Ref<HTMLSpanElement>) => {
   const {
     icon: Icon = ImCogs,
     iconSize = "sm",
@@ -21,7 +22,12 @@ const Icon = (props: IconComponentProps) => {
   );
 
   return (
-    <UtilityStyledComponent as="span" {...utilityProps} className={className}>
+    <UtilityStyledComponent
+      as="span"
+      {...utilityProps}
+      className={className}
+      ref={ref}
+    >
       {typeof Icon === "string" ? (
         <Image src={Icon} className="icon__image" />
       ) : (
@@ -31,4 +37,4 @@ const Icon = (props: IconComponentProps) => {
   );
 };
 
-export default Icon;
+export default forwardRef(Icon);

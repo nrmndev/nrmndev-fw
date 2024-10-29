@@ -1,8 +1,7 @@
-import { ColorOptions } from "@uiTypes";
+import { PickUtilityProps } from "@uiTypes";
 import { IconType } from "react-icons";
 
-export type LabelDecorationComponentProps = {
+export type LabelDecorationComponentProps = PickUtilityProps<"color"> & {
   Icon?: IconType;
-  color?: ColorOptions;
   position?: "left" | "right";
 };

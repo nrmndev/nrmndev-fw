@@ -1,6 +1,6 @@
 import { UtilityProps } from "@uiTypes";
 import { convertCSSPropToString, propStyleHandler, splitProps } from "@utils";
-import { useMemo } from "react";
+import { forwardRef, useMemo } from "react";
 import styled from "styled-components";
 import React from "react";
 
@@ -15,43 +15,41 @@ import React from "react";
  *
  */
 
-const UtilityStyledComponent = React.forwardRef(
-  <T extends React.ElementType = "div">(
-    { as, style, ...props }: UtilityProps<T>,
-    ref?: React.Ref<React.ElementRef<T>>
-  ) => {
-    const Component = as || "div";
+const UtilityStyledComponent = <T extends React.ElementType>(
+  { as, style, ...props }: UtilityProps<T>,
+  ref?: React.Ref<React.ElementRef<T>>
+) => {
+  const Component = as || "div";
 
-    const memoizedSplittedProps = useMemo(() => {
-      return splitProps(props);
-    }, [props]);
-    const { utilityProps, intrinsicProps } = memoizedSplittedProps;
+  const memoizedSplittedProps = useMemo(() => {
+    return splitProps(props);
+  }, [props]);
+  const { utilityProps, intrinsicProps } = memoizedSplittedProps;
 
-    const memoizedStyles = useMemo(() => {
-      return propStyleHandler({ ...utilityProps });
-    }, [utilityProps]);
+  const memoizedStyles = useMemo(() => {
+    return propStyleHandler({ ...utilityProps });
+  }, [utilityProps]);
 
-    const { className, inlineStyle } = memoizedStyles;
-    // const componentProps = {
-    //   ...(className ? { className: className } : {}),
-    // };
+  const { className, inlineStyle } = memoizedStyles;
+  // const componentProps = {
+  //   ...(className ? { className: className } : {}),
+  // };
 
-    const CSSString = convertCSSPropToString(inlineStyle);
+  const CSSString = convertCSSPropToString(inlineStyle);
 
-    const commonProps = {
-      style,
-      ref,
-      className,
-      ...intrinsicProps,
-    };
+  const commonProps = {
+    style,
+    ref,
+    className,
+    ...intrinsicProps,
+  };
 
-    return CSSString !== "" ? (
-      <StyledComponent {...commonProps} as={as} $ss={CSSString} />
-    ) : (
-      <Component {...commonProps} className={className} />
-    );
-  }
-);
+  return CSSString !== "" ? (
+    <StyledComponent {...commonProps} as={as} $ss={CSSString} />
+  ) : (
+    <Component {...commonProps} className={className} />
+  );
+};
 
 const StyledComponent = styled.div<{ $ss?: string }>`
   ${({ $ss }) => $ss}
@@ -60,7 +58,7 @@ const StyledComponent = styled.div<{ $ss?: string }>`
 // Disable automatic class name generation
 StyledComponent.displayName = "StyledComponent";
 //StyledComponent.styledComponentId = "utilityStyled"; // Custom ID
-export default UtilityStyledComponent;
+export default forwardRef(UtilityStyledComponent);
 
 // return (
 //   <StyledComponent

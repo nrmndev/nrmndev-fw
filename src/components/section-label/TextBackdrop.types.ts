@@ -1,8 +1,8 @@
-import { ColorOptions, SizeOptions, IncrementOf5Options } from "@uiTypes";
+import { SizeOptions, PickUtilityProps } from "@uiTypes";
 
-export type TextBackdropComponentProps = {
+export type TextBackdropComponentProps = PickUtilityProps<
+  "color" | "opacity"
+> & {
   label: string;
-  opacity?: IncrementOf5Options;
-  color?: ColorOptions;
   size?: SizeOptions;
 };

@@ -1,7 +1,7 @@
 import { ColorOptions, ColorProps, TextProps } from "@uiTypes";
 import { IconType } from "react-icons";
 
-type ListOptions = "ordered-list" | "unordered-list";
+type ListOptions = "ol" | "ul";
 
 type Items = {
   label: string | JSX.Element;

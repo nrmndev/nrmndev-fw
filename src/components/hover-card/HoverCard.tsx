@@ -7,8 +7,12 @@ import HoverCardContextProvider from "./HoverCardContext";
 import classNames from "classnames";
 import { UtilityStyledComponent } from "@uiComponents";
 import { HoverCardComponentProps } from "@uiComponentTypes";
+import { forwardRef } from "react";
 
-const HoverCard = ({ animation, ...utilityProps }: HoverCardComponentProps) => {
+const HoverCard = (
+  { animation, ...utilityProps }: HoverCardComponentProps,
+  ref?: React.Ref<HTMLDivElement>
+) => {
   const className = classNames(
     "hovercard",
     animation ? "animate animate__" + animation : "animate animate__slideInLeft"
@@ -16,6 +20,7 @@ const HoverCard = ({ animation, ...utilityProps }: HoverCardComponentProps) => {
   return (
     <HoverCardContextProvider>
       <UtilityStyledComponent
+        ref={ref}
         as="div"
         {...utilityProps}
         className={className}
@@ -29,4 +34,4 @@ HoverCard.Heading = HoverCardHeading;
 HoverCard.Icon = HoverCardIcon;
 HoverCard.Overlay = Overlay;
 HoverCard.OverlayHeading = OverlayHeading;
-export default HoverCard;
+export default forwardRef(HoverCard);

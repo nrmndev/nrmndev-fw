@@ -1,13 +1,17 @@
 import { MediaComponentProps } from "@uiComponentTypes";
 import { Icon, Typography, UtilityStyledComponent } from "@uiComponents";
+import { forwardRef } from "react";
 
-const Media = ({
-  icon,
-  heading,
-  color: mainColor = "black",
-  body,
-  ...utilityProps
-}: MediaComponentProps) => {
+const Media = (
+  {
+    icon,
+    heading,
+    color: mainColor = "black",
+    body,
+    ...utilityProps
+  }: MediaComponentProps,
+  ref?: React.Ref<HTMLDivElement>
+) => {
   //Icon props
   const {
     position: iconPosition = "left",
@@ -26,6 +30,7 @@ const Media = ({
       as="div"
       className={`media media__icon-${iconPosition}`}
       {...utilityProps}
+      ref={ref}
     >
       <Icon {...iconProps} color={iconColor} className="media__icon" />
       <div className="media__content">
@@ -42,4 +47,4 @@ const Media = ({
   );
 };
 
-export default Media;
+export default forwardRef(Media);
