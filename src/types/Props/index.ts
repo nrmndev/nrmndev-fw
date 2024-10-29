@@ -98,4 +98,4 @@ export type {
   TextProps,
 } from "./textProps";
 
-export type { TextAsProps, TypographyProps } from "./typographyProps";
+export type { TextAsProps } from "./typographyProps";

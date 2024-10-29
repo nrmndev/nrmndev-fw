@@ -36,8 +36,8 @@
       "@hooks/*": ["hooks/*"],
       "@images/*": ["images/*"],
       "@routing": ["routing"],
-      "@basetypes": ["types/base/index"],
-      "@uniontypes": ["types/union/index"],
+      // "@basetypes": ["types/base/index"],
+      // "@uniontypes": ["types/union/index"],
       // "@proptypes": ["types/props/index"],
       "@root/*": ["../*"],
       "@utils": ["utils/index"]
@@ -54,6 +54,7 @@
   //   "src/routing",
   //   "src/stories",
   //   "**/*.bak.ts",
+  //   "**/*.test.ts",
   //   "archive"
   // ]
 

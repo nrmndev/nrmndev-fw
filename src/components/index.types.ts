@@ -1,4 +1,4 @@
-export type { AnchorLinkComponentProps } from "./link/Link.types";
+export type { LinkComponentProps } from "./link/Link.types";
 export type { ButtonProps, ButtonComponentProps } from "./button/Button.types";
 export type { CardComponentProps } from "./card/Card.types";
 export type { CardContentComponentProps } from "./card/CardContent.types";
