@@ -34,4 +34,4 @@ HoverCard.Heading = HoverCardHeading;
 HoverCard.Icon = HoverCardIcon;
 HoverCard.Overlay = Overlay;
 HoverCard.OverlayHeading = OverlayHeading;
-export default forwardRef(HoverCard);
+export default HoverCard;

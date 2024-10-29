@@ -1,7 +1,7 @@
 import { SectionLabelComponentProps } from "@uiComponentTypes";
 import classNames from "classnames";
 import LabelWrapper from "./LabelWrapper";
-import { UtilityStyledComponent } from "components/utility-styled-component";
+import { UtilityStyledComponent } from "@uiComponents";
 import { forwardRef } from "react";
 
 const SectionLabel = (

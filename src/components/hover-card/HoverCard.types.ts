@@ -1,7 +1,9 @@
 import { TypographyComponentProps } from "@uiComponentTypes";
-import { AnimationProps, ChildrenProps } from "@uiTypes";
+import { AnimationProps, ChildrenProps, PickUtilityProps } from "@uiTypes";
 
-export type HoverCardComponentProps = AnimationProps & Required<ChildrenProps>;
+export type HoverCardComponentProps = PickUtilityProps<"children"> &
+  AnimationProps &
+  Required<ChildrenProps>;
 
 export type HoverCardHeadingComponentProps = Required<ChildrenProps> &
   TypographyComponentProps;

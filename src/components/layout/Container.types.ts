@@ -1,4 +1,4 @@
-import { PickUtilityProps } from "@uiTypes";
+import { AsProps, PickUtilityProps } from "@uiTypes";
 
 export type ContainerComponentProps = Partial<
   PickUtilityProps<
@@ -13,7 +13,8 @@ export type ContainerComponentProps = Partial<
     | "margin"
     | "children"
     | "fluid"
-    | "as"
+    | "borderRadius"
     | "overlay"
   >
->;
+> &
+  AsProps<"div" | "section" | "article" | "footer" | "header">;

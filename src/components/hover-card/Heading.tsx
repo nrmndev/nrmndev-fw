@@ -1,10 +1,10 @@
 import { Typography } from "@uiComponents";
-import { HoverCardHeadingComponentProps } from "@uiComponentTypes";
+import { TypographyComponentProps } from "@uiComponentTypes";
 import useHoverCardProvider from "./useHoverCardProvider";
 import { forwardRef } from "react";
 
 const HoverCardHeading = (
-  { ...utilityProps }: HoverCardHeadingComponentProps,
+  { ...utilityProps }: TypographyComponentProps,
   ref?: React.Ref<HTMLHeadingElement>
 ) => {
   const isUsedInsideParentHoverCard = useHoverCardProvider();

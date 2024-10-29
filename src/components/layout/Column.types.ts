@@ -1,4 +1,4 @@
-import { PickUtilityProps } from "@uiTypes";
+import { AsProps, PickUtilityProps } from "@uiTypes";
 
 export type ColumnComponentProps = PickUtilityProps<
   | "background"
@@ -13,7 +13,10 @@ export type ColumnComponentProps = PickUtilityProps<
   | "lg"
   | "xl"
   | "xxl"
+  | "display"
   //| "columnBreakpoints"
   | "children"
   | "gap"
->;
+  | "opacity"
+> &
+  AsProps<"section" | "article" | "div" | "header" | "footer">;
