@@ -1,4 +1,4 @@
-import { ColumnBreakpointProps, GetStyleReturnProps } from "@uiTypes";
+import { ColumnBreakpointOptions, GetStyleReturnProps } from "@uiTypes";
 
 export const getColumnBreakPointStyle = ({
   lg,
@@ -7,7 +7,7 @@ export const getColumnBreakPointStyle = ({
   xl,
   xs,
   xxl,
-}: ColumnBreakpointProps): GetStyleReturnProps => {
+}: ColumnBreakpointOptions): GetStyleReturnProps => {
   const classes: string[] = [];
   const inline: React.CSSProperties = {};
   if (!xs && !sm && !md && !lg && !xl && !xxl) return { classes: "", inline };
