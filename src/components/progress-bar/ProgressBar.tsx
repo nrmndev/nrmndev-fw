@@ -1,16 +1,20 @@
 import { ProgressBarComponentProps } from "@uiComponentTypes";
 import { UtilityStyledComponent } from "@uiComponents";
+import { forwardRef } from "react";
 
-const ProgressBar = ({
-  total,
-  current,
-  color = "primary",
-  label,
-  showProgress = false,
-  format = "percentage",
-  variant = "solid",
-  ...utilityProps
-}: ProgressBarComponentProps) => {
+const ProgressBar = (
+  {
+    total,
+    current,
+    color = "primary",
+    label,
+    showProgress = false,
+    format = "percentage",
+    variant = "solid",
+    ...utilityProps
+  }: ProgressBarComponentProps,
+  ref?: React.Ref<HTMLSpanElement>
+) => {
   const currentBarWidth = (current / total) * 100;
   return (
     <>
@@ -18,6 +22,7 @@ const ProgressBar = ({
         as="span"
         className="progress-bar"
         {...utilityProps}
+        ref={ref}
       >
         {showProgress && (
           <span className="progress-bar__text">
@@ -48,7 +53,7 @@ const ProgressBar = ({
   );
 };
 
-export default ProgressBar;
+export default forwardRef(ProgressBar);
 
 // export interface IProps
 //   extends Omit<BaseProps, "children">,

@@ -1,4 +1,4 @@
-import { PickUtilityProps, SizeOptions } from "@uiTypes";
+import { PickUtilityProps } from "@uiTypes";
 
 export type ColumnComponentProps = PickUtilityProps<
   | "background"
@@ -13,5 +13,7 @@ export type ColumnComponentProps = PickUtilityProps<
   | "lg"
   | "xl"
   | "xxl"
+  //| "columnBreakpoints"
   | "children"
-> & { gap?: SizeOptions };
+  | "gap"
+>;

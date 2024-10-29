@@ -51,7 +51,7 @@ type AsButton = ButtonProp & {
 };
 
 type AsAnchorLink = AnchorLinkProps & {
-  as: "anchorLink";
+  as: "a";
   to?: never;
   type?: never;
   onClick?: never;

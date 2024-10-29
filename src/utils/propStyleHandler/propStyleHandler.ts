@@ -69,6 +69,17 @@ export const propStyleHandler = (props: PropStyleHandlerProps) => {
       xl: props.xl,
       xxl: props.xxl,
     });
+  // if (props.columnBreakpoints) {
+  //   const { xs, sm, md, lg, xl, xxl } = props.columnBreakpoints;
+  //   processStyle(getStyle.columnBreakPoint, {
+  //     xs,
+  //     sm,
+  //     md,
+  //     lg,
+  //     xl,
+  //     xxl,
+  //   });
+  // }
   //Utility handle for Border
   if (props.border) processStyle(getStyle.border, { border: props.border });
   //Utility handle for Color
@@ -88,6 +99,11 @@ export const propStyleHandler = (props: PropStyleHandlerProps) => {
   if (props.height) processStyle(getStyle.height, { height: props.height });
   //Utility handle for Margin
   if (props.margin) processStyle(getStyle.margin, { margin: props.margin });
+  //Utility handle for Opacity
+  if (props.opacity) processStyle(getStyle.opacity, { opacity: props.opacity });
+  //Utility handle for Overlay
+  //Utility handle for Gap
+  if (props.gap) processStyle(getStyle.gap, { opacity: props.gap });
   //Utility handle for Padding
   if (props.padding) processStyle(getStyle.padding, { padding: props.padding });
   //Utility handle for Position

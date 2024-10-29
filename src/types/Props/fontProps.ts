@@ -33,7 +33,7 @@ export type FontWeightOptions =
 export type FontProps = {
   font?:
     | {
-        size?: SizeOptions | ValueAndUnitProps;
+        size?: Omit<SizeOptions, "zero"> | ValueAndUnitProps;
         family?: FontFamilyOptions;
         style?: FontStyleOptions;
         weight?: FontWeightOptions;

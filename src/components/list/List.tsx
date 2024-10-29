@@ -1,21 +1,28 @@
 import { ListComponentProps } from "@uiComponentTypes";
 import classNames from "classnames";
+import { UtilityStyledComponent } from "components/utility-styled-component";
+import { forwardRef } from "react";
 
-const List = ({
-  display = "block",
-  icon: Icon,
-  iconSize = 24,
-  iconColor = "primary",
-  color = "primary",
-  items = [
-    {
-      label: "use {label:string} for list data",
-      children: [{ label: "use {children: [{label:string}]} for nested list" }],
-    },
-  ],
-  listType = "unordered-list",
-  text,
-}: ListComponentProps) => {
+const List = <T extends React.ElementType>(
+  {
+    display = "block",
+    icon: Icon,
+    iconSize = 24,
+    iconColor = "primary",
+    color = "primary",
+    items = [
+      {
+        label: "use {label:string} for list data",
+        children: [
+          { label: "use {children: [{label:string}]} for nested list" },
+        ],
+      },
+    ],
+    listType = "unordered-list",
+    text,
+  }: ListComponentProps,
+  ref?: React.Ref<React.ElementRef<T>>
+) => {
   const ListTag = listType === "ordered-list" ? "ol" : "ul";
 
   const className = classNames(
@@ -27,7 +34,7 @@ const List = ({
   );
 
   return (
-    <ListTag className={className}>
+    <UtilityStyledComponent as={ListTag} className={className} ref={ref}>
       {items.map((item, index) => (
         <li className={`list__item color-${color}`} key={index}>
           {Icon ? (
@@ -47,8 +54,8 @@ const List = ({
           )}
         </li>
       ))}
-    </ListTag>
+    </UtilityStyledComponent>
   );
 };
 
-export default List;
+export default forwardRef(List);

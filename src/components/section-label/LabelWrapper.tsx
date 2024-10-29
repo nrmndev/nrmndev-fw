@@ -1,16 +1,28 @@
-import { Typography, TextBackdrop, LabelDecoration } from "@uiComponents";
+import {
+  Typography,
+  TextBackdrop,
+  LabelDecoration,
+  UtilityStyledComponent,
+} from "@uiComponents";
 import { LabelWrapperComponentProps } from "@uiComponentTypes";
 
-const LabelWrapper = ({
-  label,
-  leftDecoration,
-  rightDecoration,
-  textBackdrop,
-  as = "h2",
-  ...utilityProps
-}: LabelWrapperComponentProps) => {
+const LabelWrapper = (
+  {
+    label,
+    leftDecoration,
+    rightDecoration,
+    textBackdrop,
+    as = "h2",
+    ...utilityProps
+  }: LabelWrapperComponentProps,
+  ref?: React.Ref<HTMLDivElement>
+) => {
   return (
-    <div className="section-label__content">
+    <UtilityStyledComponent
+      as="div"
+      className="section-label__content"
+      ref={ref}
+    >
       {textBackdrop?.label && <TextBackdrop {...textBackdrop} />}
 
       {leftDecoration?.Icon && (
@@ -24,7 +36,7 @@ const LabelWrapper = ({
       {rightDecoration?.Icon && (
         <LabelDecoration {...rightDecoration} position="right" />
       )}
-    </div>
+    </UtilityStyledComponent>
   );
 };
 

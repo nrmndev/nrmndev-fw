@@ -1,4 +1,8 @@
-import { PropStyleHandlerProps } from "@uiTypes";
+import {
+  // ColumnBreakpointOptions,
+  // ColumnBreakpointProps,
+  PropStyleHandlerProps,
+} from "@uiTypes";
 import React from "react";
 
 export type UtilityProps<T extends React.ElementType = "div"> = {
@@ -14,8 +18,6 @@ export type UtilityProps<T extends React.ElementType = "div"> = {
  * @template K - The keys to pick from `UtilityProps`
  * @returns prop type ie. {color, border, margin, ...}
  */
-// export type PickUtilityProps<K extends keyof PropStyleHandlerProps> =
-//   Pick<PropStyleHandlerProps, K>
 
 export type PickUtilityProps<K extends keyof PropStyleHandlerProps> = Omit<
   Pick<PropStyleHandlerProps, K>,
@@ -24,6 +26,21 @@ export type PickUtilityProps<K extends keyof PropStyleHandlerProps> = Omit<
   className?: string;
   style?: React.CSSProperties;
 };
+
+// type EnhancedProps = Omit<PropStyleHandlerProps, "className" | "style"> &
+//   ColumnBreakpointProps;
+
+// export type PickUtilityProps<K extends keyof EnhancedProps> = {
+//   [P in keyof Pick<
+//     Omit<PropStyleHandlerProps, "className" | "style">,
+//     K
+//   >]?: P extends "columnBreakpoints"
+//     ? ColumnBreakpointOptions // Directly provide `{ xs, md, sm }` if columnBreakpoint is selected
+//     : PropStyleHandlerProps[P];
+// } & {
+//   className?: string;
+//   style?: React.CSSProperties;
+// };
 
 /**
  *

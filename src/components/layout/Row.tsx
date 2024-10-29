@@ -1,8 +1,14 @@
 import { UtilityStyledComponent } from "@uiComponents";
 import { RowComponentProps } from "@uiComponentTypes";
+import { forwardRef } from "react";
 
-const Row = ({ ...utilityProps }: RowComponentProps) => {
-  return <UtilityStyledComponent className={"row"} {...utilityProps} />;
+const Row = (
+  { ...utilityProps }: RowComponentProps,
+  ref?: React.Ref<HTMLDivElement>
+) => {
+  return (
+    <UtilityStyledComponent className={"row"} {...utilityProps} ref={ref} />
+  );
 };
 
-export default Row;
+export default forwardRef(Row);

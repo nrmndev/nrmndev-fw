@@ -1,5 +1,30 @@
 ## Changelog
 
+### [v3.0.1-alpha] - 2024-29-10
+
+## **HOTFIXES**
+
+## ** ADDED FEATURES **
+
+### Utility
+
+- `AsProps`
+  - Implementation: <T extends React.ReactElement | keyof React.JSX.IntrinsicElements> = {as?: T;};
+  - Usage:
+  ```jsx typography.tsx
+  type TypographyProps = AsProps<"h1" |"h2" | "h3" | "h4" |"h5" |"h6" |"p">;
+  const Typography({as}:TypographyProps) => <UtilityComponent as={as}/>
+  ```
+  ```jsx homepage.tsx
+    import {Container} from "nrmndev-ui"
+    const HomePage= ()=>{
+      return <Typography as="h2">Some Content</Container>
+    }
+  ```
+- `GapProps`: {gap: SizeOptions | ValueAndUnitProps}
+- `opacity`: {opacity: IncrementOf5Options}
+- `overlay`
+
 ### [v3.0.0-alpha] - 2024-29-10
 
 ## **BREAKING CHANGES**

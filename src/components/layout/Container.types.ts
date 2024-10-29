@@ -1,4 +1,4 @@
-import { OverlayProps, PickUtilityProps } from "@uiTypes";
+import { PickUtilityProps } from "@uiTypes";
 
 export type ContainerComponentProps = Partial<
   PickUtilityProps<
@@ -12,7 +12,8 @@ export type ContainerComponentProps = Partial<
     | "height"
     | "margin"
     | "children"
+    | "fluid"
+    | "as"
+    | "overlay"
   >
-> & { fluid?: boolean } & OverlayProps & {
-    as?: keyof React.JSX.IntrinsicElements;
-  };
+>;
