@@ -1,0 +1,9 @@
+@use "../base/variables" as var;
+
+@for $j from 1 through length(var.$incrementsOf5) {
+  $val: nth(var.$incrementsOf5, $j);
+
+  .opacity-#{$val} {
+    opacity: calc($val / 100);
+  }
+}
