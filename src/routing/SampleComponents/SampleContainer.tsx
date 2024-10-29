@@ -2,7 +2,7 @@ import heroBanner from "../../assets/hero_banner.jpg";
 
 import { Column, Container, Media, Typography } from "@uiComponents";
 import { FaPhone } from "react-icons/fa";
-import { getPaddingStyle } from "utils/propStyleHandler/padding";
+import { getPaddingStyle } from "utils/propStyleHandler/props/padding";
 
 const SampleContainer = () => {
   // const paddingClass = getPaddingStyle(undefined);

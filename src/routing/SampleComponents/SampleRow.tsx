@@ -6,9 +6,7 @@ import { FaPhone } from "react-icons/fa";
 const SampleRow = () => {
   return (
     <>
-      <Typography as="h3" textAlign="center">
-        Sample row handling columns
-      </Typography>
+      <Typography as="h3">Sample row handling columns</Typography>
       <Container
         border={{ bottom: { color: "primary", width: 10 } }}
         borderRadius={{ bottomLeft: 10, bottomRight: 10 }}
@@ -26,15 +24,7 @@ const SampleRow = () => {
             left: { value: 10 },
           }}
         >
-          <Row
-            lgColumns={3}
-            mdColumns={2}
-            smColumns={1}
-            xxlColumns={3}
-            xlColumns={3}
-            xsColumns={1}
-            flex={{ alignItems: "stretch", justifyContent: "center" }}
-          >
+          <Row flex={{ alignItems: "stretch", justifyContent: "center" }}>
             <Media
               icon={{
                 icon: FaPhone,
