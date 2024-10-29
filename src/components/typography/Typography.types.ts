@@ -1,18 +1,10 @@
-import {
-  ColorProps,
-  FontProps,
-  MarginProps,
-  TextProps,
-  TypographyProps,
-} from "@uiTypes";
+import { PickUtilityProps } from "@uiTypes";
 
 export type TextAsProps = {
   as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span";
 };
 
-export type TypographyComponentProps = TypographyProps &
-  ColorProps &
-  TextAsProps &
-  TextProps &
-  MarginProps &
-  FontProps;
+export type TypographyComponentProps = PickUtilityProps<
+  "color" | "text" | "margin" | "font" | "children"
+> &
+  TextAsProps;

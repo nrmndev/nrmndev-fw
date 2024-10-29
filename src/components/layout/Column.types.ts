@@ -13,4 +13,5 @@ export type ColumnComponentProps = PickUtilityProps<
   | "lg"
   | "xl"
   | "xxl"
+  | "children"
 > & { gap?: SizeOptions };

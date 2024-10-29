@@ -1,7 +1,8 @@
 // import IntegrationComponentTesting from "components/utility-styled-component/IntegrationComponentTesting";
 // import img from "/images/homepage/construction_1.jpg";
-import { Container, Row } from "@uiComponents";
+import { Column, Container, Media, Row } from "@uiComponents";
 import { useEffect, useRef } from "react";
+import { BsFillHouseGearFill } from "react-icons/bs";
 // import { isKeyInPropPresent } from "@utils";
 // import { MarginProps, MarginValueUnitOptions } from "@uiTypes";
 const SampleIntegration = () => {
@@ -13,6 +14,49 @@ const SampleIntegration = () => {
 
   return (
     <>
+      <Container className="flex flex-3">
+        <Column flex={{ alignContent: "center", justifyContent: "evenly" }}>
+          <Media
+            icon={{
+              icon: BsFillHouseGearFill,
+              rounded: true,
+              variant: "outline",
+              background: "white",
+            }}
+            heading={{ children: "1.2m+", as: "h3", color: "white" }}
+            body={{
+              children: "Projects Done",
+              color: "white",
+            }}
+          />
+          <Media
+            icon={{
+              icon: BsFillHouseGearFill,
+              rounded: true,
+              variant: "outline",
+              background: "white",
+            }}
+            heading={{ children: "1.2m+", as: "h3", color: "white" }}
+            body={{
+              children: "Projects Done",
+              color: "white",
+            }}
+          />{" "}
+          <Media
+            icon={{
+              icon: BsFillHouseGearFill,
+              rounded: true,
+              variant: "outline",
+              background: "white",
+            }}
+            heading={{ children: "1.2m+", as: "h3", color: "white" }}
+            body={{
+              children: "Projects Done",
+              color: "white",
+            }}
+          />
+        </Column>
+      </Container>
       <Container
         background="primary"
         border={{ width: 2, style: "solid", color: "primary" }}
