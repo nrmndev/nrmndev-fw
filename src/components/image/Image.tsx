@@ -1,10 +1,10 @@
-import { ImageComponentProps } from "@uiTypes";
-import { UtilityStyledComponent } from "components/utility-styled-component";
+import { UtilityStyledComponent } from "@uiComponents";
+import { ImageComponentProps } from "@uiComponentTypes";
 
 const Image = ({
   as = "img",
-  src = "test",
-  alt = "",
+  src,
+  alt = "Image",
   ...utilityProps
 }: ImageComponentProps) => {
   return (

@@ -1,4 +1,4 @@
-import { MediaComponentProps } from "@uiTypes";
+import { MediaComponentProps } from "@uiComponentTypes";
 import { Icon, Typography, UtilityStyledComponent } from "@uiComponents";
 
 const Media = ({

@@ -1,5 +1,5 @@
-import { CardMediaComponentProps } from "@uiTypes";
 import { UtilityStyledComponent } from "@uiComponents";
+import { CardMediaComponentProps } from "@uiComponentTypes";
 
 const CardMedia = ({ ...utilityProps }: CardMediaComponentProps) => {
   return (
@@ -7,9 +7,8 @@ const CardMedia = ({ ...utilityProps }: CardMediaComponentProps) => {
       as="div"
       className="card__media"
       background={{ image: utilityProps.image }}
-      height={utilityProps.height}
       {...utilityProps}
-      //role="img" //check implementation of role from MUI
+      //role="img"
       //title={title}
     />
   );

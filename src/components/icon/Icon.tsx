@@ -1,7 +1,7 @@
 import { Image, UtilityStyledComponent } from "@uiComponents";
-import { IconComponentProps } from "@uiTypes";
 import classNames from "classnames";
 import { ImCogs } from "react-icons/im";
+import { IconComponentProps } from "@uiComponentTypes";
 
 const Icon = (props: IconComponentProps) => {
   const {

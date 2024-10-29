@@ -1,5 +1,5 @@
-import { CardContentComponentProps } from "@uiTypes";
 import { UtilityStyledComponent } from "@uiComponents";
+import { CardContentComponentProps } from "@uiComponentTypes";
 
 const CardContent = ({ ...utilityProps }: CardContentComponentProps) => {
   return (

@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { UtilityStyledComponent } from "@uiComponents";
 import { NavLink } from "react-router-dom";
-import { ButtonComponentProps } from "@uiTypes";
+import { ButtonComponentProps } from "@uiComponentTypes";
 
 const Button = ({
   as: Component = "button",

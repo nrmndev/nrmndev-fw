@@ -1,4 +1,4 @@
-import { AnchorLinkComponentProps } from "@uiTypes";
+import { AnchorLinkComponentProps } from "@uiComponentTypes";
 import { UtilityStyledComponent } from "@uiComponents";
 
 const AsAnchorLink = ({ size, ...rest }: AnchorLinkComponentProps) => {

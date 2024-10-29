@@ -1,0 +1,17 @@
+import { UtilityProps } from "@uiTypes";
+// import { PropStyleHandlerProps } from "@utils";
+
+export type UtilityStyledComponentProps<T extends React.ElementType = "div"> = {
+  as: T;
+} & UtilityProps; //& Omit<React.HTMLProps<HTMLElement>, "color">
+
+//"height" | "width" | "color" | "background" | "backGround"
+//AsOptionalProps & { role?: string; title?: string }; //all props below are to follow
+
+// export type UtilityStyledComponentProps<T extends React.ElementType> = {
+//   as: T;
+//   children?: React.ReactNode;
+//   style?: React.CSSProperties;
+//   className?: string;
+// } & PropStyleHandlerProps &
+//   AsOptionalProps & { role?: string; title?: string }; //all props below are to follow

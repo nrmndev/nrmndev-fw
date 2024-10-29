@@ -1,13 +1,7 @@
-import { ColumnComponentProps } from "@uiTypes";
+import { ColumnComponentProps } from "@uiComponentTypes";
 import { UtilityStyledComponent } from "@uiComponents";
 
-const Column = ({
-  title,
-  role,
-  name,
-  tabIndex,
-  ...utilityProps
-}: ColumnComponentProps) => {
+const Column = ({ ...utilityProps }: ColumnComponentProps) => {
   return <UtilityStyledComponent as="div" {...utilityProps} className="col" />;
 };
 

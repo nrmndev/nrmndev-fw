@@ -1,32 +1,42 @@
-import { ContainerComponentProps } from "@uiTypes";
 import { UtilityStyledComponent } from "@uiComponents";
 import classNames from "classnames";
+import React from "react";
+import { ContainerComponentProps } from "@uiComponentTypes";
 
-const Container = ({
-  fluid,
-  overlay,
-  ...utilityProps
-}: ContainerComponentProps) => {
-  let isOverlay = "";
-  if (overlay) {
-    const { color: overlayColor, opacity: overlayOpacity = 70 } = overlay;
-    isOverlay += overlayColor ? `before:bg-${overlayColor}` : "";
-    isOverlay += ` before:opacity-${overlayOpacity}`;
+const Container = React.forwardRef(
+  (
+    {
+      fluid,
+      overlay,
+      as: Component = "div", // Default to 'div'
+      className,
+      ...utilityProps
+    }: ContainerComponentProps,
+    ref?: React.Ref<React.ElementRef<"div">>
+  ) => {
+    let isOverlay = "";
+    if (overlay) {
+      const { color: overlayColor, opacity: overlayOpacity = 70 } = overlay;
+      isOverlay += overlayColor ? `before:bg-${overlayColor}` : "";
+      isOverlay += ` before:opacity-${overlayOpacity}`;
+    }
+
+    const combinedClasses = classNames(
+      fluid ? "container--fluid" : "container",
+      isOverlay ?? "",
+      className
+    );
+
+    return (
+      <UtilityStyledComponent
+        ref={ref}
+        as={Component}
+        {...utilityProps}
+        className={combinedClasses}
+      />
+    );
   }
-
-  const combinedClasses = classNames(
-    fluid ? "container--fluid" : "container",
-    isOverlay ?? ""
-  );
-
-  return (
-    <UtilityStyledComponent
-      as="div"
-      {...utilityProps}
-      className={combinedClasses}
-    />
-  );
-};
+);
 
 export default Container;
 

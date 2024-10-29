@@ -1,4 +1,4 @@
-import { ListComponentProps } from "@uiTypes";
+import { ListComponentProps } from "@uiComponentTypes";
 import classNames from "classnames";
 
 const List = ({

@@ -1,68 +1,97 @@
-import { UtilityStyledComponentProps } from "@uiTypes";
-import { propStyleHandler } from "@utils";
+import { UtilityProps } from "@uiTypes";
+import { convertCSSPropToString, propStyleHandler, splitProps } from "@utils";
 import { useMemo } from "react";
 import styled from "styled-components";
+import React from "react";
 
-/**
- * Acts as a wrapper that handles utility props.
- * @returns Component with utility classNames or inlineStyles
+/***
+ *
+ * UtilityStyledComponent is Polymorphic Component with Utility Props predefined from UtilityProps
+ * This handles the complexity of creating component of repeating yourself by passing utilityProps you want your compontent to have.
+ * @params {as, ...props as UtilityProps}
+ * @returns Valid JSX Component with utility and IntrinsicAttributes attached to it.
+ * Valid JSX Component with classNames, and module css from styled-components (for calculated styles and inline style)
+ *
+ *
  */
 
-const UtilityStyledComponent = (props: UtilityStyledComponentProps) => {
-  const {
-    as: Component = "a",
-    children,
-    href,
-    src,
-    alt,
-    target,
-    style,
-  } = props;
+const UtilityStyledComponent = React.forwardRef(
+  <T extends React.ElementType = "div">(
+    { as, style, ...props }: UtilityProps<T>,
+    ref?: React.Ref<React.ElementRef<T>>
+  ) => {
+    const Component = as || "div";
 
-  const memoizedStyles = useMemo(() => {
-    return propStyleHandler({ ...props });
-  }, [props]);
+    const memoizedSplittedProps = useMemo(() => {
+      return splitProps(props);
+    }, [props]);
+    const { utilityProps, intrinsicProps } = memoizedSplittedProps;
 
-  const { className, styled } = memoizedStyles;
-  //const { className, styled } = propStyleHandler({ ...props });
+    const memoizedStyles = useMemo(() => {
+      return propStyleHandler({ ...utilityProps });
+    }, [utilityProps]);
 
-  const ComponentProps = {
-    ...(className ? { className: className } : {}),
-    ...(Component === "a" ? { href, target } : {}),
-    ...(Component === "img" ? { src, alt } : {}),
-    ...(Component === "iframe" ? { src } : {}),
-    ...(Component === "video" ? { src } : {}),
-    //Add other support
-    //...(Component === "form" ? {}: {}),
-    //...(Component === "input" ? {}: {}),
-    //...(Component === "button" ? {}: {}),
-  };
+    const { className, inlineStyle } = memoizedStyles;
+    // const componentProps = {
+    //   ...(className ? { className: className } : {}),
+    // };
 
-  if (styled) {
-    return (
-      <StyledComponent
-        as={Component}
-        {...ComponentProps}
-        $ss={styled}
-        style={style}
-      >
-        {children}
-      </StyledComponent>
+    const CSSString = convertCSSPropToString(inlineStyle);
+
+    const commonProps = {
+      style,
+      ref,
+      className,
+      ...intrinsicProps,
+    };
+
+    return CSSString !== "" ? (
+      <StyledComponent {...commonProps} as={as} $ss={CSSString} />
+    ) : (
+      <Component {...commonProps} className={className} />
     );
   }
-  return (
-    <Component {...ComponentProps} style={style}>
-      {children}
-    </Component>
-  );
-};
+);
 
 const StyledComponent = styled.div<{ $ss?: string }>`
-  ${(props) => {
-    if (!props.$ss) {
-      return null;
-    }
-    return props.$ss;
-  }}
+  ${({ $ss }) => $ss}
 `;
+
+// Disable automatic class name generation
+StyledComponent.displayName = "StyledComponent";
+//StyledComponent.styledComponentId = "utilityStyled"; // Custom ID
 export default UtilityStyledComponent;
+
+// return (
+//   <StyledComponent
+//     as={as}
+//     style={style}
+//     className={className}
+//     $ss={CSSString}
+//     {...intrinsicProps}
+//     ref={ref}
+//   >
+//     {intrinsicProps.children}
+//   </StyledComponent>
+// );
+// return inlineStyle ? (
+//   <StyledComponent
+//     as={as}
+//     style={style}
+//     className={className}
+//     $ss={CSSString}
+//     {...intrinsicProps}
+//     ref={ref}
+//   >
+//     {intrinsicProps.children}
+//   </StyledComponent>
+// ) : (
+//   <Component
+//     style={style}
+//     className={className}
+//     ref={ref}
+//     {...intrinsicProps}
+//   >
+//     {intrinsicProps.children}
+//   </Component>
+// );
