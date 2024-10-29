@@ -39,6 +39,12 @@ export const splitProps = <T extends React.ElementType>(
 export const KeyOfUtilityProps = [
   "background",
   "border",
+  "boxShadow",
+  "xsColumns",
+  "smColumns",
+  "xxlColumns",
+  "lg",
+  "mdColumns",
   "borderRadius",
   "className",
   "color",
