@@ -2,7 +2,7 @@
 
 A utility-first CSS and CSS-in-JS framework with type safety and memoized centralized logic
 
-## MAJOR VERSION RELEASE (breaking changes) see changelog [v2.0] - 2024-21-10
+## Alpha Version released (v2.1.0)
 
 ## Table of Contents
 
@@ -18,34 +18,63 @@ A utility-first CSS and CSS-in-JS framework with type safety and memoized centra
 
 You can install the framework using npm or yarn:
 
-````bash
+```bash
 npm install nrmndev-fw
 # or
 yarn add nrmndev-fw
+```
 
 ## Getting Started
-Include a simple example that helps users understand how to quickly set up and use your framework.
 
-Example:
-```md
-Here's a quick example to get you started:
+### Component usage:
 
 ```jsx
-import React from 'react';
-import { Typography } from 'nrmndev-fw';
+import React from "react";
+import { Typography } from "nrmndev-fw";
 
 const App = () => (
   <div>
-    <Typography as="h2" color="primary">Hello world!</Typography>
+    <Typography as="h2" color="primary">
+      Hello world!
+    </Typography>
   </div>
 );
 
 export default App;
-````
+```
+
+### UtiliStyledComponent usage:
+
+Just import the utility props you need, pass spread object to `UtilityStyledComponent` and it will handle the className logic
+(if a form of predefined classNames or calculated styles passed into styled-component to render with just module classNames).
+For in-depth explanation refer to the documentation:
+
+```jsx
+import { RowComponentProps } from "@uiTypes";
+import { UtilityStyledComponent } from "@uiComponents";
+
+const Row = ({ ...utilityProps }: RowComponentProps) => {
+  return (
+    <UtilityStyledComponent as="div" {...utilityProps} className={"row"} />
+  );
+};
+```
+
+```jsx
+const App = () => {
+  return (
+    <Row id="SampleId" className="someClassName" padding={"md"} margin={{top:{value:25,unit:"px"}}} xsColumns={2} smColumns={3} mdColumns={4}  flex={{ alignItems: "stretch", justifyContent: "center" }} {/* and many more*/} />
+  );
+};
+```
+
+Expects:
+
+<div className="someClassName p-sm flex-xs-2 flex-sm-2 flex-md-2 flex-direction-row">
 
 ## Usage
 
-This framework is designed for **personal use** and is not intended for production environments or widespread distribution. Please use it for personal projects or development purposes.
+This framework is on a continous development and designed for **personal use**. The current release is not intended for production environments or widespread distribution. Please use it for personal projects or development purposes.
 
 See all components and documentation here: (StoryBook under construction 🛠🛠🛠)
 

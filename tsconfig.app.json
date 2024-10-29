@@ -30,7 +30,8 @@
     "moduleResolution": "Node",
     "baseUrl": "./src",
     "paths": {
-      "@uiComponents": ["components/index"],
+      "@uiComponents": ["components/index.ts"],
+      "@uiComponentTypes": ["components/index.types"],
       "@uiTypes": ["types/index"],
       "@hooks/*": ["hooks/*"],
       "@images/*": ["images/*"],
@@ -38,10 +39,13 @@
       "@basetypes": ["types/base/index"],
       "@uniontypes": ["types/union/index"],
       // "@proptypes": ["types/props/index"],
+      "@root/*": ["../*"],
       "@utils": ["utils/index"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "src/**/*.test.tsx", "tests"],
+
+  //PUBLISHING TO NPM CONFIG "exclude"
   "exclude": [
     "node_modules",
     "dist",
@@ -49,7 +53,20 @@
     "src/main.tsx",
     "src/routing",
     "src/stories",
-    "**/*.bak.ts"
+    "**/*.bak.ts",
+    "archive"
   ]
-  //"exclude": ["node_modules", "**/*.bak.ts"]
+
+  //DEVELOPMENT CONFIG "exclude"
+  //"exclude": ["node_modules", "**/*.bak.ts", "archive"]
 }
+
+// "exclude": [
+//   "node_modules",
+//   "dist",
+//   "src/app.tsx",
+//   "src/main.tsx",
+//   "src/routing",
+//   "src/stories",
+//   "**/*.bak.ts"
+// ]

@@ -1,6 +1,63 @@
 ## Changelog
 
-### [v2.1.0-alpha] - 2024-22-10
+### [v3.0.0-alpha] - 2024-29-10
+
+## **BREAKING CHANGES**
+
+- All components now utilize <UtilityStyledComponent> for managing utility CSS. Please exercise caution when updating to ensure compatibility.
+
+## IMPROVEMENTS
+
+- **UtilityStyledComponent**
+  - Full test coverage for `UtilityStyledComponent`
+  - ForwardRef implemented to `UtilityStyledComponent`
+  - Polymhorpic Component using `as` props
+- Components can easily extend utility properties using `{PickUtilityProps<keyof UtilityProps>}!` (must use <UtilityStyledComponent>)
+
+  - **Usage**: PickUtilityProps<| "background"| "border"| "flex"| "padding"| "color"| "position"| "width"| "height"| "margin">
+  - **Returns extended properties**: {background, border, flex, padding, color, position, width, height, margin}
+  - **Example**:
+
+  ```jsx container.tsx
+  type ContainerComponentProps = PickUtilityProps<| "background"| "border"| "flex"| "padding"| "color"| "position"| "width"| "height"| "margin">
+  const  Container  = ({...utilityProps}: ContainerComponentProps) => <UtilityStyledComponent {...utilityProps}>
+
+  ```
+
+  ```jsx homepage.tsx
+    import {Container} from "nrmndev-ui"
+    const HomePage= ()=>{
+      return <Container as="section" background="primary" border={width:2, style:solid, color:"primary"} padding="md" color="secondary" position={{position: relative}} width={{value:100, unit:"%"}} height={{value:100,unit:"vh"}}>Some Content</Container>
+    }
+  ```
+
+  ```jsx DOM
+  <section class="sc-blHHSb cjtpDk container bg-primary color-secondary p-md">
+    Some Content
+  </section>
+  ```
+
+  ```jsx computed style-component
+  .cjtpDk {
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--primary);
+    width: 100%;
+    height: 100vh;
+    position: relative;
+  }
+  ```
+
+- Centralised UtilityComponent with Memoization
+- Centralised import of all componentTypes @ `nrmndev-fw/@uiComponentTypes`
+- Centralised import of all components @ `nrmndev-fw`
+- Centralised import of all utils @ `nrmndev-fw/@utils`
+
+## ADDED FEATURES
+
+- **Utility**
+  - `convertCSSPropToString` : utility function that converts a React.CSSProperties object into a CSS-friendly string format. This function iterates through the properties of the object, transforming them into a valid CSS string representation, suitable for inline styles or other CSS applications.
+  - `typeCheckers` : collection of functions that serve as type predicates to assert and narrow down types at runtime.
 
 ## Alpha Version released.
 

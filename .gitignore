@@ -28,5 +28,6 @@ dist-ssr
 *.sln
 *.sw?
 
+coverage/*
 TODO.txt
 *storybook.log
