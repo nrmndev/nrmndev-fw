@@ -1,26 +1,33 @@
+import { AsProps, PickUtilityProps } from "@uiTypes";
 import heroBanner from "../../assets/hero_banner.jpg";
 
 import { Column, Container, Media, Typography } from "@uiComponents";
 import { FaPhone } from "react-icons/fa";
-import { getPaddingStyle } from "utils/propStyleHandler/props/padding";
+import { ExtendUtilityProps } from "@utils";
+import { useEffect, useRef } from "react";
 
-const SampleContainer = () => {
+const Test = () => {
   // const paddingClass = getPaddingStyle(undefined);
   // console.log(paddingClass);
   return (
     <>
-      <Typography as="h3" textAlign="center">
+      <Typography as="h3" text={{ align: "center" }}>
         Sample container-fluid with background as Image, overLay: white,
         opacity: .3, border: bottom:10, color:"secondary"
       </Typography>
       <Container
-        border={{ bottom: 10, color: "secondary" }}
-        borderRadius={{ bottomLeft: 10, bottomRight: 10 }}
+        border={{ bottom: { width: 5 } }}
+        //borderRadius={{}}
         background={{ image: heroBanner, attachment: "fixed" }}
-        padding={{ top: 25, right: 30, bottom: 30, left: 30 }}
+        padding={{
+          top: { value: 30 },
+          right: { value: 30 },
+          bottom: { value: 30 },
+          left: { value: 30 },
+        }}
         fluid
       >
-        <Typography as="h4" textAlign="center" color="white">
+        <Typography as="h4" text={{ align: "center" }} color="white">
           Sample container-flex
         </Typography>
         <Container flex={{ alignContent: "evenly" }}>
@@ -74,7 +81,7 @@ const SampleContainer = () => {
         </Container>
       </Container>
       <hr />
-      <Typography as="h3" textAlign="center">
+      <Typography as="h3" text={{ align: "center" }}>
         Sample container-fluid with utility props
       </Typography>
       <Container
@@ -82,11 +89,11 @@ const SampleContainer = () => {
         borderRadius={"lg"}
         padding={"lg"}
         margin={"xxl"}
-        border={{ value: "lg", color: "primary" }}
+        border={{ width: 5, color: "dark" }}
         fluid
         // style={{ backgroundColor: "black", minHeight: "200px" }}
       >
-        <Typography as="h4" textAlign="center" color="white">
+        <Typography as="h4" text={{ align: "center" }} color="white">
           Sample container-flex
         </Typography>
         <Container flex={{ alignContent: "evenly" }}>
@@ -145,7 +152,7 @@ const SampleContainer = () => {
         borderRadius={"lg"}
         padding={"lg"}
         margin={"xxl"}
-        border={{ value: "lg", color: "accent2" }}
+        border={{ width: 2, color: "secondary" }}
         fluid
       >
         <Container
@@ -156,7 +163,7 @@ const SampleContainer = () => {
             justifyContent: "start",
           }}
         >
-          <Typography as="h4" textAlign="center" color="white">
+          <Typography as="h4" text={{ align: "center" }} color="white">
             Sample container-flex alignItems:"start", alignContent:"start",
             flexDirection: "col", justifyContent: "start"
           </Typography>
@@ -263,4 +270,21 @@ const SampleContainer = () => {
   );
 };
 
+const EnhancedContainer = ExtendUtilityProps<
+  typeof Container,
+  PickUtilityProps<"color" | "width" | "boxShadow" | "opacity">
+>(Container);
+
+const SampleContainer = () => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    console.log(ref.current);
+  }, []);
+  return (
+    <EnhancedContainer boxShadow="box-shadow-6" opacity={40} ref={ref}>
+      Hello my Friend
+    </EnhancedContainer>
+  );
+};
 export default SampleContainer;

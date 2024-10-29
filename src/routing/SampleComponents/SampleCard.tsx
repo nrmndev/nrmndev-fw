@@ -13,7 +13,7 @@ import { BsFillHouseGearFill } from "react-icons/bs";
 import { FaBeer, FaCheck, FaCog } from "react-icons/fa";
 const SampleCard = () => (
   <>
-    <Container marginTop={"sm"} marginBottom="negative-lg">
+    <Container margin={{ top: "sm", bottom: "negative-lg" }}>
       <Row>
         <Column xxl={6} xl={6} lg={6} md={12} sm={12} xs={12}>
           <img
@@ -26,7 +26,7 @@ const SampleCard = () => (
             position="left"
             label="About Us"
             decoration={{ left: { Icon: FaBeer } }}
-            fontSize={"xxl"}
+            font={{ size: "xxl" }}
           />
           <Typography as="h2">
             A Company To Change The World We're Caryatecton
@@ -57,13 +57,13 @@ const SampleCard = () => (
     <Container
       fluid
       background={"light"}
-      padding={{ top: 50, bottom: 50, unit: "px" }}
+      padding={{ top: { value: 50 }, bottom: { value: 50 } }}
     >
       <Container>
         <SectionLabel
           position="left"
           label="Services"
-          fontSize={"xxl"}
+          font={{ size: "xxl" }}
           decoration={{ left: { Icon: FaCog } }}
         />
         <Column padding={"zero"}>
@@ -77,7 +77,7 @@ const SampleCard = () => (
           </Typography>
         </Column>
         <Container className="fluid">
-          <Row lgColumns={3} mdColumns={3} xlColumns={3} xxlColumns={3}>
+          <Row columnItems={{ lg: 3, md: 3, xl: 3, xxl: 3 }}>
             <Column flex={{ alignItems: "stretch" }}>
               <Card
                 boxShadow="box-shadow-3"
@@ -336,28 +336,28 @@ const SampleCard = () => (
     <Container
       fluid
       background={"primary"}
-      padding={{ top: 50, bottom: 50, unit: "px" }}
+      padding={{ top: { value: 50 }, bottom: { value: 50 } }}
     >
       <Container>
         <SectionLabel
           position="right"
           label="Trades"
-          fontSize={"xxl"}
+          font={{ size: "xxl" }}
           color="light"
           decoration={{ right: { Icon: FaCog, color: "light" } }}
         />
         <Column padding={"zero"}>
-          <Typography as="h3" textAlign="right" color="light">
+          <Typography as="h3" text={{ align: "right" }} color="light">
             Fully Integrated Construction Services.
           </Typography>
-          <Typography as="p" textAlign="right" color="light">
+          <Typography as="p" text={{ align: "right" }} color="light">
             Proactively pontificate client-centered relationships via- process
             centric leadershio skills. Credibly maintain focused internal or
             "organic" sources rather than vertical alignments
           </Typography>
         </Column>
         <Container className="fluid">
-          <Row lgColumns={3} mdColumns={3} xlColumns={3} xxlColumns={3}>
+          <Row columnItems={{ lg: 3, md: 3, xl: 3, xxl: 3 }}>
             <Column flex={{ alignItems: "stretch" }}>
               <Card boxShadow="box-shadow-3" background={"white"}>
                 <Media
@@ -463,7 +463,7 @@ const SampleCard = () => (
                   heading={{
                     children: "Fire Detection and Alarm System (FDAS)",
                     color: "primary",
-                    fontSize: "md",
+                    font: { size: "md" },
                   }}
                   body={{
                     children:
@@ -534,7 +534,7 @@ const SampleCard = () => (
                     children:
                       "Mechanical Automatic Fire Suppresion System (AFSS)",
                     color: "primary",
-                    fontSize: "md",
+                    font: { size: "md" },
                   }}
                   body={{
                     children:

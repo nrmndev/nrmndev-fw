@@ -6,6 +6,7 @@ const LinksArray = [
   { label: "Button", to: "/button" },
   { label: "Card", to: "/card" },
   { label: "Container", to: "/container" },
+  { label: "Column", to: "/column" },
   // { label: "Countdown", to: "/countdown" },
   { label: "Form", to: "/form" },
   { label: "Hover Card", to: "/hovercard" },
@@ -34,8 +35,8 @@ const ComponentNavRoutes = () => {
   return (
     <div className="routeNav">
       <List
-        textAlign="center"
-        listType="unordered-list"
+        text={{ align: "center" }}
+        listType="ul"
         icon={PiLineVertical}
         iconColor="white"
         color="white"

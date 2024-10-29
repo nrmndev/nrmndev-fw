@@ -1,13 +1,11 @@
 import { Icon } from "@uiComponents";
-import viteLogo from "/vite.svg";
+
 import { FaBeer } from "react-icons/fa";
 
 //Limit to 3 combinations color/background
 const SampleIcon = () => {
   return (
     <>
-      <p>Icon using img with background:black, iconSize:lg</p>
-      <Icon icon={viteLogo} variant="solid" background="black" iconSize="lg" />
       <hr /> <p>Icon using react-icons with background:black, iconSize:lg</p>
       <Icon
         icon={FaBeer}

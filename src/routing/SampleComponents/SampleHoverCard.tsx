@@ -6,10 +6,10 @@ const SampleHoverCard = () => {
     <>
       <HoverCard style={{ maxWidth: "300px" }}>
         <HoverCard.Icon icon={FaBedPulse} />
-        <HoverCard.Heading level={3}>Sample Heading</HoverCard.Heading>
+        <HoverCard.Heading as="h3">Sample Heading</HoverCard.Heading>
         <HoverCard.Body>Sample body</HoverCard.Body>
         <HoverCard.Overlay>
-          <HoverCard.OverlayHeading level={3}>
+          <HoverCard.OverlayHeading as="h3">
             Sample Overlay Heading
           </HoverCard.OverlayHeading>
         </HoverCard.Overlay>

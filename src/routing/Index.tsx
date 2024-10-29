@@ -17,6 +17,7 @@ import SampleCard from "./SampleComponents/SampleCard";
 import SampleRow from "./SampleComponents/SampleRow";
 import SampleImage from "./SampleComponents/SampleImage";
 import SampleIntegration from "./SampleComponents/SampleIntegration";
+import SampleColumn from "./SampleComponents/SampleColumn";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
       { path: "card", element: <SampleCard /> },
       { path: "container", element: <SampleContainer /> },
       { path: "countdown", element: <SampleCountdown /> },
+      { path: "column", element: <SampleColumn /> },
       { path: "form", element: <SampleForm /> },
       { path: "hovercard", element: <SampleHoverCard /> },
       { path: "icon", element: <SampleIcon /> },

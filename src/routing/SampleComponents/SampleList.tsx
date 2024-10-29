@@ -4,7 +4,7 @@ const SampleList = () => {
   return (
     <>
       <List
-        listType="ordered-list"
+        listType="ol"
         items={[
           { label: "Market Research", children: [{ label: "Level 1" }] },
           { label: "Pre-construction services" },
@@ -14,7 +14,7 @@ const SampleList = () => {
       />
       <hr />
       <List
-        listType="ordered-list"
+        listType="ol"
         display="inline-flex"
         items={[
           { label: "Market Research" },
@@ -22,11 +22,11 @@ const SampleList = () => {
           { label: "Industrial manufacturing" },
           { label: "Build and construction" },
         ]}
-        textAlign="right"
+        text={{ align: "right" }}
       />
       <hr />
       <List
-        listType="ordered-list"
+        listType="ol"
         display="inline-flex-space-between"
         items={[
           { label: "Market Research" },
