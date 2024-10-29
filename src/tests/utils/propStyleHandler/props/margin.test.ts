@@ -61,6 +61,18 @@ describe(`Margin as SizeOptions | ValueAndUnitProps`, () => {
       inline: { margin: "5px" },
     });
   });
+
+  //margin:{value:0} --> {margin: 0px}
+  test(`returns { classes: "", inline: {margin: "5px" } } when margin is of type ValueAndUnitProps with specified unit`, () => {
+    expect(
+      getMarginStyle({
+        margin: { value: 0 } as ValueAndUnitProps,
+      })
+    ).toMatchObject({
+      classes: "",
+      inline: { margin: "0px" },
+    });
+  });
   //}
 });
 

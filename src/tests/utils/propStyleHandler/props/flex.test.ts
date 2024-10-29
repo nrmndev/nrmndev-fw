@@ -5,7 +5,7 @@ import { getFlexStyle } from "@utils";
 
 describe(`getPositionStyle Function`, () => {
   test(`{FlexProps} is undefined, returning {classes:"", inline:{}} `, () => {
-    expect(getFlexStyle(undefined)).toMatchObject({
+    expect(getFlexStyle({ flex: undefined })).toMatchObject({
       classes: "",
       inline: {},
     });
@@ -13,11 +13,13 @@ describe(`getPositionStyle Function`, () => {
   test(`{FlexProps} defined, returning {classes:"flex-nowrap flex-col content-around items-baseline justify-center", inline:{}} `, () => {
     expect(
       getFlexStyle({
-        flexDirection: "col",
-        flexWrap: "nowrap",
-        alignContent: "around",
-        alignItems: "baseline",
-        justifyContent: "center",
+        flex: {
+          flexDirection: "col",
+          flexWrap: "nowrap",
+          alignContent: "around",
+          alignItems: "baseline",
+          justifyContent: "center",
+        },
       })
     ).toStrictEqual({
       classes:
@@ -29,7 +31,9 @@ describe(`getPositionStyle Function`, () => {
   test(`{flexDirection} defined, returning {classes:"flex-col", inline:{}} `, () => {
     expect(
       getFlexStyle({
-        flexDirection: "col",
+        flex: {
+          flexDirection: "col",
+        },
       })
     ).toStrictEqual({
       classes: "flex-col",
@@ -40,7 +44,9 @@ describe(`getPositionStyle Function`, () => {
   test(`{alignContent} defined, returning {classes:"content-center", inline:{}} `, () => {
     expect(
       getFlexStyle({
-        alignContent: "center",
+        flex: {
+          alignContent: "center",
+        },
       })
     ).toStrictEqual({
       classes: "content-center",
@@ -51,7 +57,9 @@ describe(`getPositionStyle Function`, () => {
   test(`{alignItems} defined, returning {classes:"items-end", inline:{}} `, () => {
     expect(
       getFlexStyle({
-        alignItems: "end",
+        flex: {
+          alignItems: "end",
+        },
       })
     ).toStrictEqual({
       classes: "items-end",
@@ -62,7 +70,9 @@ describe(`getPositionStyle Function`, () => {
   test(`{justifyContent} defined, returning {classes:"justify-evenly", inline:{}} `, () => {
     expect(
       getFlexStyle({
-        justifyContent: "evenly",
+        flex: {
+          justifyContent: "evenly",
+        },
       })
     ).toStrictEqual({
       classes: "justify-evenly",
@@ -73,7 +83,9 @@ describe(`getPositionStyle Function`, () => {
   test(`{flexDirection} defined, returning {classes:"flex-col-reverse", inline:{}} `, () => {
     expect(
       getFlexStyle({
-        flexDirection: "col-reverse",
+        flex: {
+          flexDirection: "col-reverse",
+        },
       })
     ).toStrictEqual({
       classes: "flex-col-reverse",

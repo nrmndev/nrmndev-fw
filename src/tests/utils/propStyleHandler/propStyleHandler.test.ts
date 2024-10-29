@@ -28,6 +28,8 @@ describe(`getBackgroundStyle Function`, () => {
         xl: undefined,
         xs: undefined,
         xxl: undefined,
+        gap: undefined,
+        opacity: undefined,
       })
     ).toStrictEqual({ className: "", inlineStyle: {} });
   });
@@ -61,16 +63,15 @@ describe(`getBackgroundStyle Function`, () => {
       xs: 6,
       xxl: 7,
       padding: "zero",
+      opacity: 10,
+      gap: "sm",
     };
 
     const result = propStyleHandler(propsAsClass).className;
     const expectedOutput =
-      "user-defined-class bg-dark col-xs-6 col-sm-4 col-md-3 col-lg-3 col-xl-6 col-xxl-7 color-white d-flex flex-xs-4 flex-sm-1 flex-md-2 flex-lg-5 flex-xl-1 flex-xxl-2 m-lg p-0 text-center text-dashed text-capitalize box-shadow-3";
+      "user-defined-class bg-dark box-shadow-3 col-xs-6 col-sm-4 col-md-3 col-lg-3 col-xl-6 col-xxl-7 color-white d-flex flex-xs-4 flex-sm-1 flex-md-2 flex-lg-5 flex-xl-1 flex-xxl-2 flex-nowrap flex-col content-between items-baseline justify-around g-sm m-lg opacity-10 p-0 text-center text-dashed text-capitalize";
     expect(result).toEqual(expectedOutput);
-    //console.log(result);
-    //PropStyleHandler will not return classes in order, so lets just check by array
-
-    //expect(result.className).
+    //PropstyleHandler Classnames are arranged alphabetically so just testing .toEqual()
   });
   // Test all props that has a key of ValueAndUnitProps and pass value as undefined
   test(`Pass undefined values for all supported props, returns {className:"", inlineStyle:{}}`, () => {
@@ -87,6 +88,7 @@ describe(`getBackgroundStyle Function`, () => {
         },
         padding: { value: undefined },
         margin: { value: undefined },
+        gap: { value: undefined },
       })
     ).toStrictEqual({ className: "", inlineStyle: { position: "absolute" } });
   });

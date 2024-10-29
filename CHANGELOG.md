@@ -8,22 +8,58 @@
 
 ### Utility
 
-- `AsProps`
-  - Implementation: <T extends React.ReactElement | keyof React.JSX.IntrinsicElements> = {as?: T;};
-  - Usage:
-  ```jsx typography.tsx
-  type TypographyProps = AsProps<"h1" |"h2" | "h3" | "h4" |"h5" |"h6" |"p">;
-  const Typography({as}:TypographyProps) => <UtilityComponent as={as}/>
-  ```
-  ```jsx homepage.tsx
-    import {Container} from "nrmndev-ui"
-    const HomePage= ()=>{
-      return <Typography as="h2">Some Content</Container>
-    }
-  ```
-- `GapProps`: {gap: SizeOptions | ValueAndUnitProps}
-- `opacity`: {opacity: IncrementOf5Options}
-- `overlay`
+#### `ExtendUtilityProps`
+
+- A higher-order component (HOC) utility that extends an existing component with additional utility props, defined in PropStyleHandlerProps. It enhances the component with extra styling or layout properties while maintaining ref forwarding.
+
+- Implementation:
+
+```jsx
+type ExtendUtilityProps = <C extends React.ComponentType<any>,U extends Partial<PropStyleHandlerProps>
+>(Component: C)
+``
+- Usage:
+```
+
+```jsx yourComponent.tsx
+const ref = useRef<HTMLDivElement>(null);
+// Use ExtendUtilityProps to add utility props to Button
+const EnhancedContainer = ExtendUtilityProps<
+typeof Container,
+PickUtilityProps<"color" | "width" | "boxShadow" | "opacity">>(Container);
+
+// Usage example with the enhanced component
+<EnhancedContainer boxShadow="box-shadow-6" opacity={40} ref={ref}>
+    Hello my Friend
+</EnhancedContainer>
+```
+
+### Reusable Props and UtilityStyledComponent Integration
+
+#### `AsProps`
+
+- Implementation: <T extends React.ReactElement | keyof React.JSX.IntrinsicElements> = {as?: T;};
+- Usage:
+
+```jsx typography.tsx
+type TypographyProps = AsProps<"h1" |"h2" | "h3" | "h4" |"h5" |"h6" |"p">;
+const Typography({as}:TypographyProps) => <UtilityComponent as={as}/>
+```
+
+```jsx homepage.tsx
+  import {Container} from "nrmndev-ui"
+  const HomePage= ()=>{
+    return <Typography as="h2">Some Content</Container>
+  }
+```
+
+### `GapProps`
+
+- {gap: SizeOptions | ValueAndUnitProps}
+
+### `OpacityProps`
+
+- {opacity: IncrementOf5Options}
 
 ### [v3.0.0-alpha] - 2024-29-10
 

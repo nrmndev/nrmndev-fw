@@ -19,7 +19,7 @@ module.exports = {
   setupFilesAfterEnv: ["@testing-library/jest-dom"], // Optional: for additional matchers
   //Coverage
   collectCoverage: true,
-
+  modulePathIgnorePatterns: ["\\.types\\.ts$"], // Add this to skip .types.ts files
   /**
    * Global Testing config - START
    */
@@ -35,12 +35,12 @@ module.exports = {
     "!src/main.tsx", // Exclude main.tsx
     "!src/utils/storybook/**", //Exclude storybook will be moved to a separate source code
   ],
-  modulePathIgnorePatterns: ["\\.types\\.ts$"], // Add this to skip .types.ts files
+
   // Global Testing config - END
 
   /***
    * FOR TEST ISOLATION, Ignore others that is not indicated below
    */
-  // testMatch: ["**/src/tests/propStyleHandler/padding.test.ts"],
-  // collectCoverageFrom: ["src/utils/propStyleHandler/padding.ts"],
+  //testMatch: ["**/src/tests/utils/propStyleHandler/props/gap.test.ts"],
+  //collectCoverageFrom: ["src/utils/propStyleHandler/props/gap.ts"],
 };
