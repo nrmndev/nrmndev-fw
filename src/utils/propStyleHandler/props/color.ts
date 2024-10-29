@@ -1,9 +1,8 @@
-import { ColorProps } from "@uiTypes";
-import { StyleReturnType } from "./styleReturnType";
+import { ColorProps, GetStyleReturnProps } from "@uiTypes";
 
 export const getColorStyle = <T extends ColorProps>({
   color,
-}: T): StyleReturnType => {
+}: T): GetStyleReturnProps => {
   let classes: string = "";
   let inline: React.CSSProperties = {};
 
@@ -11,7 +10,7 @@ export const getColorStyle = <T extends ColorProps>({
     return { classes, inline };
   }
 
-  console.log(color);
+  //console.log(color);
   switch (typeof color) {
     case "string":
       switch (color) {
@@ -24,17 +23,10 @@ export const getColorStyle = <T extends ColorProps>({
           classes += `color-${color}`;
           break;
       }
-
       break;
-    case "object":
-      //let { top, right, bottom, left, unit } = color;
-      inline = {
-        // ...(top ? { paddingTop: `${top}${unit}` } : {}),
-        // ...(right ? { paddingRight: `${right}${unit}` } : {}),
-        // ...(bottom ? { paddingBottom: `${bottom}${unit}` } : {}),
-        // ...(left ? { paddingLeft: `${left}${unit}` } : {}),
-      };
-      break;
+    // case "object":
+    //   inline = {};
+    //   break;
   }
 
   return { classes, inline };

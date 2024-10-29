@@ -1,23 +1,20 @@
-import { getBackgroundStyle } from "./background";
-import { getBorderStyle } from "./border";
-import { getBorderRadiusStyle } from "./borderRadius";
-import { getColorStyle } from "./color";
-import { getColumnBreakPointStyle } from "./columnBreakpoints";
-import { getDisplayStyle } from "./display";
-import { getFlexStyle } from "./flex";
-import { getFlexColumnStyle } from "./flexColumn";
-import { getMarginStyle } from "./margin";
-import { getPaddingStyle } from "./padding";
-import { getTextStyle } from "./text";
-import { getWidthStyle } from "./width";
-import { getFontStyle } from "./font";
-import { getHeightStyle } from "./height";
-import { getPositionStyle } from "./position";
-
-export type StyleReturnType = {
-  inline: React.CSSProperties;
-  classes: string;
-};
+import {
+  getBackgroundStyle,
+  getBorderRadiusStyle,
+  getBorderStyle,
+  getColorStyle,
+  getColumnBreakPointStyle,
+  getColumnItemsStyle,
+  getDisplayStyle,
+  getFlexStyle,
+  getFontStyle,
+  getHeightStyle,
+  getMarginStyle,
+  getPaddingStyle,
+  getPositionStyle,
+  getTextStyle,
+  getWidthStyle,
+} from "./props";
 
 export const getStyle = {
   margin: getMarginStyle,
@@ -31,7 +28,7 @@ export const getStyle = {
   columnBreakPoint: getColumnBreakPointStyle,
   display: getDisplayStyle,
   flex: getFlexStyle,
-  flexColumns: getFlexColumnStyle,
+  columnItems: getColumnItemsStyle,
   font: getFontStyle,
   height: getHeightStyle,
   position: getPositionStyle,

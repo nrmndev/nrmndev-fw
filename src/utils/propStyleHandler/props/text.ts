@@ -1,9 +1,8 @@
-import { StyleReturnType } from "./styleReturnType";
-import { TextProps } from "types/props/textProps";
+import { TextProps, GetStyleReturnProps } from "@uiTypes";
 
 export const getTextStyle = <T extends TextProps>({
   text,
-}: T): StyleReturnType => {
+}: T): GetStyleReturnProps => {
   let classes: string = "";
   let inline: React.CSSProperties = {};
 

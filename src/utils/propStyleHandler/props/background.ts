@@ -1,9 +1,8 @@
-import { StyleReturnType } from "./styleReturnType";
-import { BackgroundProps } from "types/props/backgroundProps";
+import { BackgroundProps, GetStyleReturnProps } from "@uiTypes";
 
 export const getBackgroundStyle = <T extends BackgroundProps>({
   background,
-}: T): StyleReturnType => {
+}: T): GetStyleReturnProps => {
   let classes: string = "";
   let inline: React.CSSProperties = {};
 
@@ -23,10 +22,10 @@ export const getBackgroundStyle = <T extends BackgroundProps>({
       size = "cover",
       repeat = "no-repeat",
     } = background;
-    console.log(image, attachment, position, size);
+    //console.log(image, attachment, position, size);
     const positionStyle =
       typeof position === "object"
-        ? `${position.value}/${position.unit}`
+        ? `${position.value}${position.unit}`
         : position;
     inline = {
       background: `url(${image}) ${repeat} ${positionStyle}/${size} ${attachment}`,
