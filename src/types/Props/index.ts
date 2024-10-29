@@ -8,6 +8,7 @@ export type {
   AsAnchorProps,
   AsImgProps,
   AsOptionalProps,
+  AsProps,
 } from "./asProps";
 
 export type {
@@ -36,7 +37,11 @@ export type { AnchorTargetOptions, ButtonTypeOptions } from "./buttonProps";
 export type { ChildrenProps } from "./childrenProps";
 export type { ColorProps, ColorOptions } from "./colorProps";
 
-export type { ColumnBreakpointProps, ColumnOptions } from "./columnProps";
+export type {
+  ColumnBreakpointProps,
+  ColumnOptions,
+  ColumnBreakpointOptions,
+} from "./columnProps";
 export type { ColumnItemsProps } from "./columnItemsProps";
 
 //Not Sure about this Prop
@@ -61,6 +66,7 @@ export type {
 } from "./flexProps";
 
 export type { FlexBoxProps } from "./flexBoxProps";
+export type { FluidProps } from "./fluidProps";
 
 export type { FontSizeProps, FontSizeOptions } from "./fontSizeProps";
 export type {
@@ -71,6 +77,7 @@ export type {
 } from "./fontProps";
 
 export type { HeightProps } from "./heightProps";
+export type { GapProps } from "./gapProps";
 export type { WidthProps } from "./widthProps";
 //Better check usage
 export type { InputProps } from "./inputProps";
@@ -78,6 +85,7 @@ export type { InputProps } from "./inputProps";
 export type { FlexLayoutProps, SpacingProps } from "./layoutProps";
 
 export type { OverlayProps } from "./overlayProps";
+export type { OpacityProps } from "./opacityProps";
 
 export type {
   MarginProps,
@@ -88,6 +96,7 @@ export type {
 
 export type { PaddingProps } from "./paddingProps";
 export type { PositionProps, PositionOptions } from "./positionProps";
+export type { RoundedProps } from "./roundedProps";
 
 export type { SizeProps, SizeOptions, SizeNegativeOptions } from "./sizeProps";
 

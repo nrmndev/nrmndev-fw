@@ -4,13 +4,18 @@ import {
   BorderRadiusProps,
   BoxShadowProps,
   ColorProps,
-  ColumnBreakpointProps,
+  ColumnBreakpointOptions,
+  //ColumnBreakpointProps,
   ColumnItemsProps,
   DisplayProps,
   FlexProps,
+  FluidProps,
   FontProps,
+  GapProps,
   HeightProps,
   MarginProps,
+  OpacityProps,
+  OverlayProps,
   PaddingProps,
   PositionProps,
   TextProps,
@@ -22,7 +27,8 @@ export type PropStyleHandlerProps = BorderProps &
   BorderRadiusProps &
   BoxShadowProps &
   ColorProps &
-  ColumnBreakpointProps &
+  ColumnBreakpointOptions &
+  FluidProps &
   DisplayProps &
   FlexProps &
   HeightProps &
@@ -32,6 +38,9 @@ export type PropStyleHandlerProps = BorderProps &
   PositionProps &
   WidthProps &
   PaddingProps &
+  OpacityProps &
+  GapProps &
+  OverlayProps &
   ColumnItemsProps & {
     className?: string;
     children?: React.ReactNode;
