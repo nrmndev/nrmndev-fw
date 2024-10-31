@@ -6,7 +6,7 @@ import { forwardRef } from "react";
 
 const Button = (
   {
-    as: Component = "button",
+    as,
     display,
     size = "md",
     variant = "solid-primary",
@@ -16,7 +16,7 @@ const Button = (
     to = "/404",
     ...utilityProps
   }: ButtonComponentProps,
-  ref?: React.Ref<React.ElementRef<"button">>
+  ref?: React.Ref<HTMLButtonElement>
 ) => {
   const className = classNames(
     "btn",
@@ -25,25 +25,26 @@ const Button = (
     variant && "btn-" + variant
   );
 
+  const Component = as === "navLink" ? NavLink : as || "button";
+
   const conditionalProps = {
+    ...(as === "button" && { type }),
+    ...(as === "a" && { href, target }),
+    ...(as === "navLink" && { to }),
+  };
+  const commonProps = {
     ...utilityProps,
-    ...(Component === "a" && { href: href, target: target }),
-    ...(Component === "button" && { type: type }),
-    ...(Component === "navLink" && { to: to }),
+    className: className,
   };
 
-  if (Component === "button" || Component === "a")
-    return (
-      <UtilityStyledComponent
-        as={Component}
-        {...conditionalProps}
-        className={className}
-        ref={ref}
-      />
-    );
-  if (Component === "navLink")
-    return <NavLink to={to} {...conditionalProps} className={className} />;
-  //return <UtilityStyledComponent as={NavLink} to={to} {...conditionalProps} className={className} />;
+  return (
+    <UtilityStyledComponent
+      as={Component}
+      {...commonProps}
+      {...conditionalProps}
+      ref={ref as React.Ref<HTMLButtonElement | HTMLAnchorElement>}
+    />
+  );
 };
 
 export default forwardRef(Button);

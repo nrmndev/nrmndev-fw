@@ -1,7 +1,8 @@
-import { PickUtilityProps } from "@uiTypes";
+import { UtilityPartialProps } from "@uiTypes";
 
-export type ProgressBarComponentProps = PickUtilityProps<
-  "padding" | "margin" | "width" | "color"
+export type ProgressBarComponentProps = UtilityPartialProps<
+  "padding" | "margin" | "width" | "color",
+  "span"
 > & {
   label?: string;
   labelPosition?: "top" | "bottom";

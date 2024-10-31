@@ -7,8 +7,14 @@ const Row = (
   ref?: React.Ref<HTMLDivElement>
 ) => {
   return (
-    <UtilityStyledComponent className={"row"} {...utilityProps} ref={ref} />
+    <UtilityStyledComponent
+      as="div"
+      className={"row"}
+      {...utilityProps}
+      ref={ref}
+    />
   );
 };
 
 export default forwardRef(Row);
+// as UtilityJSX;

@@ -1,5 +1,6 @@
-import { PickUtilityProps } from "@uiTypes";
+import { UtilityPartialProps } from "@uiTypes";
 
-export type CardComponentProps = PickUtilityProps<
-  "background" | "boxShadow" | "margin" | "padding" | "children"
+export type CardComponentProps = UtilityPartialProps<
+  "background" | "boxShadow" | "margin" | "padding" | "children",
+  "div"
 >;

@@ -5,6 +5,7 @@ import {
   UtilityStyledComponent,
 } from "@uiComponents";
 import { LabelWrapperComponentProps } from "@uiComponentTypes";
+import { forwardRef } from "react";
 
 const LabelWrapper = (
   {
@@ -40,4 +41,4 @@ const LabelWrapper = (
   );
 };
 
-export default LabelWrapper;
+export default forwardRef(LabelWrapper);

@@ -4,6 +4,7 @@ import {
   IncrementOf5Options,
   PickUtilityProps,
   SizeOptions,
+  UtilityPartialProps,
 } from "@uiTypes";
 
 type DecorationsProps = {
@@ -21,9 +22,11 @@ type DecorationsProps = {
   };
 };
 
-export type SectionLabelComponentProps = PickUtilityProps<"color" | "font"> &
+export type SectionLabelComponentProps = UtilityPartialProps<
+  "color" | "font",
+  "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
+> &
   DecorationsProps & {
     label: string;
     position?: "left" | "center" | "right";
-    as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   };

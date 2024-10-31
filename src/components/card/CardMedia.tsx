@@ -8,7 +8,6 @@ const CardMedia = (
 ) => {
   return (
     <UtilityStyledComponent
-      as="div"
       className="card__media"
       background={{ image: utilityProps.image }}
       {...utilityProps}

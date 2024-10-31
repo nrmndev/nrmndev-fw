@@ -1,5 +1,6 @@
-import { PickUtilityProps } from "@uiTypes";
+import { UtilityPartialProps } from "@uiTypes";
 
-export type CardMediaComponentProps = PickUtilityProps<
-  "height" | "background"
+export type CardMediaComponentProps = UtilityPartialProps<
+  "height" | "background",
+  "div"
 > & { image: string };

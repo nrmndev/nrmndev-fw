@@ -1,8 +1,9 @@
-import { PickUtilityProps, SizeOptions } from "@uiTypes";
+import { SizeOptions, UtilityPartialProps } from "@uiTypes";
 import { IconType } from "react-icons";
 
-export type IconComponentProps = PickUtilityProps<
-  "background" | "color" | "margin"
+export type IconComponentProps = UtilityPartialProps<
+  "background" | "color" | "margin",
+  "svg" | "img"
 > & {
   icon: IconType | string; // Use IconType for react-icons
   iconSize?: SizeOptions;

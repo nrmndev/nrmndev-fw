@@ -1,3 +1,3 @@
-import { PickUtilityProps } from "@uiTypes";
+import { UtilityPartialProps } from "@uiTypes";
 
-export type CardContentComponentProps = PickUtilityProps<"padding">;
+export type CardContentComponentProps = UtilityPartialProps<"padding", "div">;

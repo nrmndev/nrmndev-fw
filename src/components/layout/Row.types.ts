@@ -1,11 +1,12 @@
-import { PickUtilityProps } from "@uiTypes";
+import { UtilityPartialProps } from "@uiTypes";
 
-export type RowComponentProps = PickUtilityProps<
+export type RowComponentProps = UtilityPartialProps<
   | "border"
   | "background"
   | "columnItems"
   | "flex"
   | "position"
   | "borderRadius"
-  | "children"
+  | "children",
+  "div"
 >;

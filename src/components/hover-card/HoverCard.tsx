@@ -8,10 +8,7 @@ import classNames from "classnames";
 import { UtilityStyledComponent } from "@uiComponents";
 import { HoverCardComponentProps } from "@uiComponentTypes";
 
-const HoverCard = (
-  { animation, ...utilityProps }: HoverCardComponentProps,
-  ref?: React.Ref<HTMLDivElement>
-) => {
+const HoverCard = ({ animation, ...utilityProps }: HoverCardComponentProps) => {
   const className = classNames(
     "hovercard",
     animation ? "animate animate__" + animation : "animate animate__slideInLeft"
@@ -19,7 +16,6 @@ const HoverCard = (
   return (
     <HoverCardContextProvider>
       <UtilityStyledComponent
-        ref={ref}
         as="div"
         {...utilityProps}
         className={className}

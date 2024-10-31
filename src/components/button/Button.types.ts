@@ -28,10 +28,10 @@ export type ButtonProps = {
 };
 
 import { AnchorTargetOptions, ButtonTypeOptions } from "@uiTypes";
+import { HTMLAttributes } from "react";
 
 export type ButtonProp = {
   type?: ButtonTypeOptions;
-  onClick?: () => void;
 };
 
 export type AnchorLinkProps = {
@@ -79,4 +79,5 @@ export type ButtonComponentProps = PickUtilityProps<
   | "children"
 > &
   PolymorphicButtonProps &
-  ButtonProps;
+  ButtonProps &
+  HTMLAttributes<"button" | "anchor">;
