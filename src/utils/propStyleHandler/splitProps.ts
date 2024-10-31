@@ -23,7 +23,7 @@ export const splitProps = <T extends React.ElementType>(
     if (isUtilityKey(key)) {
       utilityProps[key] = value as UtilityProps[typeof key];
     } else {
-      intrinsicProps[key] = value;
+      intrinsicProps[key] = value as keyof JSX.IntrinsicElements;
     }
   });
   //console.log(`utilityProps:` + JSON.stringify(utilityProps));
