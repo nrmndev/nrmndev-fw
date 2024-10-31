@@ -282,7 +282,13 @@ const SampleContainer = () => {
     console.log(ref.current);
   }, []);
   return (
-    <EnhancedContainer boxShadow="box-shadow-6" opacity={40} ref={ref}>
+    <EnhancedContainer
+      boxShadow="box-shadow-6"
+      opacity={40}
+      ref={ref}
+      margin={{ top: { value: 50 } }}
+      color="white"
+    >
       Hello my Friend
     </EnhancedContainer>
   );

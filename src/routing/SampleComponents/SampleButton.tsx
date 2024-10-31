@@ -3,12 +3,13 @@ import { useEffect, useRef } from "react";
 import { FaBeer } from "react-icons/fa";
 
 const SampleButton = () => {
-  const ref = useRef<HTMLButtonElement>(null);
+  // const ref = useRef<HTMLButtonElement>(null);
 
-  useEffect(() => {}, []);
-  const handleClick = () => {
-    console.log(ref.current);
-  };
+  // useEffect(() => {}, []);
+  // const handleClick = () => {
+  //   console.log(ref.current);
+  // };
+
   return (
     <>
       <Button
@@ -17,21 +18,32 @@ const SampleButton = () => {
         font={{ size: { value: 100 } }}
         variant="flat"
         color="primary"
-        ref={ref}
-        onClick={handleClick}
       >
-        BorderRadius
+        Button
       </Button>
-      <Button size="xs" margin={{ top: { value: 20 } }} as="a" href="/test">
-        <FaBeer /> Test
+      <Button
+        size="xs"
+        margin={{ top: { value: 20 } }}
+        padding={{ value: 50 }}
+        as="a"
+        href="#test"
+      >
+        <FaBeer /> A
       </Button>
-      <Button size="sm" margin={{ top: { value: 20 } }} as="navLink" to="/test">
-        <FaBeer /> Test
+      <Button
+        size="sm"
+        margin={{ top: { value: 20 } }}
+        padding={{ value: 50 }}
+        as="navLink"
+        to="#test"
+      >
+        <FaBeer /> Navlink
       </Button>{" "}
       <Button
         size="md"
         color="white"
         margin={{ top: { value: 20 } }}
+        padding={{ value: 50 }}
         as="navLink"
         to="/test"
       >

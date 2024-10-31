@@ -156,6 +156,7 @@ const SampleIntegration = () => {
         fluid
         background={"light"}
         padding={{ top: { value: 50 }, bottom: { value: 50 } }}
+        margin={{ top: { value: 50 }, bottom: { value: 50 } }}
       >
         <Container>
           <SectionLabel
