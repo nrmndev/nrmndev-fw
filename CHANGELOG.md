@@ -4,6 +4,9 @@
 
 ## **HOTFIXES**
 
+- Added `UtilityPartialProps` and `UtilityRequireProps` which extends UtilityProps and `as` with HTMLAttributes see docs for usage
+- Added forwardRef to all components
+
 ## ** ADDED FEATURES **
 
 ### Utility

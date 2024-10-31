@@ -2,7 +2,6 @@ import { IconType } from "react-icons";
 import {
   ColorOptions,
   IncrementOf5Options,
-  PickUtilityProps,
   SizeOptions,
   UtilityPartialProps,
 } from "@uiTypes";

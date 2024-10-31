@@ -1,4 +1,4 @@
-import { AsProps, PickUtilityProps, UtilityPartialProps } from "@uiTypes";
+import { UtilityPartialProps } from "@uiTypes";
 
 export type TypographyComponentProps = UtilityPartialProps<
   "color" | "text" | "margin" | "font" | "children",

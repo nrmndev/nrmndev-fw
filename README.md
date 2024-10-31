@@ -2,6 +2,19 @@
 
 A utility-first CSS and CSS-in-JS framework with type safety and memoized centralized logic
 
+## New Major Version released (v4.0.0-beta) 2024-31-10
+
+### **HOTFIXES**
+
+- Added `UtilityPartialProps` and `UtilityRequireProps` which extends UtilityProps and `as` with HTMLAttributes see docs for usage
+- Added forwardRef to all components
+
+### Utility
+
+#### `ExtendUtilityProps`
+
+- A higher-order component (HOC) utility that extends an existing component with additional utility props, defined in PropStyleHandlerProps. It enhances the component with extra styling or layout properties while maintaining ref forwarding.
+
 ## Alpha Version released (v2.1.0)
 
 ## Table of Contents
