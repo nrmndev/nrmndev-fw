@@ -13,8 +13,6 @@ export * from "./form";
 
 // export { default as ColumnGroup } from "./group/ColumnGroup";
 
-export { default as HeroBanner } from "./hero/HeroBanner";
-
 export { default as Icon } from "./icon/Icon";
 
 export { default as Image } from "./image/Image";

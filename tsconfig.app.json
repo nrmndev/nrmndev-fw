@@ -53,21 +53,21 @@
   ],
 
   //PUBLISHING TO NPM CONFIG "exclude"
-  // "exclude": [
-  //   "node_modules",
-  //   "dist",
-  //   "src/app.tsx",
-  //   "src/main.tsx",
-  //   "src/routing",
-  //   "src/stories",
-  //   "**/*.bak.ts",
-  //   "**/*.test.ts",
-  //   "**/*.test.tsx",
-  //   "archive"
-  // ]
+  "exclude": [
+    "node_modules",
+    "dist",
+    "src/app.tsx",
+    "src/main.tsx",
+    "src/routing",
+    "src/stories",
+    "**/*.bak.ts",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "archive"
+  ]
 
   //DEVELOPMENT CONFIG "exclude"
-  "exclude": ["node_modules", "**/*.bak.ts", "archive"]
+  //"exclude": ["node_modules", "**/*.bak.ts", "archive"]
 }
 
 // "exclude": [
