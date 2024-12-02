@@ -106,3 +106,27 @@ a {
 .main-nav-logo img {
   max-width: 250px;
 }
+
+.main-nav-mobile-toggle {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  top: 20px;
+  display: none;
+}
+@media (max-width: 768px) {
+  .main-nav {
+    flex-direction: column;
+    padding-bottom: 5px;
+  }
+  .main-nav-logo {
+    order: -1;
+  }
+  .main-nav-mobile-toggle {
+    display: block;
+  }
+  .main-nav-logo img {
+    margin-left: -20px;
+    padding-right: 40px;
+  }
+}
