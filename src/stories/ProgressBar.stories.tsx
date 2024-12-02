@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ProgressBar } from "@uiComponents";
+import { ProgressBar } from "components/component.barrel.index";
 
 const meta = {
   title: "Example/ProgressBar",

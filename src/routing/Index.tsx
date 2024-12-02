@@ -18,6 +18,9 @@ import SampleRow from "./SampleComponents/SampleRow";
 import SampleImage from "./SampleComponents/SampleImage";
 import SampleIntegration from "./SampleComponents/SampleIntegration";
 import SampleColumn from "./SampleComponents/SampleColumn";
+import { Homepage } from "./Caryatecton/page/homepage/Index";
+import { SampleTemplatingTrial } from "./SampleComponents/SampleTemplatingTrial";
+import SampleMUI from "./SampleComponents/SampleMUI";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +43,9 @@ const router = createBrowserRouter([
       { path: "sectionlabel", element: <SampleSectionLabel /> },
       { path: "typography", element: <SampleTypography /> },
       { path: "integration", element: <SampleIntegration /> },
+      { path: "ceh", element: <Homepage /> },
+      { path: "trial", element: <SampleTemplatingTrial /> },
+      { path: "mui", element: <SampleMUI /> },
       {
         path: "mainnavigation",
         element: (

@@ -1,4 +1,4 @@
-import { Container } from "@uiComponents";
+import { Container } from "components/component.barrel.index";
 import Column from "components/layout/Column";
 import React from "react";
 import SampleHeroBanner from "routing/SampleComponents/SampleHero";

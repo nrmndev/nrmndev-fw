@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { getWidthStyle } from "@utils";
+import { getWidthStyle } from "_utils";
 
 describe(`getBackgroundStyle Function`, () => {
   test(`width is undefined, returning {classes:"", inline:{}} `, () => {

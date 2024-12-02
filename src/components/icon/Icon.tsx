@@ -1,40 +1,65 @@
-import { Image, UtilityStyledComponent } from "@uiComponents";
-import classNames from "classnames";
+import { UtilityStyledComponent } from "components/component.barrel.index";
 import { ImCogs } from "react-icons/im";
-import { IconComponentProps } from "@uiComponentTypes";
+import { IconComponentProps } from "components/component.barrel.types";
 import { forwardRef } from "react";
+// import styled from "styled-components";
 
 const Icon = (props: IconComponentProps, ref?: React.Ref<HTMLSpanElement>) => {
   const {
     icon: Icon = ImCogs,
-    iconSize = "sm",
-    rounded = false,
-    variant = "solid",
+    size = "sm",
+    variant = "flat",
+    template,
     ...utilityProps
   } = props;
 
-  const className = classNames(
-    "icon",
-    `icon-${variant}`,
-    `${variant === "outline" ? `icon--${utilityProps.color}` : ""}`,
-    iconSize && "icon--" + iconSize,
-    rounded && `icon--rounded`
-  );
+  const variantStyle = (variant: "solid" | "outline" | "flat") => {
+    switch (variant) {
+      case "solid":
+        return { backgroundColor: utilityProps.color };
+      case "outline":
+        return {
+          borderWidth: 2,
+          borderStyle: "solid",
+          borderColor: utilityProps.color,
+        };
+      case "flat":
+        return {
+          color: utilityProps.color,
+        };
+      default:
+        return {}; // Fallback style, empty object or any default style
+    }
+  };
+  let variantStyles = {
+    size: size,
+    ...variantStyle(variant),
+    font: { size: size },
+  };
 
   return (
     <UtilityStyledComponent
       as="span"
-      {...utilityProps}
-      className={className}
+      {...{ ...variantStyles, ...utilityProps }}
+      className={"icon"}
       ref={ref}
     >
-      {typeof Icon === "string" ? (
-        <Image src={Icon} className="icon__image" />
-      ) : (
-        <Icon />
-      )}
+      <Icon />
     </UtilityStyledComponent>
   );
 };
 
 export default forwardRef(Icon);
+
+// const StyledIcon = styled(Icon)`
+//   background: -webkit-gradient(
+//     linear,
+//     left top,
+//     left bottom,
+//     from(#f00),
+//     to(#333)
+//   );
+//   -webkit-background-clip: text;
+//   -webkit-text-fill-color: transparent;
+//   display: initial; /* reset Font Awesome's display:inline-block */
+// `;

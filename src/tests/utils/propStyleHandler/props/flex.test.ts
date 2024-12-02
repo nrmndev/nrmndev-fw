@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { getFlexStyle } from "@utils";
+import { getFlexStyle } from "_utils";
 
 //Uses FlexProps
 

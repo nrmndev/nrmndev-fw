@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { Row } from "@uiComponents";
+import { Row } from "components/component.barrel.index";
 import { render, screen } from "@testing-library/react";
 
 describe(`getBackgroundStyle Function`, () => {

@@ -1,4 +1,4 @@
-import { Icon } from "@uiComponents";
+import { Icon } from "components/component.barrel.index";
 
 import { FaBeer } from "react-icons/fa";
 

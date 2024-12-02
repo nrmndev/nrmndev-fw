@@ -1,37 +1,59 @@
-import { UtilityStyledComponent } from "@uiComponents";
+import { UtilityStyledComponent } from "components/component.barrel.index";
 import classNames from "classnames";
 import React, { forwardRef } from "react";
-import { ContainerComponentProps } from "@uiComponentTypes";
-
+import { ContainerComponentProps } from "components/component.barrel.types";
 const Container = (
   {
-    fluid,
-    overlay,
     as: Component = "div", // Default to 'div'
     className,
     ...utilityProps
   }: ContainerComponentProps,
   ref?: React.Ref<React.ElementRef<"div">>
 ) => {
-  let isOverlay = "";
-  if (overlay) {
-    const { color: overlayColor, opacity: overlayOpacity = 70 } = overlay;
-    isOverlay += overlayColor ? `before:bg-${overlayColor}` : "";
-    isOverlay += ` before:opacity-${overlayOpacity}`;
-  }
+  // const { ref: inViewRef, inView } = useInView({
+  //   triggerOnce: true,
+  //   threshold: 0.1,
+  // });
+
+  // // Combine the forwarded ref and the ref from useInView
+  // const combinedRef = ref
+  //   ? (node: HTMLDivElement | null) => {
+  //       inViewRef(node); // useInView ref
+  //       if (ref) {
+  //         if (typeof ref === "function") {
+  //           ref(node); // Call function-based refs
+  //         } else {
+  //           (ref as React.MutableRefObject<HTMLDivElement | null>).current =
+  //             node; // Assign to object-based refs
+  //         }
+  //       }
+  //     }
+  //   : inViewRef;
+
+  // let isOverlay = "";
+  // if (overlay) {
+  //   const { color: overlayColor, opacity: overlayOpacity = 70 } = overlay;
+  //   isOverlay += overlayColor ? `before:bg-${overlayColor}` : "";
+  //   isOverlay += ` before:opacity-${overlayOpacity}`;
+  // }
 
   const combinedClasses = classNames(
-    fluid ? "container--fluid" : "container",
-    isOverlay ?? "",
+    "container",
+    //isOverlay ?? "",
     className
+    //`fade-in ${inView ? "visible" : ""}`
   );
-
+  //const componentTemplate = useComponentTemplate("container", template || 0);
   return (
     <UtilityStyledComponent
       ref={ref}
       as={Component}
       {...utilityProps}
       className={combinedClasses}
+      // style={{
+      //   opacity: inView ? 1 : 0,
+      //   transition: "opacity 0.5s ease-in-out",
+      // }}
     />
   );
 };

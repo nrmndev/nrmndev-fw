@@ -1,4 +1,4 @@
-import { ColorOptions, UtilityPartialProps } from "@uiTypes";
+import { ColorOptions, TemplateProps, UtilityPartialProps } from "_uiTypes";
 import { IconType } from "react-icons";
 
 type ListOptions = "ol" | "ul";
@@ -9,19 +9,19 @@ type Items = {
 };
 
 export type ListComponentProps = UtilityPartialProps<
-  "color" | "text",
+  "color" | "text" | "font" | "display" | "margin" | "padding",
   "ol" | "ul"
 > & {
-  display?:
-    | "inline-flex"
-    | "inline-flex-space-between"
-    | "block"
-    | "grid-2-columns"
-    | "grid-3-columns"
-    | "grid-4-columns";
+  // display?:
+  //   | "inline-flex"
+  //   | "inline-flex-space-between"
+  //   | "block"
+  //   | "grid-2-columns"
+  //   | "grid-3-columns"
+  //   | "grid-4-columns";
   icon?: IconType;
   iconSize?: number;
   iconColor?: ColorOptions;
   items?: Items[];
   listType?: ListOptions;
-};
+} & TemplateProps;

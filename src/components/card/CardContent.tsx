@@ -1,5 +1,5 @@
-import { UtilityStyledComponent } from "@uiComponents";
-import { CardContentComponentProps } from "@uiComponentTypes";
+import { UtilityStyledComponent } from "components/component.barrel.index";
+import { CardContentComponentProps } from "components/component.barrel.types";
 import { forwardRef } from "react";
 
 const CardContent = (

@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
-import { ColorProps } from "@uiTypes";
-import { isOfType } from "@utils";
+import { ColorProps } from "_uiTypes";
+import { isOfType } from "_utils";
 
 // NEEDS REFINEMENT
 describe(`isOfType Function`, () => {

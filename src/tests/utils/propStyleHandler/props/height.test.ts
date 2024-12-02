@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { getHeightStyle } from "@utils";
+import { getHeightStyle } from "_utils";
 
 describe(`getBackgroundStyle Function`, () => {
   test(`height is undefined, returning {classes:"", inline:{}} `, () => {

@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { convertCSSPropToString } from "@utils";
+import { convertCSSPropToString } from "_utils";
 
 describe(`convertCSSPropToString Function`, () => {
   test(`{fontSize: "10px"} to "font-size: 10px;"`, () => {

@@ -1,0 +1,28 @@
+@use "../base/variables" as var;
+// THEME Classes ie.  .bg-primary, .color-secondary
+@for $j from 1 through length(var.$themes) {
+  $theme: nth(var.$themes, $j);
+
+  // Background classes
+  .h\:bg-#{$theme}:hover {
+    background: var(--#{$theme});
+  }
+
+  .h\:c-#{$theme}:hover {
+    color: var(--#{$theme});
+  }
+}
+
+/* Hover utilities */
+.hover\:outlined:hover {
+  border: 2px solid currentColor;
+}
+
+.hover\:lighten:hover {
+  filter: brightness(1.2);
+}
+
+.hover\:solid:hover {
+  background-color: green;
+  color: white;
+}

@@ -1,4 +1,4 @@
-import { MainNavigation } from "@uiComponents";
+import { MainNavigation } from "components/component.barrel.index";
 
 const SampleMainNavigation = () => <MainNavigation />;
 

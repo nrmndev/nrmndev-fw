@@ -8,3 +8,15 @@
 
 @use "layouts" as *;
 @use "animations/index" as *;
+
+.bento--content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex; /* Optional: For centering content */
+  justify-content: center;
+  align-items: center;
+  color: white; /* Example styling */
+}

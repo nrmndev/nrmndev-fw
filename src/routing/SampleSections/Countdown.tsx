@@ -1,4 +1,4 @@
-import { Container, Media } from "@uiComponents";
+import { Container, Media } from "components/component.barrel.index";
 import { FaBeer } from "react-icons/fa";
 
 const SampleCountdown = () => {

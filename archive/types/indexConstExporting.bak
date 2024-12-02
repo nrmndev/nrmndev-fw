@@ -1,0 +1,136 @@
+export type {
+  AnimationOptions,
+  AnimationProps,
+  AnimationSettings,
+  TransitionOptions,
+} from "../../src/types/props/animationProps";
+
+export type {
+  AsComponentProps,
+  AsAnchorProps,
+  AsImgProps,
+  AsOptionalProps,
+  AsProps,
+} from "../../src/types/props/asProps";
+
+export type {
+  BackgroundProps,
+  BackgroundAsImageProps,
+  BackgroundAsColorProps,
+} from "../../src/types/props/backgroundProps";
+
+//Shouldn't it be size not value? @borderProps
+export type {
+  BorderProps,
+  BorderEdgeOptions,
+  BorderOptions,
+  BorderBaseOptions,
+} from "../../src/types/props/borderProps";
+
+export type {
+  BoxShadowProps,
+  BoxShadowOptions,
+} from "../../src/types/props/boxShadowProps";
+
+export type {
+  BorderRadiusProps,
+  BorderRadiusOptions,
+} from "../../src/types/props/borderRadiusProps";
+
+export type {
+  AnchorTargetOptions,
+  ButtonTypeOptions,
+} from "../../src/types/props/buttonProps";
+
+export type { ChildrenProps } from "../../src/types/props/childrenProps";
+export type {
+  ColorProps,
+  ColorOptions,
+} from "../../src/types/props/colorProps";
+
+export type {
+  ColumnBreakpointProps,
+  ColumnOptions,
+  ColumnBreakpointOptions,
+} from "../../src/types/props/columnProps";
+export type { ColumnItemsProps } from "../../src/types/props/columnItemsProps";
+
+export type {
+  DisplayProps,
+  DisplayOptions,
+} from "../../src/types/props/displayProps";
+// Double check usage
+export type {
+  FocusEventHandlerProps,
+  KeyboardEventHandlerProps,
+  MouseEventHandlerProps,
+  FormEventHandlerProps,
+} from "../../src/types/props/eventHandlerProps";
+
+export type {
+  FlexProps,
+  AlignContentOptions,
+  AlignItemsOptions,
+  FlexDirectionOptions,
+  FlexWrapOptions,
+  JustifyContentOptions,
+} from "../../src/types/props/flexProps";
+
+export type { FluidProps } from "../../src/types/props/fluidProps";
+
+export type {
+  FontSizeProps,
+  FontSizeOptions,
+} from "../../src/types/props/fontSizeProps";
+export type {
+  FontFamilyOptions,
+  FontProps,
+  FontStyleOptions,
+  FontWeightOptions,
+  FontAsObjectProps,
+} from "../../src/types/props/fontProps";
+
+export type { HoverProps } from "../../src/types/props/hoverProps";
+export type { HeightProps } from "../../src/types/props/heightProps";
+export type { GapProps } from "../../src/types/props/gapProps";
+export type { WidthProps } from "../../src/types/props/widthProps";
+//Better check usage
+export type { InputProps } from "../../src/types/props/inputProps";
+
+export type { OverlayProps } from "../../src/types/props/overlayProps";
+export type { OpacityProps } from "../../src/types/props/opacityProps";
+
+export type {
+  MarginProps,
+  MarginAxisOptions,
+  MarginEdgeOptions,
+  MarginValueUnitOptions,
+} from "../../src/types/props/marginProps";
+
+export type { PaddingProps } from "../../src/types/props/paddingProps";
+export type {
+  PositionProps,
+  PositionOptions,
+} from "../../src/types/props/positionProps";
+export type { RoundedProps } from "../../src/types/props/roundedProps";
+
+export type {
+  SizeProps,
+  SizeOptions,
+  SizeNegativeOptions,
+} from "../../src/types/props/sizeProps";
+
+export type {
+  TextTransformProps,
+  TextAlignProps,
+  TextDecorationProps,
+  TextProps,
+} from "../../src/types/props/textProps";
+
+export type {
+  TranslateProps,
+  TranslateOptions,
+} from "../../src/types/props/translateProps";
+export type { TextAsProps } from "../../src/types/props/typographyProps";
+
+export type { UtilityBaseProps } from "../../src/types/props/utilityBaseProps";

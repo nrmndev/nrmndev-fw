@@ -1,4 +1,4 @@
-import { HeroBanner } from "@uiComponents";
+import { HeroBanner } from "components/component.barrel.index";
 
 const SampleHeroBanner = () => <HeroBanner />;
 

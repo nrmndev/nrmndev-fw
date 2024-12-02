@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { getColumnBreakPointStyle } from "@utils";
+import { getColumnBreakPointStyle } from "_utils";
 
 describe(`getColumnBreakPointStyle Function`, () => {
   test(`{ColumnBreakPointProps} passed but with undefined values, returning {classes:"", inline:{}} `, () => {

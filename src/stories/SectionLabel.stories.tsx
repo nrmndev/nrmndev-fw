@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { SectionLabel } from "@uiComponents";
+import { SectionLabel } from "components/component.barrel.index";
 
 const meta = {
   title: "Example/SectionLabel",

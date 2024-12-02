@@ -1,4 +1,4 @@
-import { List } from "@uiComponents";
+import { List } from "components/component.barrel.index";
 import { PiLineVertical } from "react-icons/pi";
 import { Link } from "react-router-dom";
 
@@ -19,6 +19,10 @@ const LinksArray = [
   { label: "Section Label", to: "/sectionlabel" },
   { label: "Typography", to: "/typography" },
   { label: "Utility Integration", to: "/integration" },
+  { label: "Ceh", to: "/ceh" },
+  { label: "Trial Template", to: "/trial" },
+  { label: "MUI ", to: "/mui" },
+  { label: "Revised ", to: "/revised" },
 ];
 
 const ListItem = LinksArray.map((link, i) => {

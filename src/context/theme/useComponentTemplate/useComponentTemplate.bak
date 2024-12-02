@@ -1,0 +1,25 @@
+import { PropStyleHandlerProps } from "_uiTypes";
+import { ComponentTemplateTypes } from "../componentTemplate/componentTemplate.types";
+import { useUtilityTheme } from "../theme.barrel.index";
+import { CSSVariablesType } from "../theme.barrel.types";
+
+export const useComponentTemplate = (
+  component: keyof ComponentTemplateTypes,
+  template: number
+): {} | PropStyleHandlerProps => {
+  //if (!template || !component) return {};
+  let cssVariables: CSSVariablesType = {};
+  const { componentTemplate, cssVariables: cssVarUtility } = useUtilityTheme();
+  cssVariables = cssVarUtility ? cssVarUtility : cssVariables;
+
+  if (
+    componentTemplate && //Check if componentTemplate from Context is defined
+    template > 0 && //Disallow template={0 || negative values}
+    componentTemplate[component] && //does componentTemplate has object 'component'?
+    template <= componentTemplate[component].length //Disallow template value more than the component array length
+  ) {
+    //const templateIndex = componentTemplate[component].length -1;
+    return componentTemplate[component][template - 1]; //Return the props to be used by UtilityStyledComponent
+  }
+  return {};
+};

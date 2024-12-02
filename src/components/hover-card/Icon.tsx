@@ -1,7 +1,7 @@
-import { Icon } from "@uiComponents";
+import { Icon } from "components/component.barrel.index";
 
 import useHoverCardProvider from "./useHoverCardProvider";
-import { IconComponentProps } from "@uiComponentTypes";
+import { IconComponentProps } from "components/component.barrel.types";
 import { forwardRef } from "react";
 
 const HoverCardIcon = (

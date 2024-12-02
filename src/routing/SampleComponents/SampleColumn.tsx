@@ -1,4 +1,10 @@
-import { Column, Container, Media, Row, Typography } from "@uiComponents";
+import {
+  Column,
+  Container,
+  Media,
+  Row,
+  Typography,
+} from "components/component.barrel.index";
 import { FaPhone } from "react-icons/fa";
 
 const SampleColumn = () => {

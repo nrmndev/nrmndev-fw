@@ -64,12 +64,45 @@ a {
 
 /** EXTRA CSS for Development **/
 .routeNav {
+  position: absolute;
+  top: 0;
+  width: 100%;
   padding: 1rem;
   background-color: var(--primary);
   color: var(--text-color-primary);
-  margin-bottom: 3rem;
+  display: none;
 }
 
 .routeNav a {
   color: var(--text-color-primary);
+}
+
+.main-nav-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-nav {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  display: flex;
+  text-transform: uppercase;
+  margin: 0;
+}
+.main-nav a {
+  color: var(--primary);
+  cursor: pointer;
+}
+.main-nav-logo img {
+  max-width: 250px;
 }

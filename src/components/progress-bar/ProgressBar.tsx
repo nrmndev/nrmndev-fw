@@ -1,5 +1,5 @@
-import { ProgressBarComponentProps } from "@uiComponentTypes";
-import { UtilityStyledComponent } from "@uiComponents";
+import { ProgressBarComponentProps } from "components/component.barrel.types";
+import { UtilityStyledComponent } from "components/component.barrel.index";
 import { forwardRef } from "react";
 
 const ProgressBar = (
@@ -11,11 +11,13 @@ const ProgressBar = (
     showProgress = false,
     format = "percentage",
     variant = "solid",
+    template,
     ...utilityProps
   }: ProgressBarComponentProps,
   ref?: React.Ref<HTMLSpanElement>
 ) => {
   const currentBarWidth = (current / total) * 100;
+
   return (
     <>
       <UtilityStyledComponent

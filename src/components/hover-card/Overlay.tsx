@@ -1,6 +1,6 @@
 import useHoverCardProvider from "./useHoverCardProvider";
-import { UtilityStyledComponent } from "@uiComponents";
-import { OverlayComponentProps } from "@uiComponentTypes";
+import { UtilityStyledComponent } from "components/component.barrel.index";
+import { OverlayComponentProps } from "components/component.barrel.types";
 import { forwardRef } from "react";
 
 const Overlay = (

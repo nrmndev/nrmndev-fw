@@ -1,6 +1,6 @@
-import { Typography } from "@uiComponents";
+import { Typography } from "components/component.barrel.index";
 import useHoverCardProvider from "./useHoverCardProvider";
-import { TypographyComponentProps } from "@uiComponentTypes";
+import { TypographyComponentProps } from "components/component.barrel.types";
 import React, { forwardRef } from "react";
 
 const OverlayHeading = <T extends React.ElementType>(

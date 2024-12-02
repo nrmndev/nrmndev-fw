@@ -1,4 +1,4 @@
-import { UtilityPartialProps } from "@uiTypes";
+import { TemplateProps, UtilityPartialProps } from "_uiTypes";
 
 export type ProgressBarComponentProps = UtilityPartialProps<
   "padding" | "margin" | "width" | "color",
@@ -12,4 +12,4 @@ export type ProgressBarComponentProps = UtilityPartialProps<
   format?: "percentage" | "whole";
   variant?: "striped" | "solid";
   children?: never;
-};
+} & TemplateProps;

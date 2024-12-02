@@ -2,7 +2,7 @@
 // THEME Classes ie.  .bg-primary, .color-secondary
 @for $j from 1 through length(var.$themes) {
   $theme: nth(var.$themes, $j);
-  .color-#{$theme} {
+  .c-#{$theme} {
     color: var(--#{$theme});
   }
 }

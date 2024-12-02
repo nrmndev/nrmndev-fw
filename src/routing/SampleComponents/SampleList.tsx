@@ -1,4 +1,4 @@
-import { List } from "@uiComponents";
+import { List } from "components/component.barrel.index";
 
 const SampleList = () => {
   return (

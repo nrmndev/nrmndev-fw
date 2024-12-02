@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Typography } from "@uiComponents";
-import { argTypesGenerator } from "@utils";
+import { Typography } from "components/component.barrel.index";
+import { argTypesGenerator } from "_utils";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {

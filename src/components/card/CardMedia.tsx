@@ -1,5 +1,5 @@
-import { UtilityStyledComponent } from "@uiComponents";
-import { CardMediaComponentProps } from "@uiComponentTypes";
+import { UtilityStyledComponent } from "components/component.barrel.index";
+import { CardMediaComponentProps } from "components/component.barrel.types";
 import { forwardRef } from "react";
 
 const CardMedia = (

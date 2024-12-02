@@ -1,0 +1,1 @@
+export { getSvgString } from "./reactIconsToString";

@@ -1,5 +1,5 @@
-import { PropStyleHandlerProps } from "@uiTypes";
-import { getStyle } from "@utils";
+import { GetStyleReturnProps, PropStyleHandlerProps } from "_uiTypes";
+import { getStyle } from "_utils";
 import React from "react";
 
 /**
@@ -36,23 +36,31 @@ import React from "react";
  */
 
 export const propStyleHandler = (props: PropStyleHandlerProps) => {
-  //console.log(props.className);
+  // console.log(`prop style handler`, props.opacity);
   //Initialize variable
   let styleAsClassNames: string[] = [];
   let styleAsInlineStyle: React.CSSProperties = {};
-
+  let hoverStylesAsInlineStyle: React.CSSProperties = {};
+  let inViewStylesAsInlineStyle: React.CSSProperties = {};
   // Helper function to process style
   const processStyle = (getStyleFn: Function, prop: any) => {
     //console.log(`processStyle prop:` + JSON.stringify(prop));
-    const { classes, inline } = getStyleFn(prop);
+    const { classes, inline, hoverInline, inViewInline } = getStyleFn(
+      prop
+    ) as GetStyleReturnProps;
     classes && styleAsClassNames.push(classes);
     inline && Object.assign(styleAsInlineStyle, inline);
+    hoverInline && Object.assign(hoverStylesAsInlineStyle, hoverInline);
+    inViewInline && Object.assign(inViewStylesAsInlineStyle, inViewInline);
+    //console.log(cssString);
   };
 
-  //User-defined ClassNames
-  const { className: userDefinedClassNames } = props;
-  userDefinedClassNames && styleAsClassNames.push(userDefinedClassNames);
-
+  // //User-defined ClassNames
+  // const { className: userDefinedClassNames } = props;
+  // userDefinedClassNames && styleAsClassNames.push(userDefinedClassNames);
+  //Utility handle for Animation
+  if (props.animation)
+    processStyle(getStyle.animation, { animation: props.animation });
   //Utility handle for Background classes
   if (props.background)
     processStyle(getStyle.background, { background: props.background });
@@ -60,9 +68,12 @@ export const propStyleHandler = (props: PropStyleHandlerProps) => {
   if (props.borderRadius)
     processStyle(getStyle.borderRadius, { borderRadius: props.borderRadius });
 
-  //Utility handle for BoxShadow
-  const { boxShadow } = props;
-  boxShadow && styleAsClassNames.push(boxShadow);
+  //Utility handle for BoxShadow  //Utility handle for BorderRadius
+  if (props.boxShadow)
+    processStyle(getStyle.boxShadow, { boxShadow: props.boxShadow });
+  //const { boxShadow } = props;
+  //boxShadow && styleAsClassNames.push(boxShadow);
+
   //Utility handle for Responsive Column BreakPoints
   if (props.sm || props.xs || props.md || props.lg || props.xs || props.xxl)
     processStyle(getStyle.columnBreakPoint, {
@@ -95,26 +106,34 @@ export const propStyleHandler = (props: PropStyleHandlerProps) => {
 
   //Utility handle for Flex
   if (props.flex) processStyle(getStyle.flex, { flex: props.flex });
+  //Utility handle for Flex
+  if (props.fluid) processStyle(getStyle.fluid, { fluid: props.fluid });
 
   //Utility handle for FontSize
-  // if (props.font) processStyle(getStyle.font, { font: props.font });
+  if (props.font) processStyle(getStyle.font, { font: props.font });
   //Utility handle for Gap
   if (props.gap) processStyle(getStyle.gap, { gap: props.gap });
-  //Utility handle for Width
-  if (props.width) processStyle(getStyle.width, { width: props.width });
+
   // //Utility handle for Height
   if (props.height) processStyle(getStyle.height, { height: props.height });
+  // //Utility handle for Hover
+  if (props.hover) processStyle(getStyle.hover, { hover: props.hover });
   //Utility handle for Margin
   if (props.margin) processStyle(getStyle.margin, { margin: props.margin });
   //Utility handle for Opacity
-  if (props.opacity) processStyle(getStyle.opacity, { opacity: props.opacity });
-  //Utility handle for Overlay
+  if (props.opacity || props.opacity == 0) {
+    processStyle(getStyle.opacity, { opacity: props.opacity });
+  } //Utility handle for Overlay
 
   //Utility handle for Padding
   if (props.padding) processStyle(getStyle.padding, { padding: props.padding });
   //Utility handle for Position
   if (props.position)
     processStyle(getStyle.position, { position: props.position });
+  //Utility handle for Rounded
+  if (props.rounded) processStyle(getStyle.rounded, { rounded: props.rounded });
+  //Utility handle for Size (styled as of padding)
+  if (props.size) processStyle(getStyle.size, { size: props.size });
   //Utility handle for Text
 
   if (props.text)
@@ -126,11 +145,24 @@ export const propStyleHandler = (props: PropStyleHandlerProps) => {
       },
     });
 
+  //Utility handle for Transition
+  if (props.transform)
+    processStyle(getStyle.transform, { transform: props.transform });
+  //Utility handle for Transition
+  if (props.transition)
+    processStyle(getStyle.transition, { transition: props.transition });
+  //Utility handle for Translate
+  if (props.translate)
+    processStyle(getStyle.translate, { translate: props.translate });
+  //Utility handle for Width
+  if (props.width) processStyle(getStyle.width, { width: props.width });
   //Sanitize classes by removing spaces and undefined.
   const sanitizedstyleAsClassNames = styleAsClassNames.filter((c) => c !== "");
-  //console.log(sanitizedstyleAsClassNames);
+  //console.log(`sanitizedstyleAsClassNames`, sanitizedstyleAsClassNames);
   return {
     className: sanitizedstyleAsClassNames.join(" "),
     inlineStyle: styleAsInlineStyle,
+    hoverInlineStyle: hoverStylesAsInlineStyle,
+    inviewInlineStyle: inViewStylesAsInlineStyle,
   };
 };

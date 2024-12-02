@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Heading } from "@uiComponents";
-import { argTypesGenerator } from "@utils";
+import { Heading } from "components/component.barrel.index";
+import { argTypesGenerator } from "_utils";
 
 const meta = {
   title: "Example/Heading",

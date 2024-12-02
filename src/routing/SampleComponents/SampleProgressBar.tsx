@@ -1,4 +1,4 @@
-import { ProgressBar } from "@uiComponents";
+import { ProgressBar } from "components/component.barrel.index";
 
 const SampleProgressBar = () => {
   return (

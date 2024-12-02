@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
-import { PropStyleHandlerProps, ValueAndUnitProps } from "@uiTypes";
-import { propStyleHandler, typeCheckers } from "@utils";
+import { PropStyleHandlerProps, ValueAndUnitProps } from "_uiTypes";
+import { propStyleHandler, typeCheckers } from "_utils";
 
 describe(`typeCheckers Function`, () => {
   test(`to return true because value is defined, hence infer the passed variable as type of ValueAndUnitProps`, () => {

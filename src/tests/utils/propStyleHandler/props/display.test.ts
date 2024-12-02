@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { getDisplayStyle } from "@utils";
+import { getDisplayStyle } from "_utils";
 
 describe(`getBackgroundStyle Function`, () => {
   test(`display is undefined, returning {classes:"", inline:{}} `, () => {

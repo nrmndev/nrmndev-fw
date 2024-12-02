@@ -1,0 +1,8 @@
+import { useContext } from "react";
+import { UtilityContext } from "./UtilityContextProvider";
+
+const useUtilityContextProvider = () => {
+  return useContext(UtilityContext);
+};
+
+export default useUtilityContextProvider;

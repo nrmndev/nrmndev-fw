@@ -1,9 +1,14 @@
-import { AsProps, PickUtilityProps } from "@uiTypes";
+import { AsProps, PickUtilityProps } from "_uiTypes";
 import heroBanner from "../../assets/hero_banner.jpg";
 
-import { Column, Container, Media, Typography } from "@uiComponents";
+import {
+  Column,
+  Container,
+  Media,
+  Typography,
+} from "components/component.barrel.index";
 import { FaPhone } from "react-icons/fa";
-import { ExtendUtilityProps } from "@utils";
+import { ExtendUtilityProps } from "_utils";
 import { useEffect, useRef } from "react";
 
 const Test = () => {

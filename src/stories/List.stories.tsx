@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { List } from "@uiComponents";
+import { List } from "components/component.barrel.index";
 import { FaBeer } from "react-icons/fa";
-import { typeDocGenerator } from "@utils";
+import { typeDocGenerator } from "_utils";
 
 const meta = {
   title: "Example/List",

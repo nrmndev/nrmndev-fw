@@ -1,1 +1,1 @@
-export * from "./convertCSSPropToString";
+export { convertCSSPropToString } from "./convertCSSPropToString";

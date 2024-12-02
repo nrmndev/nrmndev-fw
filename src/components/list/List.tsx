@@ -1,6 +1,6 @@
-import { ListComponentProps } from "@uiComponentTypes";
+import { ListComponentProps } from "components/component.barrel.types";
 import classNames from "classnames";
-import { UtilityStyledComponent } from "@uiComponents";
+import { UtilityStyledComponent } from "components/component.barrel.index";
 import { forwardRef } from "react";
 
 const List = <T extends React.ElementType>(
@@ -20,6 +20,8 @@ const List = <T extends React.ElementType>(
     ],
     listType = "ol",
     text,
+    template,
+    ...utilityProps
   }: ListComponentProps,
   ref?: React.Ref<React.ElementRef<T>>
 ) => {
@@ -32,11 +34,16 @@ const List = <T extends React.ElementType>(
   );
 
   return (
-    <UtilityStyledComponent as={listType} className={className} ref={ref}>
+    <UtilityStyledComponent
+      as={listType}
+      className={className}
+      {...utilityProps}
+      ref={ref}
+    >
       {items.map((item, index) => (
         <li className={`list__item color-${color}`} key={index}>
           {Icon ? (
-            <span className={`list__icon--${iconColor}`}>
+            <span className={`list__icon list__icon--${iconColor}`}>
               <Icon size={iconSize} />
             </span>
           ) : (

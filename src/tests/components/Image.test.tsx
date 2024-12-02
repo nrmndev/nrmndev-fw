@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { Image } from "@uiComponents";
+import { Image } from "components/component.barrel.index";
 import img from "justMockImage.png";
 
 describe(`Image Component`, () => {

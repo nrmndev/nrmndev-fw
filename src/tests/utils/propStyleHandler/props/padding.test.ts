@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
-import { SizeOptions, ValueAndUnitProps } from "@uiTypes";
-import { getPaddingStyle } from "@utils";
+import { SizeOptions, ValueAndUnitProps } from "_uiTypes";
+import { getPaddingStyle } from "_utils";
 
 //NOTE: The method is already typed, but typecasting for the testing clarity
 

@@ -1,6 +1,6 @@
-import { Button } from "@uiComponents";
+import { Button } from "components/component.barrel.index";
 import useHoverCardProvider from "./useHoverCardProvider";
-import { ButtonProps } from "@uiComponentTypes";
+import { ButtonProps } from "components/component.barrel.types";
 import { forwardRef } from "react";
 
 const OverlayButton = (

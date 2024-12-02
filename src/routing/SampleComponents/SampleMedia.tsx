@@ -1,4 +1,4 @@
-import { Media } from "@uiComponents";
+import { Media } from "components/component.barrel.index";
 import { FaPhone } from "react-icons/fa";
 import constructionImg from "@images/homepage/construction_1.jpg";
 
@@ -7,6 +7,7 @@ const SampleMedia = () => {
     <>
       <p>Media icon: react-icons, iconPosition: left</p>
       <Media
+        className="sample"
         borderRadius={"xs"}
         background="primary"
         color="white"

@@ -1,11 +1,13 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { UtilityStyledComponent } from "@uiComponents";
+import { UtilityStyledComponent } from "components/component.barrel.index";
 import React from "react";
 
+//NOTE: {as} and {ref} must always present
 describe(`UtilityStyledComponent`, () => {
   test(`renders with default element type (div)`, () => {
-    render(<UtilityStyledComponent data-testid="Utility" />);
+    const ref = React.createRef<HTMLDivElement>();
+    render(<UtilityStyledComponent as="div" data-testid="Utility" ref={ref} />);
 
     // Query the element by its test ID
     const el = screen.getByTestId("Utility");
@@ -16,7 +18,10 @@ describe(`UtilityStyledComponent`, () => {
   });
 
   test(`renders as 'section'`, () => {
-    render(<UtilityStyledComponent data-testid="Utility" as="section" />);
+    const ref = React.createRef<HTMLDivElement>();
+    render(
+      <UtilityStyledComponent data-testid="Utility" as="section" ref={ref} />
+    );
 
     // Query the image by its role
     const el = screen.getByTestId("Utility");
@@ -27,11 +32,13 @@ describe(`UtilityStyledComponent`, () => {
   });
 
   test(`applies generated 'styled-component' unique classNames for computed props`, () => {
+    const ref = React.createRef<HTMLDivElement>();
     render(
       <UtilityStyledComponent
         as="section"
         data-testid="Utility"
         padding={{ value: 10, unit: "px" }}
+        ref={ref}
       >
         test
       </UtilityStyledComponent>
@@ -46,16 +53,20 @@ describe(`UtilityStyledComponent`, () => {
   });
 
   test("renders with specified 'as' prop element type", () => {
+    const ref = React.createRef<HTMLDivElement>();
     render(
-      <UtilityStyledComponent as="span">Test Content</UtilityStyledComponent>
+      <UtilityStyledComponent as="span" ref={ref}>
+        Test Content
+      </UtilityStyledComponent>
     );
     const element = screen.getByText("Test Content");
     expect(element.tagName).toBe("SPAN");
   });
 
   test("applies inline style correctly", () => {
+    const ref = React.createRef<HTMLDivElement>();
     render(
-      <UtilityStyledComponent style={{ color: "red" }}>
+      <UtilityStyledComponent as="div" style={{ color: "red" }} ref={ref}>
         Test Content
       </UtilityStyledComponent>
     );
@@ -63,8 +74,9 @@ describe(`UtilityStyledComponent`, () => {
     expect(element).toHaveStyle("color: red");
   });
   test("applies className from componentProps", () => {
+    const ref = React.createRef<HTMLDivElement>();
     render(
-      <UtilityStyledComponent as="div" className="test-class">
+      <UtilityStyledComponent as="div" className="test-class" ref={ref}>
         Test Content
       </UtilityStyledComponent>
     );
@@ -75,13 +87,20 @@ describe(`UtilityStyledComponent`, () => {
   test(`handles ref correctly`, () => {
     const ref = React.createRef<HTMLDivElement>();
     render(
-      <UtilityStyledComponent ref={ref}>Test Content</UtilityStyledComponent>
+      <UtilityStyledComponent as="div" ref={ref}>
+        Test Content
+      </UtilityStyledComponent>
     );
     expect(ref.current).toBeInstanceOf(HTMLDivElement);
   });
 
   test("renders children correctly", () => {
-    render(<UtilityStyledComponent>Test Content</UtilityStyledComponent>);
+    const ref = React.createRef<HTMLDivElement>();
+    render(
+      <UtilityStyledComponent as="div" ref={ref}>
+        Test Content
+      </UtilityStyledComponent>
+    );
     expect(screen.getByText("Test Content")).toBeInTheDocument();
   });
 });

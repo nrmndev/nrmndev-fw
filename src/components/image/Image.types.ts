@@ -1,7 +1,5 @@
-import { AsImgProps, UtilityPartialProps } from "@uiTypes";
+import { AsImgProps, TemplateProps, UtilityComponentProps } from "@uiTypes";
 
-export type ImageComponentProps = UtilityPartialProps<
-  "display" | "border" | "borderRadius" | "width" | "height",
-  "img"
-> &
-  AsImgProps;
+export type ImageComponentProps = UtilityComponentProps<"img"> &
+  AsImgProps &
+  TemplateProps;

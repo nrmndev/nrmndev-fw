@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { UtilityStyledComponent } from "@uiComponents";
+import { UtilityStyledComponent } from "components/component.barrel.index";
 
 describe("Padding classes", () => {
   test("user-defined padding classes", () => {

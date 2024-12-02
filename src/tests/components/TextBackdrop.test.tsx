@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { TextBackdrop } from "@uiComponents";
+import { TextBackdrop } from "components/component.barrel.index";
 
 describe(`Typography Component`, () => {
   test(`with label and opacity`, () => {

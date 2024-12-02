@@ -1,9 +1,8 @@
-import { TypographyComponentProps } from "@uiComponentTypes";
-import { AnimationProps, ChildrenProps, PickUtilityProps } from "@uiTypes";
+import { TypographyComponentProps } from "components/component.barrel.types";
+import { AnimationProps, ChildrenProps, UtilityComponentProps } from "_uiTypes";
 
-export type HoverCardComponentProps = PickUtilityProps<"children"> &
-  AnimationProps &
-  Required<ChildrenProps>;
+export type HoverCardComponentProps = UtilityComponentProps<"div"> &
+  AnimationProps;
 
 export type HoverCardHeadingComponentProps = Required<ChildrenProps> &
   TypographyComponentProps;

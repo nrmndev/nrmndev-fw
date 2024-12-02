@@ -1,9 +1,9 @@
-import { UtilityStyledComponent } from "@uiComponents";
-import { ImageComponentProps } from "@uiComponentTypes";
+import { UtilityStyledComponent } from "components/component.barrel.index";
+import { ImageComponentProps } from "components/component.barrel.types";
 import React, { forwardRef } from "react";
 
 const Image = (
-  { src, alt = "Image", ...utilityProps }: ImageComponentProps,
+  { src, alt = "Image", template, ...utilityProps }: ImageComponentProps,
   ref?: React.Ref<HTMLImageElement>
 ) => {
   return (

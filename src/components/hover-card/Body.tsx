@@ -1,5 +1,5 @@
-import { UtilityStyledComponent } from "@uiComponents";
-import { HoverCardBodyComponentProps } from "@uiComponentTypes";
+import { UtilityStyledComponent } from "components/component.barrel.index";
+import { HoverCardBodyComponentProps } from "components/component.barrel.types";
 import useHoverCardProvider from "./useHoverCardProvider";
 import { forwardRef } from "react";
 

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Media } from "@uiComponents";
+import { Media } from "components/component.barrel.index";
 import { FaBeer } from "react-icons/fa";
 
 const meta = {

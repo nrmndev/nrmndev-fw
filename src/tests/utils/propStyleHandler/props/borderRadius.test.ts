@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { getBorderRadiusStyle } from "@utils";
+import { getBorderRadiusStyle } from "_utils";
 
 describe(`getBorderRadiusStyle Function`, () => {
   test(`borderRadius is undefined, returning {classes:"", inline:{}} `, () => {

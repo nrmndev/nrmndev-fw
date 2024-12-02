@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { getBackgroundStyle } from "@utils";
+import { getBackgroundStyle } from "_utils";
 import img from "mockImage.jpg";
 describe(`getBackgroundStyle Function`, () => {
   test(`background is undefined, returning {classes:"", inline:{}} `, () => {

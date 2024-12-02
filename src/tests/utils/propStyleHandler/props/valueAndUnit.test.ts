@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { checkValue } from "@utils";
+import { checkValue } from "_utils";
 
 describe(`checkValue Function`, () => {
   test(`checkValue is undefined, returning "" `, () => {

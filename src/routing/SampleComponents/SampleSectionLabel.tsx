@@ -1,16 +1,16 @@
-import { ProgressBar, SectionLabel } from "@uiComponents";
+import { ProgressBar, DecoratedLabel } from "components/component.barrel.index";
 import { AiOutlineSmallDash } from "react-icons/ai";
+import { FaBeer } from "react-icons/fa";
 
-const SampleSectionLabel = () => {
+const SampleDecoratedLabel = () => {
   return (
     <>
-      <SectionLabel
-        color="white"
-        as="h3"
-        label="Our skills"
-        decoration={{
-          left: { Icon: AiOutlineSmallDash, color: "secondary" },
-          right: { Icon: AiOutlineSmallDash, color: "secondary" },
+      <DecoratedLabel
+        typography={{ color: "white", as: "h3" }}
+        text="Our Skills"
+        decor={{
+          right: { icon: FaBeer },
+          left: { icon: FaBeer },
         }}
       />
       <ProgressBar
@@ -20,8 +20,8 @@ const SampleSectionLabel = () => {
         showProgress
         format="percentage"
       />
-      {/* <SectionLabel label="Im on the center" position="center" />
-      <SectionLabel label="Im on the right" position="right" />
+      {/* <DecoratedLabel label="Im on the center" position="center" />
+      <DecoratedLabel label="Im on the right" position="right" />
       <span className="sectionLabel">
         <span className="sectionLabel__backdrop">Just watched you go</span>
         <span className="sectionLabel__decoration decoration--top">
@@ -44,4 +44,4 @@ const SampleSectionLabel = () => {
   );
 };
 
-export default SampleSectionLabel;
+export default SampleDecoratedLabel;

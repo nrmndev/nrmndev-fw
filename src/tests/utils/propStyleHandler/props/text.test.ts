@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { getTextStyle } from "@utils";
+import { getTextStyle } from "_utils";
 
 describe(`getBackgroundStyle Function`, () => {
   test(`text is undefined, returning {classes:"", inline:{}} `, () => {

@@ -1,4 +1,4 @@
-import { HoverCard } from "@uiComponents";
+import { HoverCard } from "components/component.barrel.index";
 import { FaBedPulse } from "react-icons/fa6";
 
 const SampleHoverCard = () => {

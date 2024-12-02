@@ -6,6 +6,7 @@ module.exports = {
     "^@uiComponents": "<rootDir>/src/components/index.ts", // Adjust this based on your alias configuration
     "^@uiComponentTypes": "<rootDir>/src/components/index.types.ts", // Adjust this based on your alias configuration
     "^@uiTypes": "<rootDir>/src/types/index", // Adjust this based on your alias configuration
+    "^@uiContext": "<rootDir>/src/context/index", // Adjust this based on your alias configuration
     "^@utils": "<rootDir>/src/utils/index", // Adjust this based on your alias configuration
     "^@root/(.*)$": "<rootDir>", // Adjust this based on your alias configuration
     "\\.(css|less|scss)$": "identity-obj-proxy", //mock CSS imports
@@ -33,7 +34,9 @@ module.exports = {
     "!src/types/**", // Exclude types files
     "!src/App.tsx", // Exclude App.tsx
     "!src/main.tsx", // Exclude main.tsx
+    "!archive/**", // Exclude archive folder
     "!src/utils/storybook/**", //Exclude storybook will be moved to a separate source code
+    "!dist", //Exclude dist
   ],
 
   // Global Testing config - END

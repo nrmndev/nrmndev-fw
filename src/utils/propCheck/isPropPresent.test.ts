@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
-import { MarginProps } from "@uiTypes";
-import { isPropPresent } from "@utils";
+import { MarginProps } from "_uiTypes";
+import { isPropPresent } from "_utils";
 
 //Should type of MarginProps, this is not allowed, discriminated. But for testing purposes we will pass it.
 const marginProp = {

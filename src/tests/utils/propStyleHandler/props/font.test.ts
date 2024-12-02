@@ -1,45 +1,114 @@
 import "@testing-library/jest-dom";
-import { getFontStyle } from "@utils";
-describe(`getColorStyle Function`, () => {
-  test(`Font is undefined`, () => {
+import { getFontStyle } from "_utils";
+describe(`getFontStyle Function`, () => {
+  test(`returns empty classes and inline styles when font is undefined"`, () => {
     expect(getFontStyle({ font: undefined })).toStrictEqual({
       classes: "",
       inline: {},
     });
   });
 
-  test(`{font} is {SizeOptions} return classname ie. font-lg`, () => {
+  test(`returns class 'font-lg' when font is a single SizeOptions value`, () => {
     expect(getFontStyle({ font: "lg" })).toStrictEqual({
       classes: "font-lg",
       inline: {},
     });
   });
-  test(`{font} is {SizeOptions} return classname ie. font-lg`, () => {
-    expect(getFontStyle({ font: "lg" })).toStrictEqual({
-      classes: "font-lg",
-      inline: {},
-    });
-  });
-  // test(`{font} is {FontProps}, {family} {size as SizeOption} defined, return inline`, () => {
-  //   expect(
-  //     getFontStyle({ font: { family: "Montserrat", size: "lg" } })
-  //   ).toStrictEqual({
-  //     classes: "",
-  //     inline: { font: "var(--font-lg) Montserrat" },
-  //   });
-  // });
-  // test(`{font} is {FontProps}, {family} and {size as ValueAndUnitProps} defined, return inline`, () => {
-  //   expect(
-  //     getFontStyle({
-  //       font: { family: "Montserrat", size: { value: 120, unit: "px" } },
-  //     })
-  //   ).toStrictEqual({
-  //     classes: "",
-  //     inline: { font: "120px Montserrat" },
-  //   });
-  // });
 
-  test(`{font} is {FontProps}, {family} {size as ValueAndUnitProps} {lineHeight} {style} {weight} defined, return inline`, () => {
+  test("returns class 'font-xxl' when only font size is provided in FontProps", () => {
+    expect(getFontStyle({ font: { size: "xxl" } })).toStrictEqual({
+      classes: "font-xxl",
+      inline: {},
+    });
+  });
+
+  test(`returns inline styles when font has family, custom size, style, and weight`, () => {
+    expect(
+      getFontStyle({
+        font: {
+          family: "Montserrat",
+          size: { value: 120, unit: "px" },
+          lineHeight: undefined,
+          style: "italic",
+          weight: "900",
+        },
+      })
+    ).toStrictEqual({
+      classes: "",
+      inline: {
+        fontFamily: "Montserrat",
+        fontSize: "120px",
+        fontStyle: "italic",
+        fontWeight: "900",
+      },
+    });
+  });
+  test(`returns inline styles when font has family, size, lineHeight, and weight`, () => {
+    expect(
+      getFontStyle({
+        font: {
+          family: "Montserrat",
+          size: { value: 120, unit: "px" },
+          lineHeight: 1.5,
+          style: undefined,
+          weight: "900",
+        },
+      })
+    ).toStrictEqual({
+      classes: "",
+      inline: {
+        fontFamily: "Montserrat",
+        fontSize: "120px",
+        fontWeight: "900",
+        lineHeight: 1.5,
+      },
+    });
+  });
+
+  test("returns inline styles when font has family, size, lineHeight, and normal style", () => {
+    expect(
+      getFontStyle({
+        font: {
+          family: "Montserrat",
+          size: { value: 120, unit: "px" },
+          lineHeight: 1.5,
+          style: "normal",
+          weight: undefined,
+        },
+      })
+    ).toStrictEqual({
+      classes: "",
+      inline: {
+        fontFamily: "Montserrat",
+        fontSize: "120px",
+        fontStyle: "normal",
+        lineHeight: 1.5,
+      },
+    });
+  });
+
+  test("returns inline styles when font lacks family but has size, lineHeight, style, and weight", () => {
+    expect(
+      getFontStyle({
+        font: {
+          family: undefined,
+          size: { value: 120, unit: "px" },
+          lineHeight: 1.5,
+          style: "italic",
+          weight: "900",
+        },
+      })
+    ).toStrictEqual({
+      classes: "",
+      inline: {
+        fontSize: "120px",
+        fontStyle: "italic",
+        fontWeight: "900",
+        lineHeight: 1.5,
+      },
+    });
+  });
+  test("returns all inline styles when font has fully defined properties", () => {
     expect(
       getFontStyle({
         font: {
@@ -52,12 +121,18 @@ describe(`getColorStyle Function`, () => {
       })
     ).toStrictEqual({
       classes: "",
-      inline: { font: "italic 900 120px/1.5 Montserrat" },
+      inline: {
+        fontFamily: "Montserrat",
+        fontSize: "120px",
+        fontStyle: "italic",
+        fontWeight: "900",
+        lineHeight: 1.5,
+      },
     });
   });
 
   //Family by default is required, testing coverage to check if it prints right default values
-  test(`{family} {size} {lineHeight} {style} {weight} of undefined, expecting inline: {font: "var(--font-md) Montserrat"}`, () => {
+  test("returns empty classes and inline styles when all font properties are undefined", () => {
     expect(
       getFontStyle({
         font: {
@@ -70,7 +145,7 @@ describe(`getColorStyle Function`, () => {
       })
     ).toStrictEqual({
       classes: "",
-      inline: { font: "var(--font-md) Montserrat" },
+      inline: {},
     });
   });
 });

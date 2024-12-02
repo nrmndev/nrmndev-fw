@@ -7,7 +7,8 @@
   "exports": {
     ".": "./dist/index.js",
     "./@utils": "./dist/utils/index.js",
-    "./@componentTypes": "./dist/components/index.types.js"
+    "./@componentTypes": "./dist/components/index.types.js",
+    "./@context": "./dist/components/context/index.js"
   },
   "scripts": {
     "dev": "vite",
@@ -16,13 +17,16 @@
     "build:npm": "tsc --project tsconfig.app.json && tsc-alias -p tsconfig.app.json && sass src/styles/main.scss dist/main.css && sass src/styles/main.scss dist/main.css",
     "build:vite": "vite build",
     "build:all": "npm run build:tsc && npm run build:vite && sass src/styles/main.scss dist/main.css",
-    "build:css": "sass src/styles/main.scss src/main.css",
+    "build:css": "sass src/styles/main.scss src/css/main.css",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build:storybook": "storybook build"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/material": "^6.1.7",
     "@rollup/plugin-alias": "^5.1.0",
     "@storybook/addon-a11y": "^8.2.9",
     "@types/node": "^22.0.1",
@@ -34,9 +38,9 @@
     "react-dom": "^18.3.1",
     "react-icons": "^5.2.1",
     "react-router-dom": "^6.10.0",
+    "react-scroll": "^1.9.0",
     "storybook-addon-code-editor": "^3.1.0",
     "storybook-react-context": "^0.7.0",
-    "styled-components": "^6.1.13",
     "tsc-alias": "^1.8.10",
     "tsconfig-paths-jest": "^0.0.1",
     "vite-tsconfig-paths": "^5.0.1"
@@ -63,9 +67,11 @@
     "@types/jest": "^29.5.13",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "@types/react-scroll": "^1.8.10",
     "@typescript-eslint/eslint-plugin": "^7.15.0",
     "@typescript-eslint/parser": "^7.15.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
+    "babel-plugin-styled-components": "^2.1.4",
     "eslint": "^8.57.0",
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-import": "^2.29.1",
@@ -75,6 +81,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+    "jest-localstorage-mock": "^2.4.26",
     "react-styleguidist": "^13.1.3",
     "sass": "^1.77.8",
     "storybook": "^8.3.2",
@@ -82,13 +89,18 @@
     "ts-loader": "^9.5.1",
     "typescript": "^5.2.2",
     "vite": "^5.3.4",
+    "web-vitals": "^4.2.4",
     "webpack": "^5.95.0",
     "webpack-cli": "^5.1.4"
   },
   "peerDependencies": {
     "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
     "react-icons": "^5.2.1",
-    "react-router-dom": "^6.10.0"
+    "react-intersection-observer": "^9.13.1",
+    "react-router-dom": "^6.10.0",
+    "styled-components": "^6.1.13"
   },
   "files": [
     "dist",

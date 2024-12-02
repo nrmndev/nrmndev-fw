@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { Typography } from "@uiComponents";
+import { Typography } from "components/component.barrel.index";
 
 describe(`Typography Component`, () => {
   test(`default as="p" `, () => {
@@ -29,6 +29,6 @@ describe(`Typography Component`, () => {
     // Assert that the image is in the document
     expect(el).toBeInTheDocument();
 
-    expect(el).toHaveClass("color-primary");
+    expect(el).toHaveClass("c-primary");
   });
 });

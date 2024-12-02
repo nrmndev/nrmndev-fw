@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "@uiComponents";
+import { Button } from "components/component.barrel.index";
 import { FaBeer } from "react-icons/fa";
 import { MemoryRouter } from "react-router-dom";
-import { argTypesGenerator, typeDocGenerator } from "@utils";
+import { argTypesGenerator, typeDocGenerator } from "_utils";
 
 const meta = {
   title: "Example/Button",

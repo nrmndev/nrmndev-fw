@@ -5,8 +5,8 @@ import HoverCardBody from "./Body";
 import HoverCardIcon from "./Icon";
 import HoverCardContextProvider from "./HoverCardContext";
 import classNames from "classnames";
-import { UtilityStyledComponent } from "@uiComponents";
-import { HoverCardComponentProps } from "@uiComponentTypes";
+import { UtilityStyledComponent } from "components/component.barrel.index";
+import { HoverCardComponentProps } from "components/component.barrel.types";
 
 const HoverCard = ({ animation, ...utilityProps }: HoverCardComponentProps) => {
   const className = classNames(

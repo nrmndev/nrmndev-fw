@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
-import { SizeOptions, ValueAndUnitProps } from "@uiTypes";
-import { getMarginStyle } from "@utils";
+import { SizeOptions, ValueAndUnitProps } from "_uiTypes";
+import { getMarginStyle } from "_utils";
 
 //NOTE: The method is already typed, but typecasting for the testing clarity
 

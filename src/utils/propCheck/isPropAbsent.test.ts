@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
-import { BorderOptions, MarginProps } from "@uiTypes";
-import { isPropAbsent } from "@utils";
+import { BorderOptions, MarginProps } from "_uiTypes";
+import { isPropAbsent } from "_utils";
 
 //Should type of MarginProps, this is not allowed, discriminated. But for testing purposes we will pass it.
 const marginProp = {

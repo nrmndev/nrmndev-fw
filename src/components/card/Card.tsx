@@ -1,5 +1,6 @@
-import { UtilityStyledComponent } from "@uiComponents";
-import { CardComponentProps } from "@uiComponentTypes";
+import { UtilityStyledComponent } from "components/component.barrel.index";
+import { CardComponentProps } from "components/component.barrel.types";
+
 import { forwardRef } from "react";
 
 const Card = (
@@ -12,7 +13,7 @@ const Card = (
       className="card"
       ref={ref}
       {...utilityProps}
-      padding={utilityProps.padding ?? "sm"}
+      padding={utilityProps.usx?.padding ?? "sm"}
     />
   );
 };

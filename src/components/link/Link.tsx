@@ -1,4 +1,4 @@
-import { UtilityStyledComponent } from "@uiComponents";
+import { UtilityStyledComponent } from "components/component.barrel.index";
 import { forwardRef } from "react";
 
 export type LinkComponentProps = {};

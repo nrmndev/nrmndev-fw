@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { getColumnItemsStyle } from "@utils";
+import { getColumnItemsStyle } from "_utils";
 
 //Uses FlexProps
 

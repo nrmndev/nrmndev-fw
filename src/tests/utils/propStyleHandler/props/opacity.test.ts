@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
-import { IncrementOf5Options } from "@uiTypes";
-import { getOpacityStyle } from "@utils";
+import { IncrementOf5Options } from "_uiTypes";
+import { getOpacityStyle } from "_utils";
 describe(`getOpacityStyle Function`, () => {
   for (let x = 0; x <= 100; x += 5) {
     test(`returns {classes:"opacity-${x}", inline: {}}`, () => {

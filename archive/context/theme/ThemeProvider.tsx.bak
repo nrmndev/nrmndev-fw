@@ -1,0 +1,122 @@
+// src/contexts/CssVariableContext.js
+import React, { createContext, useEffect, useReducer, useState } from "react";
+import { TemplateType } from "./templateTypes";
+
+// export interface CssVariables {
+//   [key: string]: string;
+// }
+// type CSSVariablesType = {
+//   light: CssVariables;
+//   dark: CssVariables;
+// };
+
+type ThemeType = "light" | "dark" | "custom1" | "custom2" | "custom3";
+
+//The value of ThemeProvider
+export interface InitialStateType {
+  //CSSRootVariables: CSSVariablesType;
+  Theme?: ThemeType;
+}
+// Initial value for the context and fallback for useReducer
+const initialState: InitialStateType = {
+  //CSSRootVariables: {} as CSSVariablesType,
+  Theme: (localStorage.getItem("theme") as ThemeType) || "light",
+};
+
+//The context
+export const ThemeContext = createContext<{
+  variables: InitialStateType;
+  dispatch: React.Dispatch<ThemeProviderReducerActionType>;
+}>({
+  variables: initialState,
+  dispatch: () => {},
+});
+
+//The props of theme provider
+export interface IProviderProps {
+  children: React.ReactNode;
+  value?: {
+    //CSSRootVariables: CSSVariablesType;
+    Theme?: ThemeType;
+    Template?: TemplateType;
+  };
+}
+
+//Actiontype for reducer
+export type ThemeProviderReducerActionType =
+  // | {
+  //     type: "Update_Variables";
+  //     payload: {
+  //       light?: { [key: string]: string };
+  //       dark?: { [key: string]: string };
+  //     };
+  //   }
+  {
+    type: "Update_Theme";
+    payload: ThemeType;
+  };
+
+//The reducer
+export const themeProviderReducer = (
+  state: InitialStateType,
+  action: ThemeProviderReducerActionType
+) => {
+  if (!action.payload) return state;
+  // Save the theme in localStorage whenever it changes
+  return { ...state, Theme: action.payload };
+
+  //Other actions turned off.
+  //switch (action.type) {
+  // case "Update_Variables":
+  //   return {
+  //     ...state,
+  //     CSSRootVariables: { ...state.CSSRootVariables, ...action.payload },
+  //   };
+  //case "Update_Theme":
+  //return { ...state, Theme: action.payload };
+  //}
+};
+
+export const ThemeContextProvider = ({ children, value }: IProviderProps) => {
+  const [isThemeLoaded, setIsThemeLoaded] = useState(false);
+
+  const [variables, dispatch] = useReducer(
+    themeProviderReducer,
+    value || initialState
+  );
+
+  //useEffect if Theme value has changed
+  useEffect(() => {
+    console.log(variables.Theme);
+    document.body.setAttribute("data-theme", variables.Theme as ThemeType);
+    localStorage.setItem("theme", variables.Theme as ThemeType);
+  }, [variables.Theme]);
+
+  return (
+    <ThemeContext.Provider value={{ variables, dispatch }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
+
+//injecting style to HTML, not ideal
+// type ThemeVariables = {
+//   "--background-color": string;
+//   "--text-color": string;
+//   // Add more variables as needed
+// };
+// useEffect(() => {
+//   const root = document.documentElement;
+//   const themeVariables =
+//     variables.CSSRootVariables[variables.Theme || "light"];
+
+//   // Apply each variable for the selected theme
+//   (Object.keys(themeVariables) as Array<keyof ThemeVariables>).forEach(
+//     (key) => {
+//       root.style.setProperty(key, themeVariables[key]);
+//     }
+//   );
+
+//   // Optional: Set the data attribute on the root element for theme
+//   //root.setAttribute("data-theme", variables.Theme || "light");
+// }, [variables.Theme]);

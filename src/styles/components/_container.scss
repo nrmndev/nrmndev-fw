@@ -60,13 +60,29 @@ $sizes: xs, sm, md, lg, xl, xxl;
   padding: 10px;
 }
 .row {
-  margin: 0 -10px;
+  // margin-left: -10px;
+  // margin-right: -10px;
   display: flex;
   flex-wrap: wrap;
   // &.flex > * {
   //   display: flex;
   //   padding: 10px;
   // }
+}
+
+.row {
+  @include mixins.respondTo("md") {
+    margin-left: unset;
+    margin-right: unset;
+  }
+  @include mixins.respondTo("sm") {
+    margin-left: unset;
+    margin-right: unset;
+  }
+  @include mixins.respondTo("xs") {
+    margin-left: unset;
+    margin-right: unset;
+  }
 }
 
 .row[class*="flex-"] > * {

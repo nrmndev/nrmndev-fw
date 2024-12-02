@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { HeroBanner } from "@uiComponents";
+import { HeroBanner } from "components/component.barrel.index";
 
 const meta = {
   title: "Example/HeroBanner",

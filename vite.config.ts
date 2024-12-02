@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig, optimizeDeps } from "vite";
 import react from "@vitejs/plugin-react";
 import tsconfigPaths from "vite-tsconfig-paths";
 // import alias from "@rollup/plugin-alias";
@@ -9,6 +9,7 @@ export default defineConfig({
   plugins: [
     react(),
     tsconfigPaths(),
+
     // alias({
     //   entries: [
     //     {
@@ -50,6 +51,9 @@ export default defineConfig({
   build: {
     outDir: "vite-build", // Replace with your desired folder name
   },
+  optimizeDeps: {
+    exclude: ["dist"], // Exclude `dist` explicitly
+  },
   // resolve: {
   //   alias: {
   //     "@uiComponents": path.resolve(__dirname, "src/components/index"),
@@ -64,3 +68,18 @@ export default defineConfig({
   //   },
   // },
 });
+
+// {
+//   babel: {
+//     plugins: [
+//       [
+//         "babel-plugin-styled-components",
+//         {
+//           displayName: true,
+//           fileName: false,
+//           namespace: false,
+//         },
+//       ],
+//     ],
+//   },
+// }

@@ -1,3 +1,3 @@
-import { UtilityPartialProps } from "@uiTypes";
+import { UtilityPartialProps } from "_uiTypes";
 
 export type CardContentComponentProps = UtilityPartialProps<"padding", "div">;

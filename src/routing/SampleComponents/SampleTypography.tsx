@@ -1,21 +1,14 @@
-import { Typography } from "@uiComponents";
+import { Typography } from "components/component.barrel.index";
+import { typographyTemplate } from "templates/typography";
 
 const SampleTypography = () => {
   return (
     <>
-      <Typography as="span" color="white" font="lg">
+      <Typography as="span" {...typographyTemplate?.PrimaryHeadingA}>
         Typography as span
       </Typography>
       <hr />
-      <Typography
-        as="h1"
-        color="gradient-1"
-        font={{
-          style: "italic",
-        }}
-      >
-        Typography as H1
-      </Typography>
+      <Typography as="h1">Typography as H1</Typography>
       <hr />
       <Typography as="h2">Typography as h2</Typography>
       <hr />

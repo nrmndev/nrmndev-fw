@@ -19,11 +19,11 @@
   --padding-xl: 3rem;
   --padding-xxl: 3.5rem;
   --font-xs: 1rem;
-  --font-sm: 1.5rem;
-  --font-md: 2rem;
-  --font-lg: 2.5rem;
-  --font-xl: 3rem;
-  --font-xxl: 3.5rem;
+  --font-sm: 2rem;
+  --font-md: 3rem;
+  --font-lg: 4rem;
+  --font-xl: 6rem;
+  --font-xxl: 8rem;
   --box-shadow-1: 1px 1px 6px #dedede;
   --box-shadow-2: 0px 0px 3px #e8eaee;
   --box-shadow-3: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
@@ -44,12 +44,12 @@
   --primary-rgb: 20, 86, 80;
   --secondary: #651b15;
   --secondary-rgb: 101, 27, 21;
-  --accent1: #146555;
-  --accent1-rgb: 20, 101, 85;
-  --accent2: #143f65;
-  --accent2-rgb: 20, 63, 101;
-  --accent3: #151565;
-  --accent3-rgb: 21, 21, 101;
+  --accent-1: #146555;
+  --accent-1-rgb: 20, 101, 85;
+  --accent-2: #143f65;
+  --accent-2-rgb: 20, 63, 101;
+  --accent-3: #151565;
+  --accent-3-rgb: 21, 21, 101;
   --white: #ffffff;
   --black: #000000;
   --light: #fafafa;
@@ -66,12 +66,48 @@
   --primary: #145650;
   --white: #ffffff;
   --black: #000000;
-  --secondary: lighten(#145650, 0.8);
   --light: #333333;
   --dark: #fafafa;
+  --secondary: lighten(#145650, 0.8);
   --text-color-primary: #ffffff;
   --text-color-secondary: #dee2e6;
   --bg-primary: #212529;
+}
+
+[data-theme=custom1] {
+  --primary: red;
+  --white: red;
+  --black: red;
+  --light: red;
+  --dark: red;
+  --secondary: lighten(red, 0.8);
+  --text-color-primary: red;
+  --text-color-secondary: red;
+  --bg-primary: red;
+}
+
+[data-theme=custom2] {
+  --primary: yellow;
+  --white: yellow;
+  --black: yellow;
+  --light: yellow;
+  --dark: yellow;
+  --secondary: lighten(yellow, 0.8);
+  --text-color-primary: yellow;
+  --text-color-secondary: yellow;
+  --bg-primary: yellow;
+}
+
+[data-theme=custom3] {
+  --primary: teal;
+  --white: teal;
+  --black: teal;
+  --light: teal;
+  --dark: teal;
+  --secondary: lighten(teal, 0.8);
+  --text-color-primary: teal;
+  --text-color-secondary: teal;
+  --bg-primary: teal;
 }
 
 html {
@@ -183,34 +219,34 @@ h6 {
   color: var(--secondary);
 }
 
-.btn-solid-accent1 {
-  background: var(--accent1);
+.btn-solid-accent-1 {
+  background: var(--accent-1);
   color: var(--white);
 }
 
-.btn-outline-accent1 {
-  border: 2px solid var(--accent1);
-  color: var(--accent1);
+.btn-outline-accent-1 {
+  border: 2px solid var(--accent-1);
+  color: var(--accent-1);
 }
 
-.btn-solid-accent2 {
-  background: var(--accent2);
+.btn-solid-accent-2 {
+  background: var(--accent-2);
   color: var(--white);
 }
 
-.btn-outline-accent2 {
-  border: 2px solid var(--accent2);
-  color: var(--accent2);
+.btn-outline-accent-2 {
+  border: 2px solid var(--accent-2);
+  color: var(--accent-2);
 }
 
-.btn-solid-accent3 {
-  background: var(--accent3);
+.btn-solid-accent-3 {
+  background: var(--accent-3);
   color: var(--white);
 }
 
-.btn-outline-accent3 {
-  border: 2px solid var(--accent3);
-  color: var(--accent3);
+.btn-outline-accent-3 {
+  border: 2px solid var(--accent-3);
+  color: var(--accent-3);
 }
 
 .btn-solid-white {
@@ -1613,9 +1649,29 @@ h6 {
 }
 
 .row {
-  margin: 0 -10px;
+  margin-left: -10px;
+  margin-right: -10px;
   display: flex;
   flex-wrap: wrap;
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+  .row {
+    margin-left: unset;
+    margin-right: unset;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .row {
+    margin-left: unset;
+    margin-right: unset;
+  }
+}
+@media (max-width: 575px) {
+  .row {
+    margin-left: unset;
+    margin-right: unset;
+  }
 }
 
 .row[class*=flex-] > * {
@@ -1865,10 +1921,7 @@ h6 {
 .icon {
   align-items: center;
   display: flex;
-  font-size: 4rem;
-  height: 8rem;
   justify-content: center;
-  width: 8rem;
 }
 .icon-outline {
   border-width: 1px;
@@ -2081,19 +2134,19 @@ ol.list {
   color: var(--secondary);
 }
 
-.list__icon--accent1,
-.list__item.color-accent1 a {
-  color: var(--accent1);
+.list__icon--accent-1,
+.list__item.color-accent-1 a {
+  color: var(--accent-1);
 }
 
-.list__icon--accent2,
-.list__item.color-accent2 a {
-  color: var(--accent2);
+.list__icon--accent-2,
+.list__item.color-accent-2 a {
+  color: var(--accent-2);
 }
 
-.list__icon--accent3,
-.list__item.color-accent3 a {
-  color: var(--accent3);
+.list__icon--accent-3,
+.list__item.color-accent-3 a {
+  color: var(--accent-3);
 }
 
 .list__icon--white,
@@ -2131,6 +2184,10 @@ ol.list {
   color: var(--gradient-3);
 }
 
+.list__icon {
+  display: flex;
+}
+
 /* LISTS */
 .list--inline .list__item {
   display: inline-block;
@@ -2140,7 +2197,8 @@ ol.list {
 /** LIST ITEM **/
 .list .list__item {
   margin-bottom: 15px;
-  line-height: 1.5;
+  display: inline-flex;
+  align-items: center;
   /* align-items: center;
   display: flex; */
 }
@@ -2424,19 +2482,19 @@ header.main-navigation nav li a:hover, header.main-navigation nav li a:active, h
   background-size: 30px 60px; /* Adjust the size of the stripes to match movement */
 }
 
-.bg-clip-gradient-1 {
+.bgclip-gradient-1 {
   background: var(--gradient-1);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.bg-clip-gradient-2 {
+.bgclip-gradient-2 {
   background: var(--gradient-2);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.bg-clip-gradient-3 {
+.bgclip-gradient-3 {
   background: var(--gradient-3);
   background-clip: text;
   -webkit-background-clip: text;
@@ -2451,16 +2509,16 @@ header.main-navigation nav li a:hover, header.main-navigation nav li a:active, h
   background: var(--secondary);
 }
 
-.bg-accent1 {
-  background: var(--accent1);
+.bg-accent-1 {
+  background: var(--accent-1);
 }
 
-.bg-accent2 {
-  background: var(--accent2);
+.bg-accent-2 {
+  background: var(--accent-2);
 }
 
-.bg-accent3 {
-  background: var(--accent3);
+.bg-accent-3 {
+  background: var(--accent-3);
 }
 
 .bg-white {
@@ -2565,28 +2623,28 @@ header.main-navigation nav li a:hover, header.main-navigation nav li a:active, h
   border-color: var(--secondary);
 }
 
-.outlined-accent1 {
-  border: 1px solid var(--accent1);
+.outlined-accent-1 {
+  border: 1px solid var(--accent-1);
 }
 
-.border-color-accent1 {
-  border-color: var(--accent1);
+.border-color-accent-1 {
+  border-color: var(--accent-1);
 }
 
-.outlined-accent2 {
-  border: 1px solid var(--accent2);
+.outlined-accent-2 {
+  border: 1px solid var(--accent-2);
 }
 
-.border-color-accent2 {
-  border-color: var(--accent2);
+.border-color-accent-2 {
+  border-color: var(--accent-2);
 }
 
-.outlined-accent3 {
-  border: 1px solid var(--accent3);
+.outlined-accent-3 {
+  border: 1px solid var(--accent-3);
 }
 
-.border-color-accent3 {
-  border-color: var(--accent3);
+.border-color-accent-3 {
+  border-color: var(--accent-3);
 }
 
 .outlined-white {
@@ -2664,51 +2722,51 @@ header.main-navigation nav li a:hover, header.main-navigation nav li a:active, h
   box-shadow: rgba(20, 86, 80, 0.4) 5px 5px, rgba(20, 86, 80, 0.3) 10px 10px, rgba(20, 86, 80, 0.2) 15px 15px, rgba(20, 86, 80, 0.1) 20px 20px, rgba(20, 86, 80, 0.05) 25px 25px, #dedede 0 0 3px;
 }
 
-.color-primary {
+.c-primary {
   color: var(--primary);
 }
 
-.color-secondary {
+.c-secondary {
   color: var(--secondary);
 }
 
-.color-accent1 {
-  color: var(--accent1);
+.c-accent-1 {
+  color: var(--accent-1);
 }
 
-.color-accent2 {
-  color: var(--accent2);
+.c-accent-2 {
+  color: var(--accent-2);
 }
 
-.color-accent3 {
-  color: var(--accent3);
+.c-accent-3 {
+  color: var(--accent-3);
 }
 
-.color-white {
+.c-white {
   color: var(--white);
 }
 
-.color-black {
+.c-black {
   color: var(--black);
 }
 
-.color-light {
+.c-light {
   color: var(--light);
 }
 
-.color-dark {
+.c-dark {
   color: var(--dark);
 }
 
-.color-gradient-1 {
+.c-gradient-1 {
   color: var(--gradient-1);
 }
 
-.color-gradient-2 {
+.c-gradient-2 {
   color: var(--gradient-2);
 }
 
-.color-gradient-3 {
+.c-gradient-3 {
   color: var(--gradient-3);
 }
 
@@ -2736,6 +2794,11 @@ header.main-navigation nav li a:hover, header.main-navigation nav li a:active, h
   display: table;
 }
 
+.fluid {
+  width: 100%;
+  max-width: 100%;
+}
+
 .g-xs {
   gap: var(--spacing-xs);
 }
@@ -2758,6 +2821,116 @@ header.main-navigation nav li a:hover, header.main-navigation nav li a:active, h
 
 .g-xxl {
   gap: var(--spacing-xxl);
+}
+
+.h\:bg-primary:hover {
+  background: var(--primary);
+}
+
+.h\:c-primary:hover {
+  color: var(--primary);
+}
+
+.h\:bg-secondary:hover {
+  background: var(--secondary);
+}
+
+.h\:c-secondary:hover {
+  color: var(--secondary);
+}
+
+.h\:bg-accent-1:hover {
+  background: var(--accent-1);
+}
+
+.h\:c-accent-1:hover {
+  color: var(--accent-1);
+}
+
+.h\:bg-accent-2:hover {
+  background: var(--accent-2);
+}
+
+.h\:c-accent-2:hover {
+  color: var(--accent-2);
+}
+
+.h\:bg-accent-3:hover {
+  background: var(--accent-3);
+}
+
+.h\:c-accent-3:hover {
+  color: var(--accent-3);
+}
+
+.h\:bg-white:hover {
+  background: var(--white);
+}
+
+.h\:c-white:hover {
+  color: var(--white);
+}
+
+.h\:bg-black:hover {
+  background: var(--black);
+}
+
+.h\:c-black:hover {
+  color: var(--black);
+}
+
+.h\:bg-light:hover {
+  background: var(--light);
+}
+
+.h\:c-light:hover {
+  color: var(--light);
+}
+
+.h\:bg-dark:hover {
+  background: var(--dark);
+}
+
+.h\:c-dark:hover {
+  color: var(--dark);
+}
+
+.h\:bg-gradient-1:hover {
+  background: var(--gradient-1);
+}
+
+.h\:c-gradient-1:hover {
+  color: var(--gradient-1);
+}
+
+.h\:bg-gradient-2:hover {
+  background: var(--gradient-2);
+}
+
+.h\:c-gradient-2:hover {
+  color: var(--gradient-2);
+}
+
+.h\:bg-gradient-3:hover {
+  background: var(--gradient-3);
+}
+
+.h\:c-gradient-3:hover {
+  color: var(--gradient-3);
+}
+
+/* Hover utilities */
+.hover\:outlined:hover {
+  border: 2px solid currentColor;
+}
+
+.hover\:lighten:hover {
+  filter: brightness(1.2);
+}
+
+.hover\:solid:hover {
+  background-color: green;
+  color: white;
 }
 
 .m-xs {
@@ -4042,7 +4215,7 @@ header.main-navigation nav li a:hover, header.main-navigation nav li a:active, h
 
 [class*="before:"] {
   position: relative;
-  z-index: 2;
+  z-index: -2;
 }
 [class*="before:"]::before {
   content: "";
@@ -4171,28 +4344,28 @@ body .hover\:color-secondary:hover {
   background: var(--secondary);
 }
 
-body .hover\:color-accent1:hover {
-  color: var(--accent1);
+body .hover\:color-accent-1:hover {
+  color: var(--accent-1);
 }
 
-.before\:bg-accent1:before {
-  background: var(--accent1);
+.before\:bg-accent-1:before {
+  background: var(--accent-1);
 }
 
-body .hover\:color-accent2:hover {
-  color: var(--accent2);
+body .hover\:color-accent-2:hover {
+  color: var(--accent-2);
 }
 
-.before\:bg-accent2:before {
-  background: var(--accent2);
+.before\:bg-accent-2:before {
+  background: var(--accent-2);
 }
 
-body .hover\:color-accent3:hover {
-  color: var(--accent3);
+body .hover\:color-accent-3:hover {
+  color: var(--accent-3);
 }
 
-.before\:bg-accent3:before {
-  background: var(--accent3);
+.before\:bg-accent-3:before {
+  background: var(--accent-3);
 }
 
 body .hover\:color-white:hover {

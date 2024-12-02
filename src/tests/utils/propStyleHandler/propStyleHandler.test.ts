@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
-import { PropStyleHandlerProps } from "@uiTypes";
-import { propStyleHandler } from "@utils";
+import { PropStyleHandlerProps } from "_uiTypes";
+import { propStyleHandler } from "_utils";
 
 describe(`getBackgroundStyle Function`, () => {
   test(`Pass undefined values for all supported props, returns {className:"", inlineStyle:{}}`, () => {
@@ -30,8 +30,9 @@ describe(`getBackgroundStyle Function`, () => {
         xxl: undefined,
         gap: undefined,
         opacity: undefined,
+        hover: undefined,
       })
-    ).toStrictEqual({ className: "", inlineStyle: {} });
+    ).toStrictEqual({ className: "", inlineStyle: {}, hoverInlineStyle: {} });
   });
 
   test(`Test string options`, () => {
@@ -47,6 +48,10 @@ describe(`getBackgroundStyle Function`, () => {
         alignItems: "baseline",
         flexWrap: "nowrap",
         justifyContent: "around",
+      },
+      hover: {
+        background: "black",
+        border: { width: 2, style: "solid", color: "black" },
       },
       margin: "lg",
       display: "flex",
@@ -69,7 +74,7 @@ describe(`getBackgroundStyle Function`, () => {
 
     const result = propStyleHandler(propsAsClass).className;
     const expectedOutput =
-      "user-defined-class bg-dark box-shadow-3 col-xs-6 col-sm-4 col-md-3 col-lg-3 col-xl-6 col-xxl-7 color-white d-flex flex-xs-4 flex-sm-1 flex-md-2 flex-lg-5 flex-xl-1 flex-xxl-2 flex-nowrap flex-col content-between items-baseline justify-around g-sm m-lg opacity-10 p-0 text-center text-dashed text-capitalize";
+      "user-defined-class bg-dark box-shadow-3 col-xs-6 col-sm-4 col-md-3 col-lg-3 col-xl-6 col-xxl-7 c-white d-flex flex-xs-4 flex-sm-1 flex-md-2 flex-lg-5 flex-xl-1 flex-xxl-2 flex-nowrap flex-col content-between items-baseline justify-around g-sm h:bg-black m-lg opacity-10 p-0 text-center text-dashed text-capitalize";
     expect(result).toEqual(expectedOutput);
     //PropstyleHandler Classnames are arranged alphabetically so just testing .toEqual()
   });
@@ -90,7 +95,11 @@ describe(`getBackgroundStyle Function`, () => {
         margin: { value: undefined },
         gap: { value: undefined },
       })
-    ).toStrictEqual({ className: "", inlineStyle: { position: "absolute" } });
+    ).toStrictEqual({
+      className: "",
+      inlineStyle: { position: "absolute" },
+      hoverInlineStyle: {},
+    });
   });
 });
 

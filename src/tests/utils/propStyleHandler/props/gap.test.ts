@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
-import { SizeOptions, ValueAndUnitProps } from "@uiTypes";
-import { getGapStyle } from "@utils";
+import { SizeOptions, ValueAndUnitProps } from "_uiTypes";
+import { getGapStyle } from "_utils";
 describe(`Gap as SizeOptions | ValueAndUnitProps`, () => {
   //if (execute) {
   //gap: undefined --> {}

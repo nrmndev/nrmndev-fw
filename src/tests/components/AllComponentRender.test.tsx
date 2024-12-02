@@ -7,7 +7,7 @@ import {
   Container,
   Row,
   Typography,
-} from "@uiComponents";
+} from "components/component.barrel.index";
 
 const components = {
   Button: { component: Button, props: { "data-testid": "Button" } },

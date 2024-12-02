@@ -1,5 +1,5 @@
-import { UtilityStyledComponent } from "@uiComponents";
-import { RowComponentProps } from "@uiComponentTypes";
+import { UtilityStyledComponent } from "components/component.barrel.index";
+import { RowComponentProps } from "components/component.barrel.types";
 import { forwardRef } from "react";
 
 const Row = (
@@ -9,7 +9,7 @@ const Row = (
   return (
     <UtilityStyledComponent
       as="div"
-      className={"row"}
+      className="row"
       {...utilityProps}
       ref={ref}
     />

@@ -1,6 +1,11 @@
 import heroBanner from "../../assets/hero_banner.jpg";
 
-import { Container, Media, Row, Typography } from "@uiComponents";
+import {
+  Container,
+  Media,
+  Row,
+  Typography,
+} from "components/component.barrel.index";
 import { FaPhone } from "react-icons/fa";
 
 const SampleRow = () => {

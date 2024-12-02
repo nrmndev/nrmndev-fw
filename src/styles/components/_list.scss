@@ -64,6 +64,9 @@ ol.list {
     color: var(--#{$theme});
   }
 }
+.list__icon {
+  display: flex;
+}
 // .list--grid-2-columns {
 //   display: grid;
 //   grid-template-columns: repeat(2, 1fr);
@@ -87,7 +90,9 @@ ol.list {
 /** LIST ITEM **/
 .list .list__item {
   margin-bottom: 15px;
-  line-height: 1.5;
+  // line-height: 1.5;
+  display: inline-flex;
+  align-items: center;
   /* align-items: center;
   display: flex; */
 }

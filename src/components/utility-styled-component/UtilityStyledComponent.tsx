@@ -1,8 +1,10 @@
-import { UtilityProps } from "@uiTypes";
-import { convertCSSPropToString, propStyleHandler, splitProps } from "@utils";
+import { UtilityProps } from "_uiTypes";
+import { convertCSSPropToString, propStyleHandler, splitProps } from "_utils";
 import { forwardRef, useMemo } from "react";
 import styled from "styled-components";
 import React from "react";
+import { useInView } from "react-intersection-observer";
+import classNames from "classnames";
 
 /***
  * `UtilityStyledComponent` is a polymorphic component that provides utility-based styling
@@ -32,51 +34,98 @@ import React from "react";
  * - Renders a `StyledComponent` if inline styles are present; otherwise, it renders the specified element.
  */
 const UtilityStyledComponent = <T extends React.ElementType = "div">(
-  { as: Component, style, ...props }: UtilityProps<T>,
+  { as: Component, className, style, usx, ...restProps }: UtilityProps<T>,
   ref?: React.Ref<React.ElementRef<T>>
 ) => {
-  //const Component = as || "div";
+  //console.log(`utility componenet`, props.border);
 
-  // Split props into utilityProps and intrinsicProps
+  /***
+   * Sanitize all props, separating intrinsicProps to avoid incompatibility spreading of unrecognized props.
+   */
   const { utilityProps, intrinsicProps } = useMemo(() => {
-    return splitProps(props);
-  }, [props]);
-  //const { utilityProps, intrinsicProps } = memoizedSplittedProps;
+    return splitProps(restProps);
+  }, [restProps]);
+  //console.log(`utility props`, utilityProps.font);
 
   // Handle utilityProps, returning className and inlineStyle for styling
-  const { className, inlineStyle } = useMemo(() => {
-    return propStyleHandler({ ...utilityProps });
+  const {
+    className: propStyleClassName,
+    inlineStyle,
+    hoverInlineStyle,
+    inviewInlineStyle,
+  } = useMemo(() => {
+    return propStyleHandler({ ...usx });
   }, [utilityProps]);
-  //const { className, inlineStyle } = memoizedPropStyleHandler;
-
+  //console.log(inlineStyle);
   // Convert inline styles to a `CSS-friendly` string for styled-components
   const CSSString = convertCSSPropToString(inlineStyle);
-
+  // Convert hover inline styles to a `CSS-friendly` string for styled-components
+  const HoverCSSString = convertCSSPropToString(hoverInlineStyle);
   //Apply common properties for the component including classNames from propStyleHandler and intrinsicProps from splitProps
+  const combineClassNames = classNames(className, propStyleClassName);
   const commonProps = {
     style,
     ref,
-    ...(className ? { className } : {}),
+    ...(combineClassNames ? { className: combineClassNames } : {}),
     ...intrinsicProps,
   };
 
+  // console.log(inViewThreshold);
+  const { ref: inViewRef, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+
+  // Combine the forwarded ref and the ref from useInView
+  const combinedRef = ref
+    ? (node: HTMLElement | null) => {
+        inViewRef(node); // useInView ref
+        if (ref) {
+          if (typeof ref === "function") {
+            (ref as (instance: HTMLElement | null) => void)(node); // Call function-based refs
+          } else {
+            (ref as React.MutableRefObject<HTMLElement | null>).current = node; // Assign to object-based refs
+          }
+        }
+      }
+    : inViewRef;
   // Conditionally render a styled-component or a standard JSX element
-  return CSSString !== "" ? (
+  return (
     <StyledComponent
       {...commonProps}
-      $ss={CSSString}
+      $css={CSSString}
+      $hcss={HoverCSSString}
       as={Component as React.ElementType}
-      ref={ref}
+      ref={combinedRef}
+      $inView={inView ? inviewInlineStyle : {}}
+      // ref={combinedRef}
+      // style={{
+      //   opacity: inView ? 1 : 0,
+      //   transition: "opacity 0.5s ease-in-out",
+      // }}
     />
-  ) : (
-    <Component {...commonProps} ref={ref} />
   );
 };
 
-const StyledComponent = styled.div<{ $ss?: string }>`
-  ${({ $ss }) => {
-    return $ss;
-  }}
+const StyledComponent = styled.div<{
+  $css?: string;
+  $hcss?: string;
+  $inView?: string;
+}>`
+  /* Apply $ss as standard styles */
+  ${({ $css }) => {
+    return $css;
+  }};
+  /* Apply $inView as standard styles */
+  ${({ $inView }) => {
+    return $inView;
+  }};
+  /* Apply $is as hover styles */
+  &:hover {
+    ${({ $hcss }) => {
+      return $hcss;
+    }};
+  }
 `;
 
 // Disable automatic class name generation

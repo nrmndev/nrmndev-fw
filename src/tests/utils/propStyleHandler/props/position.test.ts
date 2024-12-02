@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { getPositionStyle } from "@utils";
+import { getPositionStyle } from "_utils";
 
 //Uses PositionProps
 
@@ -8,6 +8,23 @@ describe(`getPositionStyle Function`, () => {
     expect(getPositionStyle({ position: undefined })).toMatchObject({
       classes: "",
       inline: {},
+    });
+  });
+  test(`the rest of the props are undefined, returning {classes:"", inline:{position: "absolute"}} `, () => {
+    expect(
+      getPositionStyle({
+        position: {
+          position: "absolute",
+          bottom: undefined,
+          top: undefined,
+          right: undefined,
+          left: undefined,
+          zIndex: undefined,
+        },
+      })
+    ).toMatchObject({
+      classes: "",
+      inline: { position: "absolute" },
     });
   });
 
@@ -29,6 +46,7 @@ describe(`getPositionStyle Function`, () => {
           right: { value: 10 },
           bottom: { value: 15 },
           left: { value: 0 },
+          zIndex: 5,
         },
       })
     ).toMatchObject({
@@ -37,6 +55,7 @@ describe(`getPositionStyle Function`, () => {
         position: "absolute",
         bottom: "15px",
         right: "10px",
+        zIndex: 5,
       },
     });
   });

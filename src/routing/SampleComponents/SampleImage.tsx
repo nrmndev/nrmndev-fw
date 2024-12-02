@@ -1,4 +1,4 @@
-import { Image } from "@uiComponents";
+import { Image } from "components/component.barrel.index";
 
 const SampleImage = () => {
   return (

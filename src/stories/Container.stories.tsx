@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Container } from "@uiComponents";
-import { argTypesGenerator, typeDocGenerator } from "@utils";
+import { Container } from "components/component.barrel.index";
+import { argTypesGenerator, typeDocGenerator } from "_utils";
 
 const meta = {
   title: "Example/Container",

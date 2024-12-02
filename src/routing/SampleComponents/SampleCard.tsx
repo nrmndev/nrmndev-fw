@@ -1,16 +1,5 @@
-import {
-  Button,
-  Card,
-  Column,
-  Container,
-  List,
-  Media,
-  Row,
-  SectionLabel,
-  Typography,
-} from "@uiComponents";
+import { Card, Container, Media } from "components/component.barrel.index";
 import { BsFillHouseGearFill } from "react-icons/bs";
-import { FaBeer, FaCheck, FaCog } from "react-icons/fa";
 const SampleCard = () => (
   <>
     <Container
@@ -28,6 +17,7 @@ const SampleCard = () => (
             variant: "outline",
             background: "primary",
             color: "white",
+            size: "xxl",
           }}
           heading={{ children: "Design and Build", color: "dark" }}
           body={{

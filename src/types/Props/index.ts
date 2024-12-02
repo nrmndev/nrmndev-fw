@@ -1,110 +1,29 @@
-export type {
-  default as AnimationProps,
-  AnimationOptions,
-} from "./animationProps";
+//export * from "./animationProps";
+// export * from "./button.types";
+export * from "../../utils/propStyleHandler/utilityBase.types";
 
-export type {
-  AsComponentProps,
-  AsAnchorProps,
-  AsImgProps,
-  AsOptionalProps,
-  AsProps,
-} from "./asProps";
-
-export type {
-  BackgroundProps,
-  BackgroundAsImageProps,
-  BackgroundAsColorProps,
-} from "./backgroundProps";
-
-//Shouldn't it be size not value? @borderProps
-export type {
-  BorderProps,
-  BorderEdgeOptions,
-  BorderOptions,
-  BorderBaseOptions,
-} from "./borderProps";
-
-export type { BoxShadowProps, BoxShadowOptions } from "./boxShadowProps";
-
-export type {
-  BorderRadiusProps,
-  BorderRadiusOptions,
-} from "./borderRadiusProps";
-
-export type { AnchorTargetOptions, ButtonTypeOptions } from "./buttonProps";
-
-export type { ChildrenProps } from "./childrenProps";
-export type { ColorProps, ColorOptions } from "./colorProps";
-
-export type {
-  ColumnBreakpointProps,
-  ColumnOptions,
-  ColumnBreakpointOptions,
-} from "./columnProps";
-export type { ColumnItemsProps } from "./columnItemsProps";
-
-//Not Sure about this Prop
-export type { ContainerGridProps } from "./containerGridProps";
-
-export type { DisplayProps, DisplayOptions } from "./displayProps";
-// Double check usage
-export type {
-  FocusEventHandlerProps,
-  KeyboardEventHandlerProps,
-  MouseEventHandlerProps,
-  FormEventHandlerProps,
-} from "./eventHandlerProps";
-
-export type {
-  FlexProps,
-  AlignContentOptions,
-  AlignItemsOptions,
-  FlexDirectionOptions,
-  FlexWrapOptions,
-  JustifyContentOptions,
-} from "./flexProps";
-
-export type { FlexBoxProps } from "./flexBoxProps";
-export type { FluidProps } from "./fluidProps";
-
-export type { FontSizeProps, FontSizeOptions } from "./fontSizeProps";
-export type {
-  FontFamilyOptions,
-  FontProps,
-  FontStyleOptions,
-  FontWeightOptions,
-} from "./fontProps";
-
-export type { HeightProps } from "./heightProps";
-export type { GapProps } from "./gapProps";
-export type { WidthProps } from "./widthProps";
-//Better check usage
-export type { InputProps } from "./inputProps";
-
-export type { FlexLayoutProps, SpacingProps } from "./layoutProps";
-
-export type { OverlayProps } from "./overlayProps";
-export type { OpacityProps } from "./opacityProps";
-
-export type {
-  MarginProps,
-  MarginAxisOptions,
-  MarginEdgeOptions,
-  MarginValueUnitOptions,
-} from "./marginProps";
-
-export type { PaddingProps } from "./paddingProps";
-export type { PositionProps, PositionOptions } from "./positionProps";
-export type { RoundedProps } from "./roundedProps";
-
-export type { SizeProps, SizeOptions, SizeNegativeOptions } from "./sizeProps";
-
-export type {
-  TextTransformProps,
-  TextAlignProps,
-  TextDecorationProps,
-  TextProps,
-} from "./textProps";
-
-export type { TextAsProps } from "./typographyProps";
+export * from "../../utils/propStyleHandler/getStyle/props/getStyle.barrel.types";
+// export * from "../../utils/propStyleHandler/getStyle/props/background/background.types";
+// export * from "../../utils/propStyleHandler/getStyle/props/border/border.types";
+// export * from "../../utils/propStyleHandler/getStyle/props/borderRadius/borderRadius.types";
+// export * from "../../utils/propStyleHandler/getStyle/props/boxShadow/boxShadow.types";
+// export * from "../../utils/propStyleHandler/getStyle/props/color/color.types";
+// export * from "../../utils/propStyleHandler/getStyle/props/columnBreakpoints/columnBreakpoints.type";
+// export * from "../../utils/propStyleHandler/getStyle/props/columnItems/columnItems.types";
+// export * from "../../utils/propStyleHandler/getStyle/props/display/display.types";
+// export * from "../../utils/propStyleHandler/getStyle/props/flex/flex.types";
+// export * from "../../utils/propStyleHandler/getStyle/props/fluid/fluid.types";
+// export * from "../../utils/propStyleHandler/getStyle/props/font/font.types";
+// export * from "../../utils/propStyleHandler/getStyle/props/gap/gap.types";
+// export * from "../../utils/propStyleHandler/getStyle/props/height/height.types";
+// export * from "../../utils/propStyleHandler/getStyle/props/hover/hover.types";
+// export * from "../../utils/propStyleHandler/getStyle/props/margin/margin.types";
+// export * from "../../utils/propStyleHandler/getStyle/props/opacity/opacity.types";
+// export * from "../../utils/propStyleHandler/getStyle/props/padding/padding.types";
+// export * from "../../utils/propStyleHandler/getStyle/props/position/position.types";
+// export * from "../../utils/propStyleHandler/getStyle/props/rounded/rounded.types";
+// export * from "../../utils/propStyleHandler/getStyle/props/size/size.types";
+// export * from "../../utils/propStyleHandler/getStyle/props/text/text.types";
+// export * from "../../utils/propStyleHandler/getStyle/props/transition/transition.types";
+// export * from "../../utils/propStyleHandler/getStyle/props/width/width.types";
+// export * from "../../utils/propStyleHandler/getStyle/props/transform/types"; //barrel file
