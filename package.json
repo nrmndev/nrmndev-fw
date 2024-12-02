@@ -7,8 +7,9 @@
   "exports": {
     ".": "./dist/index.js",
     "./@utils": "./dist/utils/index.js",
-    "./@componentTypes": "./dist/components/index.types.js",
-    "./@context": "./dist/components/context/index.js"
+    "./@componentTypes": "./dist/_uiComponentTypes.js",
+    "./@context": "./dist_uiContext.js",
+    "./@uiTypes": "./dist/_uiTypes.js"
   },
   "scripts": {
     "dev": "vite",
